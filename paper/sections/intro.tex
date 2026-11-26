@@ -52,9 +52,12 @@ Under synthetic-policy entitlements, the default TSE scope reduces the columns a
 entitlement. The scope is sufficient for the gold query on \suffTse\% of tasks; this inference quality is the
 load-bearing assumption of the approach, and we quantify it directly. With widening, execution accuracy changed by
 \dExHaikuTse{} percentage points for Claude Haiku~5.5 (95\% CI [\dExLoHaikuTse, \dExHiHaikuTse]) and by
-\dExSonnetTse{} points for Claude Sonnet~5.5 (95\% CI [\dExLoSonnetTse, \dExHiSonnetTse]) relative to full access.
+\dExSonnetTse{} points for Claude Sonnet~5.5 (95\% CI [\dExLoSonnetTse, \dExHiSonnetTse]) relative to full access, a smaller loss than static role views (\dExHaikuBone{} points) or prompt-level schema
+pruning with full credentials (\dExHaikuBthree{} points) for Haiku~5.5. A more conservative scope ($k{=}2$) brought
+accuracy to \ablExKtwo\% against \ablExBzero\% for B0 on an exploratory subset.
 Under indirect prompt injection that targets out-of-task data, exfiltration fell from \exfSonnetCtxBzero\% (B0) to
-\exfSonnetCtxTse\% (TSE) for Sonnet~5.5 and from \exfHaikuCtxBzero\% to \exfHaikuCtxTse\% for Haiku~5.5. None of
+\exfSonnetCtxTse\% (TSE) for Sonnet~5.5 and from \exfHaikuCtxBzero\% to \exfHaikuCtxTse\% for Haiku~5.5; nearly all remaining leaks used
+approved widening, and with widening denied exfiltration was \exfSonnetCtxDeny\% and \exfHaikuCtxDeny\%. None of
 our \bypassAttempts{} scripted bypass attempts reached out-of-scope data. Provisioning takes \medCompile{}\,ms
 (median) and teardown \medTeardown{}\,ms.
 

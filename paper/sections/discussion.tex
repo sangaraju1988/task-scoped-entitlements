@@ -44,8 +44,12 @@ task, never data values. Showing task row filters to the agent (non-Truman trans
 answers over filtered rows, a failure we observed in the pilot and fixed (deviation D1).
 \emph{Inference over-scopes.} Exposure rises toward the entitlement, but correctness is unaffected; precision-oriented
 prompting and $k{=}0$ reduce it.
-\emph{Widening is abused.} Under the \emph{auto} policy an injected request for in-entitlement data can be approved;
-\emph{strict} or human approval, a smaller budget, and audit review reduce this, at a utility cost.
+\emph{Widening is abused.} Under the \emph{auto} policy an injected request for in-entitlement data can be approved,
+and this was the main residual channel in our injection experiment. Our lexical \emph{strict} policy only reduced it
+modestly (Section~\ref{sec:res-security}), because the requested column was often not tagged sensitive; denying
+widening removed it at a cost of \ablDDeny{} accuracy points (exploratory). Human approval for columns outside the
+initial scope, a smaller budget, and audit review are the practical middle ground; a better sensitivity tagger
+would make \emph{strict} more effective.
 \emph{DB enforcement is wrong} (A1 or A4 violated). TSE inherits the error. Our tests and the bypass catalog check
 the configuration we ship; operators should run them against their own deployment.
 
@@ -75,5 +79,5 @@ earlier results would need scope evolution beyond widening.
 quantify run-to-run variation separately. Local open-weight agents struggled with the tool protocol, which limited
 the open-weight arm.
 \emph{Pre-freeze development and deviations.} The inference pipeline was debugged on 16 evaluation tasks before
-preregistration, and three deviations were logged (one bug fix, two budget changes); all are listed in the
-artifact.
+preregistration, and four deviations were logged (one bug fix, two budget-driven scope changes, one exploratory
+arm added after an interim inspection); all are listed in the artifact.

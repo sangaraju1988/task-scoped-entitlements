@@ -8,7 +8,8 @@ Claude Sonnet~5.5 and an open-weight agent, under synthetic role policies, TSE r
 \oerColReduction-fold and reachable cells \oerCellReduction-fold relative to the full entitlement. Execution accuracy
 changed by \dExHaikuTse{} percentage points (95\% CI [\dExLoHaikuTse, \dExHiHaikuTse]) for Haiku and \dExSonnetTse{}
 ([\dExLoSonnetTse, \dExHiSonnetTse]) for Sonnet. Under indirect prompt injection, exfiltration of out-of-task data fell
-from \exfSonnetCtxBzero\% to \exfSonnetCtxTse\% (Sonnet), and the remaining leaks came through approved widening;
+from \exfSonnetCtxBzero\% to \exfSonnetCtxTse\% (Sonnet); nearly all remaining leaks came through approved widening,
+and with widening denied exfiltration was \exfSonnetCtxDeny\%;
 \bypassSuccess{} of \bypassAttempts{} enforcement-bypass attempts succeeded. The approach rests on two assumptions:
 scope-inference quality (inferred scopes were sufficient for \suffTse\% of tasks) and correct database enforcement.
 TSE does not protect against inference from in-scope data, covert channels, misuse of in-scope data, or malicious

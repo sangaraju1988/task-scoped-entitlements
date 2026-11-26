@@ -142,9 +142,6 @@ Secondary analyses are labelled exploratory.
   arose through approved widening (agents requested the canary column on their own). We add an *exploratory* E5a arm,
   TSE with widening policy `deny` (Haiku 5.5 and Sonnet 5.5, same tasks), to quantify exfiltration without approval.
   It is reported as exploratory and does not replace any preregistered analysis.
-* **D5 (2026-11-26, budget, decided from cost only).** Pilot costs were below the estimate, so Sonnet 5.5 E2 ran on
-  all 1,000 permitted tasks (B0, B3, TSE; ReAct harness) instead of the planned 300-task subset, and E5a-context on
-  200 tasks. This enlarges the sample to the full preregistered task set and does not select tasks or outcomes.
 * **Note on the repeated-run study.** Claude models reject sampling parameters (Section 3), so the "seeds 1,2,3" runs
   of Haiku 5.5 are three independent repetitions at the model's default sampling; they measure run-to-run variance,
   not temperature-0.7 seed variance as planned for local models.
