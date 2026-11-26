@@ -123,3 +123,14 @@ Secondary analyses are labelled exploratory.
   US$0.0127/run (Sonnet 5.5), far below the estimate. The frontier arm is therefore expanded: Sonnet 5.5 runs the
   full design (E2 main, B1, non-permitted, E5) instead of a 300-task subset; Haiku 5.5 also runs the full design.
   The US$95 cap is unchanged; if the cap is reached, the reduction order of §8 applies.
+* **D3 (2026-11-26, budget, decided from cost only).** Under the LangGraph harness the LangChain Anthropic wrapper
+  did not use prompt caching, so Sonnet 5.5 cost US$0.025/run vs US$0.015/run in the manual loop. To stay under
+  the cap, Sonnet 5.5 runs only the manual ReAct harness (exp `e2_sonnet_r`); framework coverage (2 frameworks)
+  is provided by Haiku 5.5 and qwen3:8b. Sonnet 5.5 B1 and non-permitted runs are dropped (Haiku 5.5 covers them).
+  The 117 runs of the superseded exp `e2_sonnet` (B0 only, mixed harnesses) are excluded from analysis and
+  reported only as discarded.
+* **Incident I1 (2026-11-26 14:47 local).** A leftover-object sweep run during the Haiku B0/B1 batch dropped task
+  schemas of in-flight B1 runs. All Haiku runs whose timestamp falls within 10 minutes before the sweep and that
+  used broker-compiled scopes (B1) are deleted and re-executed with the same run ids. The sweep is now only run
+  when no batch is active.
+
