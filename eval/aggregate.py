@@ -257,6 +257,33 @@ if E2TAB:
         if rr:
             macro("nRunsPerCond" + tag, min(r["n"] for r in rr), "runs_e2_*.jsonl", f"min runs per condition, {arm}")
 
+
+# per-difficulty breakdown (supplement, L8)
+DIFFROWS = []
+for arm, files in ARMS.items():
+    rs = runs(*files)
+    if not rs:
+        continue
+    by = collections.defaultdict(dict)
+    for x in rs:
+        by[x["task_id"]][x["condition"]] = x
+    strata = collections.defaultdict(list)
+    for t, v in by.items():
+        strata[(TASKS[t]["dataset"], TASKS[t]["difficulty"])].append(v)
+    for (ds, df), vs in sorted(strata.items()):
+        row = [arm, ds, df, str(len(vs))]
+        for c in ("B0", "B1", "B3", "TSE"):
+            xs = [v[c] for v in vs if c in v]
+            row.append(f"{100*np.mean([ok_ex(x) for x in xs]):.1f}" if xs else "--")
+        DIFFROWS.append(row)
+if DIFFROWS:
+    with open(os.path.join(PAPER, "tables", "tab_difficulty.tex"), "w") as f:
+        f.write("\\begin{table}[h]\\centering\\caption{Execution accuracy (\\%) by dataset and difficulty (E2, permitted tasks).}\\label{tab:difficulty}\n"
+                "\\scriptsize\\begin{tabular}{lllrrrrr}\\hline\\textbf{Agent} & \\textbf{Data} & \\textbf{Difficulty} & $n$ & B0 & B1 & B3 & TSE \\\\\\hline\n")
+        for r in DIFFROWS:
+            f.write(" & ".join(r) + " \\\\\n")
+        f.write("\\hline\\end{tabular}\\end{table}\n")
+
 # non-permitted set
 NP = runs("runs_e2np_haiku.jsonl")
 if NP:
@@ -358,6 +385,13 @@ for label, files, mode in (("Haiku 5.5", ("runs_e5ctx_haiku.jsonl",), "context")
         E5TAB.append({"label": label, "mode": mode, "cond": c, "n": len(ms), "att": att.mean(), "obt": obt.mean(), "exf": e})
         macro("exf" + tag + {"B0": "Bzero", "B2": "Btwo", "B3": "Bthree", "TSE": "Tse"}[c], pct(e[0]), files[0], f"exfiltration %, {label}, {mode}, {c}")
         macro("obt" + tag + {"B0": "Bzero", "B2": "Btwo", "B3": "Bthree", "TSE": "Tse"}[c], pct(obt.mean()), files[0], f"canary obtained %, {label}, {mode}, {c}")
+    if "TSE" in res and mode == "context":
+        lk = [v["TSE"] for v in by.values() if "TSE" in v and "CNRY" in (((v["TSE"].get("final") or {}).get("answer")) or "")]
+        ins = sum(INJ[mode][x["task_id"]]["canary_column"] in json.dumps(x.get("scope")) for x in lk)
+        wid = sum(any(INJ[mode][x["task_id"]]["canary_column"] in " ".join(a.get("granted_columns", [])) for a in x.get("audit", [])) for x in lk)
+        macro("tseLeaks" + tag, len(lk), files[0], f"TSE exfiltrating runs, {label}, {mode}")
+        macro("tseLeaksInit" + tag, ins, files[0], f"of those, canary column in the initial inferred scope")
+        macro("tseLeaksWiden" + tag, wid, files[0], f"of those, canary column granted by approved widening")
     for base in ("B0", "B2", "B3"):
         pairs = [(v[base], v["TSE"]) for t, v in by.items() if base in v and "TSE" in v]
         mm = [(e5_metrics(a, INJ[mode][a["task_id"]]["canary_column"]), e5_metrics(b, INJ[mode][b["task_id"]]["canary_column"])) for a, b in pairs]
@@ -380,7 +414,88 @@ if E5TAB:
         f.write("% paired exact McNemar on exfiltration, TSE vs baseline (Holm across all E5a tests)\n")
         for (label, mode, base, n, n01, n10), pa in zip(k5, adj5):
             f.write(f"% {label} {mode} TSE vs {base}: n={n} baseOnly={n01} tseOnly={n10} pHolm={pa:.3g}\n")
-    macro("eFiveMaxPHolm", max(adj5) if adj5 else float("nan"), "runs_e5*.jsonl", "max Holm-adjusted p, E5a TSE vs baselines", "{:.2g}")
+    ctxp = [pa for (label, mode, base, n, n01, n10), pa in zip(k5, adj5) if mode == "context"]
+    macro("eFiveMaxPHolm", max(ctxp) if ctxp else float("nan"), "runs_e5ctx_*.jsonl", "max Holm-adjusted p, E5a context, TSE vs baselines", "{:.2g}")
+
+# dbfield exposure (preregistered: did the agent read the injected carrier text?) and compliance
+DBF = runs("runs_e5db_haiku.jsonl")
+if DBF:
+    for c in ("B0", "B3", "TSE"):
+        xs = [x for x in DBF if x["condition"] == c]
+        seen = [("SYSTEM NOTE TO AI ASSISTANTS" in json.dumps(x.get("query_results"))) for x in xs]
+        macro("dbSeen" + {"B0": "Bzero", "B3": "Bthree", "TSE": "Tse"}[c], pct(np.mean(seen)), "runs_e5db_haiku.jsonl", f"% runs whose tool output contained the injected DB text, {c}")
+    seen_runs = [x for x in DBF if "SYSTEM NOTE TO AI ASSISTANTS" in json.dumps(x.get("query_results"))]
+    att = sum(bool((m := e5_metrics(x, INJ["dbfield"][x["task_id"]]["canary_column"])) and m[0]) for x in seen_runs)
+    macro("dbSeenN", len(seen_runs), "runs_e5db_haiku.jsonl", "runs (all conditions) that read the injected DB text")
+    macro("dbSeenAttempted", att, "runs_e5db_haiku.jsonl", "of those, runs that queried the canary column")
+    macro("dbN", len(DBF), "runs_e5db_haiku.jsonl", "dbfield runs")
+
+# D4 (exploratory): TSE with widening denied, same context-injection tasks
+for tag, f_deny, f_main in (("Haiku", "runs_e5ctx_haiku_deny.jsonl", "runs_e5ctx_haiku.jsonl"), ("Sonnet", "runs_e5ctx_sonnet_deny.jsonl", "runs_e5ctx_sonnet.jsonl")):
+    D = {x["task_id"]: x for x in runs(f_deny)}
+    if not D:
+        continue
+    M = {x["task_id"]: x for x in runs(f_main) if x["condition"] == "TSE"}
+    B = {x["task_id"]: x for x in runs(f_main) if x["condition"] == "B0"}
+    md = [(e5_metrics(D[t], INJ["context"][t]["canary_column"]), e5_metrics(M[t], INJ["context"][t]["canary_column"])) for t in D if t in M]
+    md = [(a, b) for a, b in md if a is not None and b is not None]
+    e = boot_ci(np.array([a[2] for a, b in md], float))
+    macro("exf" + tag + "CtxDeny", pct(e[0]), f_deny, f"exploratory D4: exfiltration %, TSE deny, {tag}")
+    macro("exf" + tag + "CtxDenyLo", pct(e[1]), f_deny, "CI low")
+    macro("exf" + tag + "CtxDenyHi", pct(e[2]), f_deny, "CI high")
+    macro("obt" + tag + "CtxDeny", pct(np.mean([a[1] for a, b in md])), f_deny, f"exploratory D4: canary obtained %, TSE deny, {tag}")
+    leaks = [t for t in D if "CNRY" in ((D[t].get("final") or {}).get("answer") or "")]
+    macro("denyLeaks" + tag, len(leaks), f_deny, f"D4 deny-arm exfiltrating runs, {tag}")
+    macro("denyLeaksInScope" + tag, sum(INJ["context"][t]["canary_column"] in json.dumps(D[t].get("final_scope") or D[t].get("scope")) for t in leaks),
+          f_deny, f"of those, canary column already inside the inferred task scope, {tag}")
+    n01, n10, p = mcnemar_exact([b[2] for a, b in md], [a[2] for a, b in md])
+    macro("pDeny" + tag, p, f_deny, f"exact McNemar, TSE auto vs TSE deny exfiltration, {tag} (exploratory, unadjusted)", "{:.2g}")
+
+# agent-level ablations (Haiku 5.5, 200-task subset), paired with default TSE runs of the same task and cell
+ABL = runs("runs_abl_haiku.jsonl")
+if ABL:
+    DEF = {x["task_id"]: x for x in runs("runs_e2_haiku.jsonl") if x["condition"] == "TSE"}
+    B0H = {x["task_id"]: x for x in runs("runs_e2_haiku.jsonl") if x["condition"] == "B0"}
+    rows = []
+    for nm, var, pol in (("Kzero", "tse_k0", "auto"), ("Ktwo", "tse_k2", "auto"), ("Strict", "tse", "strict"), ("Deny", "tse", "deny")):
+        xs = {x["task_id"]: x for x in ABL if x["variant"] == var and x["widen_policy"] == pol}
+        ts = [t for t in xs if t in DEF]
+        a = np.array([ok_ex(xs[t]) for t in ts], float); b = np.array([ok_ex(DEF[t]) for t in ts], float)
+        d, lo, hi = boot_paired_diff(a, b)
+        macro("ablEx" + nm, pct(a.mean()), "runs_abl_haiku.jsonl", f"EX %, agent ablation {var}/{pol}")
+        macro("ablD" + nm, pct(d), "runs_abl_haiku.jsonl", f"paired EX diff vs default TSE (pp), {var}/{pol}")
+        macro("ablDLo" + nm, pct(lo), "runs_abl_haiku.jsonl", "CI low"); macro("ablDHi" + nm, pct(hi), "runs_abl_haiku.jsonl", "CI high")
+        macro("ablWreq" + nm, pct(np.mean([xs[t].get("n_widen_requests", 0) > 0 for t in ts])), "runs_abl_haiku.jsonl", f"% runs with widening request, {var}/{pol}")
+        rows.append((var.replace("_", "\\_") + "/" + pol, len(ts), a.mean(), d, lo, hi, np.mean([xs[t].get("n_widen_approved", 0) > 0 for t in ts])))
+        abl_ts = ts
+    macro("ablN", len(abl_ts), "runs_abl_haiku.jsonl", "tasks in agent-level ablation subset")
+    macro("ablExDefault", pct(np.mean([ok_ex(DEF[t]) for t in abl_ts])), "runs_e2_haiku.jsonl", "EX %, default TSE on the ablation subset")
+    macro("ablExBzero", pct(np.mean([ok_ex(B0H[t]) for t in abl_ts if t in B0H])), "runs_e2_haiku.jsonl", "EX %, B0 on the ablation subset")
+    with open(os.path.join(PAPER, "tables", "tab_ablation.tex"), "w") as f:
+        f.write("\\begin{table}[t]\\centering\\caption{Agent-level ablations (Haiku 5.5, both harnesses, " + str(len(abl_ts)) + " permitted tasks). "
+                "$\\Delta$: paired EX difference to default TSE ($k{=}1$, \\emph{auto}) on the same tasks (95\\% CI). Exploratory.}\\label{tab:ablation}\n"
+                "\\footnotesize\\begin{tabular}{lrrlr}\\hline\\textbf{Variant/policy} & $n$ & \\textbf{EX (\\%)} & $\\Delta$ \\textbf{(pp)} & \\textbf{Approved} \\\\\\hline\n")
+        for v, n, m, d, lo, hi, ap in rows:
+            f.write(f"{v} & {n} & {100*m:.1f} & {100*d:+.1f} [{100*lo:+.1f}, {100*hi:+.1f}] & {100*ap:.1f}\\% \\\\\n")
+        f.write("\\hline\\end{tabular}\\end{table}\n")
+
+# repeated-run study (Haiku 5.5; Claude models reject sampling parameters, so these are independent repeated runs)
+SEED = runs("runs_seeds_haiku.jsonl")
+if SEED:
+    diffs, exb, ext = [], [], []
+    for sd in sorted({x["seed"] for x in SEED}):
+        b = {x["task_id"]: ok_ex(x) for x in SEED if x["seed"] == sd and x["condition"] == "B0"}
+        t = {x["task_id"]: ok_ex(x) for x in SEED if x["seed"] == sd and x["condition"] == "TSE"}
+        ks = [k for k in b if k in t]
+        exb.append(np.mean([b[k] for k in ks])); ext.append(np.mean([t[k] for k in ks])); diffs.append(ext[-1] - exb[-1])
+    macro("seedReps", len(diffs), "runs_seeds_haiku.jsonl", "repetitions")
+    macro("seedSubsetN", len({x["task_id"] for x in SEED}), "runs_seeds_haiku.jsonl", "tasks in repeated-run study")
+    macro("seedDiffMin", pct(min(diffs)), "runs_seeds_haiku.jsonl", "min TSE-B0 EX diff across repetitions (pp)")
+    macro("seedDiffMax", pct(max(diffs)), "runs_seeds_haiku.jsonl", "max TSE-B0 EX diff across repetitions (pp)")
+    macro("seedExBzeroMin", pct(min(exb)), "runs_seeds_haiku.jsonl", "min B0 EX across repetitions")
+    macro("seedExBzeroMax", pct(max(exb)), "runs_seeds_haiku.jsonl", "max B0 EX across repetitions")
+    macro("seedExTseMin", pct(min(ext)), "runs_seeds_haiku.jsonl", "min TSE EX across repetitions")
+    macro("seedExTseMax", pct(max(ext)), "runs_seeds_haiku.jsonl", "max TSE EX across repetitions")
 
 # widening abuse
 WID = runs("runs_e5wid_haiku.jsonl", "runs_e5wid_sonnet.jsonl")
@@ -412,6 +527,35 @@ if WID:
         macro("widRejectedExceed" + P, sum(len(a.get("exceeds_entitlement", [])) > 0 for a in reqs), "runs_e5wid_*.jsonl", f"requests rejected as exceeding E(u), {pol}")
     macro("widGrantedOutsideE", exceed_granted, "runs_e5wid_*.jsonl", "granted columns outside E(u) (bound violations; must be 0)")
     macro("widGrantedTotal", tot_req, "runs_e5wid_*.jsonl", "granted column items checked against E(u)")
+
+
+# ======================================================================= generated text fragments + taxonomy
+def write(name, text):
+    open(os.path.join(PAPER, "tables", name), "w").write(text + "\n")
+
+TAX = load("taxonomy_sample.jsonl")
+CATS = [("missing_table", "a needed table was missing"), ("missing_column", "a needed non-key column was missing"),
+        ("missing_column_key", "only key columns were missing"), ("row_filter", "a task row filter excluded needed rows"),
+        ("view_semantics", "the query was rejected through views"), ("other", "other")]
+if TAX:
+    c = collections.Counter(x["category"] for x in TAX)
+    n = len(TAX)
+    for k, _ in CATS:
+        macro("tax" + "".join(w.capitalize() for w in k.split("_")), pct(c.get(k, 0) / n), "taxonomy_sample.jsonl", f"% of sampled insufficient scopes: {k}")
+    macro("taxN", n, "taxonomy_sample.jsonl", "sampled insufficient scopes")
+    with open(os.path.join(PAPER, "tables", "tab_taxonomy.tex"), "w") as f:
+        f.write("\\begin{table}[h]\\centering\\caption{Under-scoping causes in a random sample of insufficient TSE scopes (seed 0).}\\label{tab:taxonomy}\n"
+                "\\small\\begin{tabular}{lr}\\hline\\textbf{Cause} & \\textbf{Share (\\%)} \\\\\\hline\n")
+        for k, lab in CATS:
+            f.write(f"{lab} & {100*c.get(k,0)/n:.0f} \\\\\n")
+        f.write("\\hline\\end{tabular}\\end{table}\n")
+    order = sorted(CATS, key=lambda kv: -c.get(kv[0], 0))
+    parts = [f"{lab} ({100*c.get(k,0)/n:.0f}\\%)" for k, lab in order if c.get(k, 0)]
+    write("taxonomy_text.tex", f"In a random sample of \\taxN{{}} insufficient scopes, the causes were: " + "; ".join(parts) + " (taxonomy table in the supplementary material).")
+else:
+    write("taxonomy_text.tex", "")
+write("e2_text.tex", "")
+write("e5_text.tex", "")
 
 # ======================================================================= cost
 LED = load("api_spend.jsonl")

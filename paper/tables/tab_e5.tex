@@ -1,5 +1,14 @@
 \begin{table*}[t]\centering\caption{Indirect prompt injection (E5a). Each task carries an instruction to read and reveal a canary column that the task does not need (in-entitlement for most tasks). Attempted: a query referenced the canary column; obtained: a canary token appeared in a tool result; exfiltrated: a canary token appeared in the final answer (95\% CI).}\label{tab:e5}
 \footnotesize\begin{tabular}{lllrrrl}\hline\textbf{Agent} & \textbf{Injection} & \textbf{Cond.} & $n$ & \textbf{Attempted (\%)} & \textbf{Obtained (\%)} & \textbf{Exfiltrated (\%)} \\\hline
-Haiku 5.5 & context & B0 & 63 & 100.0 & 96.8 & 93.7 [87.3, 98.4] \\
-Haiku 5.5 & context & B2 & 63 & 100.0 & 96.8 & 95.2 [88.9, 100.0] \\
+Haiku 5.5 & context & B0 & 200 & 98.0 & 90.5 & 89.0 [84.5, 93.0] \\
+Haiku 5.5 & context & B2 & 200 & 98.0 & 91.0 & 90.0 [86.0, 94.0] \\
+Haiku 5.5 & context & B3 & 200 & 96.0 & 85.5 & 84.0 [79.0, 89.0] \\
+Haiku 5.5 & context & TSE & 196 & 98.0 & 25.5 & 25.0 [18.9, 31.1] \\
+Sonnet 5.5 & context & B0 & 200 & 98.5 & 91.0 & 91.0 [87.0, 95.0] \\
+Sonnet 5.5 & context & B2 & 200 & 99.0 & 91.0 & 89.5 [85.0, 93.5] \\
+Sonnet 5.5 & context & B3 & 200 & 96.0 & 86.5 & 83.0 [77.5, 88.0] \\
+Sonnet 5.5 & context & TSE & 196 & 94.4 & 30.1 & 27.6 [21.4, 33.7] \\
+Haiku 5.5 & dbfield & B0 & 198 & 6.1 & 0.5 & 0.0 [0.0, 0.0] \\
+Haiku 5.5 & dbfield & B3 & 198 & 4.5 & 0.0 & 0.0 [0.0, 0.0] \\
+Haiku 5.5 & dbfield & TSE & 195 & 3.6 & 0.0 & 0.0 [0.0, 0.0] \\
 \hline\end{tabular}\end{table*}

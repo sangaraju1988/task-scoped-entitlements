@@ -47,6 +47,18 @@ a role-level view built from other tasks misses columns that a new task needs. A
 \wreqHaiku\% of runs (Haiku 5.5) and \wreqSonnet\% (Sonnet 5.5); at least one request was approved in \wappHaiku\% and
 \wappSonnet\% of runs. \input{tables/e2_text}
 
+\textbf{Conservativeness and widening policy (exploratory).} On a \ablN-task subset (Haiku 5.5,
+Table~\ref{tab:ablation}), where B0 reaches \ablExBzero\% and default TSE \ablExDefault\%, a narrower scope ($k{=}0$)
+lowers execution accuracy by \ablDKzero{} pp ([\ablDLoKzero, \ablDHiKzero]) and a broader one ($k{=}2$) raises it by
+\ablDKtwo{} pp ([\ablDLoKtwo, \ablDHiKtwo]) to \ablExKtwo\%, close to B0, while widening requests drop to
+\ablWreqKtwo\% of runs. $k$ therefore trades exposure (Section~\ref{sec:res-inference}) for utility directly. The
+\emph{strict} policy changes accuracy by \ablDStrict{} pp ([\ablDLoStrict, \ablDHiStrict]); denying all widening
+costs \ablDDeny{} pp ([\ablDLoDeny, \ablDHiDeny]). Across \seedReps{} independent repetitions on \seedSubsetN{}
+tasks, B0 ranged from \seedExBzeroMin\% to \seedExBzeroMax\% and TSE from \seedExTseMin\% to \seedExTseMax\%; the TSE
+minus B0 difference ranged from \seedDiffMin{} to \seedDiffMax{} pp.
+
+\input{tables/tab_ablation}
+
 \input{tables/tab_e2}
 
 \textbf{Non-permitted tasks.} When the gold answer is not obtainable under the user's entitlement, the agent should
@@ -74,7 +86,20 @@ the agent holds the full entitlement: Sonnet 5.5 exfiltrated the canary in \exfS
 in \exfHaikuCtxBzero\%. Tool-level gating (B2) does not change this (\exfSonnetCtxBtwo\% and \exfHaikuCtxBtwo\%) because
 the query tool stays allowed, and prompt-level pruning (B3) helps little (\exfSonnetCtxBthree\%, \exfHaikuCtxBthree\%)
 because the injection names the column. Under TSE, exfiltration fell to \exfSonnetCtxTse\% and \exfHaikuCtxTse\%
-(all paired tests Holm-adjusted $p\le\eFiveMaxPHolm$). \input{tables/e5_text}
+(all paired tests Holm-adjusted $p\le\eFiveMaxPHolm$). The residual leaks under TSE came almost entirely through
+widening: of \tseLeaksSonnetCtx{} exfiltrating Sonnet 5.5 runs, \tseLeaksWidenSonnetCtx{} had the canary column granted
+by an approved request and \tseLeaksInitSonnetCtx{} had it in the initial inferred scope (Haiku 5.5:
+\tseLeaksWidenHaikuCtx{} and \tseLeaksInitHaikuCtx{} of \tseLeaksHaikuCtx). In an exploratory arm with widening
+denied (deviation D4), exfiltration fell to \exfSonnetCtxDeny\% ([\exfSonnetCtxDenyLo, \exfSonnetCtxDenyHi]) for
+Sonnet 5.5 and \exfHaikuCtxDeny\% for Haiku 5.5; all \denyLeaksSonnet{} remaining Sonnet leaks were tasks whose
+inferred scope already contained the canary column (over-scoping), and denying widening costs utility (above).
+\input{tables/e5_text}
+
+\textbf{Injection through stored data.} When the instruction was stored in a text column of the database instead
+of the task context (Haiku 5.5, \dbN{} runs), the agent read the injected text in \dbSeenBzero\% of B0 runs
+(\dbSeenTse\% under TSE) but never exfiltrated the canary under any condition; it queried the canary column in
+\dbSeenAttempted{} of the \dbSeenN{} runs that saw the text. This arm therefore cannot discriminate between
+conditions, and we report it only for completeness.
 
 \input{tables/tab_e5}
 

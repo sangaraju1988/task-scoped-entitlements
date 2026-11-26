@@ -1,0 +1,7 @@
+\begin{table}[t]\centering\caption{Agent-level ablations (Haiku 5.5, both harnesses, 200 permitted tasks). $\Delta$: paired EX difference to default TSE ($k{=}1$, \emph{auto}) on the same tasks (95\% CI). Exploratory.}\label{tab:ablation}
+\footnotesize\begin{tabular}{lrrlr}\hline\textbf{Variant/policy} & $n$ & \textbf{EX (\%)} & $\Delta$ \textbf{(pp)} & \textbf{Approved} \\\hline
+tse\_k0/auto & 200 & 50.5 & -9.0 [-15.0, -3.0] & 24.0\% \\
+tse\_k2/auto & 200 & 65.5 & +6.0 [-0.5, +12.5] & 1.0\% \\
+tse/strict & 200 & 58.5 & -1.0 [-7.0, +5.0] & 18.0\% \\
+tse/deny & 200 & 51.5 & -8.0 [-14.5, -1.5] & 0.0\% \\
+\hline\end{tabular}\end{table}

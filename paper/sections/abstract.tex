@@ -1,0 +1,16 @@
+\begin{abstract}
+LLM data agents usually query databases with their user's full entitlement, and tool-level least privilege does not
+narrow which rows and columns an allowed query tool can reach. We present task-scoped entitlements (TSE): a trusted
+broker infers the tables, columns and rows a natural-language task needs, compiles that scope into an ephemeral
+PostgreSQL role and security-barrier views owned by the user's role, and offers a bounded, audited widening request
+when the scope is insufficient. In a preregistered evaluation on \nTasks{} BIRD and Spider tasks with Claude Haiku~5.5,
+Claude Sonnet~5.5 and an open-weight agent, under synthetic role policies, TSE reduced reachable columns
+\oerColReduction-fold and reachable cells \oerCellReduction-fold relative to the full entitlement. Execution accuracy
+changed by \dExHaikuTse{} percentage points (95\% CI [\dExLoHaikuTse, \dExHiHaikuTse]) for Haiku and \dExSonnetTse{}
+([\dExLoSonnetTse, \dExHiSonnetTse]) for Sonnet. Under indirect prompt injection, exfiltration of out-of-task data fell
+from \exfSonnetCtxBzero\% to \exfSonnetCtxTse\% (Sonnet), and the remaining leaks came through approved widening;
+\bypassSuccess{} of \bypassAttempts{} enforcement-bypass attempts succeeded. The approach rests on two assumptions:
+scope-inference quality (inferred scopes were sufficient for \suffTse\% of tasks) and correct database enforcement.
+TSE does not protect against inference from in-scope data, covert channels, misuse of in-scope data, or malicious
+users; it reduces the data reachable per task.
+\end{abstract}
