@@ -1,0 +1,5869 @@
+{
+ "bird_california_schools": {
+  "full": {
+   "frpm": {
+    "columns": [
+     "2013-14 CALPADS Fall 1 Certification Status",
+     "Academic Year",
+     "Charter Funding Type",
+     "Charter School (Y/N)",
+     "Charter School Number",
+     "County Code",
+     "County Name",
+     "District Code",
+     "District Name",
+     "District Type",
+     "Educational Option Type",
+     "Enrollment (Ages 5-17)",
+     "Enrollment (K-12)",
+     "FRPM Count (Ages 5-17)",
+     "FRPM Count (K-12)",
+     "Free Meal Count (Ages 5-17)",
+     "Free Meal Count (K-12)",
+     "High Grade",
+     "Low Grade",
+     "NSLP Provision Status",
+     "Percent (%) Eligible FRPM (Ages 5-17)",
+     "Percent (%) Eligible FRPM (K-12)",
+     "Percent (%) Eligible Free (Ages 5-17)",
+     "Percent (%) Eligible Free (K-12)",
+     "School Code",
+     "School Name",
+     "School Type",
+     "cdscode",
+     "irc"
+    ],
+    "predicate": null
+   },
+   "satscores": {
+    "columns": [
+     "avgscrmath",
+     "avgscrread",
+     "avgscrwrite",
+     "cds",
+     "cname",
+     "dname",
+     "enroll12",
+     "numge1500",
+     "numtsttakr",
+     "rtype",
+     "sname"
+    ],
+    "predicate": null
+   },
+   "schools": {
+    "columns": [
+     "admemail1",
+     "admemail2",
+     "admemail3",
+     "admfname1",
+     "admfname2",
+     "admfname3",
+     "admlname1",
+     "admlname2",
+     "admlname3",
+     "cdscode",
+     "charter",
+     "charternum",
+     "city",
+     "closeddate",
+     "county",
+     "district",
+     "doc",
+     "doctype",
+     "edopscode",
+     "edopsname",
+     "eilcode",
+     "eilname",
+     "ext",
+     "fundingtype",
+     "gsoffered",
+     "gsserved",
+     "lastupdate",
+     "latitude",
+     "longitude",
+     "magnet",
+     "mailcity",
+     "mailstate",
+     "mailstrabr",
+     "mailstreet",
+     "mailzip",
+     "ncesdist",
+     "ncesschool",
+     "opendate",
+     "phone",
+     "school",
+     "soc",
+     "soctype",
+     "state",
+     "statustype",
+     "street",
+     "streetabr",
+     "virtual",
+     "website",
+     "zip"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "frpm": {
+    "columns": [
+     "2013-14 CALPADS Fall 1 Certification Status",
+     "Academic Year",
+     "Charter School Number",
+     "District Code",
+     "District Name",
+     "District Type",
+     "Educational Option Type",
+     "Enrollment (Ages 5-17)",
+     "FRPM Count (Ages 5-17)",
+     "FRPM Count (K-12)",
+     "Free Meal Count (K-12)",
+     "High Grade",
+     "Low Grade",
+     "Percent (%) Eligible FRPM (Ages 5-17)",
+     "Percent (%) Eligible FRPM (K-12)",
+     "Percent (%) Eligible Free (Ages 5-17)",
+     "Percent (%) Eligible Free (K-12)",
+     "School Code",
+     "School Name",
+     "School Type",
+     "cdscode",
+     "irc"
+    ],
+    "predicate": null
+   },
+   "satscores": {
+    "columns": [
+     "avgscrread",
+     "avgscrwrite",
+     "cds",
+     "cname",
+     "dname",
+     "numge1500",
+     "numtsttakr",
+     "rtype",
+     "sname"
+    ],
+    "predicate": null
+   },
+   "schools": {
+    "columns": [
+     "admemail2",
+     "admemail3",
+     "admfname2",
+     "admfname3",
+     "cdscode",
+     "charter",
+     "charternum",
+     "city",
+     "closeddate",
+     "county",
+     "district",
+     "doc",
+     "fundingtype",
+     "gsoffered",
+     "gsserved",
+     "lastupdate",
+     "magnet",
+     "mailcity",
+     "mailstate",
+     "mailstreet",
+     "ncesdist",
+     "ncesschool",
+     "opendate",
+     "school",
+     "soc",
+     "soctype",
+     "statustype"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "frpm": {
+    "columns": [
+     "2013-14 CALPADS Fall 1 Certification Status",
+     "Academic Year",
+     "Charter Funding Type",
+     "Charter School (Y/N)",
+     "Charter School Number",
+     "County Code",
+     "County Name",
+     "District Code",
+     "District Name",
+     "District Type",
+     "Educational Option Type",
+     "Enrollment (Ages 5-17)",
+     "Enrollment (K-12)",
+     "FRPM Count (Ages 5-17)",
+     "FRPM Count (K-12)",
+     "Free Meal Count (Ages 5-17)",
+     "Free Meal Count (K-12)",
+     "High Grade",
+     "Low Grade",
+     "NSLP Provision Status",
+     "Percent (%) Eligible FRPM (Ages 5-17)",
+     "Percent (%) Eligible FRPM (K-12)",
+     "Percent (%) Eligible Free (Ages 5-17)",
+     "Percent (%) Eligible Free (K-12)",
+     "School Code",
+     "School Name",
+     "School Type",
+     "cdscode",
+     "irc"
+    ],
+    "predicate": null
+   },
+   "satscores": {
+    "columns": [
+     "avgscrmath",
+     "avgscrread",
+     "avgscrwrite",
+     "cds",
+     "cname",
+     "dname",
+     "enroll12",
+     "numge1500",
+     "numtsttakr",
+     "rtype",
+     "sname"
+    ],
+    "predicate": null
+   },
+   "schools": {
+    "columns": [
+     "admemail2",
+     "admemail3",
+     "admfname2",
+     "admfname3",
+     "admlname2",
+     "admlname3",
+     "cdscode",
+     "charter",
+     "charternum",
+     "city",
+     "closeddate",
+     "county",
+     "district",
+     "doc",
+     "doctype",
+     "edopscode",
+     "edopsname",
+     "eilcode",
+     "eilname",
+     "fundingtype",
+     "gsoffered",
+     "gsserved",
+     "lastupdate",
+     "magnet",
+     "mailcity",
+     "mailstate",
+     "mailstreet",
+     "ncesdist",
+     "ncesschool",
+     "opendate",
+     "school",
+     "soc",
+     "soctype",
+     "state",
+     "statustype",
+     "virtual"
+    ],
+    "predicate": "\"doc\" IN ('00', '03', '31', '34', '42', '52', '56', '58', '98', '99')"
+   }
+  }
+ },
+ "bird_card_games": {
+  "full": {
+   "cards": {
+    "columns": [
+     "artist",
+     "asciiname",
+     "availability",
+     "bordercolor",
+     "cardkingdomfoilid",
+     "cardkingdomid",
+     "coloridentity",
+     "colorindicator",
+     "colors",
+     "convertedmanacost",
+     "dueldeck",
+     "edhrecrank",
+     "faceconvertedmanacost",
+     "facename",
+     "flavorname",
+     "flavortext",
+     "frameeffects",
+     "frameversion",
+     "hand",
+     "hasalternativedecklimit",
+     "hascontentwarning",
+     "hasfoil",
+     "hasnonfoil",
+     "id",
+     "isalternative",
+     "isfullart",
+     "isonlineonly",
+     "isoversized",
+     "ispromo",
+     "isreprint",
+     "isreserved",
+     "isstarter",
+     "isstoryspotlight",
+     "istextless",
+     "istimeshifted",
+     "keywords",
+     "layout",
+     "leadershipskills",
+     "life",
+     "loyalty",
+     "manacost",
+     "mcmid",
+     "mcmmetaid",
+     "mtgarenaid",
+     "mtgjsonv4id",
+     "mtgofoilid",
+     "mtgoid",
+     "multiverseid",
+     "name",
+     "number",
+     "originalreleasedate",
+     "originaltext",
+     "originaltype",
+     "otherfaceids",
+     "power",
+     "printings",
+     "promotypes",
+     "purchaseurls",
+     "rarity",
+     "scryfallid",
+     "scryfallillustrationid",
+     "scryfalloracleid",
+     "setcode",
+     "side",
+     "subtypes",
+     "supertypes",
+     "tcgplayerproductid",
+     "text",
+     "toughness",
+     "type",
+     "types",
+     "uuid",
+     "variations",
+     "watermark"
+    ],
+    "predicate": null
+   },
+   "foreign_data": {
+    "columns": [
+     "flavortext",
+     "id",
+     "language",
+     "multiverseid",
+     "name",
+     "text",
+     "type",
+     "uuid"
+    ],
+    "predicate": null
+   },
+   "legalities": {
+    "columns": [
+     "format",
+     "id",
+     "status",
+     "uuid"
+    ],
+    "predicate": null
+   },
+   "rulings": {
+    "columns": [
+     "date",
+     "id",
+     "text",
+     "uuid"
+    ],
+    "predicate": null
+   },
+   "set_translations": {
+    "columns": [
+     "id",
+     "language",
+     "setcode",
+     "translation"
+    ],
+    "predicate": null
+   },
+   "sets": {
+    "columns": [
+     "basesetsize",
+     "block",
+     "booster",
+     "code",
+     "id",
+     "isfoilonly",
+     "isforeignonly",
+     "isnonfoilonly",
+     "isonlineonly",
+     "ispartialpreview",
+     "keyrunecode",
+     "mcmid",
+     "mcmidextras",
+     "mcmname",
+     "mtgocode",
+     "name",
+     "parentcode",
+     "releasedate",
+     "tcgplayergroupid",
+     "totalsetsize",
+     "type"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "cards": {
+    "columns": [
+     "artist",
+     "asciiname",
+     "availability",
+     "cardkingdomid",
+     "colorindicator",
+     "colors",
+     "dueldeck",
+     "faceconvertedmanacost",
+     "facename",
+     "flavorname",
+     "flavortext",
+     "frameeffects",
+     "frameversion",
+     "hand",
+     "hasalternativedecklimit",
+     "hascontentwarning",
+     "hasfoil",
+     "hasnonfoil",
+     "id",
+     "isalternative",
+     "isonlineonly",
+     "isreprint",
+     "isreserved",
+     "isstarter",
+     "istextless",
+     "leadershipskills",
+     "life",
+     "manacost",
+     "mcmid",
+     "mtgjsonv4id",
+     "mtgofoilid",
+     "multiverseid",
+     "name",
+     "number",
+     "originalreleasedate",
+     "originaltext",
+     "originaltype",
+     "otherfaceids",
+     "power",
+     "printings",
+     "promotypes",
+     "purchaseurls",
+     "rarity",
+     "scryfallid",
+     "scryfallillustrationid",
+     "scryfalloracleid",
+     "setcode",
+     "side",
+     "subtypes",
+     "supertypes",
+     "tcgplayerproductid",
+     "text",
+     "type",
+     "types",
+     "uuid",
+     "variations"
+    ],
+    "predicate": null
+   },
+   "foreign_data": {
+    "columns": [
+     "flavortext",
+     "id",
+     "multiverseid",
+     "name",
+     "text",
+     "uuid"
+    ],
+    "predicate": null
+   },
+   "legalities": {
+    "columns": [
+     "format",
+     "id",
+     "status",
+     "uuid"
+    ],
+    "predicate": null
+   },
+   "rulings": {
+    "columns": [
+     "date",
+     "id",
+     "text",
+     "uuid"
+    ],
+    "predicate": null
+   },
+   "set_translations": {
+    "columns": [
+     "id",
+     "language",
+     "setcode",
+     "translation"
+    ],
+    "predicate": null
+   },
+   "sets": {
+    "columns": [
+     "block",
+     "code",
+     "id",
+     "isfoilonly",
+     "isforeignonly",
+     "isnonfoilonly",
+     "isonlineonly",
+     "ispartialpreview",
+     "mcmid",
+     "mcmname",
+     "mtgocode",
+     "name",
+     "parentcode",
+     "releasedate",
+     "tcgplayergroupid",
+     "type"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "cards": {
+    "columns": [
+     "artist",
+     "asciiname",
+     "availability",
+     "bordercolor",
+     "cardkingdomfoilid",
+     "cardkingdomid",
+     "coloridentity",
+     "colorindicator",
+     "colors",
+     "convertedmanacost",
+     "dueldeck",
+     "edhrecrank",
+     "faceconvertedmanacost",
+     "facename",
+     "flavorname",
+     "flavortext",
+     "frameeffects",
+     "frameversion",
+     "hand",
+     "hasalternativedecklimit",
+     "hascontentwarning",
+     "hasfoil",
+     "hasnonfoil",
+     "id",
+     "isalternative",
+     "isfullart",
+     "isonlineonly",
+     "isoversized",
+     "ispromo",
+     "isreprint",
+     "isreserved",
+     "isstarter",
+     "isstoryspotlight",
+     "istextless",
+     "istimeshifted",
+     "keywords",
+     "layout",
+     "leadershipskills",
+     "life",
+     "loyalty",
+     "manacost",
+     "mcmid",
+     "mcmmetaid",
+     "mtgarenaid",
+     "mtgjsonv4id",
+     "mtgofoilid",
+     "mtgoid",
+     "multiverseid",
+     "name",
+     "number",
+     "originalreleasedate",
+     "originaltext",
+     "originaltype",
+     "otherfaceids",
+     "power",
+     "printings",
+     "promotypes",
+     "purchaseurls",
+     "rarity",
+     "scryfallid",
+     "scryfallillustrationid",
+     "scryfalloracleid",
+     "setcode",
+     "side",
+     "subtypes",
+     "supertypes",
+     "tcgplayerproductid",
+     "text",
+     "toughness",
+     "type",
+     "types",
+     "uuid",
+     "variations",
+     "watermark"
+    ],
+    "predicate": null
+   },
+   "foreign_data": {
+    "columns": [
+     "flavortext",
+     "id",
+     "language",
+     "multiverseid",
+     "name",
+     "text",
+     "type",
+     "uuid"
+    ],
+    "predicate": null
+   },
+   "legalities": {
+    "columns": [
+     "format",
+     "id",
+     "status",
+     "uuid"
+    ],
+    "predicate": "\"format\" IN ('commander', 'future', 'legacy', 'oldschool', 'vintage')"
+   },
+   "rulings": {
+    "columns": [
+     "date",
+     "id",
+     "text",
+     "uuid"
+    ],
+    "predicate": null
+   },
+   "set_translations": {
+    "columns": [
+     "id",
+     "language",
+     "setcode",
+     "translation"
+    ],
+    "predicate": null
+   },
+   "sets": {
+    "columns": [
+     "basesetsize",
+     "block",
+     "booster",
+     "code",
+     "id",
+     "isfoilonly",
+     "isforeignonly",
+     "isnonfoilonly",
+     "isonlineonly",
+     "ispartialpreview",
+     "keyrunecode",
+     "mcmid",
+     "mcmidextras",
+     "mcmname",
+     "mtgocode",
+     "name",
+     "parentcode",
+     "releasedate",
+     "tcgplayergroupid",
+     "totalsetsize",
+     "type"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "bird_codebase_community": {
+  "full": {
+   "badges": {
+    "columns": [
+     "date",
+     "id",
+     "name",
+     "userid"
+    ],
+    "predicate": null
+   },
+   "comments": {
+    "columns": [
+     "creationdate",
+     "id",
+     "postid",
+     "score",
+     "text",
+     "userdisplayname",
+     "userid"
+    ],
+    "predicate": null
+   },
+   "posthistory": {
+    "columns": [
+     "comment",
+     "creationdate",
+     "id",
+     "posthistorytypeid",
+     "postid",
+     "revisionguid",
+     "text",
+     "userdisplayname",
+     "userid"
+    ],
+    "predicate": null
+   },
+   "postlinks": {
+    "columns": [
+     "creationdate",
+     "id",
+     "linktypeid",
+     "postid",
+     "relatedpostid"
+    ],
+    "predicate": null
+   },
+   "posts": {
+    "columns": [
+     "acceptedanswerid",
+     "answercount",
+     "body",
+     "closeddate",
+     "commentcount",
+     "communityowneddate",
+     "creaiondate",
+     "favoritecount",
+     "id",
+     "lasactivitydate",
+     "lasteditdate",
+     "lasteditordisplayname",
+     "lasteditoruserid",
+     "ownerdisplayname",
+     "owneruserid",
+     "parentid",
+     "posttypeid",
+     "score",
+     "tags",
+     "title",
+     "viewcount"
+    ],
+    "predicate": null
+   },
+   "tags": {
+    "columns": [
+     "count",
+     "excerptpostid",
+     "id",
+     "tagname",
+     "wikipostid"
+    ],
+    "predicate": null
+   },
+   "users": {
+    "columns": [
+     "aboutme",
+     "accountid",
+     "age",
+     "creationdate",
+     "displayname",
+     "downvotes",
+     "id",
+     "lastaccessdate",
+     "location",
+     "profileimageurl",
+     "reputation",
+     "upvotes",
+     "views",
+     "websiteurl"
+    ],
+    "predicate": null
+   },
+   "votes": {
+    "columns": [
+     "bountyamount",
+     "creationdate",
+     "id",
+     "postid",
+     "userid",
+     "votetypeid"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "badges": {
+    "columns": [
+     "date",
+     "id",
+     "name",
+     "userid"
+    ],
+    "predicate": null
+   },
+   "comments": {
+    "columns": [
+     "id",
+     "postid",
+     "score",
+     "text",
+     "userdisplayname",
+     "userid"
+    ],
+    "predicate": null
+   },
+   "posthistory": {
+    "columns": [
+     "comment",
+     "id",
+     "posthistorytypeid",
+     "postid",
+     "revisionguid",
+     "text",
+     "userid"
+    ],
+    "predicate": null
+   },
+   "postlinks": {
+    "columns": [
+     "creationdate",
+     "id",
+     "linktypeid",
+     "postid",
+     "relatedpostid"
+    ],
+    "predicate": null
+   },
+   "posts": {
+    "columns": [
+     "answercount",
+     "body",
+     "closeddate",
+     "commentcount",
+     "communityowneddate",
+     "creaiondate",
+     "favoritecount",
+     "id",
+     "lasteditdate",
+     "lasteditordisplayname",
+     "lasteditoruserid",
+     "ownerdisplayname",
+     "owneruserid",
+     "parentid",
+     "posttypeid",
+     "score",
+     "tags"
+    ],
+    "predicate": null
+   },
+   "tags": {
+    "columns": [
+     "excerptpostid",
+     "id",
+     "tagname",
+     "wikipostid"
+    ],
+    "predicate": null
+   },
+   "users": {
+    "columns": [
+     "aboutme",
+     "age",
+     "creationdate",
+     "downvotes",
+     "id",
+     "lastaccessdate",
+     "location",
+     "profileimageurl",
+     "reputation",
+     "views",
+     "websiteurl"
+    ],
+    "predicate": null
+   },
+   "votes": {
+    "columns": [
+     "bountyamount",
+     "creationdate",
+     "id",
+     "postid",
+     "userid"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "badges": {
+    "columns": [
+     "date",
+     "id",
+     "name",
+     "userid"
+    ],
+    "predicate": null
+   },
+   "comments": {
+    "columns": [
+     "creationdate",
+     "id",
+     "postid",
+     "score",
+     "text",
+     "userdisplayname",
+     "userid"
+    ],
+    "predicate": null
+   },
+   "posthistory": {
+    "columns": [
+     "comment",
+     "creationdate",
+     "id",
+     "posthistorytypeid",
+     "postid",
+     "revisionguid",
+     "text",
+     "userdisplayname",
+     "userid"
+    ],
+    "predicate": null
+   },
+   "postlinks": {
+    "columns": [
+     "creationdate",
+     "id",
+     "linktypeid",
+     "postid",
+     "relatedpostid"
+    ],
+    "predicate": null
+   },
+   "posts": {
+    "columns": [
+     "acceptedanswerid",
+     "answercount",
+     "body",
+     "closeddate",
+     "commentcount",
+     "communityowneddate",
+     "creaiondate",
+     "favoritecount",
+     "id",
+     "lasactivitydate",
+     "lasteditdate",
+     "lasteditordisplayname",
+     "lasteditoruserid",
+     "ownerdisplayname",
+     "owneruserid",
+     "parentid",
+     "posttypeid",
+     "score",
+     "tags",
+     "title",
+     "viewcount"
+    ],
+    "predicate": null
+   },
+   "tags": {
+    "columns": [
+     "count",
+     "excerptpostid",
+     "id",
+     "tagname",
+     "wikipostid"
+    ],
+    "predicate": null
+   },
+   "users": {
+    "columns": [
+     "aboutme",
+     "accountid",
+     "age",
+     "creationdate",
+     "displayname",
+     "downvotes",
+     "id",
+     "lastaccessdate",
+     "location",
+     "profileimageurl",
+     "reputation",
+     "upvotes",
+     "views",
+     "websiteurl"
+    ],
+    "predicate": null
+   },
+   "votes": {
+    "columns": [
+     "bountyamount",
+     "creationdate",
+     "id",
+     "postid",
+     "userid",
+     "votetypeid"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "bird_debit_card_specializing": {
+  "full": {
+   "customers": {
+    "columns": [
+     "currency",
+     "customerid",
+     "segment"
+    ],
+    "predicate": null
+   },
+   "gasstations": {
+    "columns": [
+     "chainid",
+     "country",
+     "gasstationid",
+     "segment"
+    ],
+    "predicate": null
+   },
+   "products": {
+    "columns": [
+     "description",
+     "productid"
+    ],
+    "predicate": null
+   },
+   "transactions_1k": {
+    "columns": [
+     "amount",
+     "cardid",
+     "customerid",
+     "date",
+     "gasstationid",
+     "price",
+     "productid",
+     "time",
+     "transactionid"
+    ],
+    "predicate": null
+   },
+   "yearmonth": {
+    "columns": [
+     "consumption",
+     "customerid",
+     "date"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "customers": {
+    "columns": [
+     "currency",
+     "customerid",
+     "segment"
+    ],
+    "predicate": null
+   },
+   "gasstations": {
+    "columns": [
+     "country",
+     "gasstationid",
+     "segment"
+    ],
+    "predicate": null
+   },
+   "products": {
+    "columns": [
+     "description",
+     "productid"
+    ],
+    "predicate": null
+   },
+   "transactions_1k": {
+    "columns": [
+     "amount",
+     "customerid",
+     "date",
+     "price",
+     "productid",
+     "time",
+     "transactionid"
+    ],
+    "predicate": null
+   },
+   "yearmonth": {
+    "columns": [
+     "consumption",
+     "customerid",
+     "date"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "customers": {
+    "columns": [
+     "currency",
+     "customerid",
+     "segment"
+    ],
+    "predicate": null
+   },
+   "gasstations": {
+    "columns": [
+     "chainid",
+     "country",
+     "gasstationid",
+     "segment"
+    ],
+    "predicate": "\"segment\" IN ('Premium', 'Value for money')"
+   },
+   "products": {
+    "columns": [
+     "description",
+     "productid"
+    ],
+    "predicate": null
+   },
+   "transactions_1k": {
+    "columns": [
+     "amount",
+     "cardid",
+     "customerid",
+     "date",
+     "gasstationid",
+     "price",
+     "productid",
+     "time",
+     "transactionid"
+    ],
+    "predicate": null
+   },
+   "yearmonth": {
+    "columns": [
+     "consumption",
+     "customerid",
+     "date"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "bird_european_football_2": {
+  "full": {
+   "country": {
+    "columns": [
+     "id",
+     "name"
+    ],
+    "predicate": null
+   },
+   "league": {
+    "columns": [
+     "country_id",
+     "id",
+     "name"
+    ],
+    "predicate": null
+   },
+   "match": {
+    "columns": [
+     "away_player_1",
+     "away_player_10",
+     "away_player_11",
+     "away_player_2",
+     "away_player_3",
+     "away_player_4",
+     "away_player_5",
+     "away_player_6",
+     "away_player_7",
+     "away_player_8",
+     "away_player_9",
+     "away_player_x1",
+     "away_player_x10",
+     "away_player_x11",
+     "away_player_x2",
+     "away_player_x3",
+     "away_player_x4",
+     "away_player_x5",
+     "away_player_x6",
+     "away_player_x7",
+     "away_player_x8",
+     "away_player_x9",
+     "away_player_y1",
+     "away_player_y10",
+     "away_player_y11",
+     "away_player_y2",
+     "away_player_y3",
+     "away_player_y4",
+     "away_player_y5",
+     "away_player_y6",
+     "away_player_y7",
+     "away_player_y8",
+     "away_player_y9",
+     "away_team_api_id",
+     "away_team_goal",
+     "b365a",
+     "b365d",
+     "b365h",
+     "bsa",
+     "bsd",
+     "bsh",
+     "bwa",
+     "bwd",
+     "bwh",
+     "card",
+     "corner",
+     "country_id",
+     "cross",
+     "date",
+     "foulcommit",
+     "gba",
+     "gbd",
+     "gbh",
+     "goal",
+     "home_player_1",
+     "home_player_10",
+     "home_player_11",
+     "home_player_2",
+     "home_player_3",
+     "home_player_4",
+     "home_player_5",
+     "home_player_6",
+     "home_player_7",
+     "home_player_8",
+     "home_player_9",
+     "home_player_x1",
+     "home_player_x10",
+     "home_player_x11",
+     "home_player_x2",
+     "home_player_x3",
+     "home_player_x4",
+     "home_player_x5",
+     "home_player_x6",
+     "home_player_x7",
+     "home_player_x8",
+     "home_player_x9",
+     "home_player_y1",
+     "home_player_y10",
+     "home_player_y11",
+     "home_player_y2",
+     "home_player_y3",
+     "home_player_y4",
+     "home_player_y5",
+     "home_player_y6",
+     "home_player_y7",
+     "home_player_y8",
+     "home_player_y9",
+     "home_team_api_id",
+     "home_team_goal",
+     "id",
+     "iwa",
+     "iwd",
+     "iwh",
+     "lba",
+     "lbd",
+     "lbh",
+     "league_id",
+     "match_api_id",
+     "possession",
+     "psa",
+     "psd",
+     "psh",
+     "season",
+     "shotoff",
+     "shoton",
+     "sja",
+     "sjd",
+     "sjh",
+     "stage",
+     "vca",
+     "vcd",
+     "vch",
+     "wha",
+     "whd",
+     "whh"
+    ],
+    "predicate": null
+   },
+   "player": {
+    "columns": [
+     "birthday",
+     "height",
+     "id",
+     "player_api_id",
+     "player_fifa_api_id",
+     "player_name",
+     "weight"
+    ],
+    "predicate": null
+   },
+   "player_attributes": {
+    "columns": [
+     "acceleration",
+     "aggression",
+     "agility",
+     "attacking_work_rate",
+     "balance",
+     "ball_control",
+     "crossing",
+     "curve",
+     "date",
+     "defensive_work_rate",
+     "dribbling",
+     "finishing",
+     "free_kick_accuracy",
+     "gk_diving",
+     "gk_handling",
+     "gk_kicking",
+     "gk_positioning",
+     "gk_reflexes",
+     "heading_accuracy",
+     "id",
+     "interceptions",
+     "jumping",
+     "long_passing",
+     "long_shots",
+     "marking",
+     "overall_rating",
+     "penalties",
+     "player_api_id",
+     "player_fifa_api_id",
+     "positioning",
+     "potential",
+     "preferred_foot",
+     "reactions",
+     "short_passing",
+     "shot_power",
+     "sliding_tackle",
+     "sprint_speed",
+     "stamina",
+     "standing_tackle",
+     "strength",
+     "vision",
+     "volleys"
+    ],
+    "predicate": null
+   },
+   "team": {
+    "columns": [
+     "id",
+     "team_api_id",
+     "team_fifa_api_id",
+     "team_long_name",
+     "team_short_name"
+    ],
+    "predicate": null
+   },
+   "team_attributes": {
+    "columns": [
+     "buildupplaydribbling",
+     "buildupplaydribblingclass",
+     "buildupplaypassing",
+     "buildupplaypassingclass",
+     "buildupplaypositioningclass",
+     "buildupplayspeed",
+     "buildupplayspeedclass",
+     "chancecreationcrossing",
+     "chancecreationcrossingclass",
+     "chancecreationpassing",
+     "chancecreationpassingclass",
+     "chancecreationpositioningclass",
+     "chancecreationshooting",
+     "chancecreationshootingclass",
+     "date",
+     "defenceaggression",
+     "defenceaggressionclass",
+     "defencedefenderlineclass",
+     "defencepressure",
+     "defencepressureclass",
+     "defenceteamwidth",
+     "defenceteamwidthclass",
+     "id",
+     "team_api_id",
+     "team_fifa_api_id"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "country": {
+    "columns": [
+     "id",
+     "name"
+    ],
+    "predicate": null
+   },
+   "league": {
+    "columns": [
+     "country_id",
+     "id",
+     "name"
+    ],
+    "predicate": null
+   },
+   "match": {
+    "columns": [
+     "away_player_1",
+     "away_player_10",
+     "away_player_11",
+     "away_player_2",
+     "away_player_3",
+     "away_player_4",
+     "away_player_5",
+     "away_player_6",
+     "away_player_7",
+     "away_player_8",
+     "away_player_9",
+     "away_player_x1",
+     "away_player_x10",
+     "away_player_x11",
+     "away_player_x3",
+     "away_player_x5",
+     "away_player_x6",
+     "away_player_x7",
+     "away_player_x8",
+     "away_player_x9",
+     "away_player_y1",
+     "away_player_y11",
+     "away_player_y2",
+     "away_player_y3",
+     "away_player_y4",
+     "away_player_y5",
+     "away_player_y6",
+     "away_player_y8",
+     "away_player_y9",
+     "away_team_api_id",
+     "away_team_goal",
+     "b365d",
+     "b365h",
+     "bsa",
+     "bsd",
+     "bwd",
+     "bwh",
+     "card",
+     "corner",
+     "country_id",
+     "cross",
+     "date",
+     "foulcommit",
+     "gba",
+     "gbh",
+     "goal",
+     "home_player_1",
+     "home_player_10",
+     "home_player_11",
+     "home_player_2",
+     "home_player_3",
+     "home_player_4",
+     "home_player_5",
+     "home_player_6",
+     "home_player_7",
+     "home_player_8",
+     "home_player_9",
+     "home_player_x10",
+     "home_player_x11",
+     "home_player_x3",
+     "home_player_x5",
+     "home_player_x6",
+     "home_player_x7",
+     "home_player_x8",
+     "home_player_x9",
+     "home_player_y1",
+     "home_player_y10",
+     "home_player_y11",
+     "home_player_y2",
+     "home_player_y4",
+     "home_player_y5",
+     "home_player_y6",
+     "home_team_api_id",
+     "home_team_goal",
+     "id",
+     "iwa",
+     "iwd",
+     "lba",
+     "lbd",
+     "league_id",
+     "match_api_id",
+     "possession",
+     "psa",
+     "psd",
+     "psh",
+     "season",
+     "shotoff",
+     "shoton",
+     "sjd",
+     "vca",
+     "vcd",
+     "vch",
+     "whh"
+    ],
+    "predicate": null
+   },
+   "player": {
+    "columns": [
+     "height",
+     "id",
+     "player_api_id",
+     "player_fifa_api_id",
+     "player_name"
+    ],
+    "predicate": null
+   },
+   "player_attributes": {
+    "columns": [
+     "acceleration",
+     "aggression",
+     "agility",
+     "attacking_work_rate",
+     "balance",
+     "ball_control",
+     "crossing",
+     "defensive_work_rate",
+     "dribbling",
+     "finishing",
+     "free_kick_accuracy",
+     "gk_handling",
+     "gk_kicking",
+     "gk_positioning",
+     "id",
+     "interceptions",
+     "jumping",
+     "long_passing",
+     "marking",
+     "player_api_id",
+     "player_fifa_api_id",
+     "potential",
+     "reactions",
+     "short_passing",
+     "shot_power",
+     "sliding_tackle",
+     "sprint_speed",
+     "stamina",
+     "standing_tackle",
+     "strength",
+     "vision",
+     "volleys"
+    ],
+    "predicate": null
+   },
+   "team": {
+    "columns": [
+     "id",
+     "team_api_id",
+     "team_fifa_api_id",
+     "team_long_name",
+     "team_short_name"
+    ],
+    "predicate": null
+   },
+   "team_attributes": {
+    "columns": [
+     "buildupplaydribbling",
+     "buildupplaydribblingclass",
+     "buildupplaypassing",
+     "buildupplaypassingclass",
+     "buildupplayspeed",
+     "chancecreationcrossing",
+     "chancecreationcrossingclass",
+     "chancecreationpositioningclass",
+     "chancecreationshooting",
+     "chancecreationshootingclass",
+     "date",
+     "defenceaggression",
+     "defenceaggressionclass",
+     "defencedefenderlineclass",
+     "defencepressure",
+     "defenceteamwidth",
+     "id",
+     "team_api_id",
+     "team_fifa_api_id"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "country": {
+    "columns": [
+     "id",
+     "name"
+    ],
+    "predicate": null
+   },
+   "league": {
+    "columns": [
+     "country_id",
+     "id",
+     "name"
+    ],
+    "predicate": null
+   },
+   "match": {
+    "columns": [
+     "away_player_1",
+     "away_player_10",
+     "away_player_11",
+     "away_player_2",
+     "away_player_3",
+     "away_player_4",
+     "away_player_5",
+     "away_player_6",
+     "away_player_7",
+     "away_player_8",
+     "away_player_9",
+     "away_player_x1",
+     "away_player_x10",
+     "away_player_x11",
+     "away_player_x2",
+     "away_player_x3",
+     "away_player_x4",
+     "away_player_x5",
+     "away_player_x6",
+     "away_player_x7",
+     "away_player_x8",
+     "away_player_x9",
+     "away_player_y1",
+     "away_player_y10",
+     "away_player_y11",
+     "away_player_y2",
+     "away_player_y3",
+     "away_player_y4",
+     "away_player_y5",
+     "away_player_y6",
+     "away_player_y7",
+     "away_player_y8",
+     "away_player_y9",
+     "away_team_api_id",
+     "away_team_goal",
+     "b365a",
+     "b365d",
+     "b365h",
+     "bsa",
+     "bsd",
+     "bsh",
+     "bwa",
+     "bwd",
+     "bwh",
+     "card",
+     "corner",
+     "country_id",
+     "cross",
+     "date",
+     "foulcommit",
+     "gba",
+     "gbd",
+     "gbh",
+     "goal",
+     "home_player_1",
+     "home_player_10",
+     "home_player_11",
+     "home_player_2",
+     "home_player_3",
+     "home_player_4",
+     "home_player_5",
+     "home_player_6",
+     "home_player_7",
+     "home_player_8",
+     "home_player_9",
+     "home_player_x1",
+     "home_player_x10",
+     "home_player_x11",
+     "home_player_x2",
+     "home_player_x3",
+     "home_player_x4",
+     "home_player_x5",
+     "home_player_x6",
+     "home_player_x7",
+     "home_player_x8",
+     "home_player_x9",
+     "home_player_y1",
+     "home_player_y10",
+     "home_player_y11",
+     "home_player_y2",
+     "home_player_y3",
+     "home_player_y4",
+     "home_player_y5",
+     "home_player_y6",
+     "home_player_y7",
+     "home_player_y8",
+     "home_player_y9",
+     "home_team_api_id",
+     "home_team_goal",
+     "id",
+     "iwa",
+     "iwd",
+     "iwh",
+     "lba",
+     "lbd",
+     "lbh",
+     "league_id",
+     "match_api_id",
+     "possession",
+     "psa",
+     "psd",
+     "psh",
+     "season",
+     "shotoff",
+     "shoton",
+     "sja",
+     "sjd",
+     "sjh",
+     "stage",
+     "vca",
+     "vcd",
+     "vch",
+     "wha",
+     "whd",
+     "whh"
+    ],
+    "predicate": null
+   },
+   "player": {
+    "columns": [
+     "height",
+     "id",
+     "player_api_id",
+     "player_fifa_api_id",
+     "player_name",
+     "weight"
+    ],
+    "predicate": null
+   },
+   "player_attributes": {
+    "columns": [
+     "acceleration",
+     "aggression",
+     "agility",
+     "attacking_work_rate",
+     "balance",
+     "ball_control",
+     "crossing",
+     "curve",
+     "date",
+     "defensive_work_rate",
+     "dribbling",
+     "finishing",
+     "free_kick_accuracy",
+     "gk_diving",
+     "gk_handling",
+     "gk_kicking",
+     "gk_positioning",
+     "gk_reflexes",
+     "heading_accuracy",
+     "id",
+     "interceptions",
+     "jumping",
+     "long_passing",
+     "long_shots",
+     "marking",
+     "overall_rating",
+     "penalties",
+     "player_api_id",
+     "player_fifa_api_id",
+     "positioning",
+     "potential",
+     "preferred_foot",
+     "reactions",
+     "short_passing",
+     "shot_power",
+     "sliding_tackle",
+     "sprint_speed",
+     "stamina",
+     "standing_tackle",
+     "strength",
+     "vision",
+     "volleys"
+    ],
+    "predicate": "\"attacking_work_rate\" IN ('None', 'high', 'le', 'low', 'norm', 'y')"
+   },
+   "team": {
+    "columns": [
+     "id",
+     "team_api_id",
+     "team_fifa_api_id",
+     "team_long_name",
+     "team_short_name"
+    ],
+    "predicate": null
+   },
+   "team_attributes": {
+    "columns": [
+     "buildupplaydribbling",
+     "buildupplaydribblingclass",
+     "buildupplaypassing",
+     "buildupplaypassingclass",
+     "buildupplaypositioningclass",
+     "buildupplayspeed",
+     "buildupplayspeedclass",
+     "chancecreationcrossing",
+     "chancecreationcrossingclass",
+     "chancecreationpassing",
+     "chancecreationpassingclass",
+     "chancecreationpositioningclass",
+     "chancecreationshooting",
+     "chancecreationshootingclass",
+     "date",
+     "defenceaggression",
+     "defenceaggressionclass",
+     "defencedefenderlineclass",
+     "defencepressure",
+     "defencepressureclass",
+     "defenceteamwidth",
+     "defenceteamwidthclass",
+     "id",
+     "team_api_id",
+     "team_fifa_api_id"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "bird_financial": {
+  "full": {
+   "account": {
+    "columns": [
+     "account_id",
+     "date",
+     "district_id",
+     "frequency"
+    ],
+    "predicate": null
+   },
+   "card": {
+    "columns": [
+     "card_id",
+     "disp_id",
+     "issued",
+     "type"
+    ],
+    "predicate": null
+   },
+   "client": {
+    "columns": [
+     "birth_date",
+     "client_id",
+     "district_id",
+     "gender"
+    ],
+    "predicate": null
+   },
+   "disp": {
+    "columns": [
+     "account_id",
+     "client_id",
+     "disp_id",
+     "type"
+    ],
+    "predicate": null
+   },
+   "district": {
+    "columns": [
+     "a10",
+     "a11",
+     "a12",
+     "a13",
+     "a14",
+     "a15",
+     "a16",
+     "a2",
+     "a3",
+     "a4",
+     "a5",
+     "a6",
+     "a7",
+     "a8",
+     "a9",
+     "district_id"
+    ],
+    "predicate": null
+   },
+   "loan": {
+    "columns": [
+     "account_id",
+     "amount",
+     "date",
+     "duration",
+     "loan_id",
+     "payments",
+     "status"
+    ],
+    "predicate": null
+   },
+   "order": {
+    "columns": [
+     "account_id",
+     "account_to",
+     "amount",
+     "bank_to",
+     "k_symbol",
+     "order_id"
+    ],
+    "predicate": null
+   },
+   "trans": {
+    "columns": [
+     "account",
+     "account_id",
+     "amount",
+     "balance",
+     "bank",
+     "date",
+     "k_symbol",
+     "operation",
+     "trans_id",
+     "type"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "account": {
+    "columns": [
+     "account_id",
+     "date",
+     "district_id",
+     "frequency"
+    ],
+    "predicate": null
+   },
+   "card": {
+    "columns": [
+     "disp_id"
+    ],
+    "predicate": null
+   },
+   "client": {
+    "columns": [
+     "client_id",
+     "district_id"
+    ],
+    "predicate": null
+   },
+   "disp": {
+    "columns": [
+     "account_id",
+     "client_id",
+     "disp_id",
+     "type"
+    ],
+    "predicate": null
+   },
+   "district": {
+    "columns": [
+     "a10",
+     "a13",
+     "a14",
+     "a15",
+     "a3",
+     "a4",
+     "a5",
+     "a6",
+     "a7",
+     "a9",
+     "district_id"
+    ],
+    "predicate": null
+   },
+   "loan": {
+    "columns": [
+     "account_id",
+     "amount",
+     "duration",
+     "loan_id",
+     "payments",
+     "status"
+    ],
+    "predicate": null
+   },
+   "order": {
+    "columns": [
+     "account_id",
+     "amount",
+     "bank_to",
+     "order_id"
+    ],
+    "predicate": null
+   },
+   "trans": {
+    "columns": [
+     "account_id",
+     "amount",
+     "balance",
+     "date",
+     "k_symbol",
+     "operation",
+     "trans_id",
+     "type"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "account": {
+    "columns": [
+     "account_id",
+     "date",
+     "district_id",
+     "frequency"
+    ],
+    "predicate": null
+   },
+   "card": {
+    "columns": [
+     "disp_id"
+    ],
+    "predicate": null
+   },
+   "client": {
+    "columns": [
+     "client_id",
+     "district_id"
+    ],
+    "predicate": null
+   },
+   "disp": {
+    "columns": [
+     "account_id",
+     "client_id",
+     "disp_id",
+     "type"
+    ],
+    "predicate": null
+   },
+   "district": {
+    "columns": [
+     "a10",
+     "a12",
+     "a13",
+     "a14",
+     "a15",
+     "a16",
+     "a2",
+     "a3",
+     "a4",
+     "a5",
+     "a6",
+     "a7",
+     "a8",
+     "a9",
+     "district_id"
+    ],
+    "predicate": null
+   },
+   "loan": {
+    "columns": [
+     "account_id",
+     "amount",
+     "date",
+     "duration",
+     "loan_id",
+     "payments",
+     "status"
+    ],
+    "predicate": null
+   },
+   "order": {
+    "columns": [
+     "account_id",
+     "account_to",
+     "amount",
+     "bank_to",
+     "order_id"
+    ],
+    "predicate": null
+   },
+   "trans": {
+    "columns": [
+     "account",
+     "account_id",
+     "amount",
+     "balance",
+     "bank",
+     "date",
+     "k_symbol",
+     "operation",
+     "trans_id",
+     "type"
+    ],
+    "predicate": "\"k_symbol\" IN (' ', 'DUCHOD', 'POJISTNE', 'SANKC. UROK', 'SIPO', 'UROK', 'UVER')"
+   }
+  }
+ },
+ "bird_formula_1": {
+  "full": {
+   "circuits": {
+    "columns": [
+     "alt",
+     "circuitid",
+     "circuitref",
+     "country",
+     "lat",
+     "lng",
+     "location",
+     "name",
+     "url"
+    ],
+    "predicate": null
+   },
+   "constructorresults": {
+    "columns": [
+     "constructorid",
+     "constructorresultsid",
+     "points",
+     "raceid",
+     "status"
+    ],
+    "predicate": null
+   },
+   "constructors": {
+    "columns": [
+     "constructorid",
+     "constructorref",
+     "name",
+     "nationality",
+     "url"
+    ],
+    "predicate": null
+   },
+   "constructorstandings": {
+    "columns": [
+     "constructorid",
+     "constructorstandingsid",
+     "points",
+     "position",
+     "positiontext",
+     "raceid",
+     "wins"
+    ],
+    "predicate": null
+   },
+   "drivers": {
+    "columns": [
+     "code",
+     "dob",
+     "driverid",
+     "driverref",
+     "forename",
+     "nationality",
+     "number",
+     "surname",
+     "url"
+    ],
+    "predicate": null
+   },
+   "driverstandings": {
+    "columns": [
+     "driverid",
+     "driverstandingsid",
+     "points",
+     "position",
+     "positiontext",
+     "raceid",
+     "wins"
+    ],
+    "predicate": null
+   },
+   "laptimes": {
+    "columns": [
+     "driverid",
+     "lap",
+     "milliseconds",
+     "position",
+     "raceid",
+     "time"
+    ],
+    "predicate": null
+   },
+   "pitstops": {
+    "columns": [
+     "driverid",
+     "duration",
+     "lap",
+     "milliseconds",
+     "raceid",
+     "stop",
+     "time"
+    ],
+    "predicate": null
+   },
+   "qualifying": {
+    "columns": [
+     "constructorid",
+     "driverid",
+     "number",
+     "position",
+     "q1",
+     "q2",
+     "q3",
+     "qualifyid",
+     "raceid"
+    ],
+    "predicate": null
+   },
+   "races": {
+    "columns": [
+     "circuitid",
+     "date",
+     "name",
+     "raceid",
+     "round",
+     "time",
+     "url",
+     "year"
+    ],
+    "predicate": null
+   },
+   "results": {
+    "columns": [
+     "constructorid",
+     "driverid",
+     "fastestlap",
+     "fastestlapspeed",
+     "fastestlaptime",
+     "grid",
+     "laps",
+     "milliseconds",
+     "number",
+     "points",
+     "position",
+     "positionorder",
+     "positiontext",
+     "raceid",
+     "rank",
+     "resultid",
+     "statusid",
+     "time"
+    ],
+    "predicate": null
+   },
+   "seasons": {
+    "columns": [
+     "url",
+     "year"
+    ],
+    "predicate": null
+   },
+   "status": {
+    "columns": [
+     "status",
+     "statusid"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "circuits": {
+    "columns": [
+     "alt",
+     "circuitid",
+     "country",
+     "location",
+     "name"
+    ],
+    "predicate": null
+   },
+   "constructorresults": {
+    "columns": [
+     "constructorid",
+     "constructorresultsid",
+     "points",
+     "raceid",
+     "status"
+    ],
+    "predicate": null
+   },
+   "constructors": {
+    "columns": [
+     "constructorid",
+     "constructorref",
+     "url"
+    ],
+    "predicate": null
+   },
+   "constructorstandings": {
+    "columns": [
+     "constructorid",
+     "constructorstandingsid",
+     "position",
+     "raceid",
+     "wins"
+    ],
+    "predicate": null
+   },
+   "drivers": {
+    "columns": [
+     "driverid",
+     "driverref",
+     "number",
+     "url"
+    ],
+    "predicate": null
+   },
+   "driverstandings": {
+    "columns": [
+     "driverid",
+     "driverstandingsid",
+     "position",
+     "positiontext",
+     "raceid"
+    ],
+    "predicate": null
+   },
+   "laptimes": {
+    "columns": [
+     "driverid",
+     "lap",
+     "milliseconds",
+     "time"
+    ],
+    "predicate": null
+   },
+   "pitstops": {
+    "columns": [
+     "driverid",
+     "duration",
+     "milliseconds",
+     "stop",
+     "time"
+    ],
+    "predicate": null
+   },
+   "qualifying": {
+    "columns": [
+     "constructorid",
+     "driverid",
+     "number",
+     "q1",
+     "q2",
+     "q3",
+     "qualifyid"
+    ],
+    "predicate": null
+   },
+   "races": {
+    "columns": [
+     "circuitid",
+     "date",
+     "round",
+     "time",
+     "year"
+    ],
+    "predicate": null
+   },
+   "results": {
+    "columns": [
+     "constructorid",
+     "driverid",
+     "fastestlap",
+     "fastestlapspeed",
+     "fastestlaptime",
+     "laps",
+     "milliseconds",
+     "number",
+     "points",
+     "position",
+     "positionorder",
+     "positiontext",
+     "resultid",
+     "statusid"
+    ],
+    "predicate": null
+   },
+   "seasons": {
+    "columns": [
+     "url"
+    ],
+    "predicate": null
+   },
+   "status": {
+    "columns": [
+     "status",
+     "statusid"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "circuits": {
+    "columns": [
+     "alt",
+     "circuitid",
+     "circuitref",
+     "country",
+     "location",
+     "name",
+     "url"
+    ],
+    "predicate": null
+   },
+   "constructorresults": {
+    "columns": [
+     "constructorid",
+     "constructorresultsid",
+     "points",
+     "raceid",
+     "status"
+    ],
+    "predicate": null
+   },
+   "constructors": {
+    "columns": [
+     "constructorid",
+     "constructorref",
+     "name",
+     "url"
+    ],
+    "predicate": null
+   },
+   "constructorstandings": {
+    "columns": [
+     "constructorid",
+     "constructorstandingsid",
+     "position",
+     "positiontext",
+     "raceid",
+     "wins"
+    ],
+    "predicate": null
+   },
+   "drivers": {
+    "columns": [
+     "code",
+     "driverid",
+     "driverref",
+     "number",
+     "url"
+    ],
+    "predicate": null
+   },
+   "driverstandings": {
+    "columns": [
+     "driverid",
+     "driverstandingsid",
+     "position",
+     "positiontext",
+     "raceid",
+     "wins"
+    ],
+    "predicate": null
+   },
+   "laptimes": {
+    "columns": [
+     "driverid",
+     "lap",
+     "milliseconds",
+     "position",
+     "time"
+    ],
+    "predicate": null
+   },
+   "pitstops": {
+    "columns": [
+     "driverid",
+     "duration",
+     "lap",
+     "milliseconds",
+     "stop",
+     "time"
+    ],
+    "predicate": null
+   },
+   "qualifying": {
+    "columns": [
+     "constructorid",
+     "driverid",
+     "number",
+     "position",
+     "q1",
+     "q2",
+     "q3",
+     "qualifyid"
+    ],
+    "predicate": null
+   },
+   "races": {
+    "columns": [
+     "circuitid",
+     "date",
+     "round",
+     "time",
+     "url",
+     "year"
+    ],
+    "predicate": null
+   },
+   "results": {
+    "columns": [
+     "constructorid",
+     "driverid",
+     "fastestlap",
+     "fastestlapspeed",
+     "fastestlaptime",
+     "grid",
+     "laps",
+     "milliseconds",
+     "number",
+     "points",
+     "position",
+     "positionorder",
+     "positiontext",
+     "rank",
+     "resultid",
+     "statusid",
+     "time"
+    ],
+    "predicate": null
+   },
+   "seasons": {
+    "columns": [
+     "url"
+    ],
+    "predicate": null
+   },
+   "status": {
+    "columns": [
+     "status",
+     "statusid"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "bird_student_club": {
+  "full": {
+   "attendance": {
+    "columns": [
+     "link_to_event",
+     "link_to_member"
+    ],
+    "predicate": null
+   },
+   "budget": {
+    "columns": [
+     "amount",
+     "budget_id",
+     "category",
+     "event_status",
+     "link_to_event",
+     "remaining",
+     "spent"
+    ],
+    "predicate": null
+   },
+   "event": {
+    "columns": [
+     "event_date",
+     "event_id",
+     "event_name",
+     "location",
+     "notes",
+     "status",
+     "type"
+    ],
+    "predicate": null
+   },
+   "expense": {
+    "columns": [
+     "approved",
+     "cost",
+     "expense_date",
+     "expense_description",
+     "expense_id",
+     "link_to_budget",
+     "link_to_member"
+    ],
+    "predicate": null
+   },
+   "income": {
+    "columns": [
+     "amount",
+     "date_received",
+     "income_id",
+     "link_to_member",
+     "notes",
+     "source"
+    ],
+    "predicate": null
+   },
+   "major": {
+    "columns": [
+     "college",
+     "department",
+     "major_id",
+     "major_name"
+    ],
+    "predicate": null
+   },
+   "member": {
+    "columns": [
+     "email",
+     "first_name",
+     "last_name",
+     "link_to_major",
+     "member_id",
+     "phone",
+     "position",
+     "t_shirt_size",
+     "zip"
+    ],
+    "predicate": null
+   },
+   "zip_code": {
+    "columns": [
+     "city",
+     "county",
+     "short_state",
+     "state",
+     "type",
+     "zip_code"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "attendance": {
+    "columns": [
+     "link_to_event",
+     "link_to_member"
+    ],
+    "predicate": null
+   },
+   "budget": {
+    "columns": [
+     "amount",
+     "budget_id",
+     "category",
+     "event_status",
+     "link_to_event",
+     "spent"
+    ],
+    "predicate": null
+   },
+   "event": {
+    "columns": [
+     "event_date",
+     "event_id",
+     "notes",
+     "status",
+     "type"
+    ],
+    "predicate": null
+   },
+   "expense": {
+    "columns": [
+     "cost",
+     "expense_date",
+     "expense_description",
+     "link_to_budget",
+     "link_to_member"
+    ],
+    "predicate": null
+   },
+   "income": {
+    "columns": [
+     "amount",
+     "date_received",
+     "link_to_member",
+     "notes"
+    ],
+    "predicate": null
+   },
+   "major": {
+    "columns": [
+     "college",
+     "major_id",
+     "major_name"
+    ],
+    "predicate": null
+   },
+   "member": {
+    "columns": [
+     "link_to_major",
+     "member_id",
+     "position",
+     "t_shirt_size"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "attendance": {
+    "columns": [
+     "link_to_event",
+     "link_to_member"
+    ],
+    "predicate": "\"link_to_event\" IN ('recI43CzsZ0Q625ma', 'recLKj8BbTNqxFbTb', 'recggMW2eyCYceNcy', 'reciRZdAqNIKuMC96', 'reckYL4xtQWpkTJ8k', 'recoVo6dFSzG1ypX7', 'recsgSUqFCJqekzL5', 'recykdvf4LgsyA3wZ')"
+   },
+   "budget": {
+    "columns": [
+     "amount",
+     "budget_id",
+     "category",
+     "event_status",
+     "link_to_event",
+     "remaining",
+     "spent"
+    ],
+    "predicate": null
+   },
+   "event": {
+    "columns": [
+     "event_date",
+     "event_id",
+     "event_name",
+     "notes",
+     "status",
+     "type"
+    ],
+    "predicate": null
+   },
+   "expense": {
+    "columns": [
+     "approved",
+     "cost",
+     "expense_date",
+     "expense_description",
+     "link_to_budget",
+     "link_to_member"
+    ],
+    "predicate": null
+   },
+   "income": {
+    "columns": [
+     "amount",
+     "date_received",
+     "link_to_member",
+     "notes",
+     "source"
+    ],
+    "predicate": null
+   },
+   "major": {
+    "columns": [
+     "college",
+     "department",
+     "major_id",
+     "major_name"
+    ],
+    "predicate": null
+   },
+   "member": {
+    "columns": [
+     "link_to_major",
+     "member_id",
+     "position",
+     "t_shirt_size"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "bird_superhero": {
+  "full": {
+   "alignment": {
+    "columns": [
+     "alignment",
+     "id"
+    ],
+    "predicate": null
+   },
+   "attribute": {
+    "columns": [
+     "attribute_name",
+     "id"
+    ],
+    "predicate": null
+   },
+   "colour": {
+    "columns": [
+     "colour",
+     "id"
+    ],
+    "predicate": null
+   },
+   "gender": {
+    "columns": [
+     "gender",
+     "id"
+    ],
+    "predicate": null
+   },
+   "hero_attribute": {
+    "columns": [
+     "attribute_id",
+     "attribute_value",
+     "hero_id"
+    ],
+    "predicate": null
+   },
+   "hero_power": {
+    "columns": [
+     "hero_id",
+     "power_id"
+    ],
+    "predicate": null
+   },
+   "publisher": {
+    "columns": [
+     "id",
+     "publisher_name"
+    ],
+    "predicate": null
+   },
+   "race": {
+    "columns": [
+     "id",
+     "race"
+    ],
+    "predicate": null
+   },
+   "superhero": {
+    "columns": [
+     "alignment_id",
+     "eye_colour_id",
+     "full_name",
+     "gender_id",
+     "hair_colour_id",
+     "height_cm",
+     "id",
+     "publisher_id",
+     "race_id",
+     "skin_colour_id",
+     "superhero_name",
+     "weight_kg"
+    ],
+    "predicate": null
+   },
+   "superpower": {
+    "columns": [
+     "id",
+     "power_name"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "alignment": {
+    "columns": [
+     "alignment",
+     "id"
+    ],
+    "predicate": null
+   },
+   "attribute": {
+    "columns": [
+     "attribute_name",
+     "id"
+    ],
+    "predicate": null
+   },
+   "colour": {
+    "columns": [
+     "colour",
+     "id"
+    ],
+    "predicate": null
+   },
+   "hero_attribute": {
+    "columns": [
+     "attribute_id",
+     "attribute_value",
+     "hero_id"
+    ],
+    "predicate": null
+   },
+   "hero_power": {
+    "columns": [
+     "hero_id",
+     "power_id"
+    ],
+    "predicate": null
+   },
+   "publisher": {
+    "columns": [
+     "id",
+     "publisher_name"
+    ],
+    "predicate": null
+   },
+   "race": {
+    "columns": [
+     "race"
+    ],
+    "predicate": null
+   },
+   "superhero": {
+    "columns": [
+     "alignment_id",
+     "eye_colour_id",
+     "full_name",
+     "hair_colour_id",
+     "height_cm",
+     "id",
+     "publisher_id",
+     "skin_colour_id",
+     "superhero_name"
+    ],
+    "predicate": null
+   },
+   "superpower": {
+    "columns": [
+     "id",
+     "power_name"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "alignment": {
+    "columns": [
+     "alignment",
+     "id"
+    ],
+    "predicate": null
+   },
+   "attribute": {
+    "columns": [
+     "attribute_name",
+     "id"
+    ],
+    "predicate": null
+   },
+   "colour": {
+    "columns": [
+     "colour",
+     "id"
+    ],
+    "predicate": null
+   },
+   "hero_attribute": {
+    "columns": [
+     "attribute_id",
+     "attribute_value",
+     "hero_id"
+    ],
+    "predicate": null
+   },
+   "hero_power": {
+    "columns": [
+     "hero_id",
+     "power_id"
+    ],
+    "predicate": null
+   },
+   "publisher": {
+    "columns": [
+     "id",
+     "publisher_name"
+    ],
+    "predicate": null
+   },
+   "race": {
+    "columns": [
+     "race"
+    ],
+    "predicate": null
+   },
+   "superhero": {
+    "columns": [
+     "alignment_id",
+     "eye_colour_id",
+     "full_name",
+     "hair_colour_id",
+     "height_cm",
+     "id",
+     "publisher_id",
+     "skin_colour_id",
+     "superhero_name",
+     "weight_kg"
+    ],
+    "predicate": null
+   },
+   "superpower": {
+    "columns": [
+     "id",
+     "power_name"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "bird_thrombosis_prediction": {
+  "full": {
+   "examination": {
+    "columns": [
+     "ANA Pattern",
+     "Examination Date",
+     "aCL IgA",
+     "aCL IgG",
+     "aCL IgM",
+     "ana",
+     "diagnosis",
+     "id",
+     "kct",
+     "lac",
+     "rvvt",
+     "symptoms",
+     "thrombosis"
+    ],
+    "predicate": null
+   },
+   "laboratory": {
+    "columns": [
+     "DNA-II",
+     "T-BIL",
+     "T-CHO",
+     "U-PRO",
+     "alb",
+     "alp",
+     "aptt",
+     "c3",
+     "c4",
+     "centromea",
+     "cpk",
+     "cre",
+     "crp",
+     "date",
+     "dna",
+     "fg",
+     "glu",
+     "got",
+     "gpt",
+     "hct",
+     "hgb",
+     "id",
+     "iga",
+     "igg",
+     "igm",
+     "ldh",
+     "pic",
+     "plt",
+     "pt",
+     "ra",
+     "rbc",
+     "rf",
+     "rnp",
+     "sc170",
+     "sm",
+     "ssa",
+     "ssb",
+     "tat",
+     "tat2",
+     "tg",
+     "tp",
+     "ua",
+     "un",
+     "wbc"
+    ],
+    "predicate": null
+   },
+   "patient": {
+    "columns": [
+     "First Date",
+     "admission",
+     "birthday",
+     "description",
+     "diagnosis",
+     "id",
+     "sex"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "examination": {
+    "columns": [
+     "Examination Date",
+     "aCL IgG",
+     "aCL IgM",
+     "ana",
+     "id",
+     "kct",
+     "lac",
+     "rvvt",
+     "symptoms"
+    ],
+    "predicate": null
+   },
+   "laboratory": {
+    "columns": [
+     "T-BIL",
+     "T-CHO",
+     "U-PRO",
+     "alb",
+     "alp",
+     "c4",
+     "centromea",
+     "cpk",
+     "cre",
+     "crp",
+     "date",
+     "dna",
+     "glu",
+     "got",
+     "gpt",
+     "hgb",
+     "id",
+     "iga",
+     "igg",
+     "igm",
+     "ldh",
+     "pt",
+     "ra",
+     "rf",
+     "rnp",
+     "sm",
+     "ssa",
+     "ssb",
+     "tat",
+     "tat2",
+     "tp",
+     "ua",
+     "wbc"
+    ],
+    "predicate": null
+   },
+   "patient": {
+    "columns": [
+     "First Date",
+     "description",
+     "id"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "examination": {
+    "columns": [
+     "ANA Pattern",
+     "Examination Date",
+     "aCL IgA",
+     "aCL IgG",
+     "aCL IgM",
+     "ana",
+     "id",
+     "kct",
+     "lac",
+     "rvvt",
+     "symptoms",
+     "thrombosis"
+    ],
+    "predicate": null
+   },
+   "laboratory": {
+    "columns": [
+     "DNA-II",
+     "T-BIL",
+     "T-CHO",
+     "U-PRO",
+     "alb",
+     "alp",
+     "aptt",
+     "c3",
+     "c4",
+     "centromea",
+     "cpk",
+     "cre",
+     "crp",
+     "date",
+     "dna",
+     "fg",
+     "glu",
+     "got",
+     "gpt",
+     "hct",
+     "hgb",
+     "id",
+     "iga",
+     "igg",
+     "igm",
+     "ldh",
+     "pic",
+     "plt",
+     "pt",
+     "ra",
+     "rbc",
+     "rf",
+     "rnp",
+     "sc170",
+     "sm",
+     "ssa",
+     "ssb",
+     "tat",
+     "tat2",
+     "tg",
+     "tp",
+     "ua",
+     "un",
+     "wbc"
+    ],
+    "predicate": "\"U-PRO\" IN ('+1(30)', '0', '1', '3', '30', '4', '>=300', 'TR')"
+   },
+   "patient": {
+    "columns": [
+     "First Date",
+     "admission",
+     "description",
+     "id"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "bird_toxicology": {
+  "full": {
+   "atom": {
+    "columns": [
+     "atom_id",
+     "element",
+     "molecule_id"
+    ],
+    "predicate": null
+   },
+   "bond": {
+    "columns": [
+     "bond_id",
+     "bond_type",
+     "molecule_id"
+    ],
+    "predicate": null
+   },
+   "connected": {
+    "columns": [
+     "atom_id",
+     "atom_id2",
+     "bond_id"
+    ],
+    "predicate": null
+   },
+   "molecule": {
+    "columns": [
+     "label",
+     "molecule_id"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "atom": {
+    "columns": [
+     "atom_id",
+     "element",
+     "molecule_id"
+    ],
+    "predicate": null
+   },
+   "bond": {
+    "columns": [
+     "bond_id",
+     "bond_type",
+     "molecule_id"
+    ],
+    "predicate": null
+   },
+   "connected": {
+    "columns": [
+     "atom_id",
+     "atom_id2",
+     "bond_id"
+    ],
+    "predicate": null
+   },
+   "molecule": {
+    "columns": [
+     "label",
+     "molecule_id"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "atom": {
+    "columns": [
+     "atom_id",
+     "element",
+     "molecule_id"
+    ],
+    "predicate": "\"element\" IN ('br', 'cl', 'cu', 'f', 'h', 'n', 'o', 'p')"
+   },
+   "bond": {
+    "columns": [
+     "bond_id",
+     "bond_type",
+     "molecule_id"
+    ],
+    "predicate": null
+   },
+   "connected": {
+    "columns": [
+     "atom_id",
+     "atom_id2",
+     "bond_id"
+    ],
+    "predicate": null
+   },
+   "molecule": {
+    "columns": [
+     "label",
+     "molecule_id"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "spider_battle_death": {
+  "full": {
+   "battle": {
+    "columns": [
+     "bulgarian_commander",
+     "date",
+     "id",
+     "latin_commander",
+     "name",
+     "result"
+    ],
+    "predicate": null
+   },
+   "death": {
+    "columns": [
+     "caused_by_ship_id",
+     "id",
+     "injured",
+     "killed",
+     "note"
+    ],
+    "predicate": null
+   },
+   "ship": {
+    "columns": [
+     "disposition_of_ship",
+     "id",
+     "location",
+     "lost_in_battle",
+     "name",
+     "ship_type",
+     "tonnage"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "battle": {
+    "columns": [
+     "bulgarian_commander",
+     "date",
+     "id",
+     "latin_commander",
+     "name"
+    ],
+    "predicate": null
+   },
+   "death": {
+    "columns": [
+     "caused_by_ship_id",
+     "id",
+     "killed",
+     "note"
+    ],
+    "predicate": null
+   },
+   "ship": {
+    "columns": [
+     "disposition_of_ship",
+     "id",
+     "location",
+     "lost_in_battle",
+     "name",
+     "tonnage"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "battle": {
+    "columns": [
+     "bulgarian_commander",
+     "date",
+     "id",
+     "latin_commander",
+     "name",
+     "result"
+    ],
+    "predicate": null
+   },
+   "death": {
+    "columns": [
+     "caused_by_ship_id",
+     "id",
+     "injured",
+     "killed",
+     "note"
+    ],
+    "predicate": "\"note\" IN ('Dantewada, Chhattisgarh', 'Sundargarh, Odisha')"
+   },
+   "ship": {
+    "columns": [
+     "disposition_of_ship",
+     "id",
+     "location",
+     "lost_in_battle",
+     "name",
+     "ship_type",
+     "tonnage"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "spider_car_1": {
+  "full": {
+   "car_makers": {
+    "columns": [
+     "country",
+     "fullname",
+     "id",
+     "maker"
+    ],
+    "predicate": null
+   },
+   "car_names": {
+    "columns": [
+     "make",
+     "makeid",
+     "model"
+    ],
+    "predicate": null
+   },
+   "cars_data": {
+    "columns": [
+     "accelerate",
+     "cylinders",
+     "edispl",
+     "horsepower",
+     "id",
+     "mpg",
+     "weight",
+     "year"
+    ],
+    "predicate": null
+   },
+   "continents": {
+    "columns": [
+     "contid",
+     "continent"
+    ],
+    "predicate": null
+   },
+   "countries": {
+    "columns": [
+     "continent",
+     "countryid",
+     "countryname"
+    ],
+    "predicate": null
+   },
+   "model_list": {
+    "columns": [
+     "maker",
+     "model",
+     "modelid"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "car_makers": {
+    "columns": [
+     "country",
+     "fullname",
+     "id",
+     "maker"
+    ],
+    "predicate": null
+   },
+   "car_names": {
+    "columns": [
+     "make",
+     "makeid",
+     "model"
+    ],
+    "predicate": null
+   },
+   "cars_data": {
+    "columns": [
+     "accelerate",
+     "edispl",
+     "horsepower",
+     "id",
+     "mpg",
+     "weight"
+    ],
+    "predicate": null
+   },
+   "continents": {
+    "columns": [
+     "contid",
+     "continent"
+    ],
+    "predicate": null
+   },
+   "countries": {
+    "columns": [
+     "continent",
+     "countryid",
+     "countryname"
+    ],
+    "predicate": null
+   },
+   "model_list": {
+    "columns": [
+     "maker",
+     "model",
+     "modelid"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "car_makers": {
+    "columns": [
+     "country",
+     "fullname",
+     "id",
+     "maker"
+    ],
+    "predicate": null
+   },
+   "car_names": {
+    "columns": [
+     "make",
+     "makeid",
+     "model"
+    ],
+    "predicate": null
+   },
+   "cars_data": {
+    "columns": [
+     "accelerate",
+     "cylinders",
+     "edispl",
+     "horsepower",
+     "id",
+     "mpg",
+     "weight",
+     "year"
+    ],
+    "predicate": null
+   },
+   "continents": {
+    "columns": [
+     "contid",
+     "continent"
+    ],
+    "predicate": null
+   },
+   "countries": {
+    "columns": [
+     "continent",
+     "countryid",
+     "countryname"
+    ],
+    "predicate": "\"countryname\" IN ('egypt', 'italy', 'japan', 'mexico', 'new zealand', 'nigeria', 'sweden', 'uk', 'usa')"
+   },
+   "model_list": {
+    "columns": [
+     "maker",
+     "model",
+     "modelid"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "spider_concert_singer": {
+  "full": {
+   "concert": {
+    "columns": [
+     "concert_id",
+     "concert_name",
+     "stadium_id",
+     "theme",
+     "year"
+    ],
+    "predicate": null
+   },
+   "singer": {
+    "columns": [
+     "age",
+     "country",
+     "is_male",
+     "name",
+     "singer_id",
+     "song_name",
+     "song_release_year"
+    ],
+    "predicate": null
+   },
+   "singer_in_concert": {
+    "columns": [
+     "concert_id",
+     "singer_id"
+    ],
+    "predicate": null
+   },
+   "stadium": {
+    "columns": [
+     "average",
+     "capacity",
+     "highest",
+     "location",
+     "lowest",
+     "name",
+     "stadium_id"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "concert": {
+    "columns": [
+     "concert_id",
+     "concert_name",
+     "stadium_id",
+     "year"
+    ],
+    "predicate": null
+   },
+   "singer": {
+    "columns": [
+     "age",
+     "country",
+     "name",
+     "singer_id",
+     "song_release_year"
+    ],
+    "predicate": null
+   },
+   "singer_in_concert": {
+    "columns": [
+     "concert_id",
+     "singer_id"
+    ],
+    "predicate": null
+   },
+   "stadium": {
+    "columns": [
+     "average",
+     "capacity",
+     "highest",
+     "lowest",
+     "stadium_id"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "concert": {
+    "columns": [
+     "concert_id",
+     "concert_name",
+     "stadium_id",
+     "theme",
+     "year"
+    ],
+    "predicate": null
+   },
+   "singer": {
+    "columns": [
+     "age",
+     "country",
+     "is_male",
+     "name",
+     "singer_id",
+     "song_name",
+     "song_release_year"
+    ],
+    "predicate": null
+   },
+   "singer_in_concert": {
+    "columns": [
+     "concert_id",
+     "singer_id"
+    ],
+    "predicate": null
+   },
+   "stadium": {
+    "columns": [
+     "average",
+     "capacity",
+     "highest",
+     "location",
+     "lowest",
+     "name",
+     "stadium_id"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "spider_course_teach": {
+  "full": {
+   "course": {
+    "columns": [
+     "course",
+     "course_id",
+     "staring_date"
+    ],
+    "predicate": null
+   },
+   "course_arrange": {
+    "columns": [
+     "course_id",
+     "grade",
+     "teacher_id"
+    ],
+    "predicate": null
+   },
+   "teacher": {
+    "columns": [
+     "age",
+     "hometown",
+     "name",
+     "teacher_id"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "course": {
+    "columns": [
+     "course",
+     "course_id",
+     "staring_date"
+    ],
+    "predicate": null
+   },
+   "course_arrange": {
+    "columns": [
+     "course_id",
+     "grade",
+     "teacher_id"
+    ],
+    "predicate": null
+   },
+   "teacher": {
+    "columns": [
+     "age",
+     "name",
+     "teacher_id"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "course": {
+    "columns": [
+     "course",
+     "course_id",
+     "staring_date"
+    ],
+    "predicate": "\"course\" IN ('Bible', 'Health', 'Language Arts', 'Music')"
+   },
+   "course_arrange": {
+    "columns": [
+     "course_id",
+     "grade",
+     "teacher_id"
+    ],
+    "predicate": null
+   },
+   "teacher": {
+    "columns": [
+     "age",
+     "hometown",
+     "name",
+     "teacher_id"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "spider_cre_doc_template_mgt": {
+  "full": {
+   "documents": {
+    "columns": [
+     "document_description",
+     "document_id",
+     "document_name",
+     "other_details",
+     "template_id"
+    ],
+    "predicate": null
+   },
+   "paragraphs": {
+    "columns": [
+     "document_id",
+     "other_details",
+     "paragraph_id",
+     "paragraph_text"
+    ],
+    "predicate": null
+   },
+   "ref_template_types": {
+    "columns": [
+     "template_type_code",
+     "template_type_description"
+    ],
+    "predicate": null
+   },
+   "templates": {
+    "columns": [
+     "date_effective_from",
+     "date_effective_to",
+     "template_details",
+     "template_id",
+     "template_type_code",
+     "version_number"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "documents": {
+    "columns": [
+     "document_description",
+     "document_id",
+     "other_details",
+     "template_id"
+    ],
+    "predicate": null
+   },
+   "paragraphs": {
+    "columns": [
+     "document_id",
+     "other_details",
+     "paragraph_id",
+     "paragraph_text"
+    ],
+    "predicate": null
+   },
+   "ref_template_types": {
+    "columns": [
+     "template_type_code",
+     "template_type_description"
+    ],
+    "predicate": null
+   },
+   "templates": {
+    "columns": [
+     "date_effective_from",
+     "date_effective_to",
+     "template_id",
+     "template_type_code",
+     "version_number"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "documents": {
+    "columns": [
+     "document_description",
+     "document_id",
+     "document_name",
+     "other_details",
+     "template_id"
+    ],
+    "predicate": null
+   },
+   "paragraphs": {
+    "columns": [
+     "document_id",
+     "other_details",
+     "paragraph_id",
+     "paragraph_text"
+    ],
+    "predicate": null
+   },
+   "ref_template_types": {
+    "columns": [
+     "template_type_code",
+     "template_type_description"
+    ],
+    "predicate": null
+   },
+   "templates": {
+    "columns": [
+     "date_effective_from",
+     "date_effective_to",
+     "template_details",
+     "template_id",
+     "template_type_code",
+     "version_number"
+    ],
+    "predicate": "\"date_effective_from\" IN ('1975-05-20 22:51:19', '1975-10-20 02:28:58', '1979-10-20 21:23:20', '1979-12-24 10:28:16', '1993-10-07 02:33:04', '1997-04-17 08:29:44', '1999-06-21 11:10:30', '2002-03-02 14:39:49', '2002-08-25 13:26:23', '2005-02-20 00:31:34', '2008-08-01 13:57:26', '2010-09-24 01:15:11')"
+   }
+  }
+ },
+ "spider_dog_kennels": {
+  "full": {
+   "breeds": {
+    "columns": [
+     "breed_code",
+     "breed_name"
+    ],
+    "predicate": null
+   },
+   "charges": {
+    "columns": [
+     "charge_amount",
+     "charge_id",
+     "charge_type"
+    ],
+    "predicate": null
+   },
+   "dogs": {
+    "columns": [
+     "abandoned_yn",
+     "age",
+     "breed_code",
+     "date_adopted",
+     "date_arrived",
+     "date_departed",
+     "date_of_birth",
+     "dog_id",
+     "gender",
+     "name",
+     "owner_id",
+     "size_code",
+     "weight"
+    ],
+    "predicate": null
+   },
+   "owners": {
+    "columns": [
+     "cell_number",
+     "city",
+     "email_address",
+     "first_name",
+     "home_phone",
+     "last_name",
+     "owner_id",
+     "state",
+     "street",
+     "zip_code"
+    ],
+    "predicate": null
+   },
+   "professionals": {
+    "columns": [
+     "cell_number",
+     "city",
+     "email_address",
+     "first_name",
+     "home_phone",
+     "last_name",
+     "professional_id",
+     "role_code",
+     "state",
+     "street",
+     "zip_code"
+    ],
+    "predicate": null
+   },
+   "sizes": {
+    "columns": [
+     "size_code",
+     "size_description"
+    ],
+    "predicate": null
+   },
+   "treatment_types": {
+    "columns": [
+     "treatment_type_code",
+     "treatment_type_description"
+    ],
+    "predicate": null
+   },
+   "treatments": {
+    "columns": [
+     "cost_of_treatment",
+     "date_of_treatment",
+     "dog_id",
+     "professional_id",
+     "treatment_id",
+     "treatment_type_code"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "breeds": {
+    "columns": [
+     "breed_code",
+     "breed_name"
+    ],
+    "predicate": null
+   },
+   "charges": {
+    "columns": [
+     "charge_amount",
+     "charge_id",
+     "charge_type"
+    ],
+    "predicate": null
+   },
+   "dogs": {
+    "columns": [
+     "abandoned_yn",
+     "age",
+     "breed_code",
+     "date_departed",
+     "dog_id",
+     "name",
+     "owner_id",
+     "size_code",
+     "weight"
+    ],
+    "predicate": null
+   },
+   "owners": {
+    "columns": [
+     "cell_number",
+     "owner_id",
+     "state"
+    ],
+    "predicate": null
+   },
+   "professionals": {
+    "columns": [
+     "cell_number",
+     "city",
+     "professional_id",
+     "state"
+    ],
+    "predicate": null
+   },
+   "sizes": {
+    "columns": [
+     "size_code",
+     "size_description"
+    ],
+    "predicate": null
+   },
+   "treatment_types": {
+    "columns": [
+     "treatment_type_code",
+     "treatment_type_description"
+    ],
+    "predicate": null
+   },
+   "treatments": {
+    "columns": [
+     "cost_of_treatment",
+     "date_of_treatment",
+     "dog_id",
+     "professional_id",
+     "treatment_id",
+     "treatment_type_code"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "breeds": {
+    "columns": [
+     "breed_code",
+     "breed_name"
+    ],
+    "predicate": null
+   },
+   "charges": {
+    "columns": [
+     "charge_amount",
+     "charge_id",
+     "charge_type"
+    ],
+    "predicate": null
+   },
+   "dogs": {
+    "columns": [
+     "abandoned_yn",
+     "age",
+     "breed_code",
+     "date_adopted",
+     "date_arrived",
+     "date_departed",
+     "dog_id",
+     "name",
+     "owner_id",
+     "size_code",
+     "weight"
+    ],
+    "predicate": "\"breed_code\" IN ('BUL')"
+   },
+   "owners": {
+    "columns": [
+     "cell_number",
+     "city",
+     "owner_id",
+     "state"
+    ],
+    "predicate": null
+   },
+   "professionals": {
+    "columns": [
+     "cell_number",
+     "city",
+     "professional_id",
+     "role_code",
+     "state"
+    ],
+    "predicate": null
+   },
+   "sizes": {
+    "columns": [
+     "size_code",
+     "size_description"
+    ],
+    "predicate": null
+   },
+   "treatment_types": {
+    "columns": [
+     "treatment_type_code",
+     "treatment_type_description"
+    ],
+    "predicate": null
+   },
+   "treatments": {
+    "columns": [
+     "cost_of_treatment",
+     "date_of_treatment",
+     "dog_id",
+     "professional_id",
+     "treatment_id",
+     "treatment_type_code"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "spider_employee_hire_evaluation": {
+  "full": {
+   "employee": {
+    "columns": [
+     "age",
+     "city",
+     "employee_id",
+     "name"
+    ],
+    "predicate": null
+   },
+   "evaluation": {
+    "columns": [
+     "bonus",
+     "employee_id",
+     "year_awarded"
+    ],
+    "predicate": null
+   },
+   "hiring": {
+    "columns": [
+     "employee_id",
+     "is_full_time",
+     "shop_id",
+     "start_from"
+    ],
+    "predicate": null
+   },
+   "shop": {
+    "columns": [
+     "district",
+     "location",
+     "manager_name",
+     "name",
+     "number_products",
+     "shop_id"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "employee": {
+    "columns": [
+     "age",
+     "employee_id",
+     "name"
+    ],
+    "predicate": null
+   },
+   "evaluation": {
+    "columns": [
+     "bonus",
+     "employee_id",
+     "year_awarded"
+    ],
+    "predicate": null
+   },
+   "hiring": {
+    "columns": [
+     "employee_id",
+     "is_full_time",
+     "shop_id",
+     "start_from"
+    ],
+    "predicate": null
+   },
+   "shop": {
+    "columns": [
+     "district",
+     "location",
+     "name",
+     "number_products",
+     "shop_id"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "employee": {
+    "columns": [
+     "age",
+     "city",
+     "employee_id",
+     "name"
+    ],
+    "predicate": "\"city\" IN ('Bath', 'Bristol')"
+   },
+   "evaluation": {
+    "columns": [
+     "bonus",
+     "employee_id",
+     "year_awarded"
+    ],
+    "predicate": null
+   },
+   "hiring": {
+    "columns": [
+     "employee_id",
+     "is_full_time",
+     "shop_id",
+     "start_from"
+    ],
+    "predicate": null
+   },
+   "shop": {
+    "columns": [
+     "district",
+     "location",
+     "manager_name",
+     "name",
+     "number_products",
+     "shop_id"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "spider_flight_2": {
+  "full": {
+   "airlines": {
+    "columns": [
+     "abbreviation",
+     "airline",
+     "country",
+     "uid"
+    ],
+    "predicate": null
+   },
+   "airports": {
+    "columns": [
+     "airportcode",
+     "airportname",
+     "city",
+     "country",
+     "countryabbrev"
+    ],
+    "predicate": null
+   },
+   "flights": {
+    "columns": [
+     "airline",
+     "destairport",
+     "flightno",
+     "sourceairport"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "airlines": {
+    "columns": [
+     "abbreviation",
+     "airline",
+     "uid"
+    ],
+    "predicate": null
+   },
+   "airports": {
+    "columns": [
+     "airportcode",
+     "airportname",
+     "city",
+     "country"
+    ],
+    "predicate": null
+   },
+   "flights": {
+    "columns": [
+     "airline",
+     "destairport",
+     "flightno",
+     "sourceairport"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "airlines": {
+    "columns": [
+     "abbreviation",
+     "airline",
+     "country",
+     "uid"
+    ],
+    "predicate": "\"abbreviation\" IN ('Delta', 'Frontier', 'Northwest', 'Virgin')"
+   },
+   "airports": {
+    "columns": [
+     "airportcode",
+     "airportname",
+     "city",
+     "country",
+     "countryabbrev"
+    ],
+    "predicate": null
+   },
+   "flights": {
+    "columns": [
+     "airline",
+     "destairport",
+     "flightno",
+     "sourceairport"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "spider_museum_visit": {
+  "full": {
+   "museum": {
+    "columns": [
+     "museum_id",
+     "name",
+     "num_of_staff",
+     "open_year"
+    ],
+    "predicate": null
+   },
+   "visit": {
+    "columns": [
+     "museum_id",
+     "num_of_ticket",
+     "total_spent",
+     "visitor_id"
+    ],
+    "predicate": null
+   },
+   "visitor": {
+    "columns": [
+     "age",
+     "id",
+     "level_of_membership",
+     "name"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "museum": {
+    "columns": [
+     "museum_id",
+     "name",
+     "num_of_staff"
+    ],
+    "predicate": null
+   },
+   "visit": {
+    "columns": [
+     "museum_id",
+     "num_of_ticket",
+     "total_spent",
+     "visitor_id"
+    ],
+    "predicate": null
+   },
+   "visitor": {
+    "columns": [
+     "age",
+     "id",
+     "name"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "museum": {
+    "columns": [
+     "museum_id",
+     "name",
+     "num_of_staff",
+     "open_year"
+    ],
+    "predicate": null
+   },
+   "visit": {
+    "columns": [
+     "museum_id",
+     "num_of_ticket",
+     "total_spent",
+     "visitor_id"
+    ],
+    "predicate": null
+   },
+   "visitor": {
+    "columns": [
+     "age",
+     "id",
+     "level_of_membership",
+     "name"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "spider_network_1": {
+  "full": {
+   "friend": {
+    "columns": [
+     "friend_id",
+     "student_id"
+    ],
+    "predicate": null
+   },
+   "highschooler": {
+    "columns": [
+     "grade",
+     "id",
+     "name"
+    ],
+    "predicate": null
+   },
+   "likes": {
+    "columns": [
+     "liked_id",
+     "student_id"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "friend": {
+    "columns": [
+     "friend_id",
+     "student_id"
+    ],
+    "predicate": null
+   },
+   "highschooler": {
+    "columns": [
+     "grade",
+     "id",
+     "name"
+    ],
+    "predicate": null
+   },
+   "likes": {
+    "columns": [
+     "liked_id",
+     "student_id"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "friend": {
+    "columns": [
+     "friend_id",
+     "student_id"
+    ],
+    "predicate": null
+   },
+   "highschooler": {
+    "columns": [
+     "grade",
+     "id",
+     "name"
+    ],
+    "predicate": "\"name\" IN ('Alexis', 'Austin', 'Gabriel', 'Haley', 'Jessica', 'Kris', 'Kyle', 'Tiffany')"
+   },
+   "likes": {
+    "columns": [
+     "liked_id",
+     "student_id"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "spider_orchestra": {
+  "full": {
+   "conductor": {
+    "columns": [
+     "age",
+     "conductor_id",
+     "name",
+     "nationality",
+     "year_of_work"
+    ],
+    "predicate": null
+   },
+   "orchestra": {
+    "columns": [
+     "conductor_id",
+     "major_record_format",
+     "orchestra",
+     "orchestra_id",
+     "record_company",
+     "year_of_founded"
+    ],
+    "predicate": null
+   },
+   "performance": {
+    "columns": [
+     "date",
+     "official_ratings_(millions)",
+     "orchestra_id",
+     "performance_id",
+     "share",
+     "type",
+     "weekly_rank"
+    ],
+    "predicate": null
+   },
+   "show": {
+    "columns": [
+     "attendance",
+     "if_first_show",
+     "performance_id",
+     "result",
+     "show_id"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "conductor": {
+    "columns": [
+     "age",
+     "conductor_id",
+     "year_of_work"
+    ],
+    "predicate": null
+   },
+   "orchestra": {
+    "columns": [
+     "conductor_id",
+     "major_record_format",
+     "orchestra_id",
+     "record_company",
+     "year_of_founded"
+    ],
+    "predicate": null
+   },
+   "performance": {
+    "columns": [
+     "date",
+     "official_ratings_(millions)",
+     "orchestra_id",
+     "performance_id",
+     "share",
+     "weekly_rank"
+    ],
+    "predicate": null
+   },
+   "show": {
+    "columns": [
+     "attendance",
+     "if_first_show",
+     "performance_id",
+     "result"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "conductor": {
+    "columns": [
+     "age",
+     "conductor_id",
+     "name",
+     "year_of_work"
+    ],
+    "predicate": "\"name\" IN ('Antal Dor\u00e1ti', 'Gerard Schwarz', 'Michael Tilson Thomas', 'Robert Craft', 'Seiji Ozawa')"
+   },
+   "orchestra": {
+    "columns": [
+     "conductor_id",
+     "major_record_format",
+     "orchestra",
+     "orchestra_id",
+     "record_company",
+     "year_of_founded"
+    ],
+    "predicate": null
+   },
+   "performance": {
+    "columns": [
+     "date",
+     "official_ratings_(millions)",
+     "orchestra_id",
+     "performance_id",
+     "share",
+     "type",
+     "weekly_rank"
+    ],
+    "predicate": null
+   },
+   "show": {
+    "columns": [
+     "attendance",
+     "if_first_show",
+     "performance_id",
+     "result",
+     "show_id"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "spider_pets_1": {
+  "full": {
+   "has_pet": {
+    "columns": [
+     "petid",
+     "stuid"
+    ],
+    "predicate": null
+   },
+   "pets": {
+    "columns": [
+     "pet_age",
+     "petid",
+     "pettype",
+     "weight"
+    ],
+    "predicate": null
+   },
+   "student": {
+    "columns": [
+     "advisor",
+     "age",
+     "city_code",
+     "fname",
+     "lname",
+     "major",
+     "sex",
+     "stuid"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "has_pet": {
+    "columns": [
+     "petid",
+     "stuid"
+    ],
+    "predicate": null
+   },
+   "pets": {
+    "columns": [
+     "pet_age",
+     "petid",
+     "pettype"
+    ],
+    "predicate": null
+   },
+   "student": {
+    "columns": [
+     "advisor",
+     "age",
+     "city_code",
+     "stuid"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "has_pet": {
+    "columns": [
+     "petid",
+     "stuid"
+    ],
+    "predicate": null
+   },
+   "pets": {
+    "columns": [
+     "pet_age",
+     "petid",
+     "pettype",
+     "weight"
+    ],
+    "predicate": null
+   },
+   "student": {
+    "columns": [
+     "advisor",
+     "age",
+     "city_code",
+     "major",
+     "stuid"
+    ],
+    "predicate": "\"city_code\" IN ('ATL', 'CHI', 'DAL', 'HKG', 'PEK', 'ROC', 'WAS', 'YYZ')"
+   }
+  }
+ },
+ "spider_poker_player": {
+  "full": {
+   "people": {
+    "columns": [
+     "birth_date",
+     "height",
+     "name",
+     "nationality",
+     "people_id"
+    ],
+    "predicate": null
+   },
+   "poker_player": {
+    "columns": [
+     "best_finish",
+     "earnings",
+     "final_table_made",
+     "money_rank",
+     "people_id",
+     "poker_player_id"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "people": {
+    "columns": [
+     "height",
+     "name",
+     "people_id"
+    ],
+    "predicate": null
+   },
+   "poker_player": {
+    "columns": [
+     "best_finish",
+     "earnings",
+     "final_table_made",
+     "people_id",
+     "poker_player_id"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "people": {
+    "columns": [
+     "height",
+     "name",
+     "people_id"
+    ],
+    "predicate": null
+   },
+   "poker_player": {
+    "columns": [
+     "best_finish",
+     "earnings",
+     "final_table_made",
+     "money_rank",
+     "people_id",
+     "poker_player_id"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "spider_real_estate_properties": {
+  "full": {
+   "other_available_features": {
+    "columns": [
+     "feature_description",
+     "feature_id",
+     "feature_name",
+     "feature_type_code"
+    ],
+    "predicate": null
+   },
+   "other_property_features": {
+    "columns": [
+     "feature_id",
+     "property_feature_description",
+     "property_id"
+    ],
+    "predicate": null
+   },
+   "properties": {
+    "columns": [
+     "agreed_selling_price",
+     "apt_feature_1",
+     "apt_feature_2",
+     "apt_feature_3",
+     "buyer_offered_price",
+     "date_on_market",
+     "date_sold",
+     "fld_feature_1",
+     "fld_feature_2",
+     "fld_feature_3",
+     "hse_feature_1",
+     "hse_feature_2",
+     "hse_feature_3",
+     "oth_feature_1",
+     "oth_feature_2",
+     "oth_feature_3",
+     "other_property_details",
+     "property_address",
+     "property_id",
+     "property_name",
+     "property_type_code",
+     "room_count",
+     "shp_feature_1",
+     "shp_feature_2",
+     "shp_feature_3",
+     "vendor_requested_price"
+    ],
+    "predicate": null
+   },
+   "ref_feature_types": {
+    "columns": [
+     "feature_type_code",
+     "feature_type_name"
+    ],
+    "predicate": null
+   },
+   "ref_property_types": {
+    "columns": [
+     "property_type_code",
+     "property_type_description"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "other_available_features": {
+    "columns": [
+     "feature_description",
+     "feature_id",
+     "feature_name",
+     "feature_type_code"
+    ],
+    "predicate": null
+   },
+   "other_property_features": {
+    "columns": [
+     "feature_id",
+     "property_feature_description",
+     "property_id"
+    ],
+    "predicate": null
+   },
+   "properties": {
+    "columns": [
+     "apt_feature_1",
+     "apt_feature_3",
+     "date_on_market",
+     "date_sold",
+     "fld_feature_1",
+     "fld_feature_2",
+     "fld_feature_3",
+     "hse_feature_1",
+     "hse_feature_2",
+     "hse_feature_3",
+     "oth_feature_2",
+     "oth_feature_3",
+     "other_property_details",
+     "property_id",
+     "property_name",
+     "property_type_code",
+     "room_count",
+     "shp_feature_1",
+     "shp_feature_2"
+    ],
+    "predicate": null
+   },
+   "ref_feature_types": {
+    "columns": [
+     "feature_type_code",
+     "feature_type_name"
+    ],
+    "predicate": null
+   },
+   "ref_property_types": {
+    "columns": [
+     "property_type_code",
+     "property_type_description"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "other_available_features": {
+    "columns": [
+     "feature_description",
+     "feature_id",
+     "feature_name",
+     "feature_type_code"
+    ],
+    "predicate": null
+   },
+   "other_property_features": {
+    "columns": [
+     "feature_id",
+     "property_feature_description",
+     "property_id"
+    ],
+    "predicate": "\"property_feature_description\" IN ('ad', 'corrupti', 'cumque', 'doloribus', 'earum', 'vitae')"
+   },
+   "properties": {
+    "columns": [
+     "agreed_selling_price",
+     "apt_feature_1",
+     "apt_feature_2",
+     "apt_feature_3",
+     "buyer_offered_price",
+     "date_on_market",
+     "date_sold",
+     "fld_feature_1",
+     "fld_feature_2",
+     "fld_feature_3",
+     "hse_feature_1",
+     "hse_feature_2",
+     "hse_feature_3",
+     "oth_feature_1",
+     "oth_feature_2",
+     "oth_feature_3",
+     "other_property_details",
+     "property_id",
+     "property_name",
+     "property_type_code",
+     "room_count",
+     "shp_feature_1",
+     "shp_feature_2",
+     "shp_feature_3",
+     "vendor_requested_price"
+    ],
+    "predicate": null
+   },
+   "ref_feature_types": {
+    "columns": [
+     "feature_type_code",
+     "feature_type_name"
+    ],
+    "predicate": null
+   },
+   "ref_property_types": {
+    "columns": [
+     "property_type_code",
+     "property_type_description"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "spider_singer": {
+  "full": {
+   "singer": {
+    "columns": [
+     "birth_year",
+     "citizenship",
+     "name",
+     "net_worth_millions",
+     "singer_id"
+    ],
+    "predicate": null
+   },
+   "song": {
+    "columns": [
+     "highest_position",
+     "sales",
+     "singer_id",
+     "song_id",
+     "title"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "singer": {
+    "columns": [
+     "citizenship",
+     "net_worth_millions",
+     "singer_id"
+    ],
+    "predicate": null
+   },
+   "song": {
+    "columns": [
+     "sales",
+     "singer_id",
+     "song_id",
+     "title"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "singer": {
+    "columns": [
+     "citizenship",
+     "name",
+     "net_worth_millions",
+     "singer_id"
+    ],
+    "predicate": null
+   },
+   "song": {
+    "columns": [
+     "highest_position",
+     "sales",
+     "singer_id",
+     "song_id",
+     "title"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "spider_student_transcripts_tracking": {
+  "full": {
+   "addresses": {
+    "columns": [
+     "address_id",
+     "city",
+     "country",
+     "line_1",
+     "line_2",
+     "line_3",
+     "other_address_details",
+     "state_province_county",
+     "zip_postcode"
+    ],
+    "predicate": null
+   },
+   "courses": {
+    "columns": [
+     "course_description",
+     "course_id",
+     "course_name",
+     "other_details"
+    ],
+    "predicate": null
+   },
+   "degree_programs": {
+    "columns": [
+     "degree_program_id",
+     "degree_summary_description",
+     "degree_summary_name",
+     "department_id",
+     "other_details"
+    ],
+    "predicate": null
+   },
+   "departments": {
+    "columns": [
+     "department_description",
+     "department_id",
+     "department_name",
+     "other_details"
+    ],
+    "predicate": null
+   },
+   "sections": {
+    "columns": [
+     "course_id",
+     "other_details",
+     "section_description",
+     "section_id",
+     "section_name"
+    ],
+    "predicate": null
+   },
+   "semesters": {
+    "columns": [
+     "other_details",
+     "semester_description",
+     "semester_id",
+     "semester_name"
+    ],
+    "predicate": null
+   },
+   "student_enrolment": {
+    "columns": [
+     "degree_program_id",
+     "other_details",
+     "semester_id",
+     "student_enrolment_id",
+     "student_id"
+    ],
+    "predicate": null
+   },
+   "student_enrolment_courses": {
+    "columns": [
+     "course_id",
+     "student_course_id",
+     "student_enrolment_id"
+    ],
+    "predicate": null
+   },
+   "students": {
+    "columns": [
+     "cell_mobile_number",
+     "current_address_id",
+     "date_first_registered",
+     "date_left",
+     "email_address",
+     "first_name",
+     "last_name",
+     "middle_name",
+     "other_student_details",
+     "permanent_address_id",
+     "ssn",
+     "student_id"
+    ],
+    "predicate": null
+   },
+   "transcript_contents": {
+    "columns": [
+     "student_course_id",
+     "transcript_id"
+    ],
+    "predicate": null
+   },
+   "transcripts": {
+    "columns": [
+     "other_details",
+     "transcript_date",
+     "transcript_id"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "addresses": {
+    "columns": [
+     "country",
+     "line_1",
+     "line_2",
+     "line_3"
+    ],
+    "predicate": null
+   },
+   "courses": {
+    "columns": [
+     "course_description",
+     "course_id",
+     "other_details"
+    ],
+    "predicate": null
+   },
+   "degree_programs": {
+    "columns": [
+     "degree_program_id",
+     "degree_summary_description",
+     "degree_summary_name",
+     "department_id"
+    ],
+    "predicate": null
+   },
+   "departments": {
+    "columns": [
+     "department_id",
+     "department_name",
+     "other_details"
+    ],
+    "predicate": null
+   },
+   "sections": {
+    "columns": [
+     "course_id",
+     "other_details",
+     "section_id",
+     "section_name"
+    ],
+    "predicate": null
+   },
+   "semesters": {
+    "columns": [
+     "semester_description",
+     "semester_id",
+     "semester_name"
+    ],
+    "predicate": null
+   },
+   "student_enrolment": {
+    "columns": [
+     "degree_program_id",
+     "other_details",
+     "semester_id",
+     "student_enrolment_id",
+     "student_id"
+    ],
+    "predicate": null
+   },
+   "student_enrolment_courses": {
+    "columns": [
+     "course_id",
+     "student_course_id",
+     "student_enrolment_id"
+    ],
+    "predicate": null
+   },
+   "students": {
+    "columns": [
+     "cell_mobile_number",
+     "date_first_registered",
+     "other_student_details",
+     "student_id"
+    ],
+    "predicate": null
+   },
+   "transcript_contents": {
+    "columns": [
+     "student_course_id",
+     "transcript_id"
+    ],
+    "predicate": null
+   },
+   "transcripts": {
+    "columns": [
+     "other_details",
+     "transcript_date",
+     "transcript_id"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "addresses": {
+    "columns": [
+     "city",
+     "country",
+     "line_1",
+     "line_2",
+     "line_3",
+     "state_province_county"
+    ],
+    "predicate": "\"city\" IN ('Goodwinhaven', 'Herzoghaven', 'Lake Laishafurt', 'Michelleburgh', 'New Clemensburgh', 'Port Evanston', 'Port Oceane', 'Prohaskafort', 'Rutherfordtown', 'South Palma')"
+   },
+   "courses": {
+    "columns": [
+     "course_description",
+     "course_id",
+     "course_name",
+     "other_details"
+    ],
+    "predicate": null
+   },
+   "degree_programs": {
+    "columns": [
+     "degree_program_id",
+     "degree_summary_description",
+     "degree_summary_name",
+     "department_id",
+     "other_details"
+    ],
+    "predicate": null
+   },
+   "departments": {
+    "columns": [
+     "department_description",
+     "department_id",
+     "department_name",
+     "other_details"
+    ],
+    "predicate": null
+   },
+   "sections": {
+    "columns": [
+     "course_id",
+     "other_details",
+     "section_description",
+     "section_id",
+     "section_name"
+    ],
+    "predicate": null
+   },
+   "semesters": {
+    "columns": [
+     "other_details",
+     "semester_description",
+     "semester_id",
+     "semester_name"
+    ],
+    "predicate": null
+   },
+   "student_enrolment": {
+    "columns": [
+     "degree_program_id",
+     "other_details",
+     "semester_id",
+     "student_enrolment_id",
+     "student_id"
+    ],
+    "predicate": null
+   },
+   "student_enrolment_courses": {
+    "columns": [
+     "course_id",
+     "student_course_id",
+     "student_enrolment_id"
+    ],
+    "predicate": null
+   },
+   "students": {
+    "columns": [
+     "cell_mobile_number",
+     "date_first_registered",
+     "date_left",
+     "other_student_details",
+     "student_id"
+    ],
+    "predicate": null
+   },
+   "transcript_contents": {
+    "columns": [
+     "student_course_id",
+     "transcript_id"
+    ],
+    "predicate": null
+   },
+   "transcripts": {
+    "columns": [
+     "other_details",
+     "transcript_date",
+     "transcript_id"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "spider_tvshow": {
+  "full": {
+   "cartoon": {
+    "columns": [
+     "channel",
+     "directed_by",
+     "id",
+     "original_air_date",
+     "production_code",
+     "title",
+     "written_by"
+    ],
+    "predicate": null
+   },
+   "tv_channel": {
+    "columns": [
+     "content",
+     "country",
+     "hight_definition_tv",
+     "id",
+     "language",
+     "package_option",
+     "pay_per_view_ppv",
+     "pixel_aspect_ratio_par",
+     "series_name"
+    ],
+    "predicate": null
+   },
+   "tv_series": {
+    "columns": [
+     "18_49_rating_share",
+     "air_date",
+     "channel",
+     "episode",
+     "id",
+     "rating",
+     "share",
+     "viewers_m",
+     "weekly_rank"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "cartoon": {
+    "columns": [
+     "channel",
+     "directed_by",
+     "id",
+     "original_air_date",
+     "production_code",
+     "written_by"
+    ],
+    "predicate": null
+   },
+   "tv_channel": {
+    "columns": [
+     "country",
+     "hight_definition_tv",
+     "id",
+     "language",
+     "package_option",
+     "pixel_aspect_ratio_par",
+     "series_name"
+    ],
+    "predicate": null
+   },
+   "tv_series": {
+    "columns": [
+     "18_49_rating_share",
+     "air_date",
+     "channel",
+     "id",
+     "rating",
+     "share",
+     "weekly_rank"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "cartoon": {
+    "columns": [
+     "channel",
+     "directed_by",
+     "id",
+     "original_air_date",
+     "production_code",
+     "title",
+     "written_by"
+    ],
+    "predicate": null
+   },
+   "tv_channel": {
+    "columns": [
+     "content",
+     "country",
+     "hight_definition_tv",
+     "id",
+     "language",
+     "package_option",
+     "pay_per_view_ppv",
+     "pixel_aspect_ratio_par",
+     "series_name"
+    ],
+    "predicate": "\"pixel_aspect_ratio_par\" IN ('16:9')"
+   },
+   "tv_series": {
+    "columns": [
+     "18_49_rating_share",
+     "air_date",
+     "channel",
+     "episode",
+     "id",
+     "rating",
+     "share",
+     "viewers_m",
+     "weekly_rank"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "spider_voter_1": {
+  "full": {
+   "area_code_state": {
+    "columns": [
+     "area_code",
+     "state"
+    ],
+    "predicate": null
+   },
+   "contestants": {
+    "columns": [
+     "contestant_name",
+     "contestant_number"
+    ],
+    "predicate": null
+   },
+   "votes": {
+    "columns": [
+     "contestant_number",
+     "created",
+     "phone_number",
+     "state",
+     "vote_id"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "area_code_state": {
+    "columns": [
+     "area_code",
+     "state"
+    ],
+    "predicate": null
+   },
+   "contestants": {
+    "columns": [
+     "contestant_name",
+     "contestant_number"
+    ],
+    "predicate": null
+   },
+   "votes": {
+    "columns": [
+     "contestant_number",
+     "created",
+     "state",
+     "vote_id"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "area_code_state": {
+    "columns": [
+     "area_code",
+     "state"
+    ],
+    "predicate": null
+   },
+   "contestants": {
+    "columns": [
+     "contestant_name",
+     "contestant_number"
+    ],
+    "predicate": "\"contestant_name\" IN ('Alana Bregman', 'Ericka Dieter', 'Kelly Clauss', 'Loraine NygrenTania Mattioli', 'Nita Coster')"
+   },
+   "votes": {
+    "columns": [
+     "contestant_number",
+     "created",
+     "state",
+     "vote_id"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "spider_world_1": {
+  "full": {
+   "city": {
+    "columns": [
+     "countrycode",
+     "district",
+     "id",
+     "name",
+     "population"
+    ],
+    "predicate": null
+   },
+   "country": {
+    "columns": [
+     "capital",
+     "code",
+     "code2",
+     "continent",
+     "gnp",
+     "gnpold",
+     "governmentform",
+     "headofstate",
+     "indepyear",
+     "lifeexpectancy",
+     "localname",
+     "name",
+     "population",
+     "region",
+     "surfacearea"
+    ],
+    "predicate": null
+   },
+   "countrylanguage": {
+    "columns": [
+     "countrycode",
+     "isofficial",
+     "language",
+     "percentage"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "city": {
+    "columns": [
+     "countrycode",
+     "district",
+     "id",
+     "name"
+    ],
+    "predicate": null
+   },
+   "country": {
+    "columns": [
+     "capital",
+     "code",
+     "code2",
+     "continent",
+     "governmentform",
+     "headofstate",
+     "indepyear",
+     "lifeexpectancy",
+     "name",
+     "region",
+     "surfacearea"
+    ],
+    "predicate": null
+   },
+   "countrylanguage": {
+    "columns": [
+     "countrycode",
+     "isofficial",
+     "percentage"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "city": {
+    "columns": [
+     "countrycode",
+     "district",
+     "id",
+     "name",
+     "population"
+    ],
+    "predicate": null
+   },
+   "country": {
+    "columns": [
+     "capital",
+     "code",
+     "code2",
+     "continent",
+     "gnp",
+     "gnpold",
+     "governmentform",
+     "headofstate",
+     "indepyear",
+     "lifeexpectancy",
+     "localname",
+     "name",
+     "population",
+     "region",
+     "surfacearea"
+    ],
+    "predicate": "\"continent\" IN ('Africa', 'Antarctica', 'Asia', 'North America')"
+   },
+   "countrylanguage": {
+    "columns": [
+     "countrycode",
+     "isofficial",
+     "language",
+     "percentage"
+    ],
+    "predicate": null
+   }
+  }
+ },
+ "spider_wta_1": {
+  "full": {
+   "matches": {
+    "columns": [
+     "best_of",
+     "draw_size",
+     "loser_age",
+     "loser_entry",
+     "loser_hand",
+     "loser_ht",
+     "loser_id",
+     "loser_ioc",
+     "loser_name",
+     "loser_rank",
+     "loser_rank_points",
+     "loser_seed",
+     "match_num",
+     "minutes",
+     "round",
+     "score",
+     "surface",
+     "tourney_date",
+     "tourney_id",
+     "tourney_level",
+     "tourney_name",
+     "winner_age",
+     "winner_entry",
+     "winner_hand",
+     "winner_ht",
+     "winner_id",
+     "winner_ioc",
+     "winner_name",
+     "winner_rank",
+     "winner_rank_points",
+     "winner_seed",
+     "year"
+    ],
+    "predicate": null
+   },
+   "players": {
+    "columns": [
+     "birth_date",
+     "country_code",
+     "first_name",
+     "hand",
+     "last_name",
+     "player_id"
+    ],
+    "predicate": null
+   },
+   "rankings": {
+    "columns": [
+     "player_id",
+     "ranking",
+     "ranking_date",
+     "ranking_points",
+     "tours"
+    ],
+    "predicate": null
+   }
+  },
+  "restricted": {
+   "matches": {
+    "columns": [
+     "draw_size",
+     "loser_age",
+     "loser_entry",
+     "loser_hand",
+     "loser_ht",
+     "loser_id",
+     "loser_ioc",
+     "minutes",
+     "round",
+     "score",
+     "surface",
+     "tourney_date",
+     "tourney_id",
+     "tourney_name",
+     "winner_age",
+     "winner_hand",
+     "winner_ht",
+     "winner_id",
+     "winner_ioc",
+     "winner_name",
+     "winner_rank",
+     "winner_rank_points",
+     "winner_seed",
+     "year"
+    ],
+    "predicate": null
+   },
+   "players": {
+    "columns": [
+     "country_code",
+     "hand",
+     "player_id"
+    ],
+    "predicate": null
+   },
+   "rankings": {
+    "columns": [
+     "player_id",
+     "ranking_date",
+     "ranking_points",
+     "tours"
+    ],
+    "predicate": null
+   }
+  },
+  "partition": {
+   "matches": {
+    "columns": [
+     "best_of",
+     "draw_size",
+     "loser_age",
+     "loser_entry",
+     "loser_hand",
+     "loser_ht",
+     "loser_id",
+     "loser_ioc",
+     "loser_name",
+     "loser_rank",
+     "loser_rank_points",
+     "loser_seed",
+     "match_num",
+     "minutes",
+     "round",
+     "score",
+     "surface",
+     "tourney_date",
+     "tourney_id",
+     "tourney_level",
+     "tourney_name",
+     "winner_age",
+     "winner_entry",
+     "winner_hand",
+     "winner_ht",
+     "winner_id",
+     "winner_ioc",
+     "winner_name",
+     "winner_rank",
+     "winner_rank_points",
+     "winner_seed",
+     "year"
+    ],
+    "predicate": null
+   },
+   "players": {
+    "columns": [
+     "country_code",
+     "hand",
+     "player_id"
+    ],
+    "predicate": "\"hand\" IN ('', 'L', 'R')"
+   },
+   "rankings": {
+    "columns": [
+     "player_id",
+     "ranking",
+     "ranking_date",
+     "ranking_points",
+     "tours"
+    ],
+    "predicate": null
+   }
+  }
+ }
+}

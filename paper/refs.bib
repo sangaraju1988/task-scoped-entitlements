@@ -1,0 +1,340 @@
+% All entries verified in-session (Crossref/OpenAlex/arXiv API/publisher page). See references-verified.md.
+
+% ---------- Least privilege, protection, access-control classics ----------
+@article{saltzer1975protection,
+  author={Saltzer, Jerome H. and Schroeder, Michael D.},
+  title={The protection of information in computer systems},
+  journal={Proceedings of the IEEE}, volume={63}, number={9}, pages={1278--1308}, year={1975},
+  doi={10.1109/PROC.1975.9939}}
+@article{dennis1966programming,
+  author={Dennis, Jack B. and Van Horn, Earl C.},
+  title={Programming semantics for multiprogrammed computations},
+  journal={Communications of the ACM}, volume={9}, number={3}, pages={143--155}, year={1966},
+  doi={10.1145/365230.365252}}
+@article{hardy1988confused,
+  author={Hardy, Norm},
+  title={The confused deputy (or why capabilities might have been invented)},
+  journal={ACM SIGOPS Operating Systems Review}, volume={22}, number={4}, pages={36--38}, year={1988},
+  doi={10.1145/54289.871709}}
+@article{sandhu1996rbac,
+  author={Sandhu, Ravi S. and Coyne, Edward J. and Feinstein, Hal L. and Youman, Charles E.},
+  title={Role-based access control models},
+  journal={Computer}, volume={29}, number={2}, pages={38--47}, year={1996},
+  doi={10.1109/2.485845}}
+@article{ferraiolo2001nist,
+  author={Ferraiolo, David F. and Sandhu, Ravi and Gavrila, Serban and Kuhn, D. Richard and Chandramouli, Ramaswamy},
+  title={Proposed {NIST} standard for role-based access control},
+  journal={ACM Transactions on Information and System Security}, volume={4}, number={3}, pages={224--274}, year={2001},
+  doi={10.1145/501978.501980}}
+@techreport{hu2014abac,
+  author={Hu, Vincent C. and Ferraiolo, David and Kuhn, Rick and Schnitzer, Adam and Sandlin, Kenneth and Miller, Robert and Scarfone, Karen},
+  title={Guide to Attribute Based Access Control ({ABAC}) Definition and Considerations},
+  institution={National Institute of Standards and Technology}, number={SP 800-162}, year={2014},
+  doi={10.6028/NIST.SP.800-162}}
+@techreport{nist80053r5,
+  author={{Joint Task Force}},
+  title={Security and Privacy Controls for Information Systems and Organizations},
+  institution={National Institute of Standards and Technology}, number={SP 800-53 Rev. 5}, year={2020},
+  doi={10.6028/NIST.SP.800-53r5}}
+
+% ---------- Database access control, query modification ----------
+@article{griffiths1976authorization,
+  author={Griffiths, Patricia P. and Wade, Bradford W.},
+  title={An authorization mechanism for a relational database system},
+  journal={ACM Transactions on Database Systems}, volume={1}, number={3}, pages={242--255}, year={1976},
+  doi={10.1145/320473.320482}}
+@inproceedings{stonebraker1975query,
+  author={Stonebraker, Michael},
+  title={Implementation of integrity constraints and views by query modification},
+  booktitle={Proc. ACM SIGMOD Int. Conf. Management of Data}, pages={65--78}, year={1975},
+  doi={10.1145/500080.500091}}
+@inproceedings{rizvi2004extending,
+  author={Rizvi, Shariq and Mendelzon, Alberto and Sudarshan, S. and Roy, Prasan},
+  title={Extending query rewriting techniques for fine-grained access control},
+  booktitle={Proc. ACM SIGMOD Int. Conf. Management of Data}, pages={551--562}, year={2004},
+  doi={10.1145/1007568.1007631}}
+@inproceedings{kabra2006redundancy,
+  author={Kabra, Govind and Ramamurthy, Ravishankar and Sudarshan, S.},
+  title={Redundancy and information leakage in fine-grained access control},
+  booktitle={Proc. ACM SIGMOD Int. Conf. Management of Data}, pages={133--144}, year={2006},
+  doi={10.1145/1142473.1142489}}
+@article{bertino2005database,
+  author={Bertino, Elisa and Sandhu, Ravi},
+  title={Database security---concepts, approaches, and challenges},
+  journal={IEEE Transactions on Dependable and Secure Computing}, volume={2}, number={1}, pages={2--19}, year={2005},
+  doi={10.1109/TDSC.2005.9}}
+@inproceedings{miklau2004formal,
+  author={Miklau, Gerome and Suciu, Dan},
+  title={A formal analysis of information disclosure in data exchange},
+  booktitle={Proc. ACM SIGMOD Int. Conf. Management of Data}, pages={575--586}, year={2004},
+  doi={10.1145/1007568.1007633}}
+@misc{pgrls,
+  author={{The PostgreSQL Global Development Group}},
+  title={{PostgreSQL} 16 Documentation, Section 5.8: Row Security Policies},
+  howpublished={\url{https://www.postgresql.org/docs/16/ddl-rowsecurity.html}}, note={Accessed: Nov. 26, 2026}, year={2026}}
+@misc{pgsecbarrier,
+  author={{The PostgreSQL Global Development Group}},
+  title={{PostgreSQL} 16 Documentation, Section 41.5: Rules and Privileges (security\_barrier views)},
+  howpublished={\url{https://www.postgresql.org/docs/16/rules-privileges.html}}, note={Accessed: Nov. 26, 2026}, year={2026}}
+@misc{pggrant,
+  author={{The PostgreSQL Global Development Group}},
+  title={{PostgreSQL} 16 Documentation: {GRANT}},
+  howpublished={\url{https://www.postgresql.org/docs/16/sql-grant.html}}, note={Accessed: Nov. 26, 2026}, year={2026}}
+@misc{oraclevpd,
+  author={{Oracle Corporation}},
+  title={Oracle Database Security Guide 19c: Using Oracle Virtual Private Database to Control Data Access},
+  howpublished={\url{https://docs.oracle.com/en/database/oracle/oracle-database/19/dbseg/using-oracle-vpd-to-control-data-access.html}}, note={Accessed: Nov. 26, 2026}, year={2026}}
+
+% ---------- Views, query containment, complexity ----------
+@inproceedings{chandra1977optimal,
+  author={Chandra, Ashok K. and Merlin, Philip M.},
+  title={Optimal implementation of conjunctive queries in relational data bases},
+  booktitle={Proc. 9th Annu. ACM Symp. Theory of Computing (STOC)}, pages={77--90}, year={1977},
+  doi={10.1145/800105.803397}}
+@inproceedings{levy1995answering,
+  author={Levy, Alon Y. and Mendelzon, Alberto O. and Sagiv, Yehoshua},
+  title={Answering queries using views},
+  booktitle={Proc. 14th ACM SIGACT-SIGMOD-SIGART Symp. Principles of Database Systems (PODS)}, pages={95--104}, year={1995},
+  doi={10.1145/212433.220198}}
+@article{halevy2001answering,
+  author={Halevy, Alon Y.},
+  title={Answering queries using views: A survey},
+  journal={The VLDB Journal}, volume={10}, number={4}, pages={270--294}, year={2001},
+  doi={10.1007/s007780100054}}
+
+% ---------- Inference / statistical database security ----------
+@article{denning1979tracker,
+  author={Denning, Dorothy E. and Denning, Peter J. and Schwartz, Mayer D.},
+  title={The tracker: A threat to statistical database security},
+  journal={ACM Transactions on Database Systems}, volume={4}, number={1}, pages={76--96}, year={1979},
+  doi={10.1145/320064.320069}}
+@article{adam1989security,
+  author={Adam, Nabil R. and Wortmann, John C.},
+  title={Security-control methods for statistical databases: A comparative study},
+  journal={ACM Computing Surveys}, volume={21}, number={4}, pages={515--556}, year={1989},
+  doi={10.1145/76894.76895}}
+
+% ---------- Purpose-based / privacy-by-design databases ----------
+@inproceedings{agrawal2002hippocratic,
+  author={Agrawal, Rakesh and Kiernan, Jerry and Srikant, Ramakrishnan and Xu, Yirong},
+  title={Hippocratic databases},
+  booktitle={Proc. 28th Int. Conf. Very Large Data Bases (VLDB)}, pages={143--154}, year={2002},
+  doi={10.1016/B978-155860869-6/50021-4}}
+@inproceedings{lefevre2004limiting,
+  author={LeFevre, Kristen and Agrawal, Rakesh and Ercegovac, Vuk and Ramakrishnan, Raghu and Xu, Yirong and DeWitt, David},
+  title={Limiting disclosure in {H}ippocratic databases},
+  booktitle={Proc. 30th Int. Conf. Very Large Data Bases (VLDB)}, pages={108--119}, year={2004},
+  doi={10.1016/B978-012088469-8.50013-9}}
+@article{byun2008purpose,
+  author={Byun, Ji-Won and Li, Ninghui},
+  title={Purpose based access control for privacy protection in relational database systems},
+  journal={The VLDB Journal}, volume={17}, number={4}, pages={603--619}, year={2008},
+  doi={10.1007/s00778-006-0023-0}}
+@inproceedings{barth2006contextual,
+  author={Barth, Adam and Datta, Anupam and Mitchell, John C. and Nissenbaum, Helen},
+  title={Privacy and contextual integrity: Framework and applications},
+  booktitle={Proc. IEEE Symp. Security and Privacy}, pages={184--198}, year={2006},
+  doi={10.1109/SP.2006.32}}
+@misc{gdpr2016,
+  author={{European Parliament and Council of the European Union}},
+  title={Regulation ({EU}) 2016/679 (General Data Protection Regulation), Art. 5(1)(c) (data minimisation)},
+  howpublished={Official Journal of the European Union, L 119, \url{https://eur-lex.europa.eu/eli/reg/2016/679/oj}}, year={2016}}
+
+% ---------- Prompt injection and agent security ----------
+@inproceedings{greshake2023not,
+  author={Greshake, Kai and Abdelnabi, Sahar and Mishra, Shailesh and Endres, Christoph and Holz, Thorsten and Fritz, Mario},
+  title={Not what you've signed up for: Compromising real-world {LLM}-integrated applications with indirect prompt injection},
+  booktitle={Proc. 16th ACM Workshop on Artificial Intelligence and Security (AISec)}, pages={79--90}, year={2023},
+  doi={10.1145/3605764.3623985}}
+@inproceedings{liu2024formalizing,
+  author={Liu, Yupei and Jia, Yuqi and Geng, Runpeng and Jia, Jinyuan and Gong, Neil Zhenqiang},
+  title={Formalizing and benchmarking prompt injection attacks and defenses},
+  booktitle={Proc. 33rd USENIX Security Symposium}, year={2024},
+  note={\url{https://www.usenix.org/conference/usenixsecurity24/presentation/liu-yupei}}}
+@inproceedings{debenedetti2024agentdojo,
+  author={Debenedetti, Edoardo and Zhang, Jie and Balunovi{\'c}, Mislav and Beurer-Kellner, Luca and Fischer, Marc and Tram{\`e}r, Florian},
+  title={{AgentDojo}: A dynamic environment to evaluate prompt injection attacks and defenses for {LLM} agents},
+  booktitle={Advances in Neural Information Processing Systems 37 (Datasets and Benchmarks Track)}, pages={82895--82920}, year={2024},
+  doi={10.52202/079017-2636}}
+@inproceedings{zhan2024injecagent,
+  author={Zhan, Qiusi and Liang, Zhixiang and Ying, Zifan and Kang, Daniel},
+  title={{InjecAgent}: Benchmarking indirect prompt injections in tool-integrated large language model agents},
+  booktitle={Findings of the Association for Computational Linguistics: ACL 2024}, pages={10471--10506}, year={2024},
+  doi={10.18653/v1/2024.findings-acl.624}}
+@inproceedings{zhang2025asb,
+  author={Zhang, Hanrong and Huang, Jingyuan and Mei, Kai and Yao, Yifei and Wang, Zhenting and Zhan, Chenlu and Wang, Hongwei and Zhang, Yongfeng},
+  title={Agent Security Bench ({ASB}): Formalizing and benchmarking attacks and defenses in {LLM}-based agents},
+  booktitle={Proc. Int. Conf. Learning Representations (ICLR)}, year={2025},
+  note={arXiv:2410.02644}}
+@inproceedings{pedro2025prompt,
+  author={Pedro, Rodrigo and Coimbra, Miguel E. and Castro, Daniel and Carreira, Paulo and Santos, Nuno},
+  title={Prompt-to-{SQL} injections in {LLM}-integrated web applications: Risks and defenses},
+  booktitle={Proc. IEEE/ACM 47th Int. Conf. Software Engineering (ICSE)}, pages={1768--1780}, year={2025},
+  doi={10.1109/ICSE55347.2025.00007}}
+@inproceedings{debenedetti2026camel,
+  author={Debenedetti, Edoardo and Shumailov, Ilia and Fan, Tianqi and Hayes, Jamie and Carlini, Nicholas and Fabian, Daniel and Kern, Christoph and Shi, Chongyang and Terzis, Andreas and Tram{\`e}r, Florian},
+  title={Defeating prompt injections by design},
+  booktitle={Proc. IEEE Conf. Secure and Trustworthy Machine Learning (SaTML)}, pages={587--618}, year={2026},
+  doi={10.1109/SaTML68715.2026.00040}}
+@misc{costa2025fides,
+  author={Costa, Manuel and K{\"o}pf, Boris and Kolluri, Aashish and Paverd, Andrew and Russinovich, Mark and Salem, Ahmed and Tople, Shruti and Wutschitz, Lukas and Zanella-B{\'e}guelin, Santiago},
+  title={Securing {AI} agents with information-flow control},
+  howpublished={arXiv:2505.23643}, year={2025}}
+@inproceedings{wu2025isolategpt,
+  author={Wu, Yuhao and Roesner, Franziska and Kohno, Tadayoshi and Zhang, Ning and Iqbal, Umar},
+  title={{IsolateGPT}: An execution isolation architecture for {LLM}-based agentic systems},
+  booktitle={Proc. Network and Distributed System Security Symp. (NDSS)}, year={2025},
+  note={arXiv:2403.04960}}
+@misc{kim2025pfi,
+  author={Kim, Juhee and Choi, Woohyuk and Lee, Byoungyoung},
+  title={Prompt flow integrity to prevent privilege escalation in {LLM} agents},
+  howpublished={arXiv:2503.15547}, year={2025}}
+@inproceedings{yao2023react,
+  author={Yao, Shunyu and Zhao, Jeffrey and Yu, Dian and Du, Nan and Shafran, Izhak and Narasimhan, Karthik and Cao, Yuan},
+  title={{ReAct}: Synergizing reasoning and acting in language models},
+  booktitle={Proc. Int. Conf. Learning Representations (ICLR)}, year={2023},
+  note={arXiv:2210.03629}}
+@inproceedings{ruan2024toolemu,
+  author={Ruan, Yangjun and Dong, Honghua and Wang, Andrew and Pitis, Silviu and Zhou, Yongchao and Ba, Jimmy and Dubois, Yann and Maddison, Chris J. and Hashimoto, Tatsunori},
+  title={Identifying the risks of {LM} agents with an {LM}-emulated sandbox},
+  booktitle={Proc. Int. Conf. Learning Representations (ICLR)}, year={2024},
+  note={arXiv:2309.15817}}
+
+% ---------- Agent least privilege and authorization ----------
+@misc{zhu2025miniscope,
+  author={Zhu, Jinhao and Huang, Xiao and Tseng, Kevin and Vernik, Gil and others},
+  title={{MiniScope}: Authorizing agents with least-privilege permissions},
+  howpublished={arXiv:2512.11147}, year={2025}}
+@misc{shi2025progent,
+  author={Shi, Tianneng and He, Jingxuan and Wang, Zhun and Li, Hongwei and others},
+  title={{Progent}: Securing {AI} agents with privilege control},
+  howpublished={arXiv:2504.11703}, year={2025}}
+@misc{cai2025agentsentry,
+  author={Cai, Yifeng and Wang, Ziming and Deng, Zhaomeng and Yao, Mengyu and others},
+  title={Who grants the agent power? {Defending} against instruction injection via task-centric access control},
+  howpublished={arXiv:2510.26212}, year={2025}}
+@misc{zhu2026igac,
+  author={Zhu, Genliang and Wang, Chu},
+  title={Intent-governed tool authorization for {AI} agents},
+  howpublished={arXiv:2606.22916}, year={2026}}
+@misc{zheng2026intentcap,
+  author={Zheng, Yusheng and Zhang, Wenhui and Mao, Yu and others},
+  title={{LLM} agent capabilities should follow task intent and context source},
+  howpublished={arXiv:2609.14631}, year={2026}}
+@misc{zhang2025principles,
+  author={Zhang, Kaiyuan and Su, Zian and Chen, Pin-Yu and Bertino, Elisa and others},
+  title={{LLM} agents should employ security principles},
+  howpublished={arXiv:2505.24019}, year={2025}}
+@misc{sharma2026ac4a,
+  author={Sharma, Reshabh K. and Grossman, Dan},
+  title={{AC4A}: Access control for agents},
+  howpublished={arXiv:2603.20933}, year={2026}}
+@misc{li2025vision,
+  author={Li, Xinfeng and Huang, Dong and Li, Jie and Cai, Hongyi and others},
+  title={A vision for access control in {LLM}-based agent systems},
+  howpublished={arXiv:2510.11108}, year={2025}}
+@misc{surapani2026authz,
+  author={Surapani, Rakesh Kumar and Kakitapelli, Pradeep Kumar Dolabehera and Morampudi, Arun and Padi, Praveena},
+  title={Authorization architectures for tool-using {AI} agents},
+  howpublished={arXiv:2609.15906}, year={2026}}
+@inproceedings{yang2026lowerpriv,
+  author={Yang, Kaiyue and Bu, Yuyan and Yi, Jingwei and Wang, Yuchi and Zhou, Biyu and Dai, Juntao and Hu, Songlin and Yang, Yaodong},
+  title={When lower privileges suffice: Investigating over-privileged tool selection in {LLM} agents},
+  booktitle={Findings of the Association for Computational Linguistics: EMNLP 2026}, pages={43846--43867}, year={2026},
+  doi={10.18653/2026.findings-emnlp.2059}}
+@misc{lahjouji2026know,
+  author={Lahjouji, Nada and Colaco, Ashwin Gerard},
+  title={Agents that know too much: A data-centric survey of privacy in {LLM} agents},
+  howpublished={arXiv:2606.26627}, year={2026}}
+
+% ---------- Text-to-SQL ----------
+@inproceedings{yu2018spider,
+  author={Yu, Tao and Zhang, Rui and Yang, Kai and Yasunaga, Michihiro and Wang, Dongxu and Li, Zifan and Ma, James and Li, Irene and Yao, Qingning and Roman, Shanelle and Zhang, Zilin and Radev, Dragomir},
+  title={Spider: A large-scale human-labeled dataset for complex and cross-domain semantic parsing and text-to-{SQL} task},
+  booktitle={Proc. Conf. Empirical Methods in Natural Language Processing (EMNLP)}, pages={3911--3921}, year={2018},
+  doi={10.18653/v1/D18-1425}}
+@inproceedings{li2023bird,
+  author={Li, Jinyang and Hui, Binyuan and Qu, Ge and Yang, Jiaxi and Li, Binhua and Li, Bowen and Wang, Bailin and Qin, Bowen and Geng, Ruiying and Huo, Nan and Zhou, Xuanhe and Ma, Chenhao and Li, Guoliang and Chang, Kevin C. C. and Huang, Fei and Cheng, Reynold and Li, Yongbin},
+  title={Can {LLM} already serve as a database interface? {A} {BIg} bench for large-scale database grounded text-to-{SQLs}},
+  booktitle={Advances in Neural Information Processing Systems 36 (Datasets and Benchmarks Track)}, pages={42330--42357}, year={2023},
+  doi={10.52202/075280-1835}}
+@misc{birdminidev2026,
+  author={{BIRD Team}},
+  title={{BIRD-SQL} Mini-Dev (2026 update, release ``Mini-Dev 1024'', revision colleague\_review\_fixes\_20261025)},
+  howpublished={\url{https://huggingface.co/datasets/birdsql/bird_mini_dev}}, note={Accessed: Nov. 26, 2026; CC BY-SA 4.0}, year={2026}}
+@inproceedings{zhong2020semantic,
+  author={Zhong, Ruiqi and Yu, Tao and Klein, Dan},
+  title={Semantic evaluation for text-to-{SQL} with distilled test suites},
+  booktitle={Proc. Conf. Empirical Methods in Natural Language Processing (EMNLP)}, pages={396--411}, year={2020},
+  doi={10.18653/v1/2020.emnlp-main.29}}
+@inproceedings{wang2020ratsql,
+  author={Wang, Bailin and Shin, Richard and Liu, Xiaodong and Polozov, Oleksandr and Richardson, Matthew},
+  title={{RAT-SQL}: Relation-aware schema encoding and linking for text-to-{SQL} parsers},
+  booktitle={Proc. 58th Annu. Meeting of the Association for Computational Linguistics (ACL)}, pages={7567--7578}, year={2020},
+  doi={10.18653/v1/2020.acl-main.677}}
+@inproceedings{lei2020reexamining,
+  author={Lei, Wenqiang and Wang, Weixin and Ma, Zhixin and Gan, Tian and Lu, Wei and Kan, Min-Yen and Chua, Tat-Seng},
+  title={Re-examining the role of schema linking in text-to-{SQL}},
+  booktitle={Proc. Conf. Empirical Methods in Natural Language Processing (EMNLP)}, pages={6943--6954}, year={2020},
+  doi={10.18653/v1/2020.emnlp-main.564}}
+@inproceedings{li2023resdsql,
+  author={Li, Haoyang and Zhang, Jing and Li, Cuiping and Chen, Hong},
+  title={{RESDSQL}: Decoupling schema linking and skeleton parsing for text-to-{SQL}},
+  booktitle={Proc. AAAI Conf. Artificial Intelligence}, volume={37}, number={11}, pages={13067--13075}, year={2023},
+  doi={10.1609/aaai.v37i11.26535}}
+@inproceedings{pourreza2023dinsql,
+  author={Pourreza, Mohammadreza and Rafiei, Davood},
+  title={{DIN-SQL}: Decomposed in-context learning of text-to-{SQL} with self-correction},
+  booktitle={Advances in Neural Information Processing Systems 36}, pages={36339--36348}, year={2023},
+  doi={10.52202/075280-1577}}
+@article{gao2024dailsql,
+  author={Gao, Dawei and Wang, Haibin and Li, Yaliang and Sun, Xiuyu and Qian, Yichen and Ding, Bolin and Zhou, Jingren},
+  title={Text-to-{SQL} empowered by large language models: A benchmark evaluation},
+  journal={Proceedings of the VLDB Endowment}, volume={17}, number={5}, pages={1132--1145}, year={2024},
+  doi={10.14778/3641204.3641221}}
+@article{fei2026rbac,
+  author={Fei, Yang and Jiang, Yangfan and Yang, Yin and Xiao, Xiaokui},
+  title={Benchmarking text-to-{SQL} under role-based access control},
+  journal={Proceedings of the ACM on Management of Data}, volume={4}, number={4}, year={2026},
+  doi={10.1145/3837098}}
+@inproceedings{klisura2026role,
+  author={Klisura, {\DJ}or{\dj}e and Khoury, Joseph and Kundu, Ashish and Krishnan, Ram and Rios, Anthony},
+  title={Role-conditioned refusals: Evaluating access control reasoning in large language models},
+  booktitle={Findings of the Association for Computational Linguistics: EACL 2026}, pages={6018--6034}, year={2026},
+  doi={10.18653/v1/2026.findings-eacl.316}}
+@inproceedings{miyamoto2026pccsql,
+  author={Miyamoto, Ryoto and Fan, Xin and Yamana, Hayato},
+  title={Policy-conditioned constrained decoding for column-level access control in text-to-{SQL}},
+  booktitle={Proc. 15th Int. Joint Conf. Natural Language Processing and Asia-Pacific Chapter of the ACL (IJCNLP-AACL)}, pages={5377--5391}, year={2026},
+  doi={10.18653/2026.aacl-long.239}}
+@misc{abedini2025masksql,
+  author={Abedini, Sepideh and Mohapatra, Shubhankar and Emerson, D. B. and Shafieinejad, Masoumeh and others},
+  title={{MaskSQL}: Safeguarding privacy for {LLM}-based text-to-{SQL} via abstraction},
+  howpublished={arXiv:2509.23459}, year={2025}}
+@article{kim2026securemcp,
+  author={Kim, Wonbae and Yoo, Hee-Kyong and Moon, Nammee},
+  title={{SecureMCP}: Policy-enforced defense against prompt injection in {LLM}-generated {SQL} for {AIoT} databases},
+  journal={Applied Sciences}, volume={16}, number={16}, pages={7974}, year={2026},
+  doi={10.3390/app16167974}}
+
+% ---------- Statistics ----------
+@article{efron1979bootstrap,
+  author={Efron, Bradley}, title={Bootstrap methods: Another look at the jackknife},
+  journal={The Annals of Statistics}, volume={7}, number={1}, pages={1--26}, year={1979}, doi={10.1214/aos/1176344552}}
+@article{mcnemar1947note,
+  author={McNemar, Quinn}, title={Note on the sampling error of the difference between correlated proportions or percentages},
+  journal={Psychometrika}, volume={12}, number={2}, pages={153--157}, year={1947}, doi={10.1007/BF02295996}}
+@article{wilcoxon1945individual,
+  author={Wilcoxon, Frank}, title={Individual comparisons by ranking methods},
+  journal={Biometrics Bulletin}, volume={1}, number={6}, pages={80--83}, year={1945}, doi={10.2307/3001968}}
+@article{holm1979simple,
+  author={Holm, Sture}, title={A simple sequentially rejective multiple test procedure},
+  journal={Scandinavian Journal of Statistics}, volume={6}, number={2}, pages={65--70}, year={1979}}
+
+% ---------- Software ----------
+@misc{langgraph,
+  author={{LangChain, Inc.}}, title={{LangGraph} (version 1.2.24)},
+  howpublished={\url{https://github.com/langchain-ai/langgraph}}, note={Accessed: Nov. 26, 2026}, year={2026}}
+@misc{ollama,
+  author={{Ollama}}, title={Ollama (version 0.35.0)},
+  howpublished={\url{https://github.com/ollama/ollama}}, note={Accessed: Nov. 26, 2026}, year={2026}}

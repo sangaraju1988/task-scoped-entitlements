@@ -1,0 +1,14 @@
+.venv/
+pgdata/
+data/raw/
+data/.secrets.json
+logs/
+__pycache__/
+*.pyc
+.pytest_cache/
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.blg
+paper/*.bbl
+paper/template/

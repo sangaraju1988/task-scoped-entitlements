@@ -1,0 +1,81 @@
+### QUERY: all:"least privilege" AND all:"text-to-SQL"
+### QUERY: all:"task-scoped" AND all:agent AND all:database
+- 2607.22165v2 | 2026-07-24 | DBA-Bench: A Production-Fidelity Benchmark for LLM-Based Database Operations Agents | Junming Chen, Junyang Jiang, Xu Chen
+- 2604.03964v1 | 2026-04-05 | SKILLFOUNDRY: Building Self-Evolving Agent Skill Libraries from Heterogeneous Scientific Resources | Shuaike Shen, Wenduo Cheng, Mingqian Ma
+### QUERY: all:"data minimization" AND all:LLM AND all:agent
+- 2503.09780v3 | 2025-03-12 | AgentDAM: Privacy Leakage Evaluation for Autonomous Web Agents | Arman Zharmagambetov, Chuan Guo, Ivan Evtimov
+- 2410.11876v3 | 2024-10-10 | Rescriber: Smaller-LLM-Powered User-Led Data Minimization for LLM-Based Chatbots | Jijie Zhou, Eryue Xu, Yaoyao Wu
+- 2611.22223v1 | 2026-11-17 | GapLeak: When Privacy-Preserving LLM-based Web Agents Become a Privacy Risk | Chaklam Cheong, Tiancong Cao, Qi Li
+- 2606.17114v1 | 2026-06-15 | An Evaluation of Data Leakage Risks in Tool-Using LLM Agents in Realistic Scenarios | Hankyul Baek, Jaewon Noh, Sang Seo
+- 2512.11907v1 | 2025-12-10 | Structured Personalization: Modeling Constraints as Matroids for Data-Minimal LLM Agents | Daniel Platnick, Marjan Alirezaie, Hossein Rahnama
+### QUERY: all:"purpose-based access control" AND all:LLM
+### QUERY: all:"row-level security" AND all:LLM
+- 2608.26157v1 | 2026-07-06 | GROUND: Reducing Hallucinations in LLM-Based Enterprise Analytics Through Governed Semantic Definitions | Aravind Sasidharan Pillai
+### QUERY: all:"least privilege" AND all:database AND all:agent
+- 2609.11060v1 | 2026-09-10 | Grounding Agent Memory: Environment-Probing Curation for Enterprise Agents | Susheel Suresh, Hazel Mak, Sahil Bhatnagar
+- 2605.10763v1 | 2026-05-11 | MATRA: Modeling the Attack Surface of Agentic AI Systems -- OpenClaw Case Study | Tim Van hamme, Thomas Vissers, Javier Carnerero-Cano
+### QUERY: all:"fine-grained access control" AND all:"text-to-SQL"
+### QUERY: all:"access control" AND all:"LLM agent" AND all:SQL
+- 2606.26627v1 | 2026-06-25 | Agents That Know Too Much: A Data-Centric Survey of Privacy in LLM Agents | Nada Lahjouji, Ashwin Gerard Colaco
+### QUERY: all:"dynamic views" AND all:LLM
+- 2609.09030v2 | 2026-09-08 | Answer-Distribution Trajectories: A Stochastic-Dynamics View of LLM Reasoning | Mar Gonzàlez I Català, Haitz Sáez de Ocáriz Borde, Davide Murari
+- 2611.05942v3 | 2026-11-04 | Reward Budgeting Reduces Premature Convergence in Reinforcement Learning for LLM Reasoning | Mengni Jia, Mengyu Zhou, Xiaoxi Jiang
+- 2503.04188v2 | 2025-03-06 | Measuring temporal effects of agent knowledge by date-controlled tool use | R. Patrick Xian, Qiming Cui, Stefan Bauer
+- 2510.04028v1 | 2025-10-05 | The Debate on RLVR Reasoning Capability Boundary: Shrinkage, Expansion, or Both? A Two-Stage Dynamic View | Xinhao Yao, Lu Yu, Xiaolin Hu
+### QUERY: all:"database" AND all:"least privilege" AND all:LLM
+- 2605.10763v1 | 2026-05-11 | MATRA: Modeling the Attack Surface of Agentic AI Systems -- OpenClaw Case Study | Tim Van hamme, Thomas Vissers, Javier Carnerero-Cano
+### QUERY: abs:"text-to-SQL" AND abs:"access control"
+- 2607.22115v2 | 2026-07-24 | Benchmarking Text-to-SQL under Role-Based Access Control | Yang Fei, Yangfan Jiang, Yin Yang
+- 2503.12062v1 | 2025-03-15 | Genicious: Contextual Few-shot Prompting for Insights Discovery | Vineet Kumar, Ronald Tony, Darshita Rathore
+- 2510.07642v1 | 2025-10-09 | Role-Conditioned Refusals: Evaluating Access Control Reasoning in Large Language Models | Đorđe Klisura, Joseph Khoury, Ashish Kundu
+- 2606.28387v1 | 2026-06-23 | Schema-First Retrieval: Embedding Catalogs for Natural Language Analytics | Adarsh Agrawal, Shashank Indukuri
+- 2606.26627v1 | 2026-06-25 | Agents That Know Too Much: A Data-Centric Survey of Privacy in LLM Agents | Nada Lahjouji, Ashwin Gerard Colaco
+- 2604.21413v3 | 2026-04-23 | RUBICON: Agentic AI for Messy Enterprise Data | Fabian Wenz, Felix Treutwein, Çagatay Demiralp
+### QUERY: abs:"text-to-SQL" AND abs:privacy AND abs:agent
+- 2405.16755v3 | 2024-05-27 | CHESS: Contextual Harnessing for Efficient SQL Synthesis | Shayan Talaei, Mohammadreza Pourreza, Yu-Chen Chang
+- 2606.26627v1 | 2026-06-25 | Agents That Know Too Much: A Data-Centric Survey of Privacy in LLM Agents | Nada Lahjouji, Ashwin Gerard Colaco
+- 2409.02038v3 | 2024-09-03 | BEAVER: An Enterprise Benchmark for Text-to-SQL | Peter Baile Chen, Devin Yang, Weiyue Li
+- 2404.10209v3 | 2024-04-16 | Demonstration of DB-GPT: Next Generation Data Interaction System Empowered by Large Language Models | Siqiao Xue, Danrui Qi, Caigao Jiang
+- 2506.18951v4 | 2025-06-23 | SWE-SQL: Illuminating LLM Pathways to Solve User SQL Issues in Real-World Applications | Jinyang Li, Xiaolong Li, Ge Qu
+### QUERY: abs:agent AND abs:"least privilege" AND abs:data
+- 2611.22223v1 | 2026-11-17 | GapLeak: When Privacy-Preserving LLM-based Web Agents Become a Privacy Risk | Chaklam Cheong, Tiancong Cao, Qi Li
+- 2512.11147v2 | 2025-12-11 | MiniScope: Authorizing Agents with Least-Privilege Permissions | Jinhao Zhu, Xiao Huang, Kevin Tseng
+- 2610.23078v1 | 2026-10-16 | Cryptographically Secure Agent-to-Agent Communication in Multi-Agent Systems | Karol Budzyn, Adrian Brodzik, Mateusz Szczepkowski
+- 2509.23994v2 | 2025-09-28 | Policy-as-Prompt: Turning AI Governance Rules into Guardrails for AI Agents | Gauri Kholkar, Ratinder Ahuja
+- 2605.28914v1 | 2026-05-27 | AIRGuard: Guarding Agent Actions with Runtime Authority Control | Suliu Qin, Haomin Zhuang, Yujun Zhou
+- 2607.18847v1 | 2026-07-21 | Data Leakage Prevention in Agentic Applications via Preemptive Hardening | Akansha Shukla, Emily Bellov, Parth Atulbhai Gandhi
+- 2610.35451v1 | 2026-10-26 | Then there is prompt injection, a malicious email, ...: The Wild Wide West of OpenClaw Agentic System Security | Mostafijur Rahman Akhond, Mahmuda Khatun, Gias Uddin
+- 2606.28666v2 | 2026-06-27 | Why Trust Your Agent? Empirical Security Gains from TRiSM-Guided Agentic Workflows in Healthcare | Liam Kearns
+- 2606.29142v2 | 2026-06-28 | Agent Security Meets Regulatory Reality -- A Practitioner Systematization of Autonomous-Agent Threats and Controls in Regulated Financial Systems | Krishna Mohan Guda Nagavenkata Srinivasa, Satya Phanindra Kalaga, Karthik Guda Vishnu
+- 2602.20196v1 | 2026-02-22 | OpenPort Protocol: A Security Governance Specification for AI Agent Tool Access | Genliang Zhu, Chu Wang, Ziyuan Wang
+- 2606.26479v1 | 2026-06-25 | Adaptive Evaluation of Out-of-Band Defenses Against Prompt Injection in LLM Agents | Praneeth Narisetty, Shiva Nagendra Babu Kore, Uday Kumar Reddy Kattamanchi
+- 2609.33371v1 | 2026-09-27 | API Secrets Should Never Become Tokens in the LLM's Vocabulary: A Threat Analysis of API Credential Handling in LLM Agent Systems and an Empirical Evaluation of a Vault-Mediated Execution Boundary | Patrick Kenney, Hadi Ahmadi, Denis Lusson
+### QUERY: abs:"SQL agent" AND abs:security
+### QUERY: abs:"database" AND abs:"prompt injection" AND abs:SQL
+- 2605.05260v1 | 2026-05-06 | SecureMCP: A Policy-Enforced LLM Data Access Framework for AIoT Systems via Model Context Protocol | Wonbae Kim, Hee-Kyong Yoo
+- 2308.01990v4 | 2023-08-03 | From Prompt Injections to SQL Injection Attacks: How Protected is Your LLM-Integrated Web Application? | Rodrigo Pedro, Daniel Castro, Paulo Carreira
+- 2605.10176v1 | 2026-05-11 | When Prompts Become Payloads: A Framework for Mitigating SQL Injection Attacks in Large Language Model-Driven Applications | Farzad Nourmohammadzadeh Motlagh, Mehrdad Hajizadeh, Mehryar Majd
+- 2606.26627v1 | 2026-06-25 | Agents That Know Too Much: A Data-Centric Survey of Privacy in LLM Agents | Nada Lahjouji, Ashwin Gerard Colaco
+### QUERY: abs:"scoped" AND abs:"text-to-SQL"
+- 2602.21480v4 | 2026-02-25 | Both Ends Count! Just How Good are LLM Agents at "Text-to-Big SQL"? | Germán T. Eizaguirre, Lars Tissen, Marc Sánchez-Artigas
+- 2607.22115v2 | 2026-07-24 | Benchmarking Text-to-SQL under Role-Based Access Control | Yang Fei, Yangfan Jiang, Yin Yang
+- 2402.10671v3 | 2024-02-16 | Decomposition for Enhancing Attention: Improving LLM-based Text-to-SQL through Workflow Paradigm | Yuanzhen Xie, Xinzhou Jin, Tao Xie
+- 2403.15879v6 | 2024-03-23 | TrustSQL: Benchmarking Text-to-SQL Reliability with Penalty-Based Scoring | Gyubok Lee, Woosog Chay, Seonhee Cho
+- 2406.19073v2 | 2024-06-27 | AMBROSIA: A Benchmark for Parsing Ambiguous Questions into Database Queries | Irina Saparina, Mirella Lapata
+- 2610.37728v1 | 2026-10-27 | Beyond Similarity Search: Knowledge Graph Metadata Enrichment for Enterprise Retrieval-Augmented Generation | Fakabbir Amin
+- 2512.21345v1 | 2025-12-19 | Query Carefully: Detecting the Unanswerables in Text-to-SQL Tasks | Jasmin Saxer, Isabella Maria Aigner, Luise Linzmeier
+- 2610.41472v1 | 2026-10-30 | Post-SQLFix: Property-Guided Repair of LLM-Generated SQL with Runtime Verification | Zhihao Guo, Zonghan Wu, Yilei Shao
+- 2007.15280v2 | 2020-07-30 | Photon: A Robust Cross-Domain Text-to-SQL System | Jichuan Zeng, Xi Victoria Lin, Caiming Xiong
+- 2406.00014v2 | 2024-05-22 | KU-DMIS at EHRSQL 2024:Generating SQL query via question templatization in EHR | Hajung Kim, Chanhwi Kim, Hoonick Lee
+- 2609.07629v2 | 2026-09-07 | Open Tabular Insight Extraction: Where Do We Stand, and Where Should We Go? | Daniel Gomm, Maarten de Rijke, Madelon Hulsebos
+- 2601.13111v3 | 2026-01-19 | CORE-T: COherent REtrieval of Tables for Text-to-SQL | Hassan Soliman, Vivek Gupta, Dan Roth
+### QUERY: abs:"permission" AND abs:"text-to-SQL"
+- 2605.21027v2 | 2026-05-20 | Beyond Text-to-SQL: An Agentic LLM System for Governed Enterprise Analytics APIs | Gundeep Singh, Parsa Kavehzadeh, Jing Xia
+- 2510.07642v1 | 2025-10-09 | Role-Conditioned Refusals: Evaluating Access Control Reasoning in Large Language Models | Đorđe Klisura, Joseph Khoury, Ashish Kundu
+- 2606.28387v1 | 2026-06-23 | Schema-First Retrieval: Embedding Catalogs for Natural Language Analytics | Adarsh Agrawal, Shashank Indukuri
+- 2608.26730v1 | 2026-08-27 | Knowing When Not to Reuse: Conditional Experience Transfer in Autonomous LLM Post-Training | Tingyun Li, Wenfeng Feng, Weiqing Li
+- 2611.03551v1 | 2026-11-02 | Can LLM Agents Be Forward-Deployed Engineers? Requirement Discovery and Delivery for Enterprise Text-to-SQL | Marianne Menglin Liu, Rongguang Wang, Zheng Wang
+- 2606.26627v1 | 2026-06-25 | Agents That Know Too Much: A Data-Centric Survey of Privacy in LLM Agents | Nada Lahjouji, Ashwin Gerard Colaco
+### QUERY: abs:"data agent" AND abs:"access control"
+- 2606.26627v1 | 2026-06-25 | Agents That Know Too Much: A Data-Centric Survey of Privacy in LLM Agents | Nada Lahjouji, Ashwin Gerard Colaco
+- 2605.09822v1 | 2026-05-10 | Oracle Poisoning: Corrupting Knowledge Graphs to Weaponise AI Agent Reasoning | Ben Kereopa-Yorke, Guillermo Diaz, Holly Wright
