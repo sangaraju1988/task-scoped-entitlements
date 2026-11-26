@@ -165,16 +165,29 @@ class Broker:
 
 
 def cleanup_orphan_roles():
-    """Drop task roles whose schema no longer exists in any database (global, run as setup superuser)."""
+    """Drop task roles left behind by aborted batches (global; run as setup superuser, no batch active).
+    DROP OWNED BY in every database revokes privileges granted to the role there (incl. by the broker)."""
     with connect("postgres") as c:
         roles = [r[0] for r in c.execute("select rolname from pg_roles where rolname ~ '^tse_[rl]_[0-9a-f]{12}$'").fetchall()]
-        dbs = [r[0] for r in c.execute("select datname from pg_database where not datistemplate").fetchall()]
-        for r in sorted(roles, key=lambda x: x[4] != "l"):  # logins first
-            for d in dbs:
-                try:
-                    c.execute(f"REVOKE ALL ON DATABASE {qident(d)} FROM {r}")
-                except Exception:
-                    pass
+        dbs = [r[0] for r in c.execute("select datname from pg_database where not datistemplate and datallowconn").fetchall()]
+    if not roles:
+        return 0
+    for d in dbs:
+        with connect(d) as c:
+            for r in roles:
+                c.execute(f"DROP OWNED BY {r}")
+    with connect("postgres") as c:
+        # database-level privileges granted by the broker are not removed by DROP OWNED; revoke them explicitly
+        acls = c.execute("select datname, datacl::text from pg_database where datacl is not null").fetchall()
+    sec = get_secrets()
+    for d, acl in acls:
+        hit = [r for r in roles if f"{r}=" in acl]
+        if hit:
+            with connect(d, user=config.BROKER_ROLE, password=sec["broker"]) as bc:  # grantor must revoke
+                for r in hit:
+                    bc.execute(f"REVOKE ALL ON DATABASE {qident(d)} FROM {r}")
+    with connect("postgres") as c:
+        for r in sorted(roles, key=lambda x: x[4] != "l"):
             c.execute("select pg_terminate_backend(pid) from pg_stat_activity where usename=%s", (r,))
             c.execute(f"DROP ROLE IF EXISTS {r}")
-        return len(roles)
+    return len(roles)
