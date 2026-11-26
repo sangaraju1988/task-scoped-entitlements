@@ -55,6 +55,7 @@ def main():
     ap.add_argument("--injection", default=None, help="eval/injections.jsonl key mode (context|dbfield|widen)")
     ap.add_argument("--out", default=None)
     ap.add_argument("--workers", type=int, default=1)
+    ap.add_argument("--require-proposals", action="store_true", help="skip tasks whose scope proposal is not cached yet (incremental runs)")
     a = ap.parse_args()
 
     tasks = load_tasks(); prep = load_prep(); byid = {t["task_id"]: t for t in tasks}
@@ -75,7 +76,13 @@ def main():
         inj = {json.loads(l)["task_id"]: json.loads(l) for l in open(os.path.join(config.RESULTS, f"injections_{a.injection}.jsonl"))}
         sel = [t for t in sel if t["task_id"] in inj]
     cells = [tuple(c.split("/")) for c in a.cells.split(",")]
-    cellmap = assign_cells(sel, cells)
+    cellmap = assign_cells(sel, cells)  # assigned on the FULL selection so incremental runs keep the same cells
+    if a.require_proposals:
+        from eval.common import proposals as _props
+        v = VARIANTS[a.variant]
+        have = _props(v["model"], v["pvar"])
+        sel = [t for t in sel if t["task_id"] in have]
+        print("tasks with cached proposals:", len(sel), flush=True)
     conds = a.conditions.split(",")
     seeds = [int(s) for s in a.seeds.split(",")]
     out = a.out or os.path.join(config.RESULTS, f"runs_{a.exp}.jsonl")

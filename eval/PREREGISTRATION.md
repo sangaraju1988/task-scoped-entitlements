@@ -138,3 +138,7 @@ Secondary analyses are labelled exploratory.
   one broker connection per database visited). Runs whose record carries a connection error (545 records incl. the
   61 incident-I1 B1 records) were deleted and re-executed with the same run ids; the runner now keeps one broker
   connection per worker and max_connections was raised to 500. No result-dependent selection was involved.
+* **D4 (2026-11-26 15:58, exploratory addition).** Interim inspection of E5a showed that residual TSE exfiltration
+  arose through approved widening (agents requested the canary column on their own). We add an *exploratory* E5a arm,
+  TSE with widening policy `deny` (Haiku 5.5 and Sonnet 5.5, same tasks), to quantify exfiltration without approval.
+  It is reported as exploratory and does not replace any preregistered analysis.
