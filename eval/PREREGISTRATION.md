@@ -134,3 +134,7 @@ Secondary analyses are labelled exploratory.
   used broker-compiled scopes (B1) are deleted and re-executed with the same run ids. The sweep is now only run
   when no batch is active.
 
+* **Incident I2 (2026-11-26 ~15:10 local).** Batches exhausted PostgreSQL's 200-connection limit (each worker held
+  one broker connection per database visited). Runs whose record carries a connection error (545 records incl. the
+  61 incident-I1 B1 records) were deleted and re-executed with the same run ids; the runner now keeps one broker
+  connection per worker and max_connections was raised to 500. No result-dependent selection was involved.
