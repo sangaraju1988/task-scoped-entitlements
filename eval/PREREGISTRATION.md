@@ -145,3 +145,13 @@ Secondary analyses are labelled exploratory.
 * **Note on the repeated-run study.** Claude models reject sampling parameters (Section 3), so the "seeds 1,2,3" runs
   of Haiku 5.5 are three independent repetitions at the model's default sampling; they measure run-to-run variance,
   not temperature-0.7 seed variance as planned for local models.
+* **D5 (2026-11-26, compute time, decided before any open-weight agent run on evaluation tasks).** Local 8B agents
+  take minutes per run on the test laptop, so the open-weight arm (cells qwen3:8b/react, qwen3:8b/lg,
+  qwen2.5-coder:7b/react; B0, B3, TSE) runs on a 200-task stratified subset (`eval/subset_local_200.txt`) instead of
+  the full design. The >=1,000-runs-per-main-condition requirement is met within the Haiku 5.5 and Sonnet 5.5 arms;
+  open-weight results are reported as a secondary, smaller-sample arm and no claim relies on them alone.
+  Because a local run takes about 5 minutes (measured on one smoke-test task, not an evaluation result), the arm is
+  additionally **deadline-bounded**: tasks are processed in a fixed random order of the subset
+  (`eval/subset_local_200_order.txt`, seed 20261127), all three conditions of a task in sequence, and the run is
+  stopped at 2026-11-27 12:00 IST regardless of results. Only tasks with all three conditions completed are
+  analysed; the achieved n is reported.

@@ -55,6 +55,7 @@ def main():
     ap.add_argument("--injection", default=None, help="eval/injections.jsonl key mode (context|dbfield|widen)")
     ap.add_argument("--out", default=None)
     ap.add_argument("--workers", type=int, default=1)
+    ap.add_argument("--keep-order", action="store_true", help="process tasks in --subset file order (for deadline-bounded runs)")
     ap.add_argument("--require-proposals", action="store_true", help="skip tasks whose scope proposal is not cached yet (incremental runs)")
     a = ap.parse_args()
 
@@ -92,7 +93,8 @@ def main():
     cm = commit()
     policy = WideningPolicy(a.widen)
     # order by database so prompt prefixes are reused by the model server
-    sel = sorted(sel, key=lambda t: (t["pgdb"], t["task_id"]))
+    if not a.keep_order:
+        sel = sorted(sel, key=lambda t: (t["pgdb"], t["task_id"]))
     import threading, concurrent.futures as cf
     from tse.agents.claude_react import BudgetExceeded
     lock = threading.Lock()
