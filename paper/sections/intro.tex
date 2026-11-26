@@ -1,0 +1,74 @@
+\section{Introduction}
+\label{sec:introduction}
+
+\PARstart{L}{arge} language model (LLM) agents increasingly answer analytics questions by writing and running SQL on
+a user's behalf. Such an agent usually connects with the user's own credential, so it can read everything the user
+can read. Consider an analyst at a school district who asks an agent: \emph{``How many charter schools in Alameda
+County offer a free-meal program?''} The answer needs three columns of two tables and the rows of one county. The
+analyst's entitlement, however, covers every school, every test score and every contact field in the database. If the
+agent processes untrusted content, for example a note in a retrieved document or a text value stored in the
+database, an injected instruction can make it read and repeat data the question never needed~\cite{greshake2023not,debenedetti2024agentdojo}.
+The agent acts as a confused deputy~\cite{hardy1988confused}: it holds the user's authority for one narrow purpose but
+can be steered to use all of it.
+
+Least privilege says a subject should run with only the privileges its job needs~\cite{saltzer1975protection,dennis1966programming,nist80053r5}.
+For agents, recent systems apply this to \emph{tools}: they decide per task which tools, and sometimes which tool
+arguments, are allowed~\cite{zhu2025miniscope,shi2025progent,cai2025agentsentry,zhu2026igac,zheng2026intentcap,ruan2024toolemu}.
+For a data agent, however, the relevant tool is typically a single \texttt{run\_query} interface. Once it is allowed,
+the data the agent can reach is unchanged: still the full entitlement. Databases have long supported finer control
+through views, column grants and row-level security~\cite{stonebraker1975query,rizvi2004extending,pgrls,oraclevpd},
+and access-controlled text-to-SQL systems enforce a \emph{user's} policy~\cite{fei2026rbac,klisura2026role,miyamoto2026pccsql,kim2026securemcp}.
+Practitioners write static scoped views per role. None of these narrows the data an agent can reach to what the
+\emph{current task} needs.
+
+We propose \emph{task-scoped entitlements} (TSE). Before an agent starts, a trusted broker infers a relational scope
+from the natural-language task: which tables, columns and rows it needs. The broker compiles that scope into an
+ephemeral PostgreSQL role and \texttt{security\_barrier} views that are owned by the user's role, hands the agent a
+login for that role as its only credential, and drops everything when the task ends. Because the views are owned by
+the user's role, the database bounds them by the user's entitlement even when the inference is wrong. When the
+inferred scope is insufficient, the agent can file a structured widening request, which is bounded by the
+entitlement, decided by a policy, and logged.
+
+\subsection{Contributions}
+\begin{itemize}
+\item[\textbf{C1}] A formal model of task scopes: entitlement, task scope, needed data, sufficiency, minimality, a
+column/row/cell over-exposure ratio (OER), and a widening bound, with a design guarantee stated under explicit trust
+assumptions (Section~\ref{sec:model}).
+\item[\textbf{C2}] A scope-inference procedure that combines an LLM proposal with an automatically built semantic
+layer, deterministic schema linking, grounding of row filters in the task text, foreign-key closure, and a
+conservativeness parameter $k$ (Section~\ref{sec:inference}).
+\item[\textbf{C3}] Database enforcement independent of the model: compilation to ephemeral roles and
+\texttt{security\_barrier} views owned by the user role, with idempotent teardown (Section~\ref{sec:enforcement}).
+\item[\textbf{C4}] A controlled widening protocol that turns inference errors into bounded, auditable requests
+(Section~\ref{sec:widening}).
+\item[\textbf{C5}] A preregistered evaluation on \nTasks{} public text-to-SQL tasks (BIRD and Spider) with frontier
+and open-weight agents in two agent frameworks, four baselines, indirect prompt injection, widening abuse, and
+\bypassAttempts{} enforcement-bypass attempts (Sections~\ref{sec:setup}--\ref{sec:results}).
+\end{itemize}
+
+\subsection{Summary of findings}
+Under synthetic-policy entitlements, the default TSE scope reduces the columns an agent can reach by a factor of
+\oerColReduction{} (geometric mean) and the reachable cells by a factor of \oerCellReduction{} relative to the full
+entitlement. The scope is sufficient for the gold query on \suffTse\% of tasks; this inference quality is the
+load-bearing assumption of the approach, and we quantify it directly. With widening, execution accuracy changed by
+\dExHaikuTse{} percentage points for Claude Haiku~5.5 (95\% CI [\dExLoHaikuTse, \dExHiHaikuTse]) and by
+\dExSonnetTse{} points for Claude Sonnet~5.5 (95\% CI [\dExLoSonnetTse, \dExHiSonnetTse]) relative to full access.
+Under indirect prompt injection that targets out-of-task data, exfiltration fell from \exfSonnetCtxBzero\% (B0) to
+\exfSonnetCtxTse\% (TSE) for Sonnet~5.5 and from \exfHaikuCtxBzero\% to \exfHaikuCtxTse\% for Haiku~5.5. None of
+our \bypassAttempts{} scripted bypass attempts reached out-of-scope data. Provisioning takes \medCompile{}\,ms
+(median) and teardown \medTeardown{}\,ms.
+
+\subsection{What we do not claim}
+TSE reduces the data reachable for a task; it does not prevent all leakage. It does not protect against inference or
+aggregation over data inside the scope, covert or timing channels, exfiltration of in-scope data, a malicious
+authorized user, or a compromised broker, and table and column names remain visible in the catalog. Its benefit
+depends on two assumptions that can fail: the quality of scope inference (too narrow causes failures or widening;
+too broad reduces the benefit) and the correctness of database enforcement. Views, row-level security and query
+modification are established techniques that we use unchanged; the new parts are listed in
+Section~\ref{sec:whatsnew}. We make no claim about production readiness: the schemas are public benchmarks and the
+entitlements are synthetic.
+
+The rest of the paper is organized as follows. Section~\ref{sec:threat} states the threat model,
+Section~\ref{sec:related} positions the work, Sections~\ref{sec:model}--\ref{sec:enforcement} present the model and
+system, Sections~\ref{sec:setup}--\ref{sec:results} the evaluation, and Sections~\ref{sec:discussion}--\ref{sec:conclusion}
+discuss threats, limitations and future work.

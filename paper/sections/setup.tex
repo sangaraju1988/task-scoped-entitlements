@@ -1,0 +1,60 @@
+\section{Experimental Setup}
+\label{sec:setup}
+
+\textbf{Preregistration.} Hypotheses, datasets, sample sizes, metrics, tests and stopping rules were committed to the
+artifact repository before any model output was produced; the git history timestamps the commit. Before the freeze,
+the inference pipeline had been debugged on 16 evaluation tasks; these are listed in the preregistration. After the
+freeze we made one bug fix and two budget-driven changes, all logged with reasons (deviations D1--D3), and we report
+two infrastructure incidents whose affected runs were re-executed.
+
+\textbf{Tasks.} We use \nTasks{} tasks with gold SQL from two public benchmarks: all \nBird{} questions of BIRD
+Mini-Dev in its 2026 PostgreSQL release~\cite{birdminidev2026,li2023bird} (\nBirdChallenging{} labeled challenging),
+and \nSpider{} questions sampled from Spider dev~\cite{yu2018spider} by proportional stratification over hardness and
+database. Spider is distributed for SQLite; we load its 20 dev databases into PostgreSQL, translate gold queries with
+\texttt{sqlglot}, and keep a question only if the PostgreSQL result equals the SQLite result and is non-empty
+(\nSpiderValid{} of 1{,}034 qualify). Gold SQL defines the needed data, so over-exposure does not depend on a workload
+we designed.
+
+\textbf{Entitlements.} No released role policies were available for the RBAC benchmark of Fei et
+al.~\cite{fei2026rbac}, so we generate three roles per database with a seeded procedure: \emph{full} (everything),
+\emph{restricted} (drops columns tagged sensitive by a fixed lexical tagger plus a random 25\% of non-key columns) and
+\emph{partition} (drops sensitive columns and restricts the largest table with a categorical column to a value subset
+covering 30--70\% of its rows). The gold query is permitted under a role if its columns are granted and it returns the
+admin result when executed as that role; this holds for \permRateRestricted\% of tasks under \emph{restricted} and
+\permRatePartition\% under \emph{partition}. Each task is assigned a uniformly drawn permitted role. A separate set of
+\nNonPermitted{} tasks is paired with a role under which the gold answer is \emph{not} obtainable; there the correct
+behavior is to refuse. All numbers derived from these policies are synthetic-policy results.
+
+\textbf{Conditions.} \emph{B0}: the agent connects as the user's login proxy, with the grants and row policies of
+$E(u)$. \emph{B1}: static role views, an approximation of curated per-role reporting schemas: the union of the
+needed columns of the \emph{other} half of the tasks on the same database (2-fold cross-fitting) plus key columns,
+intersected with $E(u)$ and compiled by the same broker. This is optimistic for B1, since real curators do not have
+gold queries. \emph{B2}: tool-level task scoping, an approximation of MiniScope/Progent-style gating~\cite{zhu2025miniscope,shi2025progent}:
+a per-task allow-list is computed, but a data task needs the query tool, so B2's data reach and agent behavior equal
+B0's by construction; we therefore run B2 only in the injection experiment. \emph{B3}: prompt-level schema pruning:
+the prompt shows only the inferred $S(t)$ (with its row filters), but the agent connects with B0's credentials.
+\emph{TSE}: the inferred $S(t)$ ($k{=}1$) is compiled by the broker; the agent's only credential is the ephemeral
+login; widening policy \emph{auto}. B3 and TSE use identical scopes and prompts, so their difference isolates
+enforcement.
+
+\textbf{Models and frameworks.} Scope inference uses a local open-weight model, \texttt{qwen2.5-coder:7b}, served by
+Ollama~\cite{ollama} at temperature 0 with JSON-schema-constrained output; it sees schema text and the task, never
+data values. Ablations use \texttt{llama3.2:3b} and, as an exploratory variant, Claude Haiku 5.5. Agents are Claude
+Haiku 5.5 and Claude Sonnet 5.5 (Anthropic API, adaptive thinking, effort ``medium'', default sampling) and the
+open-weight \texttt{qwen3:8b}. They run in two harnesses with identical prompts and tools: a manual function-calling
+ReAct loop~\cite{yao2023react} and the LangGraph prebuilt ReAct agent~\cite{langgraph}. Each task is assigned one
+harness by balanced rotation within strata, and all conditions of a task run in the same model and harness, so
+comparisons are paired. Haiku 5.5 runs the full design in both harnesses; Sonnet 5.5 runs the main and injection
+experiments in the manual harness (deviation D3); \texttt{qwen3:8b} runs a 200-task subset. A dev-split check
+excluded \texttt{mistral-nemo:12b} and \texttt{llama3.2:3b} as agents because they rarely completed the tool
+protocol. Agents get at most 8 steps; query results show at most 20 rows.
+
+\textbf{Metrics and statistics.} Execution accuracy (EX) compares the result of the agent's final SQL, executed with
+its final credentials, to the gold result as sets of tuples up to column permutation~\cite{zhong2020semantic}.
+Over-exposure is defined in Section~\ref{sec:model}. We report 95\% percentile bootstrap CIs (10{,}000
+resamples)~\cite{efron1979bootstrap}, exact McNemar tests for paired binary outcomes~\cite{mcnemar1947note}, Wilcoxon
+signed-rank tests for paired OER~\cite{wilcoxon1945individual}, and Holm correction~\cite{holm1979simple} within each
+family, with effect sizes (paired differences, rank-biserial $r$).
+
+\textbf{Environment and cost.} PostgreSQL 16.16 on an Apple M4 laptop (10 cores, 24\,GB), password authentication for
+every role, \texttt{fsync} disabled (experiment cluster only). API spend for all Claude runs was US\$\apiSpend{}.

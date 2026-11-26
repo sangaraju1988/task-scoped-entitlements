@@ -1,0 +1,15 @@
+\section{Conclusion and Future Work}
+\label{sec:conclusion}
+Tool-level least privilege leaves a data agent's reach unchanged once its query tool is allowed. Task-scoped
+entitlements close that gap for relational data: a broker infers the tables, columns and rows a task needs, the
+database enforces that scope through ephemeral roles and views owned by the user's role, and a bounded widening
+protocol absorbs inference errors. On \nTasks{} public tasks, TSE reduced reachable columns by a factor of
+\oerColReduction{} and reachable cells by a factor of \oerCellReduction{} under synthetic-policy entitlements, at
+the utility cost reported in Section~\ref{sec:res-utility}, and lowered injection-driven exfiltration of
+out-of-task data. The approach depends on scope-inference quality, which we measured directly, and on the
+correctness of database enforcement, which we tested but which ultimately rests on the DBMS.
+
+Future work includes multi-step tasks whose scope evolves with intermediate results; propagating row restrictions
+along joins (semi-join reduction of related tables); scope inference for enterprise schemas with thousands of
+columns; combining TSE with information-flow control on the agent side~\cite{costa2025fides,debenedetti2026camel},
+so that in-scope data cannot flow to arbitrary sinks; and support for other database systems.

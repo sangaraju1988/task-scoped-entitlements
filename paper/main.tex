@@ -1,0 +1,74 @@
+\documentclass{ieeeaccess}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{amsthm}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\input{numbers}
+
+\begin{document}
+\history{Date of publication xxxx 00, 0000, date of current version xxxx 00, 0000.}
+\doi{10.1109/ACCESS.2026.0000000}
+
+\title{Task-Scoped Data Entitlements: Deriving and Database-Enforcing Least-Privilege Data Access for LLM Agents}
+\author{\uppercase{Venkata M Sangaraju}\authorrefmark{1}}
+\address[1]{Independent Researcher, Leander, TX 78641 USA (e-mail: sangaraju1988@gmail.com)}
+\tfootnote{This work received no external funding.}
+
+\markboth
+{Sangaraju: Task-Scoped Data Entitlements for LLM Agents}
+{Sangaraju: Task-Scoped Data Entitlements for LLM Agents}
+
+\corresp{Corresponding author: Venkata M Sangaraju (e-mail: sangaraju1988@gmail.com).}
+
+\input{sections/abstract}
+
+\begin{keywords}
+Access control, database security, large language models, least privilege, LLM agents, prompt injection,
+row-level security, text-to-SQL.
+\end{keywords}
+
+\titlepgskip=-21pt
+\maketitle
+
+\input{sections/intro}
+\input{sections/threat}
+\input{sections/related}
+\input{sections/model}
+\input{sections/method}
+\input{sections/setup}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/conclusion}
+
+\section*{Data and Code Availability}
+The implementation, preregistration, deviation log, raw run records (\texttt{eval/results/*.jsonl}), and the script that
+regenerates every table, figure and number in this paper (\texttt{eval/aggregate.py}) are available at
+\url{[REPOSITORY URL TO BE ADDED]}. BIRD Mini-Dev and Spider are public datasets (CC BY-SA 4.0); the artifact
+contains the processing scripts, not the datasets.
+
+\section*{Acknowledgment}
+The author used AI tools in preparing this work. Claude (Anthropic), via the Claude Code agent, was used to write
+and debug the experiment code and harness, to run the experiments, to search and verify the literature, and to
+draft text in all sections, which the author reviewed and edited. Claude Haiku 5.5 and Claude Sonnet 5.5 are also
+evaluated as agents in the experiments, and the open-weight models qwen2.5-coder:7b, qwen3:8b and llama3.2:3b were
+used as described in Section~\ref{sec:setup}. All results come from logged runs; the author takes responsibility for
+the content. [AUTHOR: please review and edit this disclosure.]
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\begin{IEEEbiographynophoto}{Venkata M Sangaraju}
+is an independent researcher based in Leander, Texas, USA. His research interests include access control and
+data governance for AI agents, and the reliability of LLM-based systems. [AUTHOR: please complete the biography
+(degrees, positions, memberships) and add a photograph.]
+\end{IEEEbiographynophoto}
+
+\EOD
+\end{document}
