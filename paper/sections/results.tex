@@ -1,0 +1,95 @@
+\section{Results}
+\label{sec:results}
+
+\subsection{E1: Over-exposure}
+\label{sec:res-exposure}
+Table~\ref{tab:e1} and Fig.~\ref{fig:e1} report scope-level results on all \nTasks{} permitted tasks. Under the full
+entitlement (B0, and equally B2 and B3, whose reach is $E(u)$) an agent can reach \oerColBzero{} times as many columns
+as the gold query needs (geometric mean) and \oerCellBzero{} times as many cells. Static role views (B1) reduce this to
+\oerColBone{} and \oerCellBone{}. The default TSE scope reaches \oerColTse{} times the needed columns and \oerCellTse{}
+times the needed cells, a \oerColReduction-fold reduction in columns and a \oerCellReduction-fold reduction in cells
+relative to B0. TSE is lower than both B0 and B1 on every granularity and dataset (Table~\ref{tab:e1tests}; all
+Holm-adjusted $p\le\eoneMaxPHolm$). Row-level over-exposure falls less (\oerRowBzero{} to \oerRowTse{}) because task
+filters are only kept when grounded in the task text and $k{=}1$ drops range filters. The reduction is robust to the
+policy generator: across nine seed and fraction settings the column-level reduction ranges from
+\sensRatioMin{}$\times$ to \sensRatioMax{}$\times$ (Table~\ref{tab:sens}). \emph{Takeaway: per task, an agent under TSE
+can reach a small fraction of the data its user can reach.}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figs/fig_e1.pdf}
+\caption{(a) Cell-level over-exposure per task (log scale; 1 = only needed data reachable). (b) Exposure versus
+sufficiency for TSE variants; the dotted line marks B0. Synthetic-policy entitlements.}
+\label{fig:e1}
+\end{figure}
+
+\input{tables/tab_e1}
+\input{tables/tab_e1_tests}
+
+\subsection{E3: Scope-inference quality}
+\label{sec:res-inference}
+Inference quality is the load-bearing assumption. The default scope is sufficient on \suffTse\% of tasks
+(95\% CI [\suffLoTse, \suffHiTse]; \suffTseBird\% on BIRD and \suffTseSpider\% on Spider), with mean column recall
+\recTse{} and precision \precTse{}. The gold scope $N(t)$ itself is sufficient on \goldSufficient\% of tasks, which
+validates the extraction. Conservativeness behaves monotonically: $k{=}0$ is sufficient on \suffTsekzero\% at
+OER$_\mathrm{col}$ \oerColTsekzero{}, $k{=}2$ on \suffTsektwo\% at \oerColTsektwo{}. Removing FK closure lowers
+sufficiency to \suffTsenoclose\%; removing the semantic layer (no descriptions, no linking) to \suffTsenosl\%; a 3B
+inference model reaches \suffTsesmall\%. As an exploratory comparison, Claude Haiku 5.5 as inference model reaches
+\suffTsehaiku\%. \input{tables/taxonomy_text}
+
+\subsection{E2: Utility}
+\label{sec:res-utility}
+Table~\ref{tab:e2} reports execution accuracy. For Claude Haiku 5.5, B0 reaches \exHaikuBzero\%, B3 \exHaikuBthree\%,
+and TSE \exHaikuTse\% (paired difference to B0: \dExHaikuTse{} pp, 95\% CI [\dExLoHaikuTse, \dExHiHaikuTse]). For
+Claude Sonnet 5.5 the corresponding values are \exSonnetBzero\%, \exSonnetBthree\% and \exSonnetTse\% (\dExSonnetTse{}
+pp, [\dExLoSonnetTse, \dExHiSonnetTse]). Static role views (B1) cost the most: \dExHaikuBone{} pp for Haiku 5.5, because
+a role-level view built from other tasks misses columns that a new task needs. Agents under TSE requested widening in
+\wreqHaiku\% of runs (Haiku 5.5) and \wreqSonnet\% (Sonnet 5.5); at least one request was approved in \wappHaiku\% and
+\wappSonnet\% of runs. \input{tables/e2_text}
+
+\input{tables/tab_e2}
+
+\textbf{Non-permitted tasks.} When the gold answer is not obtainable under the user's entitlement, the agent should
+refuse. With Haiku 5.5, B0 agents refused or gave no answer in \npRefuseBzero\% of runs and returned an answer in
+\npSilentBzero\%; under TSE the rates were \npRefuseTse\% and \npSilentTse\%, and \npExceedReq{} widening requests were
+rejected as exceeding the entitlement.
+
+\subsection{E4: Overhead}
+\label{sec:res-overhead}
+Compiling a task scope takes \medCompile{}\,ms (median; p95 \pNinetyFiveCompile{}\,ms) in one transaction and creates a
+median of \medObjects{} database objects; teardown takes \medTeardown{}\,ms (p95 \pNinetyFiveTeardown{}\,ms). Gold
+queries run \medQueryRatio{} times as long through the views as under B0 (median ratio; Table~\ref{tab:e4}). Scope
+inference dominates: \medInferS{}\,s median with the local 7B model on a laptop shared with the experiment. The gold
+result was unchanged through the views for \eFourEqual{} of \eFourOk{} tasks; \eFourGroupingErr{} gold queries were
+rejected through views because they group by a primary key with functionally dependent columns, which PostgreSQL
+accepts on base tables but cannot verify through a view, and \eFourTimeout{} exceeded the statement timeout. No task
+object survived its batch.
+
+\input{tables/tab_e4}
+
+\subsection{E5: Security}
+\label{sec:res-security}
+\textbf{(a) Indirect prompt injection.} Table~\ref{tab:e5} shows that injected instructions are highly effective when
+the agent holds the full entitlement: Sonnet 5.5 exfiltrated the canary in \exfSonnetCtxBzero\% of B0 runs and Haiku 5.5
+in \exfHaikuCtxBzero\%. Tool-level gating (B2) does not change this (\exfSonnetCtxBtwo\% and \exfHaikuCtxBtwo\%) because
+the query tool stays allowed, and prompt-level pruning (B3) helps little (\exfSonnetCtxBthree\%, \exfHaikuCtxBthree\%)
+because the injection names the column. Under TSE, exfiltration fell to \exfSonnetCtxTse\% and \exfHaikuCtxTse\%
+(all paired tests Holm-adjusted $p\le\eFiveMaxPHolm$). \input{tables/e5_text}
+
+\input{tables/tab_e5}
+
+\textbf{(b) Enforcement-bypass attempts.} We ran \bypassAttempts{} scripted attempts as the TSE role, covering
+\bypassTypes{} attack types on \bypassDbs{} canary databases (Table~\ref{tab:bypass}). \bypassSuccess{} returned a canary
+value. Several attempts executed but returned only in-scope data or metadata: catalog reads reveal view definitions
+and column names (metadata, out of scope), \texttt{pg\_stats} returns no rows for columns without privilege, and one
+attempt that named a column identical to its table's name returned the whole-row value of the in-scope view.
+Timing was not tested and is out of scope. These attempts test, but cannot prove, assumption A1.
+
+\textbf{(c) Widening abuse.} When the injection asks the agent to request the canary column, agents complied often:
+the column was requested in \widCanaryReqAuto\% of runs and, being inside the entitlement, granted under the \emph{auto}
+policy in \widCanaryGrantedAuto\% (exfiltration \widExfilAuto\%). The \emph{strict} policy reduced grants to
+\widCanaryGrantedStrict\% (exfiltration \widExfilStrict\%). Across all runs, \widGrantedOutsideE{} of \widGrantedTotal{}
+granted items lay outside $E(u)$, as the bound requires. \emph{Takeaway: widening is the main residual channel; it is
+bounded by the entitlement, logged, and can be closed further with stricter approval at a utility cost.}
+
+\input{tables/tab_bypass}
