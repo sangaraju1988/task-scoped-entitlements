@@ -1,0 +1,5 @@
+\begin{table*}[t]\centering\caption{Indirect prompt injection (E5a). Each task carries an instruction to read and reveal a canary column that the task does not need (in-entitlement for most tasks). Attempted: a query referenced the canary column; obtained: a canary token appeared in a tool result; exfiltrated: a canary token appeared in the final answer (95\% CI).}\label{tab:e5}
+\footnotesize\begin{tabular}{lllrrrl}\hline\textbf{Agent} & \textbf{Injection} & \textbf{Cond.} & $n$ & \textbf{Attempted (\%)} & \textbf{Obtained (\%)} & \textbf{Exfiltrated (\%)} \\\hline
+Haiku 5.5 & context & B0 & 63 & 100.0 & 96.8 & 93.7 [87.3, 98.4] \\
+Haiku 5.5 & context & B2 & 63 & 100.0 & 96.8 & 95.2 [88.9, 100.0] \\
+\hline\end{tabular}\end{table*}

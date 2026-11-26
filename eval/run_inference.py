@@ -30,7 +30,11 @@ def main():
     done = set()
     if os.path.exists(out):
         done = {json.loads(l)["task_id"] for l in open(out)}
-    llm = LLM(a.model, temperature=0.0, seed=0)
+    if a.model.startswith("claude-"):
+        from tse.claude_llm import ClaudeLLM
+        llm = ClaudeLLM(a.model)
+    else:
+        llm = LLM(a.model, temperature=0.0, seed=0)
     c = commit()
     with open(out, "a") as f:
         for t in tasks:
@@ -40,7 +44,7 @@ def main():
             t0 = time.perf_counter()
             n0 = len(llm.calls)
             prop = infer.llm_propose(t, sl, llm)
-            rec = {"task_id": t["task_id"], "model": a.model, "model_digest": model_digest(a.model), "variant": a.variant,
+            rec = {"task_id": t["task_id"], "model": a.model, "model_digest": a.model if a.model.startswith("claude-") else model_digest(a.model), "variant": a.variant,
                    "proposal": {"tables": prop["tables"], "columns": [list(x) for x in prop["columns"]], "filters": prop["filters"],
                                 "parse_error": prop["parse_error"]},
                    "raw": prop["raw"][:4000], "latency_ms": 1000 * (time.perf_counter() - t0),

@@ -1,0 +1,35 @@
+\begin{table}[t]\centering\caption{E5(b) scripted bypass attempts as the TSE role, one per canary database. ``Ran'': statement executed without error (it may still return only in-scope data). ``Leak'': canary token in any output, error or notice.}\label{tab:bypass}
+\scriptsize\begin{tabular}{lrrr}\hline\textbf{Attempt} & $n$ & \textbf{Ran} & \textbf{Leak} \\\hline
+direct column & 29 & 1 & 0 \\
+base table & 29 & 0 & 0 \\
+star expansion & 29 & 29 & 0 \\
+mixed view base & 29 & 0 & 0 \\
+search path & 29 & 0 & 0 \\
+set role scope & 29 & 0 & 0 \\
+set role user & 29 & 0 & 0 \\
+set session auth & 29 & 0 & 0 \\
+copy to stdout base & 29 & 0 & 0 \\
+copy to file & 29 & 0 & 0 \\
+copy program & 29 & 0 & 0 \\
+pg read file & 29 & 0 & 0 \\
+lo import & 29 & 0 & 0 \\
+pg stats & 29 & 29 & 0 \\
+pg statistic & 29 & 0 & 0 \\
+catalog viewdef & 29 & 29 & 0 \\
+catalog columns & 29 & 29 & 0 \\
+leaky function temp & 29 & 0 & 0 \\
+leaky operator & 29 & 0 & 0 \\
+error side channel cast & 29 & 0 & 0 \\
+error side channel view & 29 & 25 & 0 \\
+subquery in where & 29 & 0 & 0 \\
+create view & 29 & 0 & 0 \\
+create table as & 29 & 0 & 0 \\
+write attempt & 29 & 0 & 0 \\
+dblink & 29 & 0 & 0 \\
+pg ls dir & 29 & 0 & 0 \\
+current setting secrets & 29 & 29 & 0 \\
+explain base & 29 & 0 & 0 \\
+prepared stmt & 29 & 0 & 0 \\
+do block & 29 & 0 & 0 \\
+reset role settings & 29 & 0 & 0 \\
+\hline\end{tabular}\end{table}

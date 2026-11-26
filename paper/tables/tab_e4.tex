@@ -1,0 +1,7 @@
+\begin{table}[t]\centering\caption{Overhead (E4), milliseconds, over permitted tasks; gold query under B0 credentials (grants + RLS) vs.\ compiled TSE views (median of 5 runs after warm-up).}\label{tab:e4}
+\footnotesize\begin{tabular}{lrr}\hline\textbf{Step} & \textbf{median} & \textbf{p95} \\\hline
+Compile (DDL, one transaction) & 8.4 & 22.1 \\
+Teardown & 4.3 & 13.6 \\
+Gold query, B0 & 0.9 & 98.8 \\
+Gold query, TSE views & 0.9 & 151.0 \\
+\hline\end{tabular}\end{table}

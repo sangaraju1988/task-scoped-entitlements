@@ -56,6 +56,7 @@ VARIANTS = {
     "tse_noclose": dict(model=INF_MODEL_MAIN, pvar="main", k=1, linking=True, closure=False),
     "tse_nosl":   dict(model=INF_MODEL_MAIN, pvar="nodesc", k=1, linking=False, closure=True),
     "tse_small":  dict(model=INF_MODEL_SMALL, pvar="main", k=1, linking=True, closure=True),
+    "tse_haiku":  dict(model="claude-haiku-5-5", pvar="main", k=1, linking=True, closure=True),  # exploratory
 }
 
 

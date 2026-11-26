@@ -1,0 +1,79 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Threat matrix}
+Table~\ref{tab:threats} lists the attack vectors we considered, the mechanism that addresses each, its status, and
+the evidence. ``Mitigated'' means the mechanism blocks the vector under A1--A4 and our attempts to break it failed;
+``partially mitigated'' means TSE reduces the exposure but does not remove it; ``out of scope'' means TSE does
+not address it.
+
+\begin{table*}[t]
+\centering
+\caption{Threat matrix. Evidence: E-sections of this paper and unit tests (T) in the artifact.}
+\label{tab:threats}
+\footnotesize
+\begin{tabular}{p{4.1cm}p{6.6cm}p{2.3cm}p{3.2cm}}
+\hline
+\textbf{Vector} & \textbf{Mechanism / reason} & \textbf{Status} & \textbf{Evidence} \\
+\hline
+1. Injected instruction to read out-of-task columns or rows within $E(u)$ & Columns/rows outside $S(t)$ are not in the views; base tables unreadable & Mitigated & E5a (Table~\ref{tab:e5}); E5b; T \\
+2. Injected instruction to read data outside $E(u)$ & View owner $U$ lacks the privilege; B0 already blocks it & Mitigated (also by B0) & E5a (out-of-$E$ subset); T \\
+3. Injected instruction to request widening for out-of-task data & Bound $W\subseteq E(u)$; policy; budget; audit. In-entitlement requests can be approved under \emph{auto} & Partially mitigated & E5c (Section~\ref{sec:res-security}) \\
+4. Widening requests beyond $E(u)$ & Rejected by the bound check and unenforceable by the DB (view owner lacks privilege) & Mitigated & E5c (no grant outside $E(u)$); T \\
+5. Role switching (\texttt{SET ROLE}, \texttt{SET SESSION AUTHORIZATION}) & Membership \texttt{WITH SET FALSE}; no superuser & Mitigated & E5b; T \\
+6. Direct base-table access, schema-path tricks, mixing views and base tables & No \texttt{USAGE} on \texttt{public}; privileges checked per relation & Mitigated & E5b; T \\
+7. Leaky functions/operators observing filtered rows & \texttt{security\_barrier}; no \texttt{CREATE}/\texttt{TEMPORARY} & Mitigated & E5b; T (leaky-function test) \\
+8. Statistics and catalog values (\texttt{pg\_stats}, \texttt{pg\_statistic}) & \texttt{pg\_stats} filters by column privilege; \texttt{pg\_statistic} denied & Mitigated & E5b; T \\
+9. Error-message side channels & Errors arise only on in-scope data; no out-of-scope value reached in our attempts & Mitigated (tested) & E5b; T \\
+10. Server file and program access (\texttt{COPY}, \texttt{pg\_read\_file}, large objects) & Require superuser or predefined roles; read-only transactions & Mitigated & E5b; T \\
+11. Writes, DDL, persistence & Read-only transactions; no \texttt{CREATE}; ephemeral roles dropped at task end & Mitigated & E5b; E4 (cleanup) \\
+12. Schema metadata (table/column names, view definitions) & PostgreSQL exposes catalog metadata to all roles & Out of scope & E5b (catalog reads run) \\
+13. Timing and other covert channels & Not addressed & Out of scope & -- \\
+14. Inference/aggregation from in-scope data & Classic statistical-database threat~\cite{denning1979tracker} & Out of scope & -- \\
+15. Exfiltration of in-scope data & TSE limits what is reachable, not what the agent says & Partially mitigated (smaller reach) & E1 (OER) \\
+16. Malicious authorized user; compromised broker; wrong $E(u)$ & Outside A3 / beyond TSE's role & Out of scope & -- \\
+\hline
+\end{tabular}
+\end{table*}
+
+\subsection{Mitigations when the load-bearing assumptions fail}
+\emph{Inference under-scopes.} The agent hits a missing column or empty rows. Widening turns this into a
+bounded request (Section~\ref{sec:res-utility}). Operators can raise $k$, which buys sufficiency with exposure
+(Fig.~\ref{fig:e1}b), or use a stronger inference model on the broker side; the broker sees only the schema and the
+task, never data values. Showing task row filters to the agent (non-Truman transparency) avoids silently wrong
+answers over filtered rows, a failure we observed in the pilot and fixed (deviation D1).
+\emph{Inference over-scopes.} Exposure rises toward the entitlement, but correctness is unaffected; precision-oriented
+prompting and $k{=}0$ reduce it.
+\emph{Widening is abused.} Under the \emph{auto} policy an injected request for in-entitlement data can be approved;
+\emph{strict} or human approval, a smaller budget, and audit review reduce this, at a utility cost.
+\emph{DB enforcement is wrong} (A1 or A4 violated). TSE inherits the error. Our tests and the bypass catalog check
+the configuration we ship; operators should run them against their own deployment.
+
+\subsection{When TSE is not worth it}
+TSE adds an inference call (seconds with a local 7B model; Section~\ref{sec:res-overhead}) and some loss in task
+success when scopes are insufficient. It brings little benefit when the entitlement is already close to what
+tasks need, for example a narrow reporting role; when tasks legitimately scan most of the database; or when the
+agent's outputs are not exposed to any party that should not see the full entitlement. It is most useful when
+entitlements are broad, tasks are narrow, and the agent processes untrusted content.
+
+\section{Limitations}
+\label{sec:limitations}
+\emph{Benchmarks are not enterprise schemas.} BIRD and Spider databases have tens of columns and clean keys;
+enterprise warehouses have thousands of columns, sparse documentation and undeclared joins. Inference quality and
+exposure reductions may differ there.
+\emph{Synthetic policies.} Entitlements are generated by a seeded procedure, not taken from real organizations; all
+OER numbers are labeled synthetic-policy. We vary the generator (Table~\ref{tab:sens}) but cannot claim
+representativeness.
+\emph{Baselines are approximations.} B1 approximates curated role views (optimistically, from other tasks' gold
+queries); B2 approximates task-scoped tool gating; neither is the original system.
+\emph{PostgreSQL only.} The compilation uses PostgreSQL features (view ownership semantics, \texttt{security\_barrier},
+role-membership options); other DBMSs offer analogues (e.g., Oracle VPD) but we did not test them. Views also hide
+primary-key metadata, so a few queries valid on base tables are rejected through views (Section~\ref{sec:res-overhead}).
+\emph{Single-query tasks.} Each task is answered by one final query. Multi-step analyses whose later steps depend on
+earlier results would need scope evolution beyond widening.
+\emph{Models and decoding.} Claude models reject sampling parameters, so their runs are not seed-controlled; we
+quantify run-to-run variation separately. Local open-weight agents struggled with the tool protocol, which limited
+the open-weight arm.
+\emph{Pre-freeze development and deviations.} The inference pipeline was debugged on 16 evaluation tasks before
+preregistration, and three deviations were logged (one bug fix, two budget changes); all are listed in the
+artifact.
