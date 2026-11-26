@@ -1,0 +1,42 @@
+\section{Background and Threat Model}
+\label{sec:threat}
+
+\subsection{Setting}
+A user $u$ delegates an analytics task, stated in natural language, to an LLM agent. The agent answers by issuing
+SQL through a query tool. Without our mechanism, the agent's database credential carries $u$'s full
+entitlement $E(u)$ (condition B0 in our evaluation): it can read every column and row $u$ can read, regardless of
+what the task needs. The trusted broker that provisions the agent also sees the task text and the schema.
+
+\subsection{Adversary}
+The adversary wants the agent to read, and reveal, data that the current task does not need. We consider an
+adversary who can:
+\begin{enumerate}
+\item place instructions in content the agent reads: database text fields returned by queries, and documents or
+notes attached to the task context (indirect prompt injection~\cite{greshake2023not});
+\item thereby make the agent issue arbitrary SQL on its connection, including attempts to bypass enforcement
+(catalog reads, role switching, \texttt{COPY}, leaky functions, error and timing side channels);
+\item make the agent file widening requests with plausible reasons;
+\item observe the agent's final answer (the exfiltration channel we measure).
+\end{enumerate}
+The adversary cannot modify the broker, the database configuration or the user's entitlement, and holds no
+database credential of its own.
+
+\subsection{Trust assumptions}
+We rely on A1--A4 (Section~\ref{sec:assumptions}): the DBMS enforces grants, row policies, view ownership and
+\texttt{security\_barrier} correctly; the ephemeral login is the agent's only credential; the broker is trusted;
+and no involved role has bypass privileges.
+
+\subsection{In scope and out of scope}
+\textbf{In scope:} reducing the data an agent can \emph{reach} for a task, measured as over-exposure; containing
+injected requests for out-of-task data; bounding and auditing widening; and robustness of the enforcement
+against the bypass attempts listed above.
+
+\textbf{Out of scope (not protected):}
+(i)~inference and aggregation attacks that use data inside the task scope or inside $E(u)$~\cite{denning1979tracker,adam1989security};
+(ii)~covert and timing channels;
+(iii)~exfiltration of data that is inside the task scope (TSE narrows what can leak; it does not stop the agent
+from repeating in-scope data);
+(iv)~a malicious authorized user, who already holds $E(u)$;
+(v)~a compromised broker or a misconfigured entitlement $E(u)$;
+(vi)~schema metadata: table and column names are visible in the PostgreSQL catalog to every role.
+TSE therefore reduces the data reachable per task; it does not prevent all leakage.
