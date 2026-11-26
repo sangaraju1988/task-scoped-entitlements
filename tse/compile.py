@@ -123,7 +123,10 @@ class Broker:
 
     def _drop(self, schema, R, L):
         c = self.conn
-        c.execute("select pg_terminate_backend(pid) from pg_stat_activity where usename = %s", (L,))
+        try:
+            c.execute("select pg_terminate_backend(pid) from pg_stat_activity where usename = %s", (L,))
+        except Exception:
+            pass
         c.execute(f"DROP SCHEMA IF EXISTS {qident(schema)} CASCADE")
         for role in (L, R):
             if c.execute("select 1 from pg_roles where rolname=%s", (role,)).fetchone():

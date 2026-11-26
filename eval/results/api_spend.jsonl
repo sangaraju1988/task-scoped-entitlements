@@ -1,0 +1,426 @@
+{"t": 1795684041.138467, "model": "claude-haiku-5-5", "tag": "bird-0", "usd": 0.00048965, "input": 4, "cache_write": 2466, "cache_read": 0, "output": 362}
+{"t": 1795684042.840708, "model": "claude-haiku-5-5", "tag": "bird-0", "usd": 0.000348235, "input": 2, "cache_write": 1167, "cache_read": 2466, "output": 355}
+{"t": 1795684046.796681, "model": "claude-haiku-5-5", "tag": "bird-0|lg", "usd": 0.0010053}
+{"t": 1795684049.14959, "model": "claude-haiku-5-5", "tag": "bird-0", "usd": 0.000436025, "input": 4, "cache_write": 1549, "cache_read": 0, "output": 484}
+{"t": 1795684050.7751281, "model": "claude-haiku-5-5", "tag": "bird-0", "usd": 0.00027144, "input": 2, "cache_write": 986, "cache_read": 1549, "output": 265}
+{"t": 1795684053.846863, "model": "claude-haiku-5-5", "tag": "bird-0|lg", "usd": 0.0006387}
+{"t": 1795684100.733933, "model": "claude-haiku-5-5", "tag": "bird-13", "usd": 0.00047714999999999997, "input": 4, "cache_write": 2854, "cache_read": 0, "output": 240}
+{"t": 1795684100.96726, "model": "claude-haiku-5-5", "tag": "bird-10", "usd": 0.00047115, "input": 4, "cache_write": 2810, "cache_read": 0, "output": 239}
+{"t": 1795684101.000222, "model": "claude-haiku-5-5", "tag": "bird-11", "usd": 0.000520525, "input": 4, "cache_write": 2965, "cache_read": 0, "output": 299}
+{"t": 1795684102.5364969, "model": "claude-haiku-5-5", "tag": "bird-10", "usd": 0.00020455, "input": 2, "cache_write": 294, "cache_read": 2810, "output": 279}
+{"t": 1795684102.730788, "model": "claude-haiku-5-5", "tag": "bird-13", "usd": 0.00023374000000000002, "input": 2, "cache_write": 316, "cache_read": 2854, "output": 331}
+{"t": 1795684102.739069, "model": "claude-haiku-5-5", "tag": "bird-11", "usd": 0.000359975, "input": 2, "cache_write": 1365, "cache_read": 2965, "output": 319}
+{"t": 1795684103.128147, "model": "claude-haiku-5-5", "tag": "bird-0|lg", "usd": 0.0008464000000000001}
+{"t": 1795684104.18139, "model": "claude-haiku-5-5", "tag": "bird-10", "usd": 0.00030149, "input": 2, "cache_write": 1114, "cache_read": 3104, "output": 262}
+{"t": 1795684104.209718, "model": "claude-haiku-5-5", "tag": "bird-13", "usd": 0.0002184, "input": 2, "cache_write": 484, "cache_read": 3170, "output": 252}
+{"t": 1795684105.731256, "model": "claude-haiku-5-5", "tag": "bird-12|lg", "usd": 0.0018872}
+{"t": 1795684105.75521, "model": "claude-haiku-5-5", "tag": "bird-10", "usd": 0.00021187999999999998, "input": 2, "cache_write": 296, "cache_read": 4218, "output": 265}
+{"t": 1795684107.0106082, "model": "claude-haiku-5-5", "tag": "bird-13", "usd": 0.00029474, "input": 2, "cache_write": 392, "cache_read": 3654, "output": 418}
+{"t": 1795684107.0430279, "model": "claude-haiku-5-5", "tag": "bird-0|lg", "usd": 0.0006921}
+{"t": 1795684107.3556569, "model": "claude-haiku-5-5", "tag": "bird-11", "usd": 0.000627875, "input": 2, "cache_write": 531, "cache_read": 4330, "output": 1036}
+{"t": 1795684107.45958, "model": "claude-haiku-5-5", "tag": "bird-10", "usd": 0.00026014999999999995, "input": 4, "cache_write": 1110, "cache_read": 0, "output": 242}
+{"t": 1795684107.8305202, "model": "claude-haiku-5-5", "tag": "bird-1|lg", "usd": 0.002383}
+{"t": 1795684108.997349, "model": "claude-haiku-5-5", "tag": "bird-13", "usd": 0.00023965, "input": 4, "cache_write": 1238, "cache_read": 0, "output": 169}
+{"t": 1795684109.419146, "model": "claude-haiku-5-5", "tag": "bird-10", "usd": 0.00017905000000000002, "input": 2, "cache_write": 490, "cache_read": 1110, "output": 213}
+{"t": 1795684109.779983, "model": "claude-haiku-5-5", "tag": "bird-11", "usd": 0.000375525, "input": 4, "cache_write": 1361, "cache_read": 0, "output": 410}
+{"t": 1795684110.600835, "model": "claude-haiku-5-5", "tag": "bird-13", "usd": 0.00019883, "input": 2, "cache_write": 242, "cache_read": 1238, "output": 312}
+{"t": 1795684111.029808, "model": "claude-haiku-5-5", "tag": "bird-10", "usd": 0.000189825, "input": 2, "cache_write": 449, "cache_read": 1600, "output": 235}
+{"t": 1795684111.237264, "model": "claude-haiku-5-5", "tag": "bird-0|lg", "usd": 0.0008148999999999999}
+{"t": 1795684112.052267, "model": "claude-haiku-5-5", "tag": "bird-11", "usd": 0.000386935, "input": 2, "cache_write": 1653, "cache_read": 1361, "output": 333}
+{"t": 1795684112.69934, "model": "claude-haiku-5-5", "tag": "bird-13", "usd": 0.000300875, "input": 2, "cache_write": 543, "cache_read": 1480, "output": 436}
+{"t": 1795684112.834025, "model": "claude-haiku-5-5", "tag": "bird-10", "usd": 0.00018844, "input": 2, "cache_write": 258, "cache_read": 2049, "output": 271}
+{"t": 1795684114.1711519, "model": "claude-haiku-5-5", "tag": "bird-13", "usd": 0.00027127499999999997, "input": 4, "cache_write": 1467, "cache_read": 0, "output": 175}
+{"t": 1795684114.3004959, "model": "claude-haiku-5-5", "tag": "bird-10", "usd": 0.00028427499999999996, "input": 4, "cache_write": 1339, "cache_read": 0, "output": 233}
+{"t": 1795684115.408553, "model": "claude-haiku-5-5", "tag": "bird-1|lg", "usd": 0.0013595999999999999}
+{"t": 1795684115.846612, "model": "claude-haiku-5-5", "tag": "bird-10", "usd": 0.00014909, "input": 2, "cache_write": 284, "cache_read": 1339, "output": 200}
+{"t": 1795684115.865442, "model": "claude-haiku-5-5", "tag": "bird-13", "usd": 0.000191995, "input": 2, "cache_write": 253, "cache_read": 1467, "output": 291}
+{"t": 1795684116.066551, "model": "claude-haiku-5-5", "tag": "bird-11", "usd": 0.0005298400000000001, "input": 2, "cache_write": 604, "cache_read": 3014, "output": 848}
+{"t": 1795684116.8513951, "model": "claude-haiku-5-5", "tag": "bird-10", "usd": 9.943e-05, "input": 2, "cache_write": 244, "cache_read": 1623, "output": 105}
+{"t": 1795684117.8778381, "model": "claude-haiku-5-5", "tag": "bird-13", "usd": 0.000296775, "input": 2, "cache_write": 947, "cache_read": 1720, "output": 322}
+{"t": 1795684117.937954, "model": "claude-haiku-5-5", "tag": "bird-10", "usd": 9.562000000000001e-05, "input": 2, "cache_write": 130, "cache_read": 1867, "output": 121}
+{"t": 1795684118.107625, "model": "claude-haiku-5-5", "tag": "bird-11", "usd": 0.00035214999999999997, "input": 4, "cache_write": 1590, "cache_read": 0, "output": 306}
+{"t": 1795684118.775975, "model": "claude-haiku-5-5", "tag": "bird-12|lg", "usd": 0.0030019000000000005}
+{"t": 1795684119.009469, "model": "claude-haiku-5-5", "tag": "bird-10", "usd": 0.00010842, "input": 2, "cache_write": 166, "cache_read": 1997, "output": 135}
+{"t": 1795684119.104845, "model": "claude-haiku-5-5", "tag": "bird-14|lg", "usd": 0.0019677}
+{"t": 1795684120.016594, "model": "claude-haiku-5-5", "tag": "bird-11", "usd": 0.00031485000000000004, "input": 2, "cache_write": 1394, "cache_read": 1590, "output": 249}
+{"t": 1795684120.169868, "model": "claude-haiku-5-5", "tag": "bird-13", "usd": 0.000253745, "input": 2, "cache_write": 387, "cache_read": 2667, "output": 357}
+{"t": 1795684121.0954728, "model": "claude-haiku-5-5", "tag": "bird-10", "usd": 0.00021208, "input": 2, "cache_write": 166, "cache_read": 2163, "output": 339}
+{"t": 1795684122.384694, "model": "claude-haiku-5-5", "tag": "bird-10", "usd": 0.000190365, "input": 2, "cache_write": 631, "cache_read": 2329, "output": 176}
+{"t": 1795684124.933939, "model": "claude-haiku-5-5", "tag": "bird-10", "usd": 0.000328925, "input": 2, "cache_write": 465, "cache_read": 2960, "output": 482}
+{"t": 1795684124.964213, "model": "claude-haiku-5-5", "tag": "bird-11", "usd": 0.000614415, "input": 2, "cache_write": 479, "cache_read": 2984, "output": 1049}
+{"t": 1795684126.149855, "model": "claude-haiku-5-5", "tag": "bird-100|lg", "usd": 0.0020163000000000004}
+{"t": 1795684126.860277, "model": "claude-haiku-5-5", "tag": "bird-102", "usd": 0.000646525, "input": 4, "cache_write": 4017, "cache_read": 0, "output": 288}
+{"t": 1795684127.4701738, "model": "claude-haiku-5-5", "tag": "bird-101", "usd": 0.000695275, "input": 4, "cache_write": 4023, "cache_read": 0, "output": 384}
+{"t": 1795684127.493151, "model": "claude-haiku-5-5", "tag": "bird-14|lg", "usd": 0.0018152000000000003}
+{"t": 1795684128.933229, "model": "claude-haiku-5-5", "tag": "bird-1|lg", "usd": 0.0031776}
+{"t": 1795684129.298502, "model": "claude-haiku-5-5", "tag": "bird-101", "usd": 0.00028343, "input": 2, "cache_write": 844, "cache_read": 4023, "output": 275}
+{"t": 1795684129.872177, "model": "claude-haiku-5-5", "tag": "bird-102", "usd": 0.000391995, "input": 2, "cache_write": 597, "cache_read": 4017, "output": 554}
+{"t": 1795684130.922409, "model": "claude-haiku-5-5", "tag": "bird-103", "usd": 0.00066115, "input": 4, "cache_write": 3978, "cache_read": 0, "output": 327}
+{"t": 1795684130.94092, "model": "claude-haiku-5-5", "tag": "bird-101", "usd": 0.00023112, "input": 2, "cache_write": 358, "cache_read": 4867, "output": 275}
+{"t": 1795684131.6576908, "model": "claude-haiku-5-5", "tag": "bird-102", "usd": 0.00029715, "input": 4, "cache_write": 1394, "cache_read": 0, "output": 245}
+{"t": 1795684132.8848388, "model": "claude-haiku-5-5", "tag": "bird-103", "usd": 0.00039673000000000003, "input": 2, "cache_write": 1066, "cache_read": 3978, "output": 447}
+{"t": 1795684133.134083, "model": "claude-haiku-5-5", "tag": "bird-101", "usd": 0.000341275, "input": 4, "cache_write": 1115, "cache_read": 0, "output": 403}
+{"t": 1795684133.303523, "model": "claude-haiku-5-5", "tag": "bird-100|lg", "usd": 0.0010507}
+{"t": 1795684134.686181, "model": "claude-haiku-5-5", "tag": "bird-102", "usd": 0.00037939, "input": 2, "cache_write": 618, "cache_read": 1394, "output": 576}
+{"t": 1795684135.129268, "model": "claude-haiku-5-5", "tag": "bird-101", "usd": 0.00038585000000000003, "input": 2, "cache_write": 1436, "cache_read": 1115, "output": 390}
+{"t": 1795684136.039579, "model": "claude-haiku-5-5", "tag": "bird-103", "usd": 0.000526515, "input": 2, "cache_write": 747, "cache_read": 5044, "output": 765}
+{"t": 1795684136.205759, "model": "claude-haiku-5-5", "tag": "bird-102", "usd": 0.000312775, "input": 4, "cache_write": 1623, "cache_read": 0, "output": 219}
+{"t": 1795684136.977512, "model": "claude-haiku-5-5", "tag": "bird-101", "usd": 0.00033939999999999996, "input": 4, "cache_write": 1344, "cache_read": 0, "output": 342}
+{"t": 1795684137.644804, "model": "claude-haiku-5-5", "tag": "bird-103", "usd": 0.000282775, "input": 4, "cache_write": 1051, "cache_read": 0, "output": 302}
+{"t": 1795684137.7417002, "model": "claude-haiku-5-5", "tag": "bird-12|lg", "usd": 0.0039448}
+{"t": 1795684137.938338, "model": "claude-haiku-5-5", "tag": "bird-101", "usd": 0.00013063999999999998, "input": 2, "cache_write": 528, "cache_read": 1344, "output": 102}
+{"t": 1795684139.291641, "model": "claude-haiku-5-5", "tag": "bird-101", "usd": 0.000129545, "input": 2, "cache_write": 137, "cache_read": 1872, "output": 187}
+{"t": 1795684139.304642, "model": "claude-haiku-5-5", "tag": "bird-102", "usd": 0.00037968, "input": 2, "cache_write": 626, "cache_read": 1623, "output": 570}
+{"t": 1795684140.2794151, "model": "claude-haiku-5-5", "tag": "bird-103", "usd": 0.00039496, "input": 2, "cache_write": 786, "cache_read": 1051, "output": 572}
+{"t": 1795684140.4302819, "model": "claude-haiku-5-5", "tag": "bird-101", "usd": 0.00011566500000000001, "input": 2, "cache_write": 291, "cache_read": 2009, "output": 118}
+{"t": 1795684141.9110432, "model": "claude-haiku-5-5", "tag": "bird-105", "usd": 0.000730525, "input": 4, "cache_write": 4057, "cache_read": 0, "output": 446}
+{"t": 1795684142.231092, "model": "claude-haiku-5-5", "tag": "bird-101", "usd": 0.0001762, "input": 2, "cache_write": 136, "cache_read": 2300, "output": 272}
+{"t": 1795684142.521356, "model": "claude-haiku-5-5", "tag": "bird-103", "usd": 0.00042057, "input": 2, "cache_write": 832, "cache_read": 1837, "output": 596}
+{"t": 1795684142.56794, "model": "claude-haiku-5-5", "tag": "bird-104|lg", "usd": 0.0017444000000000001}
+{"t": 1795684143.0791612, "model": "claude-haiku-5-5", "tag": "bird-14|lg", "usd": 0.0035555}
+{"t": 1795684143.349161, "model": "claude-haiku-5-5", "tag": "bird-101", "usd": 0.000172935, "input": 2, "cache_write": 547, "cache_read": 2436, "output": 160}
+{"t": 1795684143.686969, "model": "claude-haiku-5-5", "tag": "bird-105", "usd": 0.00031502, "input": 2, "cache_write": 954, "cache_read": 4057, "output": 310}
+{"t": 1795684144.114835, "model": "claude-haiku-5-5", "tag": "bird-103", "usd": 0.0003034, "input": 4, "cache_write": 1280, "cache_read": 0, "output": 286}
+{"t": 1795684145.1381361, "model": "claude-haiku-5-5", "tag": "bird-101", "usd": 0.000235155, "input": 2, "cache_write": 681, "cache_read": 2983, "output": 240}
+{"t": 1795684145.248551, "model": "claude-haiku-5-5", "tag": "bird-103", "usd": 0.00019975, "input": 2, "cache_write": 770, "cache_read": 1280, "output": 181}
+{"t": 1795684145.346408, "model": "claude-haiku-5-5", "tag": "bird-105", "usd": 0.00024581, "input": 2, "cache_write": 340, "cache_read": 5011, "output": 306}
+{"t": 1795684146.412525, "model": "claude-haiku-5-5", "tag": "bird-103", "usd": 0.00014345, "input": 2, "cache_write": 198, "cache_read": 2050, "output": 196}
+{"t": 1795684146.58951, "model": "claude-haiku-5-5", "tag": "bird-100|lg", "usd": 0.0036246000000000004}
+{"t": 1795684146.680814, "model": "claude-haiku-5-5", "tag": "bird-105", "usd": 0.00023102500000000002, "input": 4, "cache_write": 1117, "cache_read": 0, "output": 182}
+{"t": 1795684146.88387, "model": "claude-haiku-5-5", "tag": "bird-104|lg", "usd": 0.0006866999999999999}
+{"t": 1795684147.2950459, "model": "claude-haiku-5-5", "tag": "bird-101", "usd": 0.00029521500000000004, "input": 2, "cache_write": 523, "cache_read": 3664, "output": 386}
+{"t": 1795684147.676579, "model": "claude-haiku-5-5", "tag": "bird-105", "usd": 0.00014462, "input": 2, "cache_write": 538, "cache_read": 1117, "output": 132}
+{"t": 1795684148.744063, "model": "claude-haiku-5-5", "tag": "bird-105", "usd": 0.0001505, "input": 2, "cache_write": 494, "cache_read": 1655, "output": 144}
+{"t": 1795684148.853117, "model": "claude-haiku-5-5", "tag": "bird-103", "usd": 0.00038993000000000003, "input": 2, "cache_write": 386, "cache_read": 2248, "output": 638}
+{"t": 1795684149.172805, "model": "claude-haiku-5-5", "tag": "bird-108", "usd": 0.000674775, "input": 4, "cache_write": 4007, "cache_read": 0, "output": 347}
+{"t": 1795684150.27552, "model": "claude-haiku-5-5", "tag": "bird-106|lg", "usd": 0.0020827000000000003}
+{"t": 1795684150.9242501, "model": "claude-haiku-5-5", "tag": "bird-105", "usd": 0.000246065, "input": 2, "cache_write": 175, "cache_read": 2149, "output": 405}
+{"t": 1795684151.08723, "model": "claude-haiku-5-5", "tag": "bird-108", "usd": 0.00021814500000000002, "input": 2, "cache_write": 675, "cache_read": 4007, "output": 187}
+{"t": 1795684151.980706, "model": "claude-haiku-5-5", "tag": "bird-104|lg", "usd": 0.0012315}
+{"t": 1795684152.370406, "model": "claude-haiku-5-5", "tag": "bird-108", "usd": 0.00017876999999999997, "input": 2, "cache_write": 218, "cache_read": 4682, "output": 209}
+{"t": 1795684152.610454, "model": "claude-haiku-5-5", "tag": "bird-105", "usd": 0.000241815, "input": 2, "cache_write": 535, "cache_read": 2324, "output": 303}
+{"t": 1795684154.172066, "model": "claude-haiku-5-5", "tag": "bird-108", "usd": 0.000245325, "input": 2, "cache_write": 341, "cache_read": 4900, "output": 307}
+{"t": 1795684154.6194339, "model": "claude-haiku-5-5", "tag": "bird-105", "usd": 0.000267415, "input": 2, "cache_write": 341, "cache_read": 2859, "output": 392}
+{"t": 1795684155.979844, "model": "claude-haiku-5-5", "tag": "bird-105", "usd": 0.00025565, "input": 4, "cache_write": 1346, "cache_read": 0, "output": 174}
+{"t": 1795684156.100919, "model": "claude-haiku-5-5", "tag": "bird-108", "usd": 0.00037902499999999996, "input": 4, "cache_write": 1593, "cache_read": 0, "output": 359}
+{"t": 1795684156.216285, "model": "claude-haiku-5-5", "tag": "bird-106|lg", "usd": 0.0010953999999999998}
+{"t": 1795684156.2321448, "model": "claude-haiku-5-5", "tag": "bird-107|lg", "usd": 0.0027109}
+{"t": 1795684157.5746439, "model": "claude-haiku-5-5", "tag": "bird-105", "usd": 0.00010316, "input": 2, "cache_write": 208, "cache_read": 1346, "output": 127}
+{"t": 1795684159.266096, "model": "claude-haiku-5-5", "tag": "bird-105", "usd": 0.00019274, "input": 2, "cache_write": 512, "cache_read": 1554, "output": 226}
+{"t": 1795684159.509574, "model": "claude-haiku-5-5", "tag": "bird-109|lg", "usd": 0.002803}
+{"t": 1795684161.938161, "model": "claude-haiku-5-5", "tag": "bird-105", "usd": 0.00036361, "input": 2, "cache_write": 494, "cache_read": 2066, "output": 562}
+{"t": 1795684165.102011, "model": "claude-haiku-5-5", "tag": "bird-105", "usd": 0.0003053, "input": 2, "cache_write": 680, "cache_read": 2560, "output": 389}
+{"t": 1795684166.837404, "model": "claude-haiku-5-5", "tag": "bird-111", "usd": 0.000581775, "input": 4, "cache_write": 4011, "cache_read": 0, "output": 160}
+{"t": 1795684168.295337, "model": "claude-haiku-5-5", "tag": "bird-109|lg", "usd": 0.001532}
+{"t": 1795684168.7415118, "model": "claude-haiku-5-5", "tag": "bird-111", "usd": 0.00022656, "input": 2, "cache_write": 354, "cache_read": 4011, "output": 284}
+{"t": 1795684169.379284, "model": "claude-haiku-5-5", "tag": "bird-107|lg", "usd": 0.0018373}
+{"t": 1795684169.699779, "model": "claude-haiku-5-5", "tag": "bird-110|lg", "usd": 0.0022865000000000003}
+{"t": 1795684170.153934, "model": "claude-haiku-5-5", "tag": "bird-111", "usd": 0.00018109999999999998, "input": 2, "cache_write": 302, "cache_read": 4365, "output": 199}
+{"t": 1795684170.37164, "model": "claude-haiku-5-5", "tag": "bird-106|lg", "usd": 0.0031117}
+{"t": 1795684171.969676, "model": "claude-haiku-5-5", "tag": "bird-111", "usd": 0.0002289, "input": 4, "cache_write": 1188, "cache_read": 0, "output": 160}
+{"t": 1795684172.7544231, "model": "claude-haiku-5-5", "tag": "bird-112", "usd": 0.0006990249999999999, "input": 4, "cache_write": 4045, "cache_read": 0, "output": 386}
+{"t": 1795684173.39953, "model": "claude-haiku-5-5", "tag": "bird-111", "usd": 0.00015783000000000003, "input": 2, "cache_write": 354, "cache_read": 1188, "output": 203}
+{"t": 1795684174.8406851, "model": "claude-haiku-5-5", "tag": "bird-112", "usd": 0.000334275, "input": 2, "cache_write": 1045, "cache_read": 4045, "output": 326}
+{"t": 1795684174.9871879, "model": "claude-haiku-5-5", "tag": "bird-111", "usd": 0.000174995, "input": 2, "cache_write": 231, "cache_read": 1542, "output": 261}
+{"t": 1795684176.001549, "model": "claude-haiku-5-5", "tag": "bird-109|lg", "usd": 0.0015842}
+{"t": 1795684176.6846669, "model": "claude-haiku-5-5", "tag": "bird-111", "usd": 0.00021918, "input": 2, "cache_write": 294, "cache_read": 1773, "output": 329}
+{"t": 1795684176.700317, "model": "claude-haiku-5-5", "tag": "bird-112", "usd": 0.00023335, "input": 2, "cache_write": 370, "cache_read": 5090, "output": 272}
+{"t": 1795684177.9841568, "model": "claude-haiku-5-5", "tag": "bird-113", "usd": 0.0006116499999999999, "input": 4, "cache_write": 4014, "cache_read": 0, "output": 219}
+{"t": 1795684178.5526688, "model": "claude-haiku-5-5", "tag": "bird-112", "usd": 0.00034389999999999996, "input": 4, "cache_write": 1556, "cache_read": 0, "output": 298}
+{"t": 1795684180.350111, "model": "claude-haiku-5-5", "tag": "bird-111", "usd": 0.000562745, "input": 2, "cache_write": 1555, "cache_read": 2067, "output": 695}
+{"t": 1795684180.6842601, "model": "claude-haiku-5-5", "tag": "bird-112", "usd": 0.000328385, "input": 2, "cache_write": 893, "cache_read": 1556, "output": 402}
+{"t": 1795684181.780004, "model": "claude-haiku-5-5", "tag": "bird-111", "usd": 0.00023102500000000002, "input": 4, "cache_write": 1417, "cache_read": 0, "output": 107}
+{"t": 1795684182.109045, "model": "claude-haiku-5-5", "tag": "bird-112", "usd": 0.00019931499999999998, "input": 2, "cache_write": 469, "cache_read": 2449, "output": 232}
+{"t": 1795684183.98233, "model": "claude-haiku-5-5", "tag": "bird-107|lg", "usd": 0.0027263}
+{"t": 1795684184.005964, "model": "claude-haiku-5-5", "tag": "bird-112", "usd": 0.000392025, "input": 4, "cache_write": 1785, "cache_read": 0, "output": 337}
+{"t": 1795684184.145139, "model": "claude-haiku-5-5", "tag": "bird-111", "usd": 0.000219995, "input": 2, "cache_write": 301, "cache_read": 1417, "output": 336}
+{"t": 1795684184.883529, "model": "claude-haiku-5-5", "tag": "bird-113", "usd": 0.00070659, "input": 2, "cache_write": 482, "cache_read": 4014, "output": 1212}
+{"t": 1795684185.9476988, "model": "claude-haiku-5-5", "tag": "bird-112", "usd": 0.00026705, "input": 2, "cache_write": 932, "cache_read": 1785, "output": 265}
+{"t": 1795684187.285283, "model": "claude-haiku-5-5", "tag": "bird-114", "usd": 0.0007586499999999999, "input": 4, "cache_write": 4010, "cache_read": 0, "output": 514}
+{"t": 1795684187.462952, "model": "claude-haiku-5-5", "tag": "bird-111", "usd": 0.00029338, "input": 2, "cache_write": 392, "cache_read": 1718, "output": 454}
+{"t": 1795684187.5195498, "model": "claude-haiku-5-5", "tag": "bird-108", "usd": 0.00014763, "input": 2, "cache_write": 752, "cache_read": 1593, "output": 75}
+{"t": 1795684187.834518, "model": "claude-haiku-5-5", "tag": "bird-112", "usd": 0.00019449500000000001, "input": 2, "cache_write": 289, "cache_read": 2717, "output": 262}
+{"t": 1795684188.6335812, "model": "claude-haiku-5-5", "tag": "bird-113", "usd": 0.00068591, "input": 2, "cache_write": 1918, "cache_read": 4496, "output": 802}
+{"t": 1795684189.141553, "model": "claude-haiku-5-5", "tag": "bird-114", "usd": 0.000276425, "input": 2, "cache_write": 637, "cache_read": 4010, "output": 313}
+{"t": 1795684190.14993, "model": "claude-haiku-5-5", "tag": "bird-108", "usd": 0.00028639999999999997, "input": 2, "cache_write": 174, "cache_read": 2345, "output": 482}
+{"t": 1795684190.4534788, "model": "claude-haiku-5-5", "tag": "bird-111", "usd": 0.000345925, "input": 2, "cache_write": 501, "cache_read": 2110, "output": 524}
+{"t": 1795684190.514921, "model": "claude-haiku-5-5", "tag": "bird-113", "usd": 0.00037777499999999995, "input": 4, "cache_write": 1667, "cache_read": 0, "output": 338}
+{"t": 1795684191.429229, "model": "claude-haiku-5-5", "tag": "bird-108", "usd": 0.00019226499999999998, "input": 2, "cache_write": 615, "cache_read": 2519, "output": 180}
+{"t": 1795684191.5160162, "model": "claude-haiku-5-5", "tag": "bird-114", "usd": 0.00039265, "input": 4, "cache_write": 1414, "cache_read": 0, "output": 431}
+{"t": 1795684193.066171, "model": "claude-haiku-5-5", "tag": "bird-108", "usd": 0.00020929, "input": 2, "cache_write": 198, "cache_read": 3134, "output": 306}
+{"t": 1795684193.332695, "model": "claude-haiku-5-5", "tag": "bird-114", "usd": 0.00021759, "input": 2, "cache_write": 534, "cache_read": 1414, "output": 273}
+{"t": 1795684193.5358772, "model": "claude-haiku-5-5", "tag": "bird-113", "usd": 0.00035512, "input": 2, "cache_write": 810, "cache_read": 1667, "output": 474}
+{"t": 1795684195.040898, "model": "claude-haiku-5-5", "tag": "bird-108", "usd": 0.00041464999999999997, "input": 4, "cache_write": 1822, "cache_read": 0, "output": 373}
+{"t": 1795684195.4294689, "model": "claude-haiku-5-5", "tag": "bird-116|lg", "usd": 0.0012414000000000001}
+{"t": 1795684195.4717262, "model": "claude-haiku-5-5", "tag": "bird-114", "usd": 0.00025143, "input": 2, "cache_write": 298, "cache_read": 1948, "output": 389}
+{"t": 1795684195.5464299, "model": "claude-haiku-5-5", "tag": "bird-115|lg", "usd": 0.0023910000000000003}
+{"t": 1795684195.664403, "model": "claude-haiku-5-5", "tag": "bird-113", "usd": 0.0003944, "input": 4, "cache_write": 1896, "cache_read": 0, "output": 314}
+{"t": 1795684198.121845, "model": "claude-haiku-5-5", "tag": "bird-114", "usd": 0.00039177499999999997, "input": 4, "cache_write": 1643, "cache_read": 0, "output": 372}
+{"t": 1795684198.193622, "model": "claude-haiku-5-5", "tag": "bird-108", "usd": 0.000280545, "input": 2, "cache_write": 701, "cache_read": 1822, "output": 349}
+{"t": 1795684198.2498088, "model": "claude-haiku-5-5", "tag": "bird-113", "usd": 0.000320035, "input": 2, "cache_write": 687, "cache_read": 1896, "output": 430}
+{"t": 1795684199.9862149, "model": "claude-haiku-5-5", "tag": "bird-114", "usd": 0.00019800499999999999, "input": 2, "cache_write": 431, "cache_read": 1643, "output": 255}
+{"t": 1795684200.2301672, "model": "claude-haiku-5-5", "tag": "bird-116|lg", "usd": 0.0006667999999999999}
+{"t": 1795684202.259315, "model": "claude-haiku-5-5", "tag": "bird-114", "usd": 0.000252565, "input": 2, "cache_write": 281, "cache_read": 2074, "output": 393}
+{"t": 1795684204.480041, "model": "claude-haiku-5-5", "tag": "bird-117|lg", "usd": 0.0018771999999999999}
+{"t": 1795684204.885121, "model": "claude-haiku-5-5", "tag": "bird-116|lg", "usd": 0.0007167}
+{"t": 1795684205.7341828, "model": "claude-haiku-5-5", "tag": "bird-115|lg", "usd": 0.0027335000000000003}
+{"t": 1795684214.570337, "model": "claude-haiku-5-5", "tag": "bird-118|lg", "usd": 0.0008383}
+{"t": 1795684214.818652, "model": "claude-haiku-5-5", "tag": "bird-117|lg", "usd": 0.0018294000000000001}
+{"t": 1795684216.4114811, "model": "claude-haiku-5-5", "tag": "bird-115|lg", "usd": 0.0023285}
+{"t": 1795684216.8384929, "model": "claude-haiku-5-5", "tag": "bird-119", "usd": 0.000484525, "input": 4, "cache_write": 2777, "cache_read": 0, "output": 274}
+{"t": 1795684217.852265, "model": "claude-haiku-5-5", "tag": "bird-118|lg", "usd": 0.0004748}
+{"t": 1795684218.407627, "model": "claude-haiku-5-5", "tag": "bird-120", "usd": 0.00047165, "input": 4, "cache_write": 2514, "cache_read": 0, "output": 314}
+{"t": 1795684219.049994, "model": "claude-haiku-5-5", "tag": "bird-119", "usd": 0.00026297, "input": 2, "cache_write": 384, "cache_read": 2777, "output": 374}
+{"t": 1795684219.6244879, "model": "claude-haiku-5-5", "tag": "bird-120", "usd": 0.00013884, "input": 2, "cache_write": 376, "cache_read": 2514, "output": 133}
+{"t": 1795684221.0039198, "model": "claude-haiku-5-5", "tag": "bird-119", "usd": 0.00024481, "input": 2, "cache_write": 404, "cache_read": 3161, "output": 325}
+{"t": 1795684221.318272, "model": "claude-haiku-5-5", "tag": "bird-118|lg", "usd": 0.0005124000000000001}
+{"t": 1795684221.596321, "model": "claude-haiku-5-5", "tag": "bird-120", "usd": 0.0002496, "input": 2, "cache_write": 152, "cache_read": 2890, "output": 403}
+{"t": 1795684222.9558961, "model": "claude-haiku-5-5", "tag": "bird-119", "usd": 0.0002799, "input": 4, "cache_write": 1172, "cache_read": 0, "output": 266}
+{"t": 1795684223.338644, "model": "claude-haiku-5-5", "tag": "bird-122", "usd": 0.00047765, "input": 4, "cache_write": 2770, "cache_read": 0, "output": 262}
+{"t": 1795684223.982033, "model": "claude-haiku-5-5", "tag": "bird-120", "usd": 0.00033465, "input": 4, "cache_write": 978, "cache_read": 0, "output": 424}
+{"t": 1795684224.767982, "model": "claude-haiku-5-5", "tag": "bird-121|lg", "usd": 0.0024684000000000004}
+{"t": 1795684225.046981, "model": "claude-haiku-5-5", "tag": "bird-119", "usd": 0.00024142, "input": 2, "cache_write": 376, "cache_read": 1172, "output": 365}
+{"t": 1795684225.440531, "model": "claude-haiku-5-5", "tag": "bird-122", "usd": 0.00026589999999999996, "input": 2, "cache_write": 480, "cache_read": 2770, "output": 356}
+{"t": 1795684225.607115, "model": "claude-haiku-5-5", "tag": "bird-117|lg", "usd": 0.0029587}
+{"t": 1795684226.217783, "model": "claude-haiku-5-5", "tag": "bird-110|lg", "usd": 0.005253300000000001}
+{"t": 1795684226.554312, "model": "claude-haiku-5-5", "tag": "bird-120", "usd": 0.000352355, "input": 2, "cache_write": 551, "cache_read": 978, "output": 547}
+{"t": 1795684226.781397, "model": "claude-haiku-5-5", "tag": "bird-123", "usd": 0.00041815, "input": 4, "cache_write": 2770, "cache_read": 0, "output": 143}
+{"t": 1795684227.063137, "model": "claude-haiku-5-5", "tag": "bird-122", "usd": 0.0002499, "input": 4, "cache_write": 1048, "cache_read": 0, "output": 237}
+{"t": 1795684228.560447, "model": "claude-haiku-5-5", "tag": "bird-120", "usd": 0.00031577499999999996, "input": 4, "cache_write": 1207, "cache_read": 0, "output": 329}
+{"t": 1795684228.639662, "model": "claude-haiku-5-5", "tag": "bird-123", "usd": 0.000204025, "input": 2, "cache_write": 205, "cache_read": 2770, "output": 301}
+{"t": 1795684228.701178, "model": "claude-haiku-5-5", "tag": "bird-122", "usd": 0.00021605500000000002, "input": 2, "cache_write": 519, "cache_read": 1048, "output": 281}
+{"t": 1795684229.74303, "model": "claude-haiku-5-5", "tag": "bird-120", "usd": 0.000124645, "input": 2, "cache_write": 395, "cache_read": 1207, "output": 126}
+{"t": 1795684230.0324328, "model": "claude-haiku-5-5", "tag": "bird-123", "usd": 0.0001909, "input": 4, "cache_write": 1100, "cache_read": 0, "output": 106}
+{"t": 1795684230.632206, "model": "claude-haiku-5-5", "tag": "bird-122", "usd": 0.000262995, "input": 2, "cache_write": 497, "cache_read": 1567, "output": 370}
+{"t": 1795684231.431179, "model": "claude-haiku-5-5", "tag": "bird-123", "usd": 0.0001047, "input": 2, "cache_write": 168, "cache_read": 1100, "output": 145}
+{"t": 1795684231.8015249, "model": "claude-haiku-5-5", "tag": "bird-120", "usd": 0.000233595, "input": 2, "cache_write": 151, "cache_read": 1602, "output": 397}
+{"t": 1795684232.205284, "model": "claude-haiku-5-5", "tag": "bird-122", "usd": 0.000280525, "input": 4, "cache_write": 1277, "cache_read": 0, "output": 241}
+{"t": 1795684232.930602, "model": "claude-haiku-5-5", "tag": "bird-123", "usd": 0.000143755, "input": 2, "cache_write": 179, "cache_read": 1268, "output": 217}
+{"t": 1795684233.741662, "model": "claude-haiku-5-5", "tag": "bird-122", "usd": 0.000146345, "input": 2, "cache_write": 359, "cache_read": 1277, "output": 177}
+{"t": 1795684233.9396532, "model": "claude-haiku-5-5", "tag": "bird-121|lg", "usd": 0.0015397000000000002}
+{"t": 1795684234.095553, "model": "claude-haiku-5-5", "tag": "bird-123", "usd": 0.000238025, "input": 4, "cache_write": 1329, "cache_read": 0, "output": 143}
+{"t": 1795684235.737928, "model": "claude-haiku-5-5", "tag": "bird-122", "usd": 0.00020231, "input": 2, "cache_write": 210, "cache_read": 1636, "output": 319}
+{"t": 1795684235.866822, "model": "claude-haiku-5-5", "tag": "bird-123", "usd": 0.000191115, "input": 2, "cache_write": 205, "cache_read": 1329, "output": 304}
+{"t": 1795684237.2511842, "model": "claude-haiku-5-5", "tag": "bird-125", "usd": 0.0004994, "input": 4, "cache_write": 2776, "cache_read": 0, "output": 304}
+{"t": 1795684237.6556349, "model": "claude-haiku-5-5", "tag": "bird-124|lg", "usd": 0.0016937}
+{"t": 1795684239.186784, "model": "claude-haiku-5-5", "tag": "bird-125", "usd": 0.00027621000000000004, "input": 2, "cache_write": 362, "cache_read": 2776, "output": 406}
+{"t": 1795684240.050465, "model": "claude-haiku-5-5", "tag": "bird-126|lg", "usd": 0.0009296}
+{"t": 1795684240.686007, "model": "claude-haiku-5-5", "tag": "bird-121|lg", "usd": 0.001109}
+{"t": 1795684240.971814, "model": "claude-haiku-5-5", "tag": "bird-125", "usd": 0.000244275, "input": 4, "cache_write": 1023, "cache_read": 0, "output": 232}
+{"t": 1795684242.969653, "model": "claude-haiku-5-5", "tag": "bird-125", "usd": 0.00018418000000000002, "input": 2, "cache_write": 274, "cache_read": 1023, "output": 279}
+{"t": 1795684244.477338, "model": "claude-haiku-5-5", "tag": "bird-125", "usd": 0.000166545, "input": 2, "cache_write": 311, "cache_read": 1297, "output": 229}
+{"t": 1795684245.078799, "model": "claude-haiku-5-5", "tag": "bird-126|lg", "usd": 0.0006793999999999999}
+{"t": 1795684246.2550669, "model": "claude-haiku-5-5", "tag": "bird-125", "usd": 0.00027739999999999997, "input": 4, "cache_write": 1252, "cache_read": 0, "output": 241}
+{"t": 1795684247.222314, "model": "claude-haiku-5-5", "tag": "bird-124|lg", "usd": 0.0013722}
+{"t": 1795684247.574181, "model": "claude-haiku-5-5", "tag": "bird-110|lg", "usd": 0.005266800000000001}
+{"t": 1795684247.783315, "model": "claude-haiku-5-5", "tag": "bird-125", "usd": 0.000151095, "input": 2, "cache_write": 283, "cache_read": 1252, "output": 206}
+{"t": 1795684249.0673652, "model": "claude-haiku-5-5", "tag": "bird-127|lg", "usd": 0.0016043}
+{"t": 1795684249.177633, "model": "claude-haiku-5-5", "tag": "bird-125", "usd": 0.00014480000000000002, "input": 2, "cache_write": 226, "cache_read": 1535, "output": 202}
+{"t": 1795684249.194004, "model": "claude-haiku-5-5", "tag": "bird-128", "usd": 0.00047877499999999997, "input": 4, "cache_write": 2823, "cache_read": 0, "output": 251}
+{"t": 1795684250.321467, "model": "claude-haiku-5-5", "tag": "bird-128", "usd": 0.000135305, "input": 2, "cache_write": 275, "cache_read": 2823, "output": 145}
+{"t": 1795684250.6851048, "model": "claude-haiku-5-5", "tag": "bird-126|lg", "usd": 0.0007512}
+{"t": 1795684251.922606, "model": "claude-haiku-5-5", "tag": "bird-128", "usd": 0.0002524, "input": 4, "cache_write": 1216, "cache_read": 0, "output": 200}
+{"t": 1795684253.004352, "model": "claude-haiku-5-5", "tag": "bird-128", "usd": 0.00011536, "input": 2, "cache_write": 224, "cache_read": 1216, "output": 150}
+{"t": 1795684254.314135, "model": "claude-haiku-5-5", "tag": "bird-128", "usd": 0.000246525, "input": 4, "cache_write": 1445, "cache_read": 0, "output": 131}
+{"t": 1795684255.7422872, "model": "claude-haiku-5-5", "tag": "bird-128", "usd": 0.00011252500000000001, "input": 2, "cache_write": 155, "cache_read": 1445, "output": 157}
+{"t": 1795684256.213113, "model": "claude-haiku-5-5", "tag": "bird-119", "usd": 0.000125055, "input": 2, "cache_write": 387, "cache_read": 1548, "output": 122}
+{"t": 1795684256.424563, "model": "claude-haiku-5-5", "tag": "bird-124|lg", "usd": 0.0012154000000000002}
+{"t": 1795684258.5583339, "model": "claude-haiku-5-5", "tag": "bird-119", "usd": 0.00020280000000000002, "input": 2, "cache_write": 154, "cache_read": 1935, "output": 328}
+{"t": 1795684260.8200161, "model": "claude-haiku-5-5", "tag": "bird-119", "usd": 0.00025559, "input": 2, "cache_write": 436, "cache_read": 2089, "output": 360}
+{"t": 1795684262.654093, "model": "claude-haiku-5-5", "tag": "bird-127|lg", "usd": 0.0008930000000000001}
+{"t": 1795684262.9205918, "model": "claude-haiku-5-5", "tag": "bird-119", "usd": 0.000353025, "input": 4, "cache_write": 1401, "cache_read": 0, "output": 355}
+{"t": 1795684265.885921, "model": "claude-haiku-5-5", "tag": "bird-119", "usd": 0.00026958500000000003, "input": 2, "cache_write": 771, "cache_read": 1401, "output": 318}
+{"t": 1795684268.791423, "model": "claude-haiku-5-5", "tag": "bird-119", "usd": 0.00035342, "input": 2, "cache_write": 496, "cache_read": 2172, "output": 539}
+{"t": 1795684270.813791, "model": "claude-haiku-5-5", "tag": "bird-127|lg", "usd": 0.000828}
+{"t": 1795684298.799542, "model": "claude-haiku-5-5", "tag": "bird-116|lg", "usd": 0.0007018}
+{"t": 1795684308.5860832, "model": "claude-haiku-5-5", "tag": "bird-130", "usd": 0.00055415, "input": 4, "cache_write": 2870, "cache_read": 0, "output": 390}
+{"t": 1795684310.26508, "model": "claude-haiku-5-5", "tag": "bird-130", "usd": 0.00020527500000000002, "input": 2, "cache_write": 763, "cache_read": 2870, "output": 162}
+{"t": 1795684310.266057, "model": "claude-haiku-5-5", "tag": "bird-133", "usd": 0.000478525, "input": 4, "cache_write": 2865, "cache_read": 0, "output": 240}
+{"t": 1795684312.238413, "model": "claude-haiku-5-5", "tag": "bird-133", "usd": 0.000306975, "input": 2, "cache_write": 857, "cache_read": 2865, "output": 342}
+{"t": 1795684313.033403, "model": "claude-haiku-5-5", "tag": "bird-130", "usd": 0.00033152999999999996, "input": 2, "cache_write": 400, "cache_read": 3633, "output": 490}
+{"t": 1795684313.721792, "model": "claude-haiku-5-5", "tag": "bird-131|lg", "usd": 0.0016091999999999999}
+{"t": 1795684314.058367, "model": "claude-haiku-5-5", "tag": "bird-133", "usd": 0.000237545, "input": 2, "cache_write": 393, "cache_read": 3722, "output": 302}
+{"t": 1795684315.787402, "model": "claude-haiku-5-5", "tag": "bird-133", "usd": 0.00022652500000000002, "input": 4, "cache_write": 1305, "cache_read": 0, "output": 126}
+{"t": 1795684316.0468822, "model": "claude-haiku-5-5", "tag": "bird-130", "usd": 0.000381155, "input": 2, "cache_write": 565, "cache_read": 4033, "output": 540}
+{"t": 1795684317.289642, "model": "claude-haiku-5-5", "tag": "bird-134|lg", "usd": 0.0017991}
+{"t": 1795684317.701799, "model": "claude-haiku-5-5", "tag": "bird-133", "usd": 0.000261125, "input": 2, "cache_write": 699, "cache_read": 1305, "output": 321}
+{"t": 1795684317.8244128, "model": "claude-haiku-5-5", "tag": "bird-130", "usd": 0.00027015, "input": 4, "cache_write": 1170, "cache_read": 0, "output": 247}
+{"t": 1795684318.3166761, "model": "claude-haiku-5-5", "tag": "bird-129|lg", "usd": 0.0015651000000000003}
+{"t": 1795684318.956867, "model": "claude-haiku-5-5", "tag": "bird-130", "usd": 0.000170275, "input": 2, "cache_write": 651, "cache_read": 1170, "output": 154}
+{"t": 1795684319.5681238, "model": "claude-haiku-5-5", "tag": "bird-133", "usd": 0.00019736500000000002, "input": 2, "cache_write": 377, "cache_read": 2004, "output": 260}
+{"t": 1795684320.097379, "model": "claude-haiku-5-5", "tag": "bird-130", "usd": 0.00013316, "input": 2, "cache_write": 394, "cache_read": 1821, "output": 131}
+{"t": 1795684320.1219, "model": "claude-haiku-5-5", "tag": "bird-131|lg", "usd": 0.0010329}
+{"t": 1795684320.241164, "model": "claude-haiku-5-5", "tag": "bird-132|lg", "usd": 0.0029866}
+{"t": 1795684321.205716, "model": "claude-haiku-5-5", "tag": "bird-133", "usd": 0.00031614999999999996, "input": 4, "cache_write": 1534, "cache_read": 0, "output": 248}
+{"t": 1795684322.8587031, "model": "claude-haiku-5-5", "tag": "bird-130", "usd": 0.00032347500000000004, "input": 2, "cache_write": 401, "cache_read": 2215, "output": 502}
+{"t": 1795684323.033765, "model": "claude-haiku-5-5", "tag": "bird-133", "usd": 0.00033566499999999997, "input": 2, "cache_write": 1297, "cache_read": 1534, "output": 316}
+{"t": 1795684324.515247, "model": "claude-haiku-5-5", "tag": "bird-133", "usd": 0.000184385, "input": 2, "cache_write": 359, "cache_read": 2831, "output": 222}
+{"t": 1795684324.801737, "model": "claude-haiku-5-5", "tag": "bird-130", "usd": 0.00026298500000000003, "input": 2, "cache_write": 521, "cache_read": 2616, "output": 343}
+{"t": 1795684326.36398, "model": "claude-haiku-5-5", "tag": "bird-135", "usd": 0.000545025, "input": 4, "cache_write": 2829, "cache_read": 0, "output": 382}
+{"t": 1795684326.654921, "model": "claude-haiku-5-5", "tag": "bird-131|lg", "usd": 0.0011639}
+{"t": 1795684327.176625, "model": "claude-haiku-5-5", "tag": "bird-130", "usd": 0.000357945, "input": 2, "cache_write": 627, "cache_read": 3137, "output": 496}
+{"t": 1795684328.454865, "model": "claude-haiku-5-5", "tag": "bird-134|lg", "usd": 0.002298}
+{"t": 1795684328.77981, "model": "claude-haiku-5-5", "tag": "bird-135", "usd": 0.000471615, "input": 2, "cache_write": 1693, "cache_read": 2829, "output": 463}
+{"t": 1795684328.848118, "model": "claude-haiku-5-5", "tag": "bird-130", "usd": 0.000276775, "input": 4, "cache_write": 1399, "cache_read": 0, "output": 203}
+{"t": 1795684330.227381, "model": "claude-haiku-5-5", "tag": "bird-130", "usd": 0.000170565, "input": 2, "cache_write": 383, "cache_read": 1399, "output": 217}
+{"t": 1795684330.3430011, "model": "claude-haiku-5-5", "tag": "bird-135", "usd": 0.00032617, "input": 2, "cache_write": 1082, "cache_read": 4522, "output": 291}
+{"t": 1795684332.431298, "model": "claude-haiku-5-5", "tag": "bird-130", "usd": 0.00020276999999999998, "input": 2, "cache_write": 250, "cache_read": 1782, "output": 307}
+{"t": 1795684332.604309, "model": "claude-haiku-5-5", "tag": "bird-135", "usd": 0.000368275, "input": 4, "cache_write": 1263, "cache_read": 0, "output": 420}
+{"t": 1795684333.770808, "model": "claude-haiku-5-5", "tag": "bird-137", "usd": 0.0004184, "input": 4, "cache_write": 2856, "cache_read": 0, "output": 122}
+{"t": 1795684334.3096352, "model": "claude-haiku-5-5", "tag": "bird-135", "usd": 0.00024145499999999998, "input": 2, "cache_write": 581, "cache_read": 1263, "output": 312}
+{"t": 1795684335.5206761, "model": "claude-haiku-5-5", "tag": "bird-135", "usd": 0.000272265, "input": 2, "cache_write": 1397, "cache_read": 1844, "output": 158}
+{"t": 1795684335.598204, "model": "claude-haiku-5-5", "tag": "bird-137", "usd": 0.00019976, "input": 2, "cache_write": 424, "cache_read": 2856, "output": 236}
+{"t": 1795684336.5905302, "model": "claude-haiku-5-5", "tag": "bird-135", "usd": 0.00016798500000000003, "input": 2, "cache_write": 439, "cache_read": 3241, "output": 161}
+{"t": 1795684337.690249, "model": "claude-haiku-5-5", "tag": "bird-134|lg", "usd": 0.0016261000000000001}
+{"t": 1795684337.869257, "model": "claude-haiku-5-5", "tag": "bird-137", "usd": 0.000341625, "input": 2, "cache_write": 857, "cache_read": 3280, "output": 403}
+{"t": 1795684338.7190242, "model": "claude-haiku-5-5", "tag": "bird-135", "usd": 0.00034225, "input": 2, "cache_write": 1222, "cache_read": 3680, "output": 305}
+{"t": 1795684339.196779, "model": "claude-haiku-5-5", "tag": "bird-137", "usd": 0.00018315, "input": 4, "cache_write": 1018, "cache_read": 0, "output": 111}
+{"t": 1795684339.549645, "model": "claude-haiku-5-5", "tag": "bird-132|lg", "usd": 0.0035168}
+{"t": 1795684340.016434, "model": "claude-haiku-5-5", "tag": "bird-135", "usd": 0.000189595, "input": 2, "cache_write": 335, "cache_read": 4902, "output": 197}
+{"t": 1795684340.9248772, "model": "claude-haiku-5-5", "tag": "bird-137", "usd": 0.000191505, "input": 2, "cache_write": 413, "cache_read": 1018, "output": 259}
+{"t": 1795684341.701546, "model": "claude-haiku-5-5", "tag": "bird-135", "usd": 0.000232945, "input": 2, "cache_write": 227, "cache_read": 5237, "output": 304}
+{"t": 1795684342.625002, "model": "claude-haiku-5-5", "tag": "bird-129|lg", "usd": 0.0019422000000000003}
+{"t": 1795684343.1821618, "model": "claude-haiku-5-5", "tag": "bird-138|lg", "usd": 0.0014547}
+{"t": 1795684343.270302, "model": "claude-haiku-5-5", "tag": "bird-137", "usd": 0.00032301, "input": 2, "cache_write": 880, "cache_read": 1431, "output": 397}
+{"t": 1795684343.971884, "model": "claude-haiku-5-5", "tag": "bird-135", "usd": 0.0003764, "input": 4, "cache_write": 1492, "cache_read": 0, "output": 379}
+{"t": 1795684344.60664, "model": "claude-haiku-5-5", "tag": "bird-137", "usd": 0.00023427500000000002, "input": 4, "cache_write": 1247, "cache_read": 0, "output": 156}
+{"t": 1795684346.3001988, "model": "claude-haiku-5-5", "tag": "bird-137", "usd": 0.000167295, "input": 2, "cache_write": 177, "cache_read": 1247, "output": 265}
+{"t": 1795684346.4304168, "model": "claude-haiku-5-5", "tag": "bird-135", "usd": 0.00028787, "input": 2, "cache_write": 522, "cache_read": 1492, "output": 415}
+{"t": 1795684346.451682, "model": "claude-haiku-5-5", "tag": "bird-132|lg", "usd": 0.0010864}
+{"t": 1795684347.339065, "model": "claude-haiku-5-5", "tag": "bird-137", "usd": 9.8565e-05, "input": 2, "cache_write": 289, "cache_read": 1424, "output": 96}
+{"t": 1795684347.937402, "model": "claude-haiku-5-5", "tag": "bird-135", "usd": 0.000183215, "input": 2, "cache_write": 679, "cache_read": 2014, "output": 156}
+{"t": 1795684348.281663, "model": "claude-haiku-5-5", "tag": "bird-139", "usd": 0.0004988999999999999, "input": 4, "cache_write": 2836, "cache_read": 0, "output": 288}
+{"t": 1795684348.919861, "model": "claude-haiku-5-5", "tag": "bird-137", "usd": 0.00016282999999999998, "input": 2, "cache_write": 172, "cache_read": 1713, "output": 248}
+{"t": 1795684349.8388171, "model": "claude-haiku-5-5", "tag": "bird-138|lg", "usd": 0.0008681}
+{"t": 1795684350.2546859, "model": "claude-haiku-5-5", "tag": "bird-135", "usd": 0.000276255, "input": 2, "cache_write": 469, "cache_read": 2693, "output": 381}
+{"t": 1795684350.260349, "model": "claude-haiku-5-5", "tag": "bird-139", "usd": 0.00021281, "input": 2, "cache_write": 422, "cache_read": 2836, "output": 263}
+{"t": 1795684351.57338, "model": "claude-haiku-5-5", "tag": "bird-140", "usd": 0.00062765, "input": 4, "cache_write": 2842, "cache_read": 0, "output": 544}
+{"t": 1795684351.630888, "model": "claude-haiku-5-5", "tag": "bird-135", "usd": 0.00017457, "input": 2, "cache_write": 414, "cache_read": 3162, "output": 182}
+{"t": 1795684352.06712, "model": "claude-haiku-5-5", "tag": "bird-136|lg", "usd": 0.0015731999999999999}
+{"t": 1795684353.8699179, "model": "claude-haiku-5-5", "tag": "bird-140", "usd": 0.00029837, "input": 2, "cache_write": 690, "cache_read": 2842, "output": 367}
+{"t": 1795684354.6990159, "model": "claude-haiku-5-5", "tag": "bird-138|lg", "usd": 0.0008224}
+{"t": 1795684355.278674, "model": "claude-haiku-5-5", "tag": "bird-135", "usd": 0.000371335, "input": 2, "cache_write": 219, "cache_read": 3576, "output": 616}
+{"t": 1795684356.011839, "model": "claude-haiku-5-5", "tag": "bird-140", "usd": 0.00030602499999999997, "input": 4, "cache_write": 1045, "cache_read": 0, "output": 350}
+{"t": 1795684356.730075, "model": "claude-haiku-5-5", "tag": "bird-141", "usd": 0.000531025, "input": 4, "cache_write": 2853, "cache_read": 0, "output": 348}
+{"t": 1795684357.373795, "model": "claude-haiku-5-5", "tag": "bird-135", "usd": 0.00038639999999999996, "input": 2, "cache_write": 1094, "cache_read": 3795, "output": 423}
+{"t": 1795684357.8459342, "model": "claude-haiku-5-5", "tag": "bird-140", "usd": 0.00022515, "input": 2, "cache_write": 412, "cache_read": 1045, "output": 326}
+{"t": 1795684358.180591, "model": "claude-haiku-5-5", "tag": "bird-139", "usd": 0.00020978000000000001, "input": 2, "cache_write": 280, "cache_read": 3258, "output": 284}
+{"t": 1795684358.181799, "model": "claude-haiku-5-5", "tag": "bird-141", "usd": 0.00016248000000000003, "input": 2, "cache_write": 462, "cache_read": 2853, "output": 152}
+{"t": 1795684359.9840572, "model": "claude-haiku-5-5", "tag": "bird-141", "usd": 0.00023397499999999998, "input": 2, "cache_write": 245, "cache_read": 3315, "output": 340}
+{"t": 1795684360.11442, "model": "claude-haiku-5-5", "tag": "bird-140", "usd": 0.000193145, "input": 2, "cache_write": 411, "cache_read": 1457, "output": 254}
+{"t": 1795684360.801416, "model": "claude-haiku-5-5", "tag": "bird-135", "usd": 0.00050334, "input": 2, "cache_write": 1306, "cache_read": 4889, "output": 582}
+{"t": 1795684363.416357, "model": "claude-haiku-5-5", "tag": "bird-141", "usd": 0.00030264999999999996, "input": 4, "cache_write": 1158, "cache_read": 0, "output": 315}
+{"t": 1795684365.252112, "model": "claude-haiku-5-5", "tag": "bird-141", "usd": 0.00020503, "input": 2, "cache_write": 446, "cache_read": 1158, "output": 275}
+{"t": 1795684365.868868, "model": "claude-haiku-5-5", "tag": "bird-142|lg", "usd": 0.0010345}
+{"t": 1795684367.2715719, "model": "claude-haiku-5-5", "tag": "bird-129|lg", "usd": 0.0041058}
+{"t": 1795684367.285385, "model": "claude-haiku-5-5", "tag": "bird-139", "usd": 0.0002494, "input": 4, "cache_write": 1020, "cache_read": 0, "output": 243}
+{"t": 1795684367.3890061, "model": "claude-haiku-5-5", "tag": "bird-141", "usd": 0.00023511500000000001, "input": 2, "cache_write": 335, "cache_read": 1604, "output": 354}
+{"t": 1795684369.303019, "model": "claude-haiku-5-5", "tag": "bird-140", "usd": 0.00035214999999999997, "input": 4, "cache_write": 1274, "cache_read": 0, "output": 385}
+{"t": 1795684369.656765, "model": "claude-haiku-5-5", "tag": "bird-142|lg", "usd": 0.0005012}
+{"t": 1795684369.862838, "model": "claude-haiku-5-5", "tag": "bird-141", "usd": 0.000412775, "input": 4, "cache_write": 1387, "cache_read": 0, "output": 478}
+{"t": 1795684370.247612, "model": "claude-haiku-5-5", "tag": "bird-139", "usd": 0.00033977499999999995, "input": 2, "cache_write": 607, "cache_read": 1020, "output": 507}
+{"t": 1795684371.45579, "model": "claude-haiku-5-5", "tag": "bird-140", "usd": 0.000269315, "input": 2, "cache_write": 459, "cache_read": 1274, "output": 398}
+{"t": 1795684372.1982899, "model": "claude-haiku-5-5", "tag": "bird-139", "usd": 0.00024272, "input": 2, "cache_write": 650, "cache_read": 1627, "output": 290}
+{"t": 1795684372.2189, "model": "claude-haiku-5-5", "tag": "bird-141", "usd": 0.00026782, "input": 2, "cache_write": 750, "cache_read": 1387, "output": 320}
+{"t": 1795684372.8398662, "model": "claude-haiku-5-5", "tag": "bird-142|lg", "usd": 0.0004523}
+{"t": 1795684373.563613, "model": "claude-haiku-5-5", "tag": "bird-141", "usd": 0.00014882, "input": 2, "cache_write": 434, "cache_read": 2137, "output": 146}
+{"t": 1795684373.634439, "model": "claude-haiku-5-5", "tag": "bird-140", "usd": 0.00025802999999999997, "input": 2, "cache_write": 432, "cache_read": 1733, "output": 373}
+{"t": 1795684373.648457, "model": "claude-haiku-5-5", "tag": "bird-139", "usd": 0.00027002499999999996, "input": 4, "cache_write": 1249, "cache_read": 0, "output": 227}
+{"t": 1795684375.564302, "model": "claude-haiku-5-5", "tag": "bird-141", "usd": 0.00025728499999999995, "input": 2, "cache_write": 207, "cache_read": 2571, "output": 411}
+{"t": 1795684378.781644, "model": "claude-haiku-5-5", "tag": "bird-139", "usd": 0.000207315, "input": 2, "cache_write": 325, "cache_read": 1249, "output": 308}
+{"t": 1795684379.522874, "model": "claude-haiku-5-5", "tag": "bird-136|lg", "usd": 0.0013395}
+{"t": 1795684385.473629, "model": "claude-haiku-5-5", "tag": "bird-136|lg", "usd": 0.0009684000000000001}
+{"t": 1795684394.95917, "model": "claude-sonnet-5-5", "tag": "bird-1", "usd": 0.0086205, "input": 4, "cache_write": 2749, "cache_read": 0, "output": 174}
+{"t": 1795684395.0354161, "model": "claude-sonnet-5-5", "tag": "bird-0", "usd": 0.008073, "input": 4, "cache_write": 2466, "cache_read": 0, "output": 190}
+{"t": 1795684395.172218, "model": "claude-sonnet-5-5", "tag": "bird-101", "usd": 0.0117355, "input": 4, "cache_write": 4023, "cache_read": 0, "output": 167}
+{"t": 1795684395.343436, "model": "claude-sonnet-5-5", "tag": "bird-102", "usd": 0.0112905, "input": 4, "cache_write": 4017, "cache_read": 0, "output": 124}
+{"t": 1795684395.345014, "model": "claude-sonnet-5-5", "tag": "bird-10", "usd": 0.008253, "input": 4, "cache_write": 2810, "cache_read": 0, "output": 122}
+{"t": 1795684395.546272, "model": "claude-sonnet-5-5", "tag": "bird-100", "usd": 0.0113005, "input": 4, "cache_write": 3973, "cache_read": 0, "output": 136}
+{"t": 1795684396.901113, "model": "claude-sonnet-5-5", "tag": "bird-1", "usd": 0.0034239, "input": 2, "cache_write": 354, "cache_read": 2749, "output": 226}
+{"t": 1795684397.001259, "model": "claude-sonnet-5-5", "tag": "bird-0", "usd": 0.0030681, "input": 2, "cache_write": 227, "cache_read": 2466, "output": 225}
+{"t": 1795684397.056961, "model": "claude-sonnet-5-5", "tag": "bird-101", "usd": 0.0040813, "input": 2, "cache_write": 626, "cache_read": 4023, "output": 211}
+{"t": 1795684397.5328362, "model": "claude-sonnet-5-5", "tag": "bird-100", "usd": 0.0023888000000000004, "input": 2, "cache_write": 155, "cache_read": 3973, "output": 160}
+{"t": 1795684398.2318878, "model": "claude-sonnet-5-5", "tag": "bird-10", "usd": 0.0042825, "input": 2, "cache_write": 427, "cache_read": 2810, "output": 293}
+{"t": 1795684398.3793988, "model": "claude-sonnet-5-5", "tag": "bird-102", "usd": 0.0040957, "input": 2, "cache_write": 332, "cache_read": 4017, "output": 286}
+{"t": 1795684398.618638, "model": "claude-sonnet-5-5", "tag": "bird-0", "usd": 0.005078, "input": 4, "cache_write": 1320, "cache_read": 0, "output": 177}
+{"t": 1795684398.753731, "model": "claude-sonnet-5-5", "tag": "bird-101", "usd": 0.0041955, "input": 4, "cache_write": 1115, "cache_read": 0, "output": 140}
+{"t": 1795684398.928854, "model": "claude-sonnet-5-5", "tag": "bird-1", "usd": 0.0051218, "input": 2, "cache_write": 795, "cache_read": 3103, "output": 282}
+{"t": 1795684400.177066, "model": "claude-sonnet-5-5", "tag": "bird-10", "usd": 0.003973, "input": 4, "cache_write": 1110, "cache_read": 0, "output": 119}
+{"t": 1795684400.204926, "model": "claude-sonnet-5-5", "tag": "bird-0", "usd": 0.002716, "input": 2, "cache_write": 208, "cache_read": 1320, "output": 206}
+{"t": 1795684400.732355, "model": "claude-sonnet-5-5", "tag": "bird-1", "usd": 0.0040105, "input": 4, "cache_write": 1173, "cache_read": 0, "output": 107}
+{"t": 1795684400.741417, "model": "claude-sonnet-5-5", "tag": "bird-102", "usd": 0.004673, "input": 4, "cache_write": 1394, "cache_read": 0, "output": 118}
+{"t": 1795684400.802121, "model": "claude-sonnet-5-5", "tag": "bird-101", "usd": 0.003263, "input": 2, "cache_write": 315, "cache_read": 1115, "output": 236}
+{"t": 1795684401.368893, "model": "claude-sonnet-5-5", "tag": "bird-100", "usd": 0.0045005, "input": 4, "cache_write": 1241, "cache_read": 0, "output": 139}
+{"t": 1795684402.3078568, "model": "claude-sonnet-5-5", "tag": "bird-101", "usd": 0.004608, "input": 4, "cache_write": 1344, "cache_read": 0, "output": 124}
+{"t": 1795684402.3091671, "model": "claude-sonnet-5-5", "tag": "bird-0", "usd": 0.0052405, "input": 4, "cache_write": 1549, "cache_read": 0, "output": 136}
+{"t": 1795684402.51344, "model": "claude-sonnet-5-5", "tag": "bird-1", "usd": 0.0024213000000000004, "input": 2, "cache_write": 176, "cache_read": 1173, "output": 186}
+{"t": 1795684402.555398, "model": "claude-sonnet-5-5", "tag": "bird-10", "usd": 0.003975, "input": 2, "cache_write": 416, "cache_read": 1110, "output": 282}
+{"t": 1795684403.2584882, "model": "claude-sonnet-5-5", "tag": "bird-100", "usd": 0.0033731, "input": 2, "cache_write": 706, "cache_read": 1241, "output": 148}
+{"t": 1795684403.862154, "model": "claude-sonnet-5-5", "tag": "bird-10", "usd": 0.0045455, "input": 4, "cache_write": 1339, "cache_read": 0, "output": 119}
+{"t": 1795684403.935856, "model": "claude-sonnet-5-5", "tag": "bird-102", "usd": 0.004358399999999999, "input": 2, "cache_write": 326, "cache_read": 1394, "output": 340}
+{"t": 1795684403.9921448, "model": "claude-sonnet-5-5", "tag": "bird-101", "usd": 0.0019784, "input": 2, "cache_write": 152, "cache_read": 1344, "output": 146}
+{"t": 1795684404.991176, "model": "claude-sonnet-5-5", "tag": "bird-100", "usd": 0.0023312, "input": 2, "cache_write": 165, "cache_read": 1947, "output": 172}
+{"t": 1795684405.131573, "model": "claude-sonnet-5-5", "tag": "bird-101", "usd": 0.0012485999999999999, "input": 2, "cache_write": 178, "cache_read": 1496, "output": 65}
+{"t": 1795684405.166528, "model": "claude-sonnet-5-5", "tag": "bird-0", "usd": 0.0034989, "input": 2, "cache_write": 164, "cache_read": 1549, "output": 293}
+{"t": 1795684405.425513, "model": "claude-sonnet-5-5", "tag": "bird-1", "usd": 0.0051714, "input": 2, "cache_write": 565, "cache_read": 1349, "output": 362}
+{"t": 1795684405.5419898, "model": "claude-sonnet-5-5", "tag": "bird-102", "usd": 0.0053455, "input": 4, "cache_write": 1623, "cache_read": 0, "output": 128}
+{"t": 1795684405.55905, "model": "claude-sonnet-5-5", "tag": "bird-10", "usd": 0.0023429, "input": 2, "cache_write": 170, "cache_read": 1339, "output": 178}
+{"t": 1795684406.731822, "model": "claude-sonnet-5-5", "tag": "bird-103", "usd": 0.010523, "input": 4, "cache_write": 3978, "cache_read": 0, "output": 57}
+{"t": 1795684406.8144891, "model": "claude-sonnet-5-5", "tag": "bird-101", "usd": 0.0018414000000000002, "input": 2, "cache_write": 88, "cache_read": 1674, "output": 145}
+{"t": 1795684406.8588328, "model": "claude-sonnet-5-5", "tag": "bird-10", "usd": 0.0016474, "input": 2, "cache_write": 293, "cache_read": 1509, "output": 76}
+{"t": 1795684406.968081, "model": "claude-sonnet-5-5", "tag": "bird-1", "usd": 0.004573, "input": 4, "cache_write": 1402, "cache_read": 0, "output": 106}
+{"t": 1795684407.123241, "model": "claude-sonnet-5-5", "tag": "bird-100", "usd": 0.005163, "input": 4, "cache_write": 1470, "cache_read": 0, "output": 148}
+{"t": 1795684408.502495, "model": "claude-sonnet-5-5", "tag": "bird-10", "usd": 0.0016792, "input": 2, "cache_write": 110, "cache_read": 1802, "output": 122}
+{"t": 1795684408.582029, "model": "claude-sonnet-5-5", "tag": "bird-103", "usd": 0.0024068, "input": 2, "cache_write": 158, "cache_read": 3978, "output": 161}
+{"t": 1795684408.703719, "model": "claude-sonnet-5-5", "tag": "bird-1", "usd": 0.0024116999999999997, "input": 2, "cache_write": 175, "cache_read": 1402, "output": 183}
+{"t": 1795684408.716346, "model": "claude-sonnet-5-5", "tag": "bird-101", "usd": 0.0021626999999999996, "input": 2, "cache_write": 237, "cache_read": 1762, "output": 139}
+{"t": 1795684408.7469, "model": "claude-sonnet-5-5", "tag": "bird-102", "usd": 0.0047538, "input": 2, "cache_write": 363, "cache_read": 1623, "output": 368}
+{"t": 1795684409.0873868, "model": "claude-sonnet-5-5", "tag": "bird-100", "usd": 0.001561, "input": 2, "cache_write": 248, "cache_read": 1470, "output": 79}
+{"t": 1795684409.939342, "model": "claude-sonnet-5-5", "tag": "bird-10", "usd": 0.0023702, "input": 2, "cache_write": 414, "cache_read": 1912, "output": 114}
+{"t": 1795684410.3946838, "model": "claude-sonnet-5-5", "tag": "bird-101", "usd": 0.0024789, "input": 2, "cache_write": 414, "cache_read": 1999, "output": 124}
+{"t": 1795684410.4694452, "model": "claude-sonnet-5-5", "tag": "bird-1", "usd": 0.0025391999999999997, "input": 2, "cache_write": 207, "cache_read": 1577, "output": 186}
+{"t": 1795684411.135881, "model": "claude-sonnet-5-5", "tag": "bird-104", "usd": 0.012528, "input": 4, "cache_write": 4088, "cache_read": 0, "output": 230}
+{"t": 1795684411.178251, "model": "claude-sonnet-5-5", "tag": "bird-103", "usd": 0.004692600000000001, "input": 2, "cache_write": 494, "cache_read": 4136, "output": 304}
+{"t": 1795684411.893431, "model": "claude-sonnet-5-5", "tag": "bird-1", "usd": 0.0020824, "input": 2, "cache_write": 228, "cache_read": 1784, "output": 133}
+{"t": 1795684412.122952, "model": "claude-sonnet-5-5", "tag": "bird-100", "usd": 0.0016558, "input": 2, "cache_write": 96, "cache_read": 1718, "output": 124}
+{"t": 1795684412.3298419, "model": "claude-sonnet-5-5", "tag": "bird-101", "usd": 0.0031828000000000004, "input": 2, "cache_write": 207, "cache_read": 2413, "output": 242}
+{"t": 1795684412.449107, "model": "claude-sonnet-5-5", "tag": "bird-10", "usd": 0.0036165999999999998, "input": 2, "cache_write": 384, "cache_read": 2326, "output": 242}
+{"t": 1795684412.932106, "model": "claude-sonnet-5-5", "tag": "bird-103", "usd": 0.0032655, "input": 4, "cache_write": 1051, "cache_read": 0, "output": 63}
+{"t": 1795684412.997073, "model": "claude-sonnet-5-5", "tag": "bird-104", "usd": 0.0029853, "input": 2, "cache_write": 457, "cache_read": 4088, "output": 143}
+{"t": 1795684413.3067148, "model": "claude-sonnet-5-5", "tag": "bird-1", "usd": 0.0019077, "input": 2, "cache_write": 165, "cache_read": 2012, "output": 129}
+{"t": 1795684413.900683, "model": "claude-sonnet-5-5", "tag": "bird-100", "usd": 0.0022579, "input": 2, "cache_write": 577, "cache_read": 1814, "output": 63}
+{"t": 1795684414.286997, "model": "claude-sonnet-5-5", "tag": "bird-105", "usd": 0.0112605, "input": 4, "cache_write": 4057, "cache_read": 0, "output": 111}
+{"t": 1795684414.287265, "model": "claude-sonnet-5-5", "tag": "bird-104", "usd": 0.004313, "input": 4, "cache_write": 1266, "cache_read": 0, "output": 114}
+{"t": 1795684414.795876, "model": "claude-sonnet-5-5", "tag": "bird-103", "usd": 0.0026265999999999998, "input": 2, "cache_write": 187, "cache_read": 1051, "output": 205}
+{"t": 1795684414.857652, "model": "claude-sonnet-5-5", "tag": "bird-1", "usd": 0.0034141999999999996, "input": 2, "cache_write": 545, "cache_read": 2177, "output": 183}
+{"t": 1795684415.627035, "model": "claude-sonnet-5-5", "tag": "bird-106", "usd": 0.012798, "input": 4, "cache_write": 3996, "cache_read": 0, "output": 280}
+{"t": 1795684415.917112, "model": "claude-sonnet-5-5", "tag": "bird-104", "usd": 0.0022756, "input": 2, "cache_write": 174, "cache_read": 1266, "output": 171}
+{"t": 1795684416.0333261, "model": "claude-sonnet-5-5", "tag": "bird-100", "usd": 0.0022256, "input": 2, "cache_write": 185, "cache_read": 2391, "output": 152}
+{"t": 1795684416.034616, "model": "claude-sonnet-5-5", "tag": "bird-103", "usd": 0.003778, "input": 4, "cache_write": 1280, "cache_read": 0, "output": 57}
+{"t": 1795684416.5430589, "model": "claude-sonnet-5-5", "tag": "bird-105", "usd": 0.0031872, "input": 2, "cache_write": 143, "cache_read": 4057, "output": 242}
+{"t": 1795684417.249633, "model": "claude-sonnet-5-5", "tag": "bird-104", "usd": 0.0049655, "input": 4, "cache_write": 1495, "cache_read": 0, "output": 122}
+{"t": 1795684417.583781, "model": "claude-sonnet-5-5", "tag": "bird-103", "usd": 0.001857, "input": 2, "cache_write": 158, "cache_read": 1280, "output": 133}
+{"t": 1795684418.201001, "model": "claude-sonnet-5-5", "tag": "bird-100", "usd": 0.0024441, "input": 2, "cache_write": 169, "cache_read": 2576, "output": 176}
+{"t": 1795684418.2332082, "model": "claude-sonnet-5-5", "tag": "bird-105", "usd": 0.002954, "input": 2, "cache_write": 332, "cache_read": 4200, "output": 170}
+{"t": 1795684418.443926, "model": "claude-sonnet-5-5", "tag": "bird-1", "usd": 0.0061811999999999995, "input": 2, "cache_write": 562, "cache_read": 2722, "output": 450}
+{"t": 1795684418.824778, "model": "claude-sonnet-5-5", "tag": "bird-104", "usd": 0.0020285, "input": 2, "cache_write": 178, "cache_read": 1495, "output": 143}
+{"t": 1795684419.266921, "model": "claude-sonnet-5-5", "tag": "bird-106", "usd": 0.0058236, "input": 2, "cache_write": 500, "cache_read": 3996, "output": 417}
+{"t": 1795684419.611243, "model": "claude-sonnet-5-5", "tag": "bird-103", "usd": 0.0036578, "input": 2, "cache_write": 468, "cache_read": 1438, "output": 234}
+{"t": 1795684420.02558, "model": "claude-sonnet-5-5", "tag": "bird-104", "usd": 0.0017538, "input": 2, "cache_write": 185, "cache_read": 1673, "output": 112}
+{"t": 1795684420.296711, "model": "claude-sonnet-5-5", "tag": "bird-105", "usd": 0.0038105, "input": 4, "cache_write": 1117, "cache_read": 0, "output": 101}
+{"t": 1795684421.1479082, "model": "claude-sonnet-5-5", "tag": "bird-106", "usd": 0.0051555, "input": 4, "cache_write": 1227, "cache_read": 0, "output": 208}
+{"t": 1795684422.921464, "model": "claude-sonnet-5-5", "tag": "bird-105", "usd": 0.0025881999999999997, "input": 2, "cache_write": 389, "cache_read": 1117, "output": 150}
+{"t": 1795684423.730944, "model": "claude-sonnet-5-5", "tag": "bird-106", "usd": 0.0047891999999999995, "input": 2, "cache_write": 397, "cache_read": 1227, "output": 367}
+{"t": 1795684424.859956, "model": "claude-sonnet-5-5", "tag": "bird-105", "usd": 0.0024296, "input": 2, "cache_write": 190, "cache_read": 1506, "output": 180}
+{"t": 1795684425.780994, "model": "claude-sonnet-5-5", "tag": "bird-106", "usd": 0.004808, "input": 4, "cache_write": 1456, "cache_read": 0, "output": 116}
+{"t": 1795684427.0092669, "model": "claude-sonnet-5-5", "tag": "bird-106", "usd": 0.0012970999999999998, "input": 2, "cache_write": 151, "cache_read": 1456, "output": 77}
+{"t": 1795684427.009532, "model": "claude-sonnet-5-5", "tag": "bird-105", "usd": 0.0030211, "input": 2, "cache_write": 199, "cache_read": 1696, "output": 235}
+{"t": 1795684428.250358, "model": "claude-sonnet-5-5", "tag": "bird-106", "usd": 0.0010972, "input": 2, "cache_write": 97, "cache_read": 1607, "output": 69}
+{"t": 1795684429.055422, "model": "claude-sonnet-5-5", "tag": "bird-105", "usd": 0.004373, "input": 4, "cache_write": 1346, "cache_read": 0, "output": 100}
+{"t": 1795684429.772438, "model": "claude-sonnet-5-5", "tag": "bird-106", "usd": 0.0014244000000000001, "input": 2, "cache_write": 92, "cache_read": 1704, "output": 102}
+{"t": 1795684430.3968158, "model": "claude-sonnet-5-5", "tag": "bird-105", "usd": 0.0015585999999999998, "input": 2, "cache_write": 196, "cache_read": 1346, "output": 93}
+{"t": 1795684431.4239202, "model": "claude-sonnet-5-5", "tag": "bird-106", "usd": 0.0017660999999999998, "input": 2, "cache_write": 133, "cache_read": 1796, "output": 125}
+{"t": 1795684432.619683, "model": "claude-sonnet-5-5", "tag": "bird-105", "usd": 0.0029506999999999997, "input": 2, "cache_write": 361, "cache_read": 1542, "output": 189}
+{"t": 1795684433.5620658, "model": "claude-sonnet-5-5", "tag": "bird-106", "usd": 0.0036444, "input": 2, "cache_write": 539, "cache_read": 1929, "output": 210}
+{"t": 1795684434.89761, "model": "claude-sonnet-5-5", "tag": "bird-105", "usd": 0.0029893000000000003, "input": 2, "cache_write": 214, "cache_read": 1903, "output": 226}
+{"t": 1795684436.225543, "model": "claude-sonnet-5-5", "tag": "bird-106", "usd": 0.0036958000000000004, "input": 2, "cache_write": 286, "cache_read": 2468, "output": 273}

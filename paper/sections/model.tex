@@ -1,0 +1,97 @@
+\section{Model}
+\label{sec:model}
+
+\subsection{Scopes, entitlements and tasks}
+Let $D$ be a database instance over relations $\mathcal{R}$. A \emph{scope} $\sigma$ maps each relation
+$R$ in its domain to a pair $(C^\sigma_R,\varphi^\sigma_R)$ of a column set $C^\sigma_R\subseteq
+\mathrm{attr}(R)$ and a row predicate $\varphi^\sigma_R$ over $\mathrm{attr}(R)$ ($\top$ if absent). An
+actor holding exactly $\sigma$ sees, for each $R$, the view $V_\sigma(R)=\pi_{C^\sigma_R}\,
+\sigma_{\varphi^\sigma_R}(R)$. We write $\sigma\sqsubseteq\tau$ when $\mathrm{dom}\,\sigma\subseteq
+\mathrm{dom}\,\tau$ and, for every $R$, $C^\sigma_R\subseteq C^\tau_R$ and
+$\varphi^\sigma_R\Rightarrow\varphi^\tau_R$. The meet $\sigma\sqcap\tau$ intersects columns and conjoins
+predicates.
+
+The \emph{entitlement} $E(u)$ of user $u$ is the scope the database grants $u$ through column privileges and
+row-level-security policies. A \emph{task} $t$ is a natural-language request. For evaluation it comes with
+a gold query $q_t$. The \emph{task scope} $S(t)$ is the scope provisioned for an agent acting for $u$ on
+$t$, and we require $S(t)\sqsubseteq E(u)$.
+
+\subsection{Needed data, sufficiency and minimality}
+\begin{definition}[Needed data]
+$N(t)$ maps each relation $R$ referenced by $q_t$ to the columns of $R$ that $q_t$ references (after
+star expansion) and to the disjunction, over occurrences of $R$ in $q_t$, of the conjunction of that
+occurrence's single-relation, subquery-free \texttt{WHERE} and inner-join conjuncts.
+\end{definition}
+Conjuncts that cannot be attributed to a single relation are dropped, so $N(t)$ over-approximates the data
+$q_t$ touches. This choice can only make the over-exposure of the baselines look \emph{smaller}.
+
+\begin{definition}[Sufficiency]
+$\sigma$ is sufficient for $t$ on $D$ if $q_t$ references only columns in $\sigma$ and
+$q_t(V_\sigma(D))=q_t(D)$.
+\end{definition}
+We test sufficiency by executing $q_t$ under the compiled scope and comparing result sets. A sufficient
+$\sigma$ is \emph{minimal} if no $\sigma'\sqsubset\sigma$ is sufficient. We never claim that an inferred
+scope is minimal (Section~\ref{sec:complexity}).
+
+\subsection{Over-exposure ratio}
+For a reach scope $\rho$ and a task whose needed data is permitted ($N(t)\sqsubseteq E(u)$), let
+$\mathrm{rows}_D(\sigma,R)=|\sigma_{\varphi^\sigma_R}(R)|$, evaluated under $E(u)$'s row predicate. For B0,
+$\rho=E(u)$; for TSE, $\rho=S(t)\sqcap E(u)$. We define
+\begin{align}
+\mathrm{OER}_{\mathrm{col}} &= \frac{\sum_{R}|C^\rho_R|}{\sum_{R}|C^{N}_R|},\\
+\mathrm{OER}_{\mathrm{row}} &= \frac{\sum_{R\in\mathrm{dom}N}\mathrm{rows}_D(\rho,R)}{\sum_{R\in\mathrm{dom}N}\max(1,\mathrm{rows}_D(N,R))},\\
+\mathrm{OER}_{\mathrm{cell}} &= \frac{\sum_{R\in\mathrm{dom}\rho}|C^\rho_R|\,\mathrm{rows}_D(\rho,R)}{\sum_{R\in\mathrm{dom}N}|C^N_R|\,\max(1,\mathrm{rows}_D(N,R))}.
+\end{align}
+An OER of one means the agent can reach exactly the needed data. For an insufficient scope the OER can fall
+below one, so we always report OER together with the sufficiency rate.
+
+\subsection{Widening}
+A widening request $w=(C_w,\Delta\varphi_w,\textit{reason})$ asks for additional columns and/or the removal
+of task row predicates. The broker grants only the in-entitlement part, $w\sqcap E(u)$; everything else is
+rejected and logged. An approval policy decides on the in-bound part (Section~\ref{sec:widening}). After
+approval $S'(t)=S(t)\sqcup(w\sqcap E(u))$, so $S'(t)\sqsubseteq E(u)$ still holds.
+
+\subsection{Trust assumptions and the design guarantee}
+\label{sec:assumptions}
+\begin{itemize}
+\item[\textbf{A1}] \emph{DBMS correctness.} PostgreSQL enforces column privileges, row-level-security
+policies, view-owner privilege semantics and \texttt{security\_barrier} predicate ordering as documented~\cite{pgrls,pgsecbarrier,pggrant}.
+\item[\textbf{A2}] \emph{Single credential.} The agent's only database credential is the ephemeral login
+created for the task.
+\item[\textbf{A3}] \emph{Trusted broker.} The broker and its credential are outside the adversary's
+control. The inference model may be wrong; it need not be trusted for the guarantee below.
+\item[\textbf{A4}] \emph{No bypass privileges.} Neither the agent role nor the user role has
+\texttt{SUPERUSER}, \texttt{BYPASSRLS}, table ownership, \texttt{CREATEROLE}, or membership with the
+\texttt{SET} option in any other role, and \texttt{PUBLIC} has no privilege on base tables.
+\end{itemize}
+
+\begin{remark}[Design guarantee; holds by construction under A1--A4, not an empirical result]
+\label{rem:guarantee}
+Under A1--A4, every cell the agent can read through any query on its connection lies in
+$\mathrm{reach}_D\big(S'(t)\sqcap E(u)\big)$, where $S'(t)$ is $S(t)$ joined with the approved
+widenings.
+\end{remark}
+\noindent\emph{Proof sketch.} The login holds privileges only through membership (with \texttt{INHERIT},
+without \texttt{SET}) in a per-task role that holds \texttt{USAGE} on the task schema and \texttt{SELECT}
+on its views (A2, A4). Base tables are unreadable to it. Each view is owned by the user role, so by A1 it is
+evaluated with that role's column grants and row policy and yields
+$\pi_{C^S_R\cap C^E_R}\,\sigma_{\varphi^S_R\wedge\varphi^E_R}(R)$. The \texttt{security\_barrier}
+option evaluates the view predicate before any user-supplied predicate (A1). Writes and object creation
+are impossible (read-only transactions, no \texttt{CREATE} or \texttt{TEMPORARY} privilege). Widening
+changes the views only through the bound check. \hfill$\square$
+
+The Remark is conditional and holds by construction; we do not count it as an experimental finding.
+Section~\ref{sec:res-security} reports our attempts to break it, and Section~\ref{sec:discussion} lists
+what it does not cover: inference from in-scope data, catalog metadata (table and column names in
+\texttt{pg\_catalog} are readable by every PostgreSQL role), timing and other covert channels, misuse of
+in-scope data, a malicious user, and a compromised broker.
+
+\subsection{A note on complexity}
+\label{sec:complexity}
+Deciding whether a column scope suffices for an arbitrary query on \emph{all} instances amounts to deciding
+query containment or rewriting under views. Containment is undecidable for full relational algebra and
+NP-complete already for conjunctive queries~\cite{chandra1977optimal}, as is rewriting conjunctive queries
+using views~\cite{levy1995answering,halevy2001answering}. Moreover, $q_t$ is not available when the scope
+is inferred; only the natural-language task is. Inference is therefore a prediction problem. We
+(i)~never claim minimality, (ii)~define sufficiency per instance and test it by execution, and (iii)~bound
+the cost of errors with widening.

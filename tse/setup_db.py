@@ -33,6 +33,7 @@ def save_secrets(s):
 
 
 def short(db):
+    db = db[:-4] if db.endswith("_inj") else db  # canary clones share the source database's roles
     return db.lower().replace("bird_", "b_").replace("spider_", "s_")[:40]
 
 
@@ -50,6 +51,7 @@ def ensure_global_roles(c, sec):
         c.execute(f"CREATE ROLE {config.OWNER_ROLE} NOLOGIN")
     if config.BROKER_ROLE not in have:
         c.execute(f"CREATE ROLE {config.BROKER_ROLE} LOGIN CREATEROLE PASSWORD {qlit(sec['broker'])}")
+    c.execute(f"GRANT pg_signal_backend TO {config.BROKER_ROLE}")  # broker terminates task sessions at teardown
 
 
 def setup_database(pgdb, dataset, db_id, sec, seed=1, frac=0.25):

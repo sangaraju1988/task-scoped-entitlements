@@ -1,0 +1,111 @@
+\section{Related Work}
+\label{sec:related}
+
+We organize prior work into four groups and then state precisely what this paper adds.
+Table~\ref{tab:mechanisms} compares mechanisms as described by their authors; it contains no
+performance numbers, because we did not run those systems (Section~\ref{sec:setup} describes the
+re-implemented baselines we did run).
+
+\subsection{Fine-grained access control and query modification in databases}
+Least privilege is a design principle for protection systems~\cite{saltzer1975protection}.
+Relational databases realize it with discretionary grants on tables and
+columns~\cite{griffiths1976authorization} and role-based models~\cite{sandhu1996rbac,ferraiolo2001nist},
+with attribute-based variants~\cite{hu2014abac}. Row-level restriction has a long history:
+Stonebraker's query modification rewrites a user query by conjoining the predicates of the views a
+user may see~\cite{stonebraker1975query}; Rizvi et al.\ distinguish the \emph{Truman} model, which
+silently rewrites queries to a user's view, from the \emph{non-Truman} model, which accepts a query only
+if it is answerable from authorized views~\cite{rizvi2004extending}; Kabra et al.\ show how predicate
+pushdown can leak information past such rewrites~\cite{kabra2006redundancy}. Commercial systems expose
+these ideas as Oracle Virtual Private Database policies~\cite{oraclevpd} and PostgreSQL row-security
+policies and \texttt{security\_barrier} views~\cite{pgrls,pgsecbarrier}. Surveys summarize the
+area~\cite{bertino2005database}. Information disclosure through views has been formalized
+\cite{miklau2004formal}, and statistical-database work shows that aggregate answers over authorized data
+can still reveal individual values~\cite{denning1979tracker,adam1989security}. All of this machinery
+enforces a policy written by an administrator for a user or role; none of it derives the policy from a
+task description.
+
+\subsection{Purpose-based access and privacy-by-design databases}
+Hippocratic databases attach purposes to data and limit disclosure to what a stated purpose
+requires~\cite{agrawal2002hippocratic,lefevre2004limiting}; purpose-based access control models purposes
+hierarchically and checks access purposes against intended purposes~\cite{byun2008purpose}. Contextual
+integrity frames privacy as appropriate information flow for a context~\cite{barth2006contextual}, and
+data-minimization requirements appear in regulation~\cite{gdpr2016}. Purposes in these systems are
+declared from a fixed vocabulary and bound to stored data in advance. Our task scope is closest in spirit
+to a per-request purpose, but it is derived automatically from free-text tasks and expressed directly as a
+relational scope (columns, row predicates), not as purpose labels.
+
+\subsection{Least privilege and authorization for LLM agents}
+Indirect prompt injection lets content an agent reads redirect its actions~\cite{greshake2023not}, and
+benchmarks measure this for tool-using agents~\cite{debenedetti2024agentdojo,zhan2024injecagent,zhang2025asb,liu2024formalizing}.
+Defenses that constrain authority include task-centric, hierarchical permission models for agent
+delegates (MiniScope~\cite{zhu2025miniscope}), policy languages that restrict tool calls and their
+arguments (Progent~\cite{shi2025progent}), dynamically generated task-scoped permissions for mobile/MCP
+agents (AgentSentry~\cite{cai2025agentsentry}), short-lived intent certificates that narrow a tool
+manifest (IGAC~\cite{zhu2026igac}), and capability leases composed from task intent and context source and
+enforced at tool and OS level (IntentCap~\cite{zheng2026intentcap}). Further work argues for classic
+security principles in agent design~\cite{zhang2025principles,li2025vision,sharma2026ac4a,surapani2026authz},
+isolates or restructures execution~\cite{wu2025isolategpt,kim2025pfi}, separates control and data flow
+(CaMeL~\cite{debenedetti2026camel}), applies information-flow control (FIDES~\cite{costa2025fides}), or
+studies over-privileged tool selection~\cite{yang2026lowerpriv}. A data-centric survey catalogs privacy
+risks of agents~\cite{lahjouji2026know}. These systems decide \emph{which tools or actions} an agent may
+use, sometimes with argument constraints. For a database agent the relevant tool is usually a single
+query interface; once it is allowed, the data it can reach is the full entitlement of the credential it
+holds. Our work operates at that remaining layer: the rows and columns reachable through an allowed tool.
+
+\subsection{Text-to-SQL under access control}
+Text-to-SQL benchmarks~\cite{yu2018spider,li2023bird} and methods based on schema
+linking~\cite{wang2020ratsql,lei2020reexamining,li2023resdsql} and LLM prompting~\cite{pourreza2023dinsql,gao2024dailsql}
+assume unrestricted access. Recent work adds access control: Fei et al.\ synthesize roles and policies for
+existing benchmarks and measure RBAC violations~\cite{fei2026rbac}; Klisura et al.\ evaluate whether models
+refuse correctly under table/column policies~\cite{klisura2026role}; PCC-SQL enforces a role's column-use
+policy deterministically during decoding~\cite{miyamoto2026pccsql}; SecureMCP places RBAC checks and SQL
+interceptors in front of an LLM data-access server~\cite{kim2026securemcp}; MaskSQL abstracts schema and
+values sent to a remote model~\cite{abedini2025masksql}. Prompt-to-SQL injection is a related application
+risk~\cite{pedro2025prompt}. These systems enforce, or test compliance with, the \emph{user's} policy.
+They do not narrow access below that policy for the task at hand.
+
+\subsection{What is new relative to query modification and fine-grained access control}
+\label{sec:whatsnew}
+We do not claim views, row-level security, query modification, or role-based enforcement as new; we use
+them unchanged. Relative to query modification~\cite{stonebraker1975query} and the Truman and non-Truman
+models~\cite{rizvi2004extending}, the policy we enforce is not given: it is \emph{inferred per task} from
+natural language and must be validated empirically for sufficiency, because a wrong policy breaks the
+task (Section~\ref{sec:model}). Relative to Oracle VPD and PostgreSQL RLS~\cite{oraclevpd,pgrls}, our
+contribution is a broker that compiles an inferred scope into ephemeral roles and \texttt{security\_barrier}
+views owned by the user's role, so that the database, not the model, bounds the result by the user's
+entitlement even when inference is wrong. Relative to Hippocratic and purpose-based
+databases~\cite{agrawal2002hippocratic,byun2008purpose}, purposes are neither declared in advance nor
+attached to stored data; the scope exists only for the lifetime of one task. Relative to agent tool
+scoping~\cite{zhu2025miniscope,shi2025progent,cai2025agentsentry,zhu2026igac,zheng2026intentcap}, we
+narrow the data reachable \emph{through} an allowed tool. Relative to access-controlled
+text-to-SQL~\cite{fei2026rbac,klisura2026role,miyamoto2026pccsql,kim2026securemcp}, we enforce a
+task-minimal subset of the user's policy, and we add a bounded, audited widening protocol for when the
+inferred subset is insufficient. The new parts are therefore (i) per-task inference of a relational scope
+from natural language, (ii) its compilation to ephemeral database objects whose ownership caps them at the
+user's entitlement, (iii) the widening protocol, and (iv) the measured security/utility trade-off. To our
+knowledge, no prior system combines (i) and (ii) (novelty search documented in the artifact).
+
+\begin{table*}[t]
+\centering
+\caption{Mechanism-level comparison as described by each work (no performance numbers; we did not run these systems).
+``Data reach'': what limits the rows/columns an agent can read through an allowed query tool.}
+\label{tab:mechanisms}
+\footnotesize
+\begin{tabular}{p{2.6cm}p{2.5cm}p{2.7cm}p{2.6cm}p{2.4cm}p{2.6cm}}
+\hline
+\textbf{Work} & \textbf{Unit of authority} & \textbf{Source of policy} & \textbf{Enforcement point} & \textbf{Per-task?} & \textbf{Data reach via query tool} \\
+\hline
+Query modification~\cite{stonebraker1975query}, Truman/non-Truman~\cite{rizvi2004extending} & views / predicates & administrator & DBMS rewrite & no & user's views \\
+Oracle VPD~\cite{oraclevpd}, PostgreSQL RLS~\cite{pgrls} & row predicates, column grants & administrator & DBMS & no & user's entitlement \\
+Hippocratic DB~\cite{agrawal2002hippocratic}, PBAC~\cite{byun2008purpose} & purpose labels & declared purposes & DBMS & per declared purpose & data allowed for the purpose \\
+MiniScope~\cite{zhu2025miniscope}, AgentSentry~\cite{cai2025agentsentry} & tools / permissions & task-centric roles; generated per task & agent runtime & yes & unchanged once tool allowed \\
+Progent~\cite{shi2025progent}, IGAC~\cite{zhu2026igac} & tool calls (+arguments) & policy DSL; intent certificate & tool-call checker & yes (IGAC) & unchanged once query allowed \\
+IntentCap~\cite{zheng2026intentcap} & capability leases & task intent + context sources & tool/OS IFC & yes & not relational \\
+CaMeL~\cite{debenedetti2026camel}, FIDES~\cite{costa2025fides} & control/data flow, labels & trusted query; labels & interpreter / IFC & yes & unchanged \\
+RBAC text-to-SQL~\cite{fei2026rbac,klisura2026role} & roles (tables/columns) & synthesized roles & evaluated (model compliance) & no & user's entitlement \\
+PCC-SQL~\cite{miyamoto2026pccsql} & column-use policy & role policy & constrained decoding & no & role's columns \\
+SecureMCP~\cite{kim2026securemcp} & RBAC + SQL checks & role policy & MCP server pipeline & no & role's entitlement \\
+\textbf{TSE (this paper)} & rows, columns & \textbf{inferred from task} $\cap$ entitlement & \textbf{DBMS} (ephemeral role, views) & \textbf{yes} & \textbf{task scope (+bounded widening)} \\
+\hline
+\end{tabular}
+\end{table*}

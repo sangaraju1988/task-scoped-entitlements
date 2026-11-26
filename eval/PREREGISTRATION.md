@@ -114,4 +114,12 @@ Secondary analyses are labelled exploratory.
   are downgraded accordingly.
 
 ## 9. Deviations log
-(empty at commit time)
+* **D1 (2026-11-26, after the 5% pilot; bug fix).** In the pilot, task row filters were enforced but not shown
+  to the agent, while the prompt invited it to request removal of "a table's row filter" it could not see; agents
+  silently computed answers over filtered rows (Truman-model behaviour). Fix: the visible schema now lists each
+  table's active task row filter (non-Truman transparency), identically for B3 and TSE. Pilot runs are kept and
+  reported separately as `pilot`; main runs use the fix. No other parameter was changed.
+* **D2 (2026-11-26, budget, decided from pilot cost only).** Measured pilot cost was US$0.0014/run (Haiku 5.5) and
+  US$0.0127/run (Sonnet 5.5), far below the estimate. The frontier arm is therefore expanded: Sonnet 5.5 runs the
+  full design (E2 main, B1, non-permitted, E5) instead of a 300-task subset; Haiku 5.5 also runs the full design.
+  The US$95 cap is unchanged; if the cap is reached, the reduction order of §8 applies.

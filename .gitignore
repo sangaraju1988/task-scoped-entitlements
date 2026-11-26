@@ -12,3 +12,4 @@ paper/*.out
 paper/*.blg
 paper/*.bbl
 paper/template/
+template_files/

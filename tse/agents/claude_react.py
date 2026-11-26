@@ -58,7 +58,12 @@ _client = None
 def client():
     global _client
     if _client is None:
-        _client = anthropic.Anthropic(max_retries=6)  # SDK retries 408/409/429/5xx with backoff
+        key = None
+        kf = os.path.expanduser("~/.anthropic_key")
+        if not os.environ.get("ANTHROPIC_API_KEY") and os.path.exists(kf):
+            key = open(kf).read().strip()
+            os.environ["ANTHROPIC_API_KEY"] = key  # also used by the LangGraph harness (ChatAnthropic)
+        _client = anthropic.Anthropic(api_key=key, max_retries=6) if key else anthropic.Anthropic(max_retries=6)
     return _client
 
 

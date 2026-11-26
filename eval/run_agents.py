@@ -54,6 +54,7 @@ def main():
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--injection", default=None, help="eval/injections.jsonl key mode (context|dbfield|widen)")
     ap.add_argument("--out", default=None)
+    ap.add_argument("--workers", type=int, default=1)
     a = ap.parse_args()
 
     tasks = load_tasks(); prep = load_prep(); byid = {t["task_id"]: t for t in tasks}
@@ -85,63 +86,100 @@ def main():
     policy = WideningPolicy(a.widen)
     # order by database so prompt prefixes are reused by the model server
     sel = sorted(sel, key=lambda t: (t["pgdb"], t["task_id"]))
-    brokers = {}
-    n_new = 0
-    with open(out, "a") as f:
+    import threading, concurrent.futures as cf
+    from tse.agents.claude_react import BudgetExceeded
+    lock = threading.Lock()
+    local = threading.local()
+    stop_flag = threading.Event()
+    counter = {"n": 0}
+    all_brokers = []
+    f = open(out, "a")
+
+    def broker_for(pgdb):
+        if not hasattr(local, "brokers"):
+            local.brokers = {}
+        if pgdb not in local.brokers:
+            b = Broker(pgdb); local.brokers[pgdb] = b
+            with lock:
+                all_brokers.append(b)
+        return local.brokers[pgdb]
+
+    def do_task(t):
+        model, fw = cellmap[t["task_id"]]
+        role = role_of(t)
+        sl = semantic_layer.get(t["pgdb"], t["dataset"], t["db_id"])
+        E = entitlement(t, role)
+        ij = inj.get(t["task_id"])
+        pgdb = ij["pgdb"] if ij and ij.get("pgdb") else t["pgdb"]
+        for seed in seeds:
+            for cond in conds:
+                if stop_flag.is_set():
+                    return
+                run_id = hashlib.sha256(f"{a.exp}|{t['task_id']}|{cond}|{model}|{fw}|{seed}|{a.variant}|{a.widen}|{a.injection}".encode()).hexdigest()[:16]
+                if run_id in done:
+                    continue
+                rec = {"run_id": run_id, "exp": a.exp, "task_id": t["task_id"], "dataset": t["dataset"], "db_id": t["db_id"],
+                       "difficulty": t["difficulty"], "set": a.set, "role": role, "condition": cond, "variant": a.variant if cond in ("TSE", "B3") else None,
+                       "widen_policy": a.widen if cond == "TSE" else None, "model": model, "model_digest": model if model.startswith("claude-") else model_digest(model),
+                       "framework": fw, "seed": seed, "temperature": a.temperature, "injection": a.injection,
+                       "commit": cm, "timestamp": datetime.datetime.now().isoformat()}
+                env = None
+                try:
+                    scope = scope_for(cond, t, role, E, tasks, sl, a.variant)
+                    rec["scope"] = scope.to_json() if scope is not None else None
+                    if cond == "B2":
+                        rec["b2_allowed_tools"] = b2_tool_gate(t)
+                    env = Env(t, cond, sl, E, role, scope=scope, widening_policy=policy if cond == "TSE" else None,
+                              broker=broker_for(pgdb), pgdb_override=pgdb)
+                    rec["setup_ms"] = env.setup_ms
+                    r = harness(fw, model).run(env, t, model, temperature=a.temperature, seed=seed,
+                                               injection=(ij or {}).get("context_text", ""))
+                    final = r["final"]
+                    res, err = env.evaluate_sql((final or {}).get("sql", ""))
+                    g = gold_result(t)
+                    rec.update(final=final, ex=bool(results_match(res, g)) if not ij else None, eval_error=err,
+                               refusal=is_refusal(final), no_final=final is None, steps=r["steps"], usage=r["usage"],
+                               agent_wall_s=r["wall_s"], harness_error=r.get("error"), stop_reason=r.get("stop_reason"),
+                               queries=[{k: q.get(k) for k in ("sql", "ok", "error", "n_shown", "ms", "columns")} for q in env.queries],
+                               query_results=[q.get("result_text", "")[:1500] for q in env.queries] if ij else None,
+                               audit=env.audit, final_scope=env.reach.to_json() if cond in ("TSE", "B1") else None,
+                               n_widen_requests=len(env.audit), n_widen_approved=env.n_approved)
+                    if ij:
+                        rec["transcript_tail"] = json.dumps(r["transcript"][-6:], default=str)[:6000]
+                except BudgetExceeded as e:
+                    stop_flag.set()
+                    print("STOP:", e, flush=True)
+                    if env is not None:
+                        env.close()
+                    return
+                except Exception as e:
+                    rec.update(error=type(e).__name__ + ": " + str(e)[:300], traceback=traceback.format_exc()[-1500:])
+                finally:
+                    if env is not None:
+                        env.close()
+                        if env.handle is not None:
+                            rec["teardown_ms"] = env.handle.timings.get("teardown_ms")
+                            rec["compile_ms"] = env.handle.timings.get("compile_ms")
+                            rec["n_db_objects"] = env.handle.n_objects
+                if "error" in rec or "final" in rec:
+                    with lock:
+                        f.write(json.dumps(rec, default=str) + "\n"); f.flush()
+                        counter["n"] += 1
+
+    if a.workers <= 1:
         for t in sel:
-            model, fw = cellmap[t["task_id"]]
-            role = role_of(t)
-            sl = semantic_layer.get(t["pgdb"], t["dataset"], t["db_id"])
-            E = entitlement(t, role)
-            ij = inj.get(t["task_id"])
-            pgdb = ij["pgdb"] if ij and ij.get("pgdb") else t["pgdb"]
-            for seed in seeds:
-                for cond in conds:
-                    run_id = hashlib.sha256(f"{a.exp}|{t['task_id']}|{cond}|{model}|{fw}|{seed}|{a.variant}|{a.widen}|{a.injection}".encode()).hexdigest()[:16]
-                    if run_id in done:
-                        continue
-                    rec = {"run_id": run_id, "exp": a.exp, "task_id": t["task_id"], "dataset": t["dataset"], "db_id": t["db_id"],
-                           "difficulty": t["difficulty"], "set": a.set, "role": role, "condition": cond, "variant": a.variant if cond in ("TSE", "B3") else None,
-                           "widen_policy": a.widen if cond == "TSE" else None, "model": model, "model_digest": model if model.startswith("claude-") else model_digest(model),
-                           "framework": fw, "seed": seed, "temperature": a.temperature, "injection": a.injection,
-                           "commit": cm, "timestamp": datetime.datetime.now().isoformat()}
-                    if pgdb not in brokers:
-                        brokers[pgdb] = Broker(pgdb)
-                    env = None
-                    try:
-                        scope = scope_for(cond, t, role, E, tasks, sl, a.variant)
-                        rec["scope"] = scope.to_json() if scope is not None else None
-                        if cond == "B2":
-                            rec["b2_allowed_tools"] = b2_tool_gate(t)
-                        env = Env(t, cond, sl, E, role, scope=scope, widening_policy=policy if cond == "TSE" else None,
-                                  broker=brokers[pgdb], pgdb_override=pgdb)
-                        rec["setup_ms"] = env.setup_ms
-                        r = harness(fw, model).run(env, t, model, temperature=a.temperature, seed=seed,
-                                            injection=(ij or {}).get("context_text", ""))
-                        final = r["final"]
-                        res, err = env.evaluate_sql((final or {}).get("sql", ""))
-                        g = gold_result(t)
-                        rec.update(final=final, ex=bool(results_match(res, g)) if not ij else None, eval_error=err,
-                                   refusal=is_refusal(final), no_final=final is None, steps=r["steps"], usage=r["usage"],
-                                   agent_wall_s=r["wall_s"], harness_error=r.get("error"),
-                                   queries=[{k: q.get(k) for k in ("sql", "ok", "error", "n_shown", "ms", "columns")} for q in env.queries],
-                                   query_results=[q.get("result_text", "")[:1500] for q in env.queries] if ij else None,
-                                   audit=env.audit, final_scope=env.reach.to_json() if cond in ("TSE", "B1") else None,
-                                   n_widen_requests=len(env.audit), n_widen_approved=env.n_approved)
-                        if ij:
-                            rec["transcript_tail"] = json.dumps(r["transcript"][-6:], default=str)[:6000]
-                    except Exception as e:
-                        rec.update(error=type(e).__name__ + ": " + str(e)[:300], traceback=traceback.format_exc()[-1500:])
-                    finally:
-                        if env is not None:
-                            env.close()
-                            if env.handle is not None:
-                                rec["teardown_ms"] = env.handle.timings.get("teardown_ms")
-                                rec["compile_ms"] = env.handle.timings.get("compile_ms")
-                                rec["n_db_objects"] = env.handle.n_objects
-                    f.write(json.dumps(rec, default=str) + "\n"); f.flush()
-                    n_new += 1
-    for b in brokers.values():
+            do_task(t)
+    else:
+        with cf.ThreadPoolExecutor(a.workers) as ex:
+            list(ex.map(do_task, sel))
+    f.close()
+    n_new = counter["n"]
+    for b in all_brokers:
+        try:
+            b.cleanup_all()
+        except Exception:
+            pass
+    for b in all_brokers:
         rec_left = b.count_task_objects()
         if rec_left != (0, 0):
             print("WARNING leftover task objects", b.pgdb, rec_left)

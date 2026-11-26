@@ -131,4 +131,11 @@ class Env:
         except Exception:
             pass
         if self.handle is not None:
-            self.broker.teardown(self.handle)
+            try:
+                self.broker.teardown(self.handle)
+            except Exception as e:  # recorded; leftover objects are removed by Broker.cleanup_all at batch end
+                self.handle.timings["teardown_error"] = type(e).__name__ + ": " + str(e)[:200]
+                try:
+                    self.broker.conn.rollback()
+                except Exception:
+                    pass

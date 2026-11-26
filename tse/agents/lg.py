@@ -33,7 +33,8 @@ def run(env, task, model: str, temperature=0.0, seed=0, injection=""):
     tools = [run_query, submit_answer] + ([request_access] if env.can_widen else [])
     if model.startswith("claude-"):
         from langchain_anthropic import ChatAnthropic
-        from .claude_react import spent_usd, cap_usd, BudgetExceeded, EFFORT
+        from .claude_react import spent_usd, cap_usd, BudgetExceeded, EFFORT, client as _cl
+        _cl()  # loads ~/.anthropic_key into the environment if needed
         if spent_usd() >= cap_usd():
             raise BudgetExceeded(f"API spend cap reached (${cap_usd():.2f})")
         # same effort setting as the manual Claude loop; no sampling parameters (rejected by these models)

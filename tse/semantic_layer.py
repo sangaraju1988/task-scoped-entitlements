@@ -105,6 +105,9 @@ class SemanticLayer:
                       if t == tname and (scope is None or (c in scope.tables[tname].columns and rt in scope.tables
                                                            and rc in scope.tables[rt].columns))]
                 pk = [p for p in tb.pk if scope is None or p in scope.tables[tname].columns]
+                if scope is not None and scope.tables[tname].predicate:
+                    # non-Truman transparency: the agent is told which rows its scope exposes
+                    out[-1] += f"\n  ROW FILTER (only rows satisfying this are visible): {scope.tables[tname].predicate}"
                 if pk:
                     out[-1] += f"\n  PRIMARY KEY: {', '.join(qident(p) for p in pk)}"
                 if fk:
