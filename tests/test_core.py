@@ -143,8 +143,11 @@ def test_teardown_and_idempotent_cleanup(sl):
     hs = [b.provision(f"c{i}", Scope({"singer": TableScope(frozenset({"name"}))}), "full") for i in range(3)]
     b.teardown(hs[0])
     b.teardown(hs[0])  # idempotent
-    assert b.cleanup_all() == 2
-    assert b.count_task_objects() == (0, 0)
+    assert b.cleanup_mine() == 2
+    assert b.mine == {}
+    for h in hs:  # every object this broker created is gone (other concurrent batches are untouched)
+        assert b.conn.execute("select count(*) from pg_namespace where nspname=%s", (h.schema,)).fetchone()[0] == 0
+        assert b.conn.execute("select count(*) from pg_roles where rolname in (%s,%s)", (h.login, h.scope_role)).fetchone()[0] == 0
     b.close()
 
 

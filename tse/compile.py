@@ -72,6 +72,7 @@ class Broker:
         self.pgdb = pgdb
         self.sec = get_secrets()
         self.conn = connect(pgdb, user=config.BROKER_ROLE, password=self.sec["broker"])
+        self.mine = {}  # schema -> (scope_role, login) provisioned by THIS broker and not yet torn down
 
     def close(self):
         self.conn.close()
@@ -88,6 +89,7 @@ class Broker:
             for stmt in compile_ddl(h):
                 self.conn.execute(stmt)
         h.n_objects = 1 + len(scope.tables) + 2  # schema + views + 2 roles
+        self.mine[s] = (R, L)
         h.timings["compile_ms"] = 1000 * (time.perf_counter() - t0)
         return h
 
@@ -119,6 +121,7 @@ class Broker:
     def teardown(self, h: Handle):
         t0 = time.perf_counter()
         self._drop(h.schema, h.scope_role, h.login)
+        self.mine.pop(h.schema, None)
         h.timings["teardown_ms"] = 1000 * (time.perf_counter() - t0)
 
     def _drop(self, schema, R, L):
@@ -133,6 +136,17 @@ class Broker:
                 if role == R:
                     c.execute(f"REVOKE CONNECT ON DATABASE {qident(self.pgdb)} FROM {role}")
                 c.execute(f"DROP ROLE {role}")
+
+    def cleanup_mine(self):
+        """Drop only the objects this broker created and did not tear down (safe with concurrent batches)."""
+        n = 0
+        for schema, (R, L) in list(self.mine.items()):
+            try:
+                self._drop(schema, R, L); n += 1
+            except Exception:
+                self.conn.rollback() if self.conn.info.transaction_status else None
+            self.mine.pop(schema, None)
+        return n
 
     def cleanup_all(self):
         """Idempotent removal of any leftover task objects in this database (and their roles)."""

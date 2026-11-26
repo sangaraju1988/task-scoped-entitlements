@@ -174,16 +174,14 @@ def main():
             list(ex.map(do_task, sel))
     f.close()
     n_new = counter["n"]
+    left = 0
     for b in all_brokers:
         try:
-            b.cleanup_all()
+            left += b.cleanup_mine()
         except Exception:
             pass
-    for b in all_brokers:
-        rec_left = b.count_task_objects()
-        if rec_left != (0, 0):
-            print("WARNING leftover task objects", b.pgdb, rec_left)
         b.close()
+    print("leftover task objects removed by this batch:", left)
     print("new runs:", n_new)
 
 
