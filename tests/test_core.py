@@ -183,3 +183,10 @@ def test_b1_cross_fitting_excludes_own_task():
              {"task_id": "b", "pgdb": DB, "fold": 1, "gold_sql": 'SELECT "concert_name" FROM "concert"'}]
     s = b1_curated_scope(tasks[0], tasks, sl2, E)
     assert "concert" in s.tables and "singer" not in s.tables
+
+
+def test_results_match_permutation():
+    from tse.datasets.tasks import results_match
+    assert results_match({(1, "a"), (2, "b")}, {("a", 1), ("b", 2)})
+    assert not results_match({(1, "a")}, {("a", 2)})
+    assert not results_match(None, {(1,)})

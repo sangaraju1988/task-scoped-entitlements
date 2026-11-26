@@ -138,3 +138,23 @@ def main(seed=20261126, n_spider=500):
 
 if __name__ == "__main__":
     main()
+
+
+def results_match(got: set, gold: set) -> bool:
+    """Execution match as sets of tuples, allowing a permutation of columns (as in the Spider test-suite
+    evaluation of Zhong et al., 2020). Applied identically to every condition."""
+    if got is None:
+        return False
+    if got == gold:
+        return True
+    if not got or not gold:
+        return False
+    a, b = next(iter(got)), next(iter(gold))
+    if len(a) != len(b) or len(a) > 6 or len(got) != len(gold):
+        return False
+    import itertools
+    n = len(a)
+    for perm in itertools.permutations(range(n)):
+        if {tuple(r[i] for i in perm) for r in got} == gold:
+            return True
+    return False

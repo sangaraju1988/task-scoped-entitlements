@@ -31,8 +31,16 @@ def run(env, task, model: str, temperature=0.0, seed=0, injection=""):
         return env.request_access(columns, drop_row_filter, reason)
 
     tools = [run_query, submit_answer] + ([request_access] if env.can_widen else [])
-    llm = ChatOllama(model=model, base_url=config.OLLAMA_URL, temperature=temperature, seed=seed, num_ctx=12288,
-                     num_predict=768, reasoning=False)
+    if model.startswith("claude-"):
+        from langchain_anthropic import ChatAnthropic
+        from .claude_react import spent_usd, cap_usd, BudgetExceeded, EFFORT
+        if spent_usd() >= cap_usd():
+            raise BudgetExceeded(f"API spend cap reached (${cap_usd():.2f})")
+        # same effort setting as the manual Claude loop; no sampling parameters (rejected by these models)
+        llm = ChatAnthropic(model=model, max_tokens=8000, max_retries=6, output_config={"effort": EFFORT})
+    else:
+        llm = ChatOllama(model=model, base_url=config.OLLAMA_URL, temperature=temperature, seed=seed, num_ctx=12288,
+                         num_predict=768, reasoning=False)
     agent = create_react_agent(llm, tools, prompt=system_prompt(env))
     t0 = time.perf_counter()
     msgs = []
@@ -50,6 +58,20 @@ def run(env, task, model: str, temperature=0.0, seed=0, injection=""):
         u = getattr(m, "usage_metadata", None)
         if u:
             ptok += u.get("input_tokens", 0); otok += u.get("output_tokens", 0); ncalls += 1
+    if model.startswith("claude-"):
+        from .claude_react import PRICES, LEDGER, _lock
+        usd = 0.0
+        for m in msgs:
+            u = getattr(m, "usage_metadata", None)
+            if u:
+                det = u.get("input_token_details", {}) or {}
+                cr, cw = det.get("cache_read", 0) or 0, det.get("cache_creation", 0) or 0
+                pin, pw, pr, pout = PRICES[model]
+                plain = max(0, u.get("input_tokens", 0) - cr - cw)
+                usd += (plain * pin + cw * pw + cr * pr + u.get("output_tokens", 0) * pout) / 1e6
+        with _lock:
+            with open(LEDGER, "a") as f:
+                f.write(json.dumps({"t": time.time(), "model": model, "tag": task["task_id"] + "|lg", "usd": usd}) + "\n")
     transcript = []
     for m in msgs[1:]:
         d = {"role": m.type, "content": m.content if isinstance(m.content, str) else json.dumps(m.content)}

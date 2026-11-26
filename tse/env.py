@@ -45,9 +45,12 @@ class Env:
         else:
             raise ValueError(condition)
         self.setup_ms = 1000 * (time.perf_counter() - self.t_setup)
+        self._connect()
+
+    def _connect(self):
         self.conn = connect(self.pgdb, user=self.login, password=self.password)
         self.conn.execute("SET statement_timeout = 30000")
-        if condition in ("B0", "B2", "B3"):
+        if self.condition in ("B0", "B2", "B3"):
             self.conn.execute("SET search_path = public")
 
     # ------------------------------------------------------------------ tools
@@ -77,8 +80,13 @@ class Env:
             msg = str(e).splitlines()[0][:300]
             rec.update(ok=False, error=type(e).__name__ + ": " + msg)
             out = "ERROR: " + msg
-            if self.conn.info.transaction_status != 0:
-                self.conn.rollback()
+            try:
+                if self.conn.closed or self.conn.broken:
+                    self._connect()
+                elif self.conn.info.transaction_status != 0:
+                    self.conn.rollback()
+            except Exception:
+                self._connect()
         rec["ms"] = 1000 * (time.perf_counter() - t0)
         rec["result_text"] = out[:4000]
         self.queries.append(rec)
