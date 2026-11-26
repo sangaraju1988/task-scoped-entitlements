@@ -96,13 +96,22 @@ def main():
     f = open(out, "a")
 
     def broker_for(pgdb):
-        if not hasattr(local, "brokers"):
-            local.brokers = {}
-        if pgdb not in local.brokers:
-            b = Broker(pgdb); local.brokers[pgdb] = b
+        """One broker connection per worker thread; switching database closes the previous one
+        (after removing anything it provisioned), so connections stay bounded by the worker count."""
+        cur = getattr(local, "broker", None)
+        if cur is not None and cur.pgdb == pgdb:
+            return cur
+        if cur is not None:
+            try:
+                cur.cleanup_mine(); cur.close()
+            except Exception:
+                pass
             with lock:
-                all_brokers.append(b)
-        return local.brokers[pgdb]
+                all_brokers.remove(cur)
+        b = Broker(pgdb); local.broker = b
+        with lock:
+            all_brokers.append(b)
+        return b
 
     def do_task(t):
         model, fw = cellmap[t["task_id"]]

@@ -4529,3 +4529,187 @@
 {"t": 1795685460.903738, "model": "claude-haiku-5-5", "tag": "spider-274", "usd": 0.00022222, "input": 2, "cache_write": 366, "cache_read": 1177, "output": 329}
 {"t": 1795685461.0777102, "model": "claude-haiku-5-5", "tag": "spider-271|lg", "usd": 0.0003322}
 {"t": 1795685461.2986848, "model": "claude-haiku-5-5", "tag": "spider-999|lg", "usd": 0.0008260000000000001}
+{"t": 1795685461.397195, "model": "claude-haiku-5-5", "tag": "spider-273", "usd": 0.00027665, "input": 4, "cache_write": 1014, "cache_read": 0, "output": 299}
+{"t": 1795685461.5342798, "model": "claude-haiku-5-5", "tag": "spider-263|lg", "usd": 0.0005678}
+{"t": 1795685461.8322089, "model": "claude-haiku-5-5", "tag": "spider-272|lg", "usd": 0.00033580000000000003}
+{"t": 1795685462.142554, "model": "claude-haiku-5-5", "tag": "spider-276|lg", "usd": 0.0003855}
+{"t": 1795685462.353108, "model": "claude-haiku-5-5", "tag": "spider-274", "usd": 0.000212525, "input": 4, "cache_write": 1037, "cache_read": 0, "output": 165}
+{"t": 1795685462.371397, "model": "claude-haiku-5-5", "tag": "spider-279", "usd": 0.0002129, "input": 4, "cache_write": 1168, "cache_read": 0, "output": 133}
+{"t": 1795685463.044574, "model": "claude-haiku-5-5", "tag": "spider-270|lg", "usd": 0.0007035}
+{"t": 1795685463.5122602, "model": "claude-haiku-5-5", "tag": "spider-273", "usd": 0.00029659000000000006, "input": 2, "cache_write": 658, "cache_read": 1014, "output": 408}
+{"t": 1795685463.8940349, "model": "claude-haiku-5-5", "tag": "spider-279", "usd": 0.00014263, "input": 2, "cache_write": 278, "cache_read": 1168, "output": 192}
+{"t": 1795685463.894527, "model": "claude-haiku-5-5", "tag": "spider-280|lg", "usd": 0.00040880000000000007}
+{"t": 1795685464.055796, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.00045640000000000003, "input": 3894, "cache_write": 0, "cache_read": 0, "output": 134}
+{"t": 1795685464.218365, "model": "claude-haiku-5-5", "tag": "spider-276|lg", "usd": 0.00032669999999999997}
+{"t": 1795685464.226773, "model": "claude-haiku-5-5", "tag": "spider-287", "usd": 0.000221275, "input": 4, "cache_write": 1171, "cache_read": 0, "output": 149}
+{"t": 1795685464.251961, "model": "claude-haiku-5-5", "tag": "spider-282|lg", "usd": 0.0004184}
+{"t": 1795685464.6366332, "model": "claude-haiku-5-5", "tag": "spider-288", "usd": 0.00022115, "input": 4, "cache_write": 1170, "cache_read": 0, "output": 149}
+{"t": 1795685464.6958919, "model": "claude-haiku-5-5", "tag": "spider-274", "usd": 0.000293695, "input": 2, "cache_write": 417, "cache_read": 1037, "output": 462}
+{"t": 1795685465.628475, "model": "claude-haiku-5-5", "tag": "spider-279", "usd": 0.0002429, "input": 4, "cache_write": 1028, "cache_read": 0, "output": 228}
+{"t": 1795685465.969449, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.0004489, "input": 3944, "cache_write": 0, "cache_read": 0, "output": 109}
+{"t": 1795685465.976453, "model": "claude-haiku-5-5", "tag": "spider-287", "usd": 0.00020641, "input": 2, "cache_write": 308, "cache_read": 1171, "output": 312}
+{"t": 1795685466.242208, "model": "claude-haiku-5-5", "tag": "spider-290|lg", "usd": 0.0003373}
+{"t": 1795685466.4226391, "model": "claude-haiku-5-5", "tag": "spider-288", "usd": 0.0002144, "input": 2, "cache_write": 308, "cache_read": 1170, "output": 328}
+{"t": 1795685466.447639, "model": "claude-haiku-5-5", "tag": "spider-286|lg", "usd": 0.0006792}
+{"t": 1795685466.614698, "model": "claude-haiku-5-5", "tag": "spider-295|lg", "usd": 0.0003912}
+{"t": 1795685466.6511822, "model": "claude-haiku-5-5", "tag": "spider-179|lg", "usd": 0.0003289}
+{"t": 1795685466.889048, "model": "claude-haiku-5-5", "tag": "spider-279", "usd": 0.00013785500000000001, "input": 2, "cache_write": 359, "cache_read": 1028, "output": 165}
+{"t": 1795685467.20721, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.00044280000000000003, "input": 3938, "cache_write": 0, "cache_read": 0, "output": 98}
+{"t": 1795685467.326615, "model": "claude-haiku-5-5", "tag": "spider-287", "usd": 0.000203775, "input": 4, "cache_write": 1031, "cache_read": 0, "output": 149}
+{"t": 1795685467.362549, "model": "claude-haiku-5-5", "tag": "spider-282|lg", "usd": 0.0004607}
+{"t": 1795685467.8116, "model": "claude-haiku-5-5", "tag": "spider-288", "usd": 0.000208525, "input": 4, "cache_write": 1101, "cache_read": 0, "output": 141}
+{"t": 1795685469.0202198, "model": "claude-haiku-5-5", "tag": "spider-181|lg", "usd": 0.00031880000000000005}
+{"t": 1795685469.0859761, "model": "claude-haiku-5-5", "tag": "spider-287", "usd": 0.00019826, "input": 2, "cache_write": 278, "cache_read": 1031, "output": 306}
+{"t": 1795685469.125149, "model": "claude-haiku-5-5", "tag": "spider-290|lg", "usd": 0.0004455}
+{"t": 1795685469.242321, "model": "claude-haiku-5-5", "tag": "spider-179|lg", "usd": 0.00029410000000000005}
+{"t": 1795685469.2438579, "model": "claude-haiku-5-5", "tag": "spider-286|lg", "usd": 0.0004194}
+{"t": 1795685469.3226109, "model": "claude-haiku-5-5", "tag": "spider-295|lg", "usd": 0.0003843}
+{"t": 1795685469.524768, "model": "claude-haiku-5-5", "tag": "spider-288", "usd": 0.00020071000000000002, "input": 2, "cache_write": 300, "cache_read": 1101, "output": 304}
+{"t": 1795685469.834346, "model": "claude-haiku-5-5", "tag": "spider-182|lg", "usd": 0.0003403}
+{"t": 1795685470.197812, "model": "claude-haiku-5-5", "tag": "spider-188", "usd": 0.00016665, "input": 4, "cache_write": 1038, "cache_read": 0, "output": 73}
+{"t": 1795685470.238394, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.0006699000000000001, "input": 3899, "cache_write": 0, "cache_read": 0, "output": 560}
+{"t": 1795685470.5322912, "model": "claude-haiku-5-5", "tag": "spider-190", "usd": 0.000166525, "input": 4, "cache_write": 1037, "cache_read": 0, "output": 73}
+{"t": 1795685470.583342, "model": "claude-haiku-5-5", "tag": "spider-193", "usd": 0.00017852500000000002, "input": 4, "cache_write": 1045, "cache_read": 0, "output": 95}
+{"t": 1795685471.436447, "model": "claude-haiku-5-5", "tag": "spider-188", "usd": 7.808e-05, "input": 2, "cache_write": 96, "cache_read": 1038, "output": 111}
+{"t": 1795685471.489408, "model": "claude-haiku-5-5", "tag": "spider-192|lg", "usd": 0.0002996}
+{"t": 1795685471.736491, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.00044290000000000003, "input": 4009, "cache_write": 0, "cache_read": 0, "output": 84}
+{"t": 1795685471.775863, "model": "claude-haiku-5-5", "tag": "spider-200|lg", "usd": 0.000317}
+{"t": 1795685471.8027189, "model": "claude-haiku-5-5", "tag": "spider-199|lg", "usd": 0.00032990000000000005}
+{"t": 1795685472.2440572, "model": "claude-haiku-5-5", "tag": "spider-190", "usd": 7.469499999999999e-05, "input": 2, "cache_write": 97, "cache_read": 1037, "output": 104}
+{"t": 1795685472.368177, "model": "claude-haiku-5-5", "tag": "spider-193", "usd": 9.640000000000001e-05, "input": 2, "cache_write": 146, "cache_read": 1045, "output": 135}
+{"t": 1795685472.610094, "model": "claude-haiku-5-5", "tag": "spider-188", "usd": 0.0001589, "input": 4, "cache_write": 976, "cache_read": 0, "output": 73}
+{"t": 1795685473.145658, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.0004573, "input": 3978, "cache_write": 0, "cache_read": 0, "output": 119}
+{"t": 1795685473.228462, "model": "claude-haiku-5-5", "tag": "spider-181|lg", "usd": 0.0004421}
+{"t": 1795685473.559718, "model": "claude-haiku-5-5", "tag": "spider-190", "usd": 0.000157775, "input": 4, "cache_write": 975, "cache_read": 0, "output": 71}
+{"t": 1795685473.672192, "model": "claude-haiku-5-5", "tag": "spider-192|lg", "usd": 0.00028649999999999997}
+{"t": 1795685473.72904, "model": "claude-haiku-5-5", "tag": "spider-193", "usd": 0.000189275, "input": 4, "cache_write": 983, "cache_read": 0, "output": 132}
+{"t": 1795685473.937854, "model": "claude-haiku-5-5", "tag": "spider-188", "usd": 0.00010496000000000001, "input": 2, "cache_write": 96, "cache_read": 976, "output": 166}
+{"t": 1795685474.333605, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.0004413, "input": 3918, "cache_write": 0, "cache_read": 0, "output": 99}
+{"t": 1795685474.712969, "model": "claude-haiku-5-5", "tag": "spider-190", "usd": 7.2575e-05, "input": 2, "cache_write": 93, "cache_read": 975, "output": 102}
+{"t": 1795685474.807122, "model": "claude-haiku-5-5", "tag": "spider-200|lg", "usd": 0.000421}
+{"t": 1795685474.8549929, "model": "claude-haiku-5-5", "tag": "spider-182|lg", "usd": 0.0006274}
+{"t": 1795685475.137053, "model": "claude-haiku-5-5", "tag": "spider-199|lg", "usd": 0.000453}
+{"t": 1795685475.659304, "model": "claude-haiku-5-5", "tag": "spider-193", "usd": 0.000194905, "input": 2, "cache_write": 315, "cache_read": 983, "output": 291}
+{"t": 1795685475.762749, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.00048330000000000004, "input": 4038, "cache_write": 0, "cache_read": 0, "output": 159}
+{"t": 1795685476.1452339, "model": "claude-haiku-5-5", "tag": "spider-214", "usd": 0.0001884, "input": 4, "cache_write": 1044, "cache_read": 0, "output": 115}
+{"t": 1795685476.2591202, "model": "claude-haiku-5-5", "tag": "spider-213", "usd": 0.00020652500000000002, "input": 4, "cache_write": 1021, "cache_read": 0, "output": 157}
+{"t": 1795685476.5195498, "model": "claude-haiku-5-5", "tag": "spider-211", "usd": 0.00026177499999999995, "input": 4, "cache_write": 1031, "cache_read": 0, "output": 265}
+{"t": 1795685476.965942, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.00043180000000000003, "input": 3928, "cache_write": 0, "cache_read": 0, "output": 78}
+{"t": 1795685477.141269, "model": "claude-haiku-5-5", "tag": "spider-214", "usd": 7.1015e-05, "input": 2, "cache_write": 171, "cache_read": 1044, "output": 78}
+{"t": 1795685477.399851, "model": "claude-haiku-5-5", "tag": "spider-193", "usd": 0.000167805, "input": 2, "cache_write": 321, "cache_read": 1298, "output": 229}
+{"t": 1795685477.6408079, "model": "claude-haiku-5-5", "tag": "spider-211", "usd": 0.00011826000000000001, "input": 2, "cache_write": 366, "cache_read": 1031, "output": 124}
+{"t": 1795685477.752264, "model": "claude-haiku-5-5", "tag": "spider-213", "usd": 0.00016366, "input": 2, "cache_write": 214, "cache_read": 1021, "output": 253}
+{"t": 1795685478.251625, "model": "claude-haiku-5-5", "tag": "spider-214", "usd": 9.86e-05, "input": 2, "cache_write": 98, "cache_read": 1215, "output": 148}
+{"t": 1795685478.374337, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.00046760000000000004, "input": 3931, "cache_write": 0, "cache_read": 0, "output": 149}
+{"t": 1795685478.4411352, "model": "claude-haiku-5-5", "tag": "spider-204|lg", "usd": 0.000902}
+{"t": 1795685478.9001012, "model": "claude-haiku-5-5", "tag": "spider-205|lg", "usd": 0.0009056}
+{"t": 1795685478.910332, "model": "claude-haiku-5-5", "tag": "spider-211", "usd": 0.00012417, "input": 2, "cache_write": 168, "cache_read": 1397, "output": 178}
+{"t": 1795685479.21028, "model": "claude-haiku-5-5", "tag": "spider-217", "usd": 0.00029077499999999995, "input": 4, "cache_write": 1111, "cache_read": 0, "output": 303}
+{"t": 1795685479.247812, "model": "claude-haiku-5-5", "tag": "spider-213", "usd": 0.00021765, "input": 4, "cache_write": 986, "cache_read": 0, "output": 188}
+{"t": 1795685479.4864268, "model": "claude-haiku-5-5", "tag": "spider-214", "usd": 0.00018315, "input": 4, "cache_write": 1002, "cache_read": 0, "output": 115}
+{"t": 1795685479.594563, "model": "claude-haiku-5-5", "tag": "spider-209|lg", "usd": 0.0009943}
+{"t": 1795685479.728141, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.0003601, "input": 2886, "cache_write": 0, "cache_read": 0, "output": 143}
+{"t": 1795685480.48773, "model": "claude-haiku-5-5", "tag": "spider-214", "usd": 7.0595e-05, "input": 2, "cache_write": 171, "cache_read": 1002, "output": 78}
+{"t": 1795685480.735104, "model": "claude-haiku-5-5", "tag": "spider-213", "usd": 0.000139935, "input": 2, "cache_write": 231, "cache_read": 986, "output": 202}
+{"t": 1795685480.739969, "model": "claude-haiku-5-5", "tag": "spider-211", "usd": 0.00017597499999999998, "input": 2, "cache_write": 197, "cache_read": 1565, "output": 271}
+{"t": 1795685480.976973, "model": "claude-haiku-5-5", "tag": "spider-210|lg", "usd": 0.0011511}
+{"t": 1795685481.13205, "model": "claude-haiku-5-5", "tag": "spider-217", "usd": 0.000192185, "input": 2, "cache_write": 439, "cache_read": 1111, "output": 252}
+{"t": 1795685481.169895, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.0004935, "input": 3985, "cache_write": 0, "cache_read": 0, "output": 190}
+{"t": 1795685481.696064, "model": "claude-haiku-5-5", "tag": "spider-214", "usd": 9.918000000000001e-05, "input": 2, "cache_write": 98, "cache_read": 1173, "output": 150}
+{"t": 1795685482.5930262, "model": "claude-haiku-5-5", "tag": "spider-217", "usd": 0.000232275, "input": 4, "cache_write": 1011, "cache_read": 0, "output": 211}
+{"t": 1795685483.032056, "model": "claude-haiku-5-5", "tag": "spider-211", "usd": 0.000187445, "input": 2, "cache_write": 309, "cache_read": 1762, "output": 262}
+{"t": 1795685483.100441, "model": "claude-haiku-5-5", "tag": "spider-220", "usd": 0.0002254, "input": 4, "cache_write": 1052, "cache_read": 0, "output": 187}
+{"t": 1795685483.574785, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.0005562000000000001, "input": 3932, "cache_write": 0, "cache_read": 0, "output": 326}
+{"t": 1795685483.75149, "model": "claude-haiku-5-5", "tag": "spider-204|lg", "usd": 0.0007715}
+{"t": 1795685484.1387331, "model": "claude-haiku-5-5", "tag": "spider-211", "usd": 0.000183525, "input": 4, "cache_write": 1009, "cache_read": 0, "output": 114}
+{"t": 1795685484.227145, "model": "claude-haiku-5-5", "tag": "spider-217", "usd": 0.000138185, "input": 2, "cache_write": 327, "cache_read": 1011, "output": 174}
+{"t": 1795685485.0231879, "model": "claude-haiku-5-5", "tag": "spider-205|lg", "usd": 0.0008593000000000001}
+{"t": 1795685485.165507, "model": "claude-haiku-5-5", "tag": "spider-220", "usd": 0.00031072, "input": 2, "cache_write": 1128, "cache_read": 1052, "output": 318}
+{"t": 1795685485.3629189, "model": "claude-haiku-5-5", "tag": "spider-209|lg", "usd": 0.0009681}
+{"t": 1795685485.368619, "model": "claude-haiku-5-5", "tag": "spider-211", "usd": 0.00010353999999999999, "input": 2, "cache_write": 142, "cache_read": 1009, "output": 151}
+{"t": 1795685485.708134, "model": "claude-haiku-5-5", "tag": "spider-217", "usd": 0.00014708, "input": 2, "cache_write": 360, "cache_read": 1338, "output": 177}
+{"t": 1795685486.54073, "model": "claude-haiku-5-5", "tag": "spider-243", "usd": 0.00027515, "input": 4, "cache_write": 1046, "cache_read": 0, "output": 288}
+{"t": 1795685486.61551, "model": "claude-haiku-5-5", "tag": "spider-220", "usd": 0.000152875, "input": 2, "cache_write": 415, "cache_read": 2180, "output": 158}
+{"t": 1795685486.695296, "model": "claude-haiku-5-5", "tag": "spider-211", "usd": 0.000145085, "input": 2, "cache_write": 215, "cache_read": 1151, "output": 213}
+{"t": 1795685486.8739169, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.0006501, "input": 3966, "cache_write": 0, "cache_read": 0, "output": 507}
+{"t": 1795685487.1052039, "model": "claude-haiku-5-5", "tag": "spider-217", "usd": 0.000120805, "input": 2, "cache_write": 201, "cache_read": 1698, "output": 157}
+{"t": 1795685487.517833, "model": "claude-haiku-5-5", "tag": "spider-244", "usd": 0.000329775, "input": 4, "cache_write": 1015, "cache_read": 0, "output": 405}
+{"t": 1795685487.541857, "model": "claude-haiku-5-5", "tag": "spider-241|lg", "usd": 0.0005948}
+{"t": 1795685487.880964, "model": "claude-haiku-5-5", "tag": "spider-211", "usd": 0.000115485, "input": 2, "cache_write": 233, "cache_read": 1366, "output": 145}
+{"t": 1795685487.900438, "model": "claude-haiku-5-5", "tag": "spider-220", "usd": 0.00011802500000000001, "input": 2, "cache_write": 187, "cache_read": 2595, "output": 137}
+{"t": 1795685487.9141939, "model": "claude-haiku-5-5", "tag": "spider-210|lg", "usd": 0.0012512}
+{"t": 1795685488.123296, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.0004325, "input": 3935, "cache_write": 0, "cache_read": 0, "output": 78}
+{"t": 1795685488.1897411, "model": "claude-haiku-5-5", "tag": "spider-243", "usd": 0.000238285, "input": 2, "cache_write": 689, "cache_read": 1046, "output": 283}
+{"t": 1795685488.70526, "model": "claude-haiku-5-5", "tag": "spider-218|lg", "usd": 0.001142}
+{"t": 1795685488.876557, "model": "claude-haiku-5-5", "tag": "spider-211", "usd": 8.981499999999999e-05, "input": 2, "cache_write": 177, "cache_read": 1599, "output": 103}
+{"t": 1795685489.142852, "model": "claude-haiku-5-5", "tag": "spider-245", "usd": 0.000184275, "input": 4, "cache_write": 1047, "cache_read": 0, "output": 106}
+{"t": 1795685489.393225, "model": "claude-haiku-5-5", "tag": "spider-220", "usd": 0.00015402, "input": 2, "cache_write": 192, "cache_read": 2782, "output": 204}
+{"t": 1795685489.427913, "model": "claude-haiku-5-5", "tag": "spider-244", "usd": 0.0003016, "input": 2, "cache_write": 782, "cache_read": 1015, "output": 387}
+{"t": 1795685489.474539, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.0004706, "input": 3931, "cache_write": 0, "cache_read": 0, "output": 155}
+{"t": 1795685489.476815, "model": "claude-haiku-5-5", "tag": "spider-243", "usd": 0.00011192500000000001, "input": 2, "cache_write": 327, "cache_read": 1735, "output": 107}
+{"t": 1795685490.0326679, "model": "claude-haiku-5-5", "tag": "spider-217", "usd": 0.000274815, "input": 2, "cache_write": 277, "cache_read": 1899, "output": 442}
+{"t": 1795685490.152482, "model": "claude-haiku-5-5", "tag": "spider-211", "usd": 0.000172335, "input": 2, "cache_write": 423, "cache_read": 1776, "output": 203}
+{"t": 1795685490.5317419, "model": "claude-haiku-5-5", "tag": "spider-245", "usd": 0.00012767, "input": 2, "cache_write": 216, "cache_read": 1047, "output": 180}
+{"t": 1795685490.921952, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.0004863, "input": 3993, "cache_write": 0, "cache_read": 0, "output": 174}
+{"t": 1795685491.2016902, "model": "claude-haiku-5-5", "tag": "spider-220", "usd": 0.000239315, "input": 2, "cache_write": 387, "cache_read": 2974, "output": 322}
+{"t": 1795685491.371074, "model": "claude-haiku-5-5", "tag": "spider-256", "usd": 0.0002414, "input": 4, "cache_write": 1104, "cache_read": 0, "output": 206}
+{"t": 1795685491.391524, "model": "claude-haiku-5-5", "tag": "spider-243", "usd": 0.00024181999999999999, "input": 2, "cache_write": 128, "cache_read": 2062, "output": 410}
+{"t": 1795685491.774842, "model": "claude-haiku-5-5", "tag": "spider-211", "usd": 0.000203565, "input": 2, "cache_write": 223, "cache_read": 2199, "output": 307}
+{"t": 1795685492.0037692, "model": "claude-haiku-5-5", "tag": "spider-244", "usd": 0.0003049, "input": 4, "cache_write": 980, "cache_read": 0, "output": 364}
+{"t": 1795685492.113259, "model": "claude-haiku-5-5", "tag": "spider-245", "usd": 0.00013208, "input": 2, "cache_write": 210, "cache_read": 1263, "output": 186}
+{"t": 1795685492.2092428, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.00043190000000000004, "input": 3879, "cache_write": 0, "cache_read": 0, "output": 88}
+{"t": 1795685492.408279, "model": "claude-haiku-5-5", "tag": "spider-241|lg", "usd": 0.0008714}
+{"t": 1795685492.6496902, "model": "claude-haiku-5-5", "tag": "spider-220", "usd": 0.00025165, "input": 4, "cache_write": 990, "cache_read": 0, "output": 255}
+{"t": 1795685492.724972, "model": "claude-haiku-5-5", "tag": "spider-256", "usd": 0.00012574, "input": 2, "cache_write": 248, "cache_read": 1104, "output": 167}
+{"t": 1795685493.2732742, "model": "claude-haiku-5-5", "tag": "spider-243", "usd": 0.0003049, "input": 4, "cache_write": 984, "cache_read": 0, "output": 363}
+{"t": 1795685493.608403, "model": "claude-haiku-5-5", "tag": "spider-412", "usd": 0.00018665, "input": 4, "cache_write": 1078, "cache_read": 0, "output": 103}
+{"t": 1795685493.621194, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.00047940000000000005, "input": 3979, "cache_write": 0, "cache_read": 0, "output": 163}
+{"t": 1795685493.795918, "model": "claude-haiku-5-5", "tag": "spider-244", "usd": 0.000260125, "input": 2, "cache_write": 665, "cache_read": 980, "output": 334}
+{"t": 1795685494.00953, "model": "claude-haiku-5-5", "tag": "spider-220", "usd": 0.000162975, "input": 2, "cache_write": 403, "cache_read": 990, "output": 205}
+{"t": 1795685494.2286139, "model": "claude-haiku-5-5", "tag": "spider-256", "usd": 0.000160595, "input": 2, "cache_write": 303, "cache_read": 1352, "output": 218}
+{"t": 1795685494.237647, "model": "claude-haiku-5-5", "tag": "spider-245", "usd": 0.00034393, "input": 2, "cache_write": 536, "cache_read": 1473, "output": 524}
+{"t": 1795685495.0505228, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.0003237, "input": 2697, "cache_write": 0, "cache_read": 0, "output": 108}
+{"t": 1795685495.067606, "model": "claude-haiku-5-5", "tag": "spider-220", "usd": 0.00010450499999999999, "input": 2, "cache_write": 231, "cache_read": 1393, "output": 123}
+{"t": 1795685495.156864, "model": "claude-haiku-5-5", "tag": "spider-243", "usd": 0.00028779, "input": 2, "cache_write": 666, "cache_read": 984, "output": 389}
+{"t": 1795685495.214127, "model": "claude-haiku-5-5", "tag": "spider-412", "usd": 0.00012572999999999998, "input": 2, "cache_write": 174, "cache_read": 1078, "output": 186}
+{"t": 1795685495.487872, "model": "claude-haiku-5-5", "tag": "spider-256", "usd": 0.0001245, "input": 2, "cache_write": 310, "cache_read": 1655, "output": 138}
+{"t": 1795685495.833138, "model": "claude-haiku-5-5", "tag": "spider-413|lg", "usd": 0.0003443}
+{"t": 1795685496.152689, "model": "claude-haiku-5-5", "tag": "spider-245", "usd": 0.00027852499999999995, "input": 4, "cache_write": 985, "cache_read": 0, "output": 310}
+{"t": 1795685496.300051, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.00031240000000000006, "input": 2699, "cache_write": 0, "cache_read": 0, "output": 85}
+{"t": 1795685496.4909408, "model": "claude-haiku-5-5", "tag": "spider-415", "usd": 0.00018627500000000001, "input": 4, "cache_write": 1063, "cache_read": 0, "output": 106}
+{"t": 1795685496.647147, "model": "claude-haiku-5-5", "tag": "spider-412", "usd": 0.000221525, "input": 4, "cache_write": 1009, "cache_read": 0, "output": 190}
+{"t": 1795685496.7158122, "model": "claude-haiku-5-5", "tag": "spider-220", "usd": 0.00016643999999999999, "input": 2, "cache_write": 152, "cache_read": 1624, "output": 262}
+{"t": 1795685496.790145, "model": "claude-haiku-5-5", "tag": "spider-256", "usd": 0.00015997500000000003, "input": 2, "cache_write": 357, "cache_read": 1965, "output": 191}
+{"t": 1795685497.54881, "model": "claude-haiku-5-5", "tag": "spider-245", "usd": 0.00015642500000000002, "input": 2, "cache_write": 495, "cache_read": 985, "output": 169}
+{"t": 1795685497.6118772, "model": "claude-haiku-5-5", "tag": "spider-415", "usd": 0.00011533, "input": 2, "cache_write": 224, "cache_read": 1063, "output": 153}
+{"t": 1795685497.630322, "model": "claude-haiku-5-5", "tag": "spider-412", "usd": 8.016499999999999e-05, "input": 2, "cache_write": 219, "cache_read": 1009, "output": 85}
+{"t": 1795685498.2241652, "model": "claude-haiku-5-5", "tag": "spider-220", "usd": 0.000174835, "input": 2, "cache_write": 379, "cache_read": 1776, "output": 219}
+{"t": 1795685498.397685, "model": "claude-haiku-5-5", "tag": "spider-218|lg", "usd": 0.0014188}
+{"t": 1795685498.660954, "model": "claude-haiku-5-5", "tag": "spider-256", "usd": 0.00021729500000000003, "input": 2, "cache_write": 283, "cache_read": 2322, "output": 317}
+{"t": 1795685498.853224, "model": "claude-haiku-5-5", "tag": "spider-412", "usd": 0.00010760500000000001, "input": 2, "cache_write": 157, "cache_read": 1228, "output": 151}
+{"t": 1795685498.894351, "model": "claude-haiku-5-5", "tag": "spider-413|lg", "usd": 0.0004395}
+{"t": 1795685499.677686, "model": "claude-haiku-5-5", "tag": "spider-415", "usd": 0.00025915, "input": 4, "cache_write": 994, "cache_read": 0, "output": 269}
+{"t": 1795685499.7325609, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.0005304000000000001, "input": 2759, "cache_write": 0, "cache_read": 0, "output": 509}
+{"t": 1795685499.813589, "model": "claude-haiku-5-5", "tag": "spider-418", "usd": 0.000223775, "input": 4, "cache_write": 1075, "cache_read": 0, "output": 178}
+{"t": 1795685500.1136708, "model": "claude-haiku-5-5", "tag": "spider-220", "usd": 0.000242, "input": 2, "cache_write": 402, "cache_read": 2155, "output": 340}
+{"t": 1795685500.2108579, "model": "claude-haiku-5-5", "tag": "spider-416|lg", "usd": 0.00035130000000000003}
+{"t": 1795685500.3232582, "model": "claude-haiku-5-5", "tag": "spider-256", "usd": 0.0002524, "input": 4, "cache_write": 984, "cache_read": 0, "output": 258}
+{"t": 1795685500.876173, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.00030090000000000005, "input": 2709, "cache_write": 0, "cache_read": 0, "output": 60}
+{"t": 1795685501.2700841, "model": "claude-haiku-5-5", "tag": "spider-415", "usd": 0.00015838999999999998, "input": 2, "cache_write": 330, "cache_read": 994, "output": 214}
+{"t": 1795685501.3250508, "model": "claude-haiku-5-5", "tag": "spider-418", "usd": 9.4325e-05, "input": 2, "cache_write": 263, "cache_read": 1075, "output": 101}
+{"t": 1795685501.664819, "model": "claude-haiku-5-5", "tag": "spider-258|lg", "usd": 0.0021387000000000003}
+{"t": 1795685501.778925, "model": "claude-haiku-5-5", "tag": "spider-256", "usd": 0.000155665, "input": 2, "cache_write": 297, "cache_read": 984, "output": 217}
+{"t": 1795685502.028799, "model": "claude-haiku-5-5", "tag": "spider-423|lg", "usd": 0.00044740000000000003}
+{"t": 1795685502.842974, "model": "claude-haiku-5-5", "tag": "spider-426|lg", "usd": 0.0004778}
+{"t": 1795685503.1316638, "model": "claude-haiku-5-5", "tag": "spider-418", "usd": 0.000216705, "input": 2, "cache_write": 281, "cache_read": 1338, "output": 336}
+{"t": 1795685503.178837, "model": "claude-haiku-5-5", "tag": "spider-256", "usd": 0.00016675999999999998, "input": 2, "cache_write": 330, "cache_read": 1281, "output": 225}
+{"t": 1795685504.2327209, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.000569, "input": 2690, "cache_write": 0, "cache_read": 0, "output": 600}
+{"t": 1795685506.00787, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.0002992, "input": 2692, "cache_write": 0, "cache_read": 0, "output": 60}
+{"t": 1795685507.2842271, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.0003217, "input": 2692, "cache_write": 0, "cache_read": 0, "output": 105}
+{"t": 1795685508.526463, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.00031969999999999996, "input": 2702, "cache_write": 0, "cache_read": 0, "output": 99}
+{"t": 1795685509.7696671, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.0003083, "input": 2698, "cache_write": 0, "cache_read": 0, "output": 77}
+{"t": 1795685511.0247118, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.00030490000000000004, "input": 2694, "cache_write": 0, "cache_read": 0, "output": 71}
+{"t": 1795685512.852056, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.0003773, "input": 2808, "cache_write": 0, "cache_read": 0, "output": 193}
+{"t": 1795685514.179042, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.00031240000000000006, "input": 2744, "cache_write": 0, "cache_read": 0, "output": 76}
+{"t": 1795685516.0504289, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.00033640000000000005, "input": 2824, "cache_write": 0, "cache_read": 0, "output": 108}
+{"t": 1795685517.985395, "model": "claude-haiku-5-5", "tag": "inference", "usd": 0.000427, "input": 2775, "cache_write": 0, "cache_read": 0, "output": 299}
