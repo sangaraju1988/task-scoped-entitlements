@@ -155,3 +155,11 @@ Secondary analyses are labelled exploratory.
   (`eval/subset_local_200_order.txt`, seed 20261127), all three conditions of a task in sequence, and the run is
   stopped at 2026-11-27 12:00 IST regardless of results. Only tasks with all three conditions completed are
   analysed; the achieved n is reported.
+* **D6 (2026-11-27, after an internal review of the draft; exploratory).** (a) The agent-level ablations were
+  compared with default-TSE runs from E2, but the ablation subset's harness assignment differs from E2's for some
+  tasks, so those pairs crossed harnesses. We add default TSE (*auto*) and B0 runs on the ablation subset with the
+  ablation's own cell assignment, and all ablation contrasts use them. (b) B3 has no widening affordance, so B3 vs
+  TSE mixes enforcement with widening. We add **B3W**: B3 plus the same `request_access` tool and policy as TSE,
+  where approval only enlarges the shown schema (credentials stay E(u)); Haiku 5.5 on the ablation subset (both
+  harnesses, same cells) and Sonnet 5.5 (ReAct) on the same 200 tasks, paired with E2 TSE runs. Both are
+  exploratory and reported as such.

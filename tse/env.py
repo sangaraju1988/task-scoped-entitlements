@@ -8,6 +8,8 @@ Conditions
   B2   tool-level task scoping (approximation of MiniScope/Progent-style gating): a per-task tool allow-list
        is computed; `run_query` is necessarily allowed for every data task, so data reach equals B0.
   B3   prompt-level schema pruning: B0 credentials, but the prompt shows only the inferred scope S(t).
+  B3W  B3 plus the same request_access tool and widening policy as TSE; approval only enlarges the shown schema
+       (credentials stay E(u)). Added after review (deviation D6) so that B3W vs TSE isolates DB enforcement.
   TSE  ours: broker-compiled S(t); the agent's only credential is the ephemeral login; may request widening.
 """
 from __future__ import annotations
@@ -32,9 +34,9 @@ class Env:
         self.handle: Handle = None
         self.broker = broker
         self.t_setup = time.perf_counter()
-        if condition in ("B0", "B2", "B3"):
+        if condition in ("B0", "B2", "B3", "B3W"):
             self.login, self.password = login_role(task["pgdb"], role), get_secrets()["logins"][login_role(task["pgdb"], role)]
-            self.visible = scope if condition == "B3" else E
+            self.visible = scope if condition in ("B3", "B3W") else E
             self.reach = E
         elif condition in ("B1", "TSE"):
             assert scope is not None and broker is not None
@@ -50,13 +52,13 @@ class Env:
     def _connect(self):
         self.conn = connect(self.pgdb, user=self.login, password=self.password)
         self.conn.execute("SET statement_timeout = 30000")
-        if self.condition in ("B0", "B2", "B3"):
+        if self.condition in ("B0", "B2", "B3", "B3W"):
             self.conn.execute("SET search_path = public")
 
     # ------------------------------------------------------------------ tools
     @property
     def can_widen(self):
-        return self.condition == "TSE" and self.widening_policy is not None
+        return self.condition in ("TSE", "B3W") and self.widening_policy is not None
 
     def schema_text(self):
         return self.sl.render(self.visible)
@@ -96,13 +98,16 @@ class Env:
         if not self.can_widen:
             return "ERROR: access requests are not available."
         req = {"columns": columns or [], "drop_row_filter": drop_row_filter or [], "reason": reason}
-        new, rec = widen_mod.handle_request(req, self.handle.scope, self.E, self.sl, self.widening_policy,
+        cur = self.handle.scope if self.handle is not None else self.visible  # B3W: prompt-only scope
+        new, rec = widen_mod.handle_request(req, cur, self.E, self.sl, self.widening_policy,
                                             self.audit, self.n_approved)
         if rec["decision"] == "approved":
-            self.broker.widen(self.handle, new)
+            if self.handle is not None:
+                self.broker.widen(self.handle, new)
             self.n_approved += 1
             self.visible = new
-            self.reach = new
+            if self.handle is not None:
+                self.reach = new
             return ("APPROVED. Granted columns: " + json.dumps(rec["granted_columns"]) +
                     ("; row filters removed on: " + json.dumps(rec["granted_row_drops"]) if rec["granted_row_drops"] else "") +
                     "\nUpdated visible schema:\n" + self.schema_text())
@@ -118,7 +123,7 @@ class Env:
         try:
             with connect(self.pgdb, user=self.login, password=self.password) as c:
                 c.execute("SET statement_timeout = 60000")
-                if self.condition in ("B0", "B2", "B3"):
+                if self.condition in ("B0", "B2", "B3", "B3W"):
                     c.execute("SET search_path = public")
                 cur = c.execute(sql)
                 return result_set(cur.fetchall() if cur.description else []), None

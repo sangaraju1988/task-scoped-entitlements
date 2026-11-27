@@ -29247,3 +29247,8 @@
 {"t": 1795705077.633782, "model": "claude-haiku-5-5", "tag": "spider-451", "usd": 0.000266195, "input": 2, "cache_write": 395, "cache_read": 1962, "output": 394}
 {"t": 1795705077.642901, "model": "claude-haiku-5-5", "tag": "spider-456|lg", "usd": 0.0006567000000000001}
 {"t": 1795705078.00847, "model": "claude-haiku-5-5", "tag": "spider-462", "usd": 0.000238835, "input": 2, "cache_write": 441, "cache_read": 1151, "output": 344}
+{"t": 1795742324.362939, "model": "claude-haiku-5-5", "tag": "bird-0", "usd": 0.00032352499999999996, "input": 4, "cache_write": 1549, "cache_read": 0, "output": 259}
+{"t": 1795742325.967354, "model": "claude-haiku-5-5", "tag": "bird-0", "usd": 0.00021044, "input": 2, "cache_write": 286, "cache_read": 1549, "output": 318}
+{"t": 1795742328.282173, "model": "claude-haiku-5-5", "tag": "bird-14", "usd": 0.00039539999999999996, "input": 4, "cache_write": 1352, "cache_read": 0, "output": 452}
+{"t": 1795742331.526021, "model": "claude-haiku-5-5", "tag": "bird-14", "usd": 0.000589095, "input": 2, "cache_write": 2099, "cache_read": 1352, "output": 626}
+{"t": 1795742334.016722, "model": "claude-haiku-5-5", "tag": "bird-14", "usd": 0.00035583500000000004, "input": 2, "cache_write": 733, "cache_read": 3451, "output": 459}

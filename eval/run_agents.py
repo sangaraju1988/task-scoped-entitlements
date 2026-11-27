@@ -33,7 +33,7 @@ def is_refusal(final):
 
 
 def scope_for(cond, task, role, E, all_tasks, sl, variant):
-    if cond in ("TSE", "B3"):
+    if cond in ("TSE", "B3", "B3W"):
         return tse_scope(task, role, variant, E)
     if cond == "B1":
         return b1_curated_scope(task, all_tasks, sl, E)
@@ -137,8 +137,8 @@ def main():
                 if run_id in done:
                     continue
                 rec = {"run_id": run_id, "exp": a.exp, "task_id": t["task_id"], "dataset": t["dataset"], "db_id": t["db_id"],
-                       "difficulty": t["difficulty"], "set": a.set, "role": role, "condition": cond, "variant": a.variant if cond in ("TSE", "B3") else None,
-                       "widen_policy": a.widen if cond == "TSE" else None, "model": model, "model_digest": model if model.startswith("claude-") else model_digest(model),
+                       "difficulty": t["difficulty"], "set": a.set, "role": role, "condition": cond, "variant": a.variant if cond in ("TSE", "B3", "B3W") else None,
+                       "widen_policy": a.widen if cond in ("TSE", "B3W") else None, "model": model, "model_digest": model if model.startswith("claude-") else model_digest(model),
                        "framework": fw, "seed": seed, "temperature": a.temperature, "injection": a.injection,
                        "commit": cm, "timestamp": datetime.datetime.now().isoformat()}
                 env = None
@@ -147,7 +147,7 @@ def main():
                     rec["scope"] = scope.to_json() if scope is not None else None
                     if cond == "B2":
                         rec["b2_allowed_tools"] = b2_tool_gate(t)
-                    env = Env(t, cond, sl, E, role, scope=scope, widening_policy=policy if cond == "TSE" else None,
+                    env = Env(t, cond, sl, E, role, scope=scope, widening_policy=policy if cond in ("TSE", "B3W") else None,
                               broker=broker_for(pgdb), pgdb_override=pgdb)
                     rec["setup_ms"] = env.setup_ms
                     r = harness(fw, model).run(env, t, model, temperature=a.temperature, seed=seed,
