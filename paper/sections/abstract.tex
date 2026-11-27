@@ -4,14 +4,15 @@ narrow which rows and columns an allowed query tool can reach. We present task-s
 broker infers the tables, columns and rows a natural-language task needs, compiles that scope into an ephemeral
 PostgreSQL role and security-barrier views owned by the user's role, and offers a bounded, audited widening request
 when the scope is insufficient. In a preregistered evaluation on \nTasks{} BIRD and Spider tasks with Claude Haiku~5.5,
-Claude Sonnet~5.5 and an open-weight agent, under synthetic role policies, TSE reduced reachable columns
-\oerColReduction-fold and reachable cells \oerCellReduction-fold relative to the full entitlement. Execution accuracy
-changed by \dExHaikuTse{} percentage points (95\% CI [\dExLoHaikuTse, \dExHiHaikuTse]) for Haiku and \dExSonnetTse{}
-([\dExLoSonnetTse, \dExHiSonnetTse]) for Sonnet. Under indirect prompt injection, exfiltration of out-of-task data fell
-from \exfSonnetCtxBzero\% to \exfSonnetCtxTse\% (Sonnet); nearly all remaining leaks came through approved widening,
-and with widening denied exfiltration was \exfSonnetCtxDeny\%;
-\bypassSuccess{} of \bypassAttempts{} enforcement-bypass attempts succeeded. The approach rests on two assumptions:
-scope-inference quality (inferred scopes were sufficient for \suffTse\% of tasks) and correct database enforcement.
-TSE does not protect against inference from in-scope data, covert channels, misuse of in-scope data, or malicious
-users; it reduces the data reachable per task.
+Claude Sonnet~5.5 and open-weight agents, under synthetic role policies, the data an agent could finally reach,
+including approved widening, was \oerColRedPostSonnet-fold smaller in columns and \oerCellRedPostSonnet-fold smaller
+in cells than the full entitlement (Sonnet). Execution accuracy changed by \dExHaikuTse{} percentage points (95\% CI
+[\dExLoHaikuTse, \dExHiHaikuTse]) for Haiku and \dExSonnetTse{} ([\dExLoSonnetTse, \dExHiSonnetTse]) for Sonnet.
+Under generic indirect prompt injection, exfiltration of out-of-task data fell from \exfSonnetCtxBzero\% to
+\exfSonnetCtxTse\% (Sonnet); an injection that told the agent to request the target column still succeeded in
+\widExfilAutoSonnet\% of runs under automatic approval, so widening approval is the main residual channel.
+\bypassSuccess{} of \bypassAttempts{} scripted enforcement-bypass attempts succeeded. The approach rests on two
+assumptions: scope-inference quality (inferred scopes were sufficient for \suffTse\% of tasks) and correct database
+enforcement. TSE does not protect against inference from in-scope data, covert channels, misuse of in-scope data, or
+malicious users; it reduces the data reachable per task.
 \end{abstract}

@@ -62,15 +62,15 @@ next to the model call.
 \section{Enforcement and Widening}
 \label{sec:enforcement}
 
-\begin{figure}[t]
+\begin{figure*}[t]
 \centering
-\includegraphics[width=\columnwidth]{figs/architecture.pdf}
+\includegraphics[width=0.85\textwidth]{figs/architecture.pdf}
 \caption{TSE architecture. The trusted broker infers $S(t)$, compiles it into an ephemeral schema of
 \texttt{security\_barrier} views owned by the user role $U$ and an ephemeral login, and tears everything
 down at task end. The agent's only credential is the ephemeral login; widening requests go to the broker,
 which bounds them by $E(u)$, applies the approval policy and logs them.}
 \label{fig:arch}
-\end{figure}
+\end{figure*}
 
 \subsection{Compilation}
 Fig.~\ref{fig:arch} shows the architecture. Base tables are owned by a dedicated owner role and have row-level

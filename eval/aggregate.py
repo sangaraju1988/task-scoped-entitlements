@@ -151,7 +151,7 @@ if SC:
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
-    fig, axes = plt.subplots(1, 2, figsize=(7.0, 2.7))
+    fig, axes = plt.subplots(1, 2, figsize=(7.0, 2.9))
     order = [s for s in ("B0", "B1", "tse_k2", "tse", "tse_k0") if s in R]
     data = [[max(1e-3, x["scopes"][s]["oer_cell"]) for x in SC if s in x["scopes"]] for s in order]
     bp = axes[0].boxplot(data, vert=True, patch_artist=True, showfliers=False, widths=0.6)
@@ -165,12 +165,16 @@ if SC:
     for s, m in marks.items():
         if s in R:
             axes[1].scatter(R[s]["oer_col"], 100 * R[s]["suff"][0], marker=m, c="k", s=28)
-            axes[1].annotate(SRC_LABEL[s].replace("TSE ", "").replace(" (default)", "").replace("$", "").replace("{=}", "=").replace(" (exploratory)", "")[:18],
-                             (R[s]["oer_col"], 100 * R[s]["suff"][0]), fontsize=5.8, xytext=(3, 2), textcoords="offset points")
+            short = {"B1": "B1 role view", "tse_k0": "k=0", "tse": "k=1 (default)", "tse_k2": "k=2", "tse_noclose": "no FK closure",
+                     "tse_nosl": "no semantic layer", "tse_small": "3B inference", "tse_haiku": "Haiku inference"}[s]
+            off = {"tse_noclose": (5, -10), "tse": (-62, 4), "tse_k0": (-24, 1), "tse_small": (5, -3), "tse_nosl": (5, -8),
+                   "tse_haiku": (5, 2), "tse_k2": (5, 2), "B1": (5, 2)}.get(s, (4, 2))
+            axes[1].annotate(short, (R[s]["oer_col"], 100 * R[s]["suff"][0]), fontsize=7, xytext=off, textcoords="offset points")
     axes[1].set_xlabel("OER$_\\mathrm{col}$ (geomean)", fontsize=8); axes[1].set_ylabel("sufficient scopes (%)", fontsize=8)
     axes[1].set_title("(b) exposure vs.\\ sufficiency".replace("\\", ""), fontsize=8); axes[1].tick_params(labelsize=7)
     if "B0" in R:
-        axes[1].axvline(R["B0"]["oer_col"], ls=":", c="k", lw=0.8); axes[1].text(R["B0"]["oer_col"], 5, " B0", fontsize=6)
+        axes[1].axvline(R["B0"]["oer_col"], ls=":", c="k", lw=0.8); axes[1].text(R["B0"]["oer_col"], 5, "B0 ", fontsize=7, ha="right")
+        axes[1].set_xlim(0, R["B0"]["oer_col"] * 1.08); axes[1].set_ylim(0, 102)
     plt.tight_layout(); plt.savefig(os.path.join(PAPER, "figs", "fig_e1.pdf")); plt.close()
     # under-scoping taxonomy sample (documented procedure; classification in eval/taxonomy.py)
 SENS = load("e1_sensitivity.jsonl")
@@ -251,7 +255,7 @@ adj2 = holm(pvals2)
 if E2TAB:
     with open(os.path.join(PAPER, "tables", "tab_e2.tex"), "w") as f:
         f.write("\\begin{table*}[t]\\centering\\caption{Utility on permitted tasks (E2). EX: execution accuracy with 95\\% bootstrap CI. "
-                "$\\Delta$: paired difference to B0 in percentage points (95\\% CI; exact McNemar, Holm-adjusted). Widening (TSE): share of runs "
+                "Difference column: paired difference to B0 in percentage points (95\\% CI; exact McNemar, Holm-adjusted). Widening (TSE): share of runs "
                 "with $\\geq$1 request / $\\geq$1 approval (policy \\emph{auto}). B2 has the reach and behaviour of B0 by construction "
                 "(Section~\\ref{sec:setup}).}\\label{tab:e2}\n\\footnotesize\\begin{tabular}{llrlllrr}\\hline\n"
                 "\\textbf{Agent model} & \\textbf{Cond.} & $n$ & \\textbf{EX (\\%)} & $\\Delta$ \\textbf{vs.\\ B0 (pp)} & $p_\\mathrm{Holm}$ & "
@@ -511,7 +515,7 @@ if ABL:
     macro("ablExBzero", pct(np.mean([ok_ex(B0H[t]) for t in abl_ts if t in B0H])), "runs_abl_haiku.jsonl", "EX %, B0 on the ablation subset")
     with open(os.path.join(PAPER, "tables", "tab_ablation.tex"), "w") as f:
         f.write("\\begin{table}[t]\\centering\\caption{Agent-level ablations (Haiku 5.5, both harnesses, " + str(len(abl_ts)) + " permitted tasks). "
-                "$\\Delta$: paired EX difference to default TSE ($k{=}1$, \\emph{auto}) on the same tasks (95\\% CI). Exploratory.}\\label{tab:ablation}\n"
+                "Difference column: paired EX difference to default TSE ($k{=}1$, \\emph{auto}) on the same tasks (95\\% CI). Exploratory.}\\label{tab:ablation}\n"
                 "\\footnotesize\\begin{tabular}{lrrlr}\\hline\\textbf{Variant/policy} & $n$ & \\textbf{EX (\\%)} & $\\Delta$ \\textbf{(pp)} & \\textbf{Approved} \\\\\\hline\n")
         for v, n, m, d, lo, hi, ap in rows:
             f.write(f"{v} & {n} & {100*m:.1f} & {100*d:+.1f} [{100*lo:+.1f}, {100*hi:+.1f}] & {100*ap:.1f}\\% \\\\\n")
@@ -541,7 +545,7 @@ if WID:
     from eval.common import entitlement
     tot_req = exceed_granted = 0
     for pol in ("auto", "strict"):
-        xs = [x for x in WID if x.get("widen_policy") == pol and "error" not in x]
+        xs = [x for x in WID if x.get("widen_policy") == pol and "error" not in x and not x.get("harness_error")]
         if not xs:
             continue
         reqs = [a for x in xs for a in x.get("audit", [])]
@@ -651,8 +655,27 @@ BROKER_ERR = ("InvalidTableDefinition", "InternalError_")
 for tg, fn in (("Haiku", "runs_e2_haiku.jsonl"), ("Sonnet", "runs_e2_sonnet_r.jsonl"), ("WidSonnet", "runs_e5wid_sonnet.jsonl"), ("WidHaiku", "runs_e5wid_haiku.jsonl")):
     xs = [x for x in runs(fn) if x["condition"] == "TSE"]
     if xs:
-        macro("brokerErr" + tg, sum(str(x.get("harness_error") or "").startswith(BROKER_ERR) for x in xs), fn, f"TSE runs ended by a broker error, {tg}")
+        macro("brokerErr" + tg, sum(str(x.get("harness_error") or x.get("error") or "").startswith(BROKER_ERR) for x in xs), fn, f"TSE runs ended by a broker error, {tg}")
         macro("nTseRuns" + tg, len(xs), fn, f"TSE runs, {tg}")
+
+# share of widening-attack canary columns that the strict policy's tagger marks sensitive
+if "widen" in INJ:
+    from tse import semantic_layer as _sl
+    from tse.policies.generate import is_sensitive as _sens
+    tg_ = []
+    for t, i in INJ["widen"].items():
+        T_ = TASKS[t]; sl_ = _sl.get(T_["pgdb"], T_["dataset"], T_["db_id"])
+        tg_.append(_sens(i["canary_column"], sl_.tables[i["canary_table"]].columns[i["canary_column"]].description))
+    macro("widCanaryTagged", pct(np.mean(tg_)), "injections_widen.jsonl", "% widening-attack canary columns tagged sensitive")
+
+# open-weight arm per agent model (the pooled row mixes two models)
+LOC = runs("runs_e2_local.jsonl")
+for tg, model in (("Qwen", "qwen3:8b"), ("Coder", "qwen2.5-coder:7b")):
+    for c, C in (("B0", "Bzero"), ("B3", "Bthree"), ("TSE", "Tse")):
+        xs = [x for x in LOC if x["model"] == model and x["condition"] == c]
+        if xs:
+            macro("exLocal" + tg + C, pct(np.mean([ok_ex(x) for x in xs])), "runs_e2_local.jsonl", f"EX %, {model}, {c}")
+            macro("nLocal" + tg, len(xs), "runs_e2_local.jsonl", f"tasks, {model}")
 
 # E5: tasks whose canary column lies outside E(u) (threat-matrix row 2)
 if "context" in INJ:
@@ -670,7 +693,7 @@ if "context" in INJ:
 if WID:
     for tg, model in (("Haiku", "claude-haiku-5-5"), ("Sonnet", "claude-sonnet-5-5")):
         for pol in ("auto", "strict"):
-            xs = [x for x in WID if x["model"] == model and x.get("widen_policy") == pol and "error" not in x]
+            xs = [x for x in WID if x["model"] == model and x.get("widen_policy") == pol and "error" not in x and not x.get("harness_error")]
             if not xs:
                 continue
             e = boot_ci(np.array(["CNRY" in ((x.get("final") or {}).get("answer", "") or "") for x in xs], float))

@@ -16,15 +16,15 @@ not address it.
 \hline
 \textbf{Vector} & \textbf{Mechanism / reason} & \textbf{Status} & \textbf{Evidence} \\
 \hline
-1. Injected instruction to read out-of-task columns or rows within $E(u)$ & Columns/rows outside $S(t)$ are not in the views; base tables unreadable & Mitigated & E5a (Table~\ref{tab:e5}); E5b; T \\
-2. Injected instruction to read data outside $E(u)$ & View owner $U$ lacks the privilege; B0 already blocks it & Mitigated (also by B0) & E5a (out-of-$E$ subset); T \\
+1. Injected instruction to read out-of-task columns or rows within $E(u)$ & Columns/rows outside $S(t)$ are not in the views; base tables unreadable; reachable again through approved widening & Partially mitigated (depends on approval policy) & E5a, E5c (Table~\ref{tab:e5}); E5b; T \\
+2. Injected instruction to read data outside $E(u)$ & View owner $U$ lacks the privilege; B0 already blocks it & Mitigated (also by B0) & E5a (\nCanaryOutE{} out-of-$E$ tasks, 0 leaks); T \\
 3. Injected instruction to request widening for out-of-task data & Bound $W\subseteq E(u)$; policy; budget; audit. In-entitlement requests can be approved under \emph{auto} & Partially mitigated & E5c (Section~\ref{sec:res-security}) \\
 4. Widening requests beyond $E(u)$ & Rejected by the bound check and unenforceable by the DB (view owner lacks privilege) & Mitigated & E5c (no grant outside $E(u)$); T \\
 5. Role switching (\texttt{SET ROLE}, \texttt{SET SESSION AUTHORIZATION}) & Membership \texttt{WITH SET FALSE}; no superuser & Mitigated & E5b; T \\
 6. Direct base-table access, schema-path tricks, mixing views and base tables & No \texttt{USAGE} on \texttt{public}; privileges checked per relation & Mitigated & E5b; T \\
 7. Leaky functions/operators observing filtered rows & \texttt{security\_barrier}; no \texttt{CREATE}/\texttt{TEMPORARY} & Mitigated & E5b; T (leaky-function test) \\
 8. Statistics and catalog values (\texttt{pg\_stats}, \texttt{pg\_statistic}) & \texttt{pg\_stats} filters by column privilege; \texttt{pg\_statistic} denied & Mitigated & E5b; T \\
-9. Error-message side channels & Errors arise only on in-scope data; no out-of-scope value reached in our attempts & Mitigated (tested) & E5b; T \\
+9. Error-message side channels & Errors arise only on in-scope data; no out-of-scope value reached in our scripted attempts & Partially mitigated (scripted tests only) & E5b; T \\
 10. Server file and program access (\texttt{COPY}, \texttt{pg\_read\_file}, large objects) & Require superuser or predefined roles; read-only transactions & Mitigated & E5b; T \\
 11. Writes, DDL, persistence & Read-only transactions; no \texttt{CREATE}; ephemeral roles dropped at task end & Mitigated & E5b; E4 (cleanup) \\
 12. Schema metadata (table/column names, view definitions) & PostgreSQL exposes catalog metadata to all roles & Out of scope & E5b (catalog reads run) \\
@@ -78,6 +78,15 @@ earlier results would need scope evolution beyond widening.
 \emph{Models and decoding.} Claude models reject sampling parameters, so their runs are not seed-controlled; we
 quantify run-to-run variation separately. Local open-weight agents struggled with the tool protocol, which limited
 the open-weight arm.
+\emph{Attacks are fixed, not adaptive.} Injection uses a few fixed templates that name the target column, and the
+bypass catalog is scripted. Paraphrased or adaptive injections, attacks that try to manipulate scope inference
+itself, and agent-driven bypass search were not evaluated; nor did we compare with model-level injection defenses,
+which are complementary.
+\emph{Implementation defects.} Two broker defects ended about one percent of main TSE runs, and more widening-attack
+runs, with an error (deviation D8); they are fixed in the released code but not re-run, so the reported TSE accuracy
+is slightly pessimistic.
+\emph{Run-to-run variation.} Repeated runs of the same tasks varied by several points, which the task-level CIs do
+not include.
 \emph{Pre-freeze development and deviations.} The inference pipeline was debugged on 16 evaluation tasks before
-preregistration, and four deviations were logged (one bug fix, two budget-driven scope changes, one exploratory
-arm added after an interim inspection); all are listed in the artifact.
+preregistration, and eight deviations were logged (Section~\ref{sec:setup}); all are listed with dates and
+reasons in the artifact.

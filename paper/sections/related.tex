@@ -32,7 +32,14 @@ integrity frames privacy as appropriate information flow for a context~\cite{bar
 data-minimization requirements appear in regulation~\cite{gdpr2016}. Purposes in these systems are
 declared from a fixed vocabulary and bound to stored data in advance. Our task scope is closest in spirit
 to a per-request purpose, but it is derived automatically from free-text tasks and expressed directly as a
-relational scope (columns, row predicates), not as purpose labels.
+relational scope (columns, row predicates), not as purpose labels. Two agent systems share this per-task view of
+context. Conseca generates a security policy for each task from trusted context and enforces it deterministically on
+agent actions~\cite{tsai2025conseca}; AirGapAgent minimizes the user data given to an agent according to contextual
+integrity for the task at hand~\cite{bagdasarian2024airgapagent}. TSE applies the same idea to database reach and
+enforces it inside the DBMS rather than in the agent runtime. Outside academia, short-lived, narrowly scoped
+credentials are standard practice; OAuth 2.0 token exchange, for example, issues a down-scoped token for a specific
+downstream call~\cite{rfc8693}. TSE can be read as token exchange for relational data, with the scope inferred from
+the task.
 
 \subsection{Least privilege and authorization for LLM agents}
 Indirect prompt injection lets content an agent reads redirect its actions~\cite{greshake2023not}, and
@@ -46,7 +53,12 @@ enforced at tool and OS level (IntentCap~\cite{zheng2026intentcap}). Further wor
 security principles in agent design~\cite{zhang2025principles,li2025vision,sharma2026ac4a,surapani2026authz},
 isolates or restructures execution~\cite{wu2025isolategpt,kim2025pfi}, separates control and data flow
 (CaMeL~\cite{debenedetti2026camel}), applies information-flow control (FIDES~\cite{costa2025fides}), or
-studies over-privileged tool selection~\cite{yang2026lowerpriv}. A data-centric survey catalogs privacy
+studies over-privileged tool selection~\cite{yang2026lowerpriv}; emulation frameworks expose risky tool use
+before deployment~\cite{ruan2024toolemu}. A complementary line hardens the model itself against injected
+instructions, by marking untrusted input (spotlighting~\cite{hines2024spotlighting}) or by training the model to
+ignore instructions in the data channel (StruQ~\cite{chen2025struq}, SecAlign~\cite{chen2025secalign}). These
+defenses lower the probability that an injection succeeds; TSE limits what a successful injection can reach, so the
+two compose, and we do not compare against them. A data-centric survey catalogs privacy
 risks of agents~\cite{lahjouji2026know}. These systems decide \emph{which tools or actions} an agent may
 use, sometimes with argument constraints. For a database agent the relevant tool is usually a single
 query interface; once it is allowed, the data it can reach is the full entitlement of the credential it

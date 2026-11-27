@@ -9,24 +9,34 @@ as the gold query needs (geometric mean) and \oerCellBzero{} times as many cells
 \oerColBone{} and \oerCellBone{}. The default TSE scope reaches \oerColTse{} times the needed columns and \oerCellTse{}
 times the needed cells, a \oerColReduction-fold reduction in columns and a \oerCellReduction-fold reduction in cells
 relative to B0. TSE is lower than both B0 and B1 on every granularity and dataset (Table~\ref{tab:e1tests}; all
-Holm-adjusted $p\eoneMaxPHolm$). The row-level mean for TSE (\oerRowTse) lies below one because insufficient
-scopes miss needed tables or rows (Section~\ref{sec:res-inference}); OER is therefore always read together with
-sufficiency. Restricted to the \nTseSuff{} tasks whose TSE scope is sufficient, TSE reaches \oerColTseSuff{} times
-the needed columns, \oerRowTseSuff{} times the needed rows and \oerCellTseSuff{} times the needed cells, against
-\oerColBzeroSuff{}, \oerRowBzeroSuff{} and \oerCellBzeroSuff{} for B0 on the same tasks. The more conservative
-$k{=}2$ scope still reduces reachable columns \oerColReductionKtwo-fold and cells \oerCellReductionKtwo-fold relative
-to B0. The reduction is robust to the
-policy generator: across nine seed and fraction settings the column-level reduction ranges from
-\sensRatioMin{}$\times$ to \sensRatioMax{}$\times$ (Table~\ref{tab:sens}). \emph{Takeaway: per task, an agent under TSE
-can reach a small fraction of the data its user can reach.}
+Holm-adjusted $p\eoneMaxPHolm$), which supports H1. These all-task factors overstate the benefit in one respect:
+they include insufficient scopes, whose OER can fall below one (the row-level mean for TSE is \oerRowTse) because a
+needed table or row is missing. Restricted to the \nTseSuff{} tasks whose TSE scope is sufficient, the reduction is
+\oerColReductionSuff-fold in columns and \oerCellReductionSuff-fold in cells (TSE \oerColTseSuff, \oerRowTseSuff{}
+and \oerCellTseSuff{} times the needed columns, rows and cells, against \oerColBzeroSuff, \oerRowBzeroSuff{} and
+\oerCellBzeroSuff{} for B0). In another respect they understate it, because agents can widen. Measured on the final
+reach of each agent run, including approved widening (deviation D7), the reduction relative to B0 is
+\oerColRedPostHaiku-fold in columns and \oerCellRedPostHaiku-fold in cells for Haiku 5.5 (\nPostHaiku{} runs) and
+\oerColRedPostSonnet-fold and \oerCellRedPostSonnet-fold for Sonnet 5.5 (\nPostSonnet{} runs). The more conservative
+$k{=}2$ scope reduces reachable columns \oerColReductionKtwo-fold and cells \oerCellReductionKtwo-fold.
 
-\begin{figure}[t]
+The size of the reduction depends on how broad the entitlement is. Per role, the column-level reduction is
+\oerColRedFull-fold for \emph{full} (\nRoleFull{} tasks), \oerColRedPartition-fold for \emph{partition}
+(\nRolePartition) and \oerColRedRestricted-fold for \emph{restricted} (\nRoleRestricted); cell-level reductions are
+\oerCellRedFull-, \oerCellRedPartition- and \oerCellRedRestricted-fold. The sensitivity analysis varies the generator
+of the \emph{restricted} role (nine seed and fraction settings) and finds column-level reductions of
+\sensRatioMin{}$\times$ to \sensRatioMax{}$\times$ (Table~\ref{tab:sens}), consistent with that role's
+\oerColRedRestricted-fold; the all-task factor is higher because most tasks were assigned the broader \emph{full}
+role. \emph{Takeaway: per task, an agent under TSE can reach a small fraction of the data its user can reach, and the
+broader the user's entitlement, the larger the reduction.}
+
+\begin{figure*}[t]
 \centering
-\includegraphics[width=\columnwidth]{figs/fig_e1.pdf}
+\includegraphics[width=0.9\textwidth]{figs/fig_e1.pdf}
 \caption{(a) Cell-level over-exposure per task (log scale; 1 = only needed data reachable). (b) Exposure versus
 sufficiency for TSE variants; the dotted line marks B0. Synthetic-policy entitlements.}
 \label{fig:e1}
-\end{figure}
+\end{figure*}
 
 \input{tables/tab_e1}
 \input{tables/tab_e1_tests}
@@ -42,20 +52,41 @@ OER$_\mathrm{col}$ \oerColTsekzero{}, $k{=}2$ on \suffTsektwo\% at \oerColTsektw
 \suffTsenoclose\%, because the LLM proposal and schema linking usually already include the join tables; removing the
 semantic layer (no descriptions, no linking) lowers it to \suffTsenosl\%, and a 3B inference model reaches only
 \suffTsesmall\%. As an exploratory comparison, Claude Haiku 5.5 as inference model reaches
-\suffTsehaiku\%. \input{tables/taxonomy_text}
+\suffTsehaiku\% at a similar exposure, so a stronger broker model is the most direct way to raise sufficiency.
+Sufficiency is markedly lower on BIRD (\suffTseBird\%), whose questions need more columns and domain hints, than on
+Spider. \input{tables/taxonomy_text}
 
 \subsection{E2: Utility}
 \label{sec:res-utility}
 Table~\ref{tab:e2} reports execution accuracy. For Claude Haiku 5.5, B0 reaches \exHaikuBzero\%, B3 \exHaikuBthree\%,
 and TSE \exHaikuTse\% (paired difference to B0: \dExHaikuTse{} pp, 95\% CI [\dExLoHaikuTse, \dExHiHaikuTse]). For
 Claude Sonnet 5.5 the corresponding values are \exSonnetBzero\%, \exSonnetBthree\% and \exSonnetTse\% (\dExSonnetTse{}
-pp, [\dExLoSonnetTse, \dExHiSonnetTse]). The open-weight agents (secondary arm, \nRunsPerCondLocal{} tasks per
-condition; deviation D5) are much weaker overall, and TSE did not reduce their accuracy: B0 \exLocalBzero\%, B3
-\exLocalBthree\%, TSE \exLocalTse\% (\dExLocalTse{} pp, [\dExLoLocalTse, \dExHiLocalTse]). Static role views (B1) cost the most: \dExHaikuBone{} pp for Haiku 5.5. A role-level view built from other
-tasks is sufficient for a similar share of tasks as the TSE scope (\suffBone\% vs.\ \suffTse\%; Table~\ref{tab:e1})
-while exposing more, but it offers no widening path when it misses a column. Agents under TSE requested widening in
-\wreqHaiku\% of runs (Haiku 5.5) and \wreqSonnet\% (Sonnet 5.5); at least one request was approved in \wappHaiku\% and
-\wappSonnet\% of runs. \input{tables/e2_text}
+pp, [\dExLoSonnetTse, \dExHiSonnetTse]). Both lower CI bounds are below $-5$~pp, so the preregistered non-inferiority
+hypothesis H2 is \emph{not} supported: TSE costs accuracy. The cost is concentrated on BIRD (Haiku 5.5:
+\dExHaikuTseBird{} pp on BIRD vs.\ \dExHaikuTseSpider{} on Spider; Sonnet 5.5: \dExSonnetTseBird{} vs.\
+\dExSonnetTseSpider), where inferred scopes are less often sufficient (Section~\ref{sec:res-inference}). Sonnet 5.5
+loses more points than Haiku 5.5, plausibly because it solves more tasks under B0, so more of its correct B0 answers
+can depend on data that an insufficient scope withholds; we did not test this explanation further. The
+preregistered expectation B3~$\approx$~B0 also failed: pruning the prompt to the inferred scope without enforcement
+cost \dExHaikuBthree{} pp (Haiku 5.5) and \dExSonnetBthree{} pp (Sonnet 5.5), more than TSE, because B3 offers no
+way to ask for missing data. In the exploratory B3W baseline, which adds the same request tool to B3, TSE minus B3W
+was \dTseBthreewHaiku{} pp ([\dLoTseBthreewHaiku, \dHiTseBthreewHaiku]) for Haiku 5.5 and \dTseBthreewSonnet{} pp
+([\dLoTseBthreewSonnet, \dHiTseBthreewSonnet]) for Sonnet 5.5 on \ablN{} tasks (exploratory). Database
+enforcement therefore did not cost accuracy relative to prompt-only scoping with the same widening affordance; TSE
+was higher. We did not isolate the cause; one difference is that under B3W the displayed row filters are only
+advisory, so the agent must apply them itself, whereas under TSE the views apply them. Static role views (B1) cost the most:
+\dExHaikuBone{} pp for Haiku 5.5. A role-level view built from other tasks is sufficient for a similar share of tasks
+as the TSE scope (\suffBone\% vs.\ \suffTse\%; Table~\ref{tab:e1}) while exposing more, but it offers no widening
+path when it misses a column. Agents under TSE requested widening in \wreqHaiku\% of runs (Haiku 5.5) and
+\wreqSonnet\% (Sonnet 5.5); at least one request was approved in \wappHaiku\% and \wappSonnet\% of runs. Broker errors
+(deviation D8) ended \brokerErrHaiku{} of \nTseRunsHaiku{} Haiku 5.5 and \brokerErrSonnet{} of \nTseRunsSonnet{}
+Sonnet 5.5 TSE runs; they count as failures. \input{tables/e2_text}
+
+The open-weight agents (secondary arm, \nRunsPerCondLocal{} tasks per condition; deviation D5) are much weaker
+overall: \texttt{qwen3:8b} reached \exLocalQwenBzero\% (B0), \exLocalQwenBthree\% (B3) and \exLocalQwenTse\% (TSE) on
+\nLocalQwen{} tasks, and \texttt{qwen2.5-coder:7b}, which is also the inference model, \exLocalCoderBzero\%,
+\exLocalCoderBthree\% and \exLocalCoderTse\% on \nLocalCoder{} tasks. Pooled, TSE minus B0 was \dExLocalTse{} pp
+([\dExLoLocalTse, \dExHiLocalTse]); at this sample size we draw no conclusion beyond the absence of a large loss.
 
 \textbf{Conservativeness and widening policy (exploratory).} On a \ablN-task subset (Haiku 5.5,
 Table~\ref{tab:ablation}), where B0 reaches \ablExBzero\% and default TSE \ablExDefault\%, the paired change in execution accuracy is
@@ -65,7 +96,9 @@ Table~\ref{tab:ablation}), where B0 reaches \ablExBzero\% and default TSE \ablEx
 \emph{strict} policy changes accuracy by \ablDStrict{} pp ([\ablDLoStrict, \ablDHiStrict]); denying all widening
 changes it by \ablDDeny{} pp ([\ablDLoDeny, \ablDHiDeny]). Across \seedReps{} independent repetitions on \seedSubsetN{}
 tasks, B0 ranged from \seedExBzeroMin\% to \seedExBzeroMax\% and TSE from \seedExTseMin\% to \seedExTseMax\%; the TSE
-minus B0 difference ranged from \seedDiffMin{} to \seedDiffMax{} pp.
+minus B0 difference ranged from \seedDiffMin{} to \seedDiffMax{} pp. Run-to-run variation of this size is not
+captured by the task-level bootstrap CIs, so differences of a few points between conditions should not be
+over-interpreted; the conclusions above rest on differences larger than this range.
 
 \input{tables/tab_ablation}
 
@@ -73,8 +106,10 @@ minus B0 difference ranged from \seedDiffMin{} to \seedDiffMax{} pp.
 
 \textbf{Non-permitted tasks.} When the gold answer is not obtainable under the user's entitlement, the agent should
 refuse. With Haiku 5.5, B0 agents refused or gave no answer in \npRefuseBzero\% of runs and returned an answer in
-\npSilentBzero\%; under TSE the rates were \npRefuseTse\% and \npSilentTse\%, and \npExceedReq{} widening requests were
-rejected as exceeding the entitlement.
+\npSilentBzero\%; under TSE the rates were \npRefuseTse\% and \npSilentTse\% (the remainder ended with a harness or broker error),
+and \npExceedReq{} widening requests were rejected as exceeding the entitlement. TSE does not improve refusal
+behavior: the agent sees a scope that cannot answer the question in both cases, and whether it says so is a property
+of the model, not of the enforcement.
 
 \subsection{E4: Overhead}
 \label{sec:res-overhead}
@@ -84,8 +119,10 @@ queries run \medQueryRatio{} times as long through the views as under B0 (median
 inference dominates: \medInferS{}\,s median with the local 7B model on a laptop shared with the experiment. The gold
 result was unchanged through the views for \eFourEqual{} of \eFourOk{} tasks; \eFourGroupingErr{} gold queries were
 rejected through views because they group by a primary key with functionally dependent columns, which PostgreSQL
-accepts on base tables but cannot verify through a view, and \eFourTimeout{} exceeded the statement timeout. No task
-object survived its batch.
+accepts on base tables but cannot verify through a view, and \eFourTimeout{} exceeded the statement timeout; these rejections are an enforcement-induced utility loss and are
+included in the sufficiency results. The query-time ratio is close to one at the median, but the tail grows
+(Table~\ref{tab:e4}): views add planning work and the \texttt{security\_barrier} option can prevent predicate
+push-down, which matters for long-running analytical queries. No task object survived its batch.
 
 \input{tables/tab_e4}
 
@@ -96,10 +133,15 @@ the agent holds the full entitlement: Sonnet 5.5 exfiltrated the canary in \exfS
 in \exfHaikuCtxBzero\%. Tool-level gating (B2) does not change this (\exfSonnetCtxBtwo\% and \exfHaikuCtxBtwo\%) because
 the query tool stays allowed, and prompt-level pruning (B3) helps little (\exfSonnetCtxBthree\%, \exfHaikuCtxBthree\%)
 because the injection names the column. Under TSE, exfiltration fell to \exfSonnetCtxTse\% and \exfHaikuCtxTse\%
-(all paired tests Holm-adjusted $p\eFiveMaxPHolm$). The residual leaks under TSE came almost entirely through
+(all paired tests Holm-adjusted $p\eFiveMaxPHolm$), which supports H4. Pairs exclude runs that ended with an
+infrastructure or broker error (at most four per comparison). The broker infers each scope from the clean task, so
+the injected note cannot enlarge the initial scope. The residual leaks under TSE came almost entirely through
 widening: of \tseLeaksSonnetCtx{} exfiltrating Sonnet 5.5 runs, \tseLeaksWidenSonnetCtx{} had the canary column granted
 by an approved request and \tseLeaksInitSonnetCtx{} had it in the initial inferred scope (Haiku 5.5:
-\tseLeaksWidenHaikuCtx{} and \tseLeaksInitHaikuCtx{} of \tseLeaksHaikuCtx). In an exploratory arm with widening
+\tseLeaksWidenHaikuCtx{} and \tseLeaksInitHaikuCtx{} of \tseLeaksHaikuCtx; the two categories overlap when a
+run obtained the column both ways). For the \nCanaryOutE{} tasks whose canary column lies outside $E(u)$, no
+condition exfiltrated it (\exfOutESonnetBzero{} and \exfOutESonnetTse{} runs for B0 and TSE, Sonnet 5.5); this is
+enforced by the user's own grants and is not a TSE effect. In an exploratory arm with widening
 denied (deviation D4), exfiltration fell to \exfSonnetCtxDeny\% ([\exfSonnetCtxDenyLo, \exfSonnetCtxDenyHi]) for
 Sonnet 5.5 and \exfHaikuCtxDeny\% for Haiku 5.5; all \denyLeaksSonnet{} remaining Sonnet leaks were tasks whose
 inferred scope already contained the canary column (over-scoping), and denying widening costs utility (above).
@@ -113,18 +155,28 @@ conditions, and we report it only for completeness.
 
 \input{tables/tab_e5}
 
-\textbf{(b) Enforcement-bypass attempts.} We ran \bypassAttempts{} scripted attempts as the TSE role, covering
-\bypassTypes{} attack types on \bypassDbs{} canary databases (Table~\ref{tab:bypass}). \bypassSuccess{} returned a canary
+\textbf{(b) Enforcement-bypass attempts.} We ran \bypassTypes{} distinct scripted attack types as the TSE role on
+each of \bypassDbs{} canary databases (\bypassAttempts{} attempts in total) (Table~\ref{tab:bypass}). \bypassSuccess{} returned a canary
 value. Several attempts executed but returned only in-scope data or metadata: catalog reads reveal view definitions
 and column names (metadata, out of scope), \texttt{pg\_stats} returns no rows for columns without privilege, and one
 attempt that named a column identical to its table's name returned the whole-row value of the in-scope view.
-Timing was not tested and is out of scope. These attempts test, but cannot prove, assumption A1.
+Timing was not tested and is out of scope. The catalog is fixed and scripted, not adaptive, and mostly
+exercises standard PostgreSQL privilege checks; it tests, but cannot prove, assumption A1. A separate unit test
+checks that task text cannot inject DDL into the broker through grounded filter values.
 
-\textbf{(c) Widening abuse.} When the injection asks the agent to request the canary column, agents complied often:
-the column was requested in \widCanaryReqAuto\% of runs and, being inside the entitlement, granted under the \emph{auto}
-policy in \widCanaryGrantedAuto\% (exfiltration \widExfilAuto\%). The \emph{strict} policy reduced grants to
-\widCanaryGrantedStrict\% (exfiltration \widExfilStrict\%). Across all runs, \widGrantedOutsideE{} of \widGrantedTotal{}
-granted items lay outside $E(u)$, as the bound requires. \emph{Takeaway: widening is the main residual channel; it is
-bounded by the entitlement, logged, and can be closed further with stricter approval at a utility cost.}
+\textbf{(c) Widening abuse.} This is the strongest attack in our threat model: the injection tells the agent to
+request the canary column through \texttt{request\_access} and then reveal it. Agents complied often: the column was
+requested in \widCanaryReqAuto\% of runs and, being inside the entitlement, granted under the \emph{auto} policy in
+\widCanaryGrantedAuto\%. Exfiltration under \emph{auto} was \widExfilAutoSonnet\% for Sonnet 5.5 (95\% CI
+[\widExfilAutoSonnetLo, \widExfilAutoSonnetHi], $n=\widNAutoSonnet$) and \widExfilAutoHaiku\% for Haiku 5.5
+([\widExfilAutoHaikuLo, \widExfilAutoHaikuHi], $n=\widNAutoHaiku$); runs that ended with an error are excluded, which
+is conservative. Our lexical \emph{strict} policy, which denies only columns tagged sensitive, barely helped
+(Sonnet 5.5 \widExfilStrictSonnet\%, Haiku 5.5 \widExfilStrictHaiku\%) because only \widCanaryTagged\% of the canary columns were tagged sensitive.
+Across all runs, \widGrantedOutsideE{} of \widGrantedTotal{} granted items lay outside $E(u)$, so H5 holds.
+\emph{Takeaway: against an attacker who targets widening, automatic approval forfeits most of TSE's protection for
+in-entitlement data. Widening is bounded by the entitlement and logged, but closing this channel needs an approval
+decision that does not depend on the agent's stated reason, such as human review of columns outside the initial
+scope or denial (exploratory: \exfSonnetCtxDeny\% exfiltration under generic injection, at an accuracy cost of
+\ablDDeny{} pp).}
 
 \input{tables/tab_bypass}

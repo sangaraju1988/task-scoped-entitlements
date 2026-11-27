@@ -30,3 +30,4 @@
 70 | upper partition share bound, written as 30--70 (tse/policies/generate.py)
 12 | 12B model size label (mistral-nemo:12b)
 4.0 | CC BY-SA 4.0 license version
+2.0 | OAuth 2.0 protocol version

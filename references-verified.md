@@ -76,3 +76,13 @@ Peer-reviewed versions found for preprints listed in the build prompt: Fei et al
 | holm1979simple | url | - | NOID | → resolved (see note) | Verified via OpenAlex (Scand. J. Stat. 6:65-70, 1979). DOI 10.2307/4615733 returned 404 at doi.org, so DOI omitted. |
 | langgraph | url | https://github.com/langchain-ai/langgraph | URL | |  |
 | ollama | url | https://github.com/ollama/ollama | URL | |  |
+
+## Added 2026-11-27 after internal review (verified this session)
+| key | source checked | result |
+|---|---|---|
+| tsai2025conseca | arXiv 2501.17070 + Crossref 10.1145/3713082.3730378 (HotOS 2025, pp. 8-17) | verified |
+| bagdasarian2024airgapagent | arXiv 2405.05175 + Crossref 10.1145/3658644.3690350 (CCS 2024, pp. 3868-3882) | verified |
+| chen2025secalign | arXiv 2410.05451 + Crossref 10.1145/3719027.3744836 (CCS 2025, pp. 2833-2847) | verified |
+| chen2025struq | arXiv 2402.06363 + USENIX Security 2025 presentation page | verified (no DOI) |
+| hines2024spotlighting | arXiv 2403.14720 | verified (preprint) |
+| rfc8693 | Crossref 10.17487/RFC8693 (IETF, Jan 2020) | verified |
