@@ -1,6 +1,6 @@
 # Overlap check (word 8-grams)
 
-This paper: 7805 8-grams from 11 files.
+This paper: 9572 8-grams from 11 files.
 
 | prior document | shared 8-grams | % of this paper |
 |---|---|---|
@@ -35,7 +35,7 @@ This paper: 7805 8-grams from 11 files.
 | ~/Documents/AgenticAIPapers/02-skill-ci/paper/sections/intro.tex | 0 | 0.00 |
 | ~/Documents/AgenticAIPapers/02-skill-ci/paper/sections/related.tex | 0 | 0.00 |
 | ~/Documents/AgenticAIPapers/02-skill-ci/paper/sections/repro.tex | 0 | 0.00 |
-| ~/Documents/AgenticAIPapers/02-skill-ci/paper/sections/threat.tex | 8 | 0.10 |
+| ~/Documents/AgenticAIPapers/02-skill-ci/paper/sections/threat.tex | 8 | 0.08 |
 | ~/Documents/AgenticAIPapers/03-context-value-profiles/paper/Context_That_Pays.pdf | 0 | 0.00 |
 | ~/Documents/AgenticAIPapers/03-context-value-profiles/paper/main.pdf | 0 | 0.00 |
 | ~/Documents/AgenticAIPapers/03-context-value-profiles/paper/main.tex | 0 | 0.00 |
