@@ -42,7 +42,7 @@ conservativeness parameter $k$ (Section~\ref{sec:inference}).
 \item[\textbf{C4}] A controlled widening protocol that turns inference errors into bounded, auditable requests
 (Section~\ref{sec:widening}).
 \item[\textbf{C5}] A preregistered evaluation on \nTasks{} public text-to-SQL tasks (BIRD and Spider) with frontier
-and open-weight agents in two agent frameworks, four baselines, indirect prompt injection, widening abuse, and
+and open-weight agents in two agent frameworks, three baselines and a tool-gating control, indirect prompt injection, widening abuse, and
 \bypassAttempts{} enforcement-bypass attempts (Sections~\ref{sec:setup}--\ref{sec:results}).
 \end{itemize}
 
@@ -51,12 +51,12 @@ Under synthetic-policy entitlements, the default TSE scope reduces the columns a
 \oerColReduction{} and the reachable cells by a factor of \oerCellReduction{} relative to the full entitlement
 (geometric means over all tasks). These factors include under-scoped tasks; on tasks whose scope is sufficient the
 cell reduction is \oerCellReductionSuff-fold, and counting the widening that agents obtained during their runs it is
-\oerCellRedPostHaiku-fold (Haiku~5.5) and \oerCellRedPostSonnet-fold (Sonnet~5.5). The scope is sufficient for the
+\oerCellRedPostHaiku-fold (Haiku~5.5) and \oerCellRedPostSonnet-fold (Sonnet~5.5; exploratory, deviation D7). The scope is sufficient for the
 gold query on \suffTse\% of tasks; this inference quality is the load-bearing assumption of the approach, and we
 quantify it directly. With widening, execution accuracy changed by \dExHaikuTse{} percentage points for Claude
 Haiku~5.5 (95\% CI [\dExLoHaikuTse, \dExHiHaikuTse]) and by \dExSonnetTse{} points for Claude Sonnet~5.5 (95\% CI
 [\dExLoSonnetTse, \dExHiSonnetTse]) relative to full access; static role views cost \dExHaikuBone{} points for
-Haiku~5.5. Under generic indirect prompt injection that targets out-of-task data, exfiltration fell from
+Haiku~5.5. Under indirect prompt injection that names an out-of-task column, exfiltration fell from
 \exfSonnetCtxBzero\% (B0) to \exfSonnetCtxTse\% (TSE) for Sonnet~5.5 and from \exfHaikuCtxBzero\% to
 \exfHaikuCtxTse\% for Haiku~5.5. Nearly all remaining leaks used approved widening, and an injection written to
 exploit widening succeeded in \widExfilAutoSonnet\% (Sonnet~5.5) and \widExfilAutoHaiku\% (Haiku~5.5) of runs under
@@ -64,7 +64,7 @@ automatic approval; widening approval is therefore the main residual channel, an
 setting that matters most in deployment. None of our \bypassAttempts{} scripted bypass attempts (\bypassTypes{}
 attack types) reached out-of-scope data. Provisioning takes \medCompile{}\,ms (median) and teardown
 \medTeardown{}\,ms. Results marked exploratory (conservativeness and policy ablations, denied widening, the
-prompt-only widening baseline) were added outside the preregistered analyses and are reported as such.
+prompt-only widening baseline, post-widening exposure, inference without benchmark hints) were added outside the preregistered analyses and are reported as such.
 
 \subsection{What we do not claim}
 TSE reduces the data reachable for a task; it does not prevent all leakage. It does not protect against inference or

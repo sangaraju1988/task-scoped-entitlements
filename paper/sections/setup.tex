@@ -9,14 +9,14 @@ accuracy is non-inferior to B0 within 5 percentage points (lower bound of the pa
 indirect injection that targets in-entitlement, out-of-task data, exfiltration is lower under TSE than under B0, B2
 and B3; \emph{H5} no widening grant exceeds $E(u)$. Before the freeze, the inference pipeline had been debugged on
 16 evaluation tasks, listed in the preregistration; excluding them changes the main results only
-marginally (e.g., sufficiency \suffTseNoPre\%, Sonnet accuracy difference \dExSonnetTseNoPre{} points). Eight deviations
+marginally (e.g., sufficiency \suffTseNoPre\%, Sonnet accuracy difference \dExSonnetTseNoPre{} points). Nine deviations
 are logged with dates and reasons: a bug fix after the pilot (D1, row filters shown to the agent), two budget-driven
 scope changes (D2, D3), a deadline-bounded open-weight arm (D5), and three exploratory additions (D4: denied
 widening; D6: a prompt-only widening baseline and same-harness ablation references; D7: post-widening and per-role
-exposure), the last two made in response to an internal review of the draft, and broker defects found after
-the runs, whose affected runs count as failures (D8). Two infrastructure incidents
-are reported, and their affected runs were re-executed. Results from D4, D6 and D7 and from the agent-level
-ablations are labelled \emph{exploratory}.
+exposure; D9: inference without benchmark hints). D6, D7 and D9 respond to internal reviews of the draft. D8
+records two broker defects found after the runs; the affected runs count as failures. Two infrastructure incidents
+(a premature cleanup and a connection-limit exhaustion) are documented in the artifact; their affected runs were
+re-executed. Results from D4, D6, D7 and D9 and from the agent-level ablations are labelled \emph{exploratory}.
 
 \textbf{Tasks.} We use \nTasks{} tasks with gold SQL from two public benchmarks: all \nBird{} questions of BIRD
 Mini-Dev in its 2026 PostgreSQL release~\cite{birdminidev2026,li2023bird} (\nBirdChallenging{} labeled challenging),
@@ -52,7 +52,8 @@ policy to B3, where approval only enlarges the shown schema while the credential
 isolates database enforcement. B1 runs for Haiku~5.5 only (deviation D3).
 
 \textbf{Models and frameworks.} Scope inference uses a local open-weight model, \texttt{qwen2.5-coder:7b}, served by
-Ollama~\cite{ollama} at temperature 0 with JSON-schema-constrained output; it sees schema text and the task question with its benchmark hint, never data values, and in the injection
+Ollama~\cite{ollama} at temperature 0 with JSON-schema-constrained output; it sees schema text and the task question with its benchmark hint (BIRD's ``evidence''; we also report inference
+without it), never data values, and in the injection
 experiments it never sees the injected note (scopes are inferred from the clean task). Grounded filter values are
 embedded in view definitions as quoted literals and identifiers are quoted (\texttt{quote\_literal}/\texttt{quote\_ident}
 semantics), so task text cannot inject DDL into the broker; a unit test covers this. Ablations use \texttt{llama3.2:3b} and, as an exploratory variant, Claude Haiku 5.5. Agents are Claude

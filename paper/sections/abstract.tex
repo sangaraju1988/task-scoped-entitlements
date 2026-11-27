@@ -4,11 +4,11 @@ narrow which rows and columns an allowed query tool can reach. We present task-s
 broker infers the tables, columns and rows a natural-language task needs, compiles that scope into an ephemeral
 PostgreSQL role and security-barrier views owned by the user's role, and offers a bounded, audited widening request
 when the scope is insufficient. In a preregistered evaluation on \nTasks{} BIRD and Spider tasks with Claude Haiku~5.5,
-Claude Sonnet~5.5 and open-weight agents, under synthetic role policies, the data an agent could finally reach,
-including approved widening, was \oerColRedPostSonnet-fold smaller in columns and \oerCellRedPostSonnet-fold smaller
-in cells than the full entitlement (Sonnet). Execution accuracy changed by \dExHaikuTse{} percentage points (95\% CI
+Claude Sonnet~5.5 and open-weight agents, under synthetic role policies, TSE scopes exposed \oerColReduction-fold
+fewer columns and \oerCellReduction-fold fewer cells than the full entitlement (\oerCellReductionSuff-fold on tasks
+whose scope sufficed; about \oerCellRedPostSonnet-fold, exploratory, counting approved widening). Execution accuracy changed by \dExHaikuTse{} percentage points (95\% CI
 [\dExLoHaikuTse, \dExHiHaikuTse]) for Haiku and \dExSonnetTse{} ([\dExLoSonnetTse, \dExHiSonnetTse]) for Sonnet.
-Under generic indirect prompt injection, exfiltration of out-of-task data fell from \exfSonnetCtxBzero\% to
+Under indirect prompt injection naming an out-of-task column, exfiltration of out-of-task data fell from \exfSonnetCtxBzero\% to
 \exfSonnetCtxTse\% (Sonnet); an injection that told the agent to request the target column still succeeded in
 \widExfilAutoSonnet\% of runs under automatic approval, so widening approval is the main residual channel.
 \bypassSuccess{} of \bypassAttempts{} scripted enforcement-bypass attempts succeeded. The approach rests on two

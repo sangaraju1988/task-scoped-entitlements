@@ -13,7 +13,8 @@ from tse.compile import Broker
 
 
 def main():
-    tasks = [t for t in load_tasks() if t.get("evidence")]
+    sub = {l.strip() for l in open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "subset_nohint_200.txt")) if l.strip()}
+    tasks = [t for t in load_tasks() if t.get("evidence") and t["task_id"] in sub]   # fixed random 200 (seed 20261128)
     prep = load_prep()
     out = os.path.join(config.RESULTS, "e3_nohint.jsonl")
     done = {json.loads(l)["task_id"] for l in open(out)} if os.path.exists(out) else set()

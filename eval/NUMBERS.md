@@ -131,7 +131,7 @@ Every number in the paper text is one of these LaTeX macros.
 | `\dExLoHaikuTse` | \ensuremath{-}9.6 | runs_e2_haiku.jsonl | paired EX diff CI low, TSE-B0, Haiku 5.5 |
 | `\dExHiHaikuTse` | \ensuremath{-}3.5 | runs_e2_haiku.jsonl | paired EX diff CI high, TSE-B0, Haiku 5.5 |
 | `\dExHaikuTseBird` | \ensuremath{-}16.8 | runs_e2_haiku.jsonl | paired EX diff TSE-B0, Haiku 5.5, bird |
-| `\dExHaikuTseSpider` | 3.8 | runs_e2_haiku.jsonl | paired EX diff TSE-B0, Haiku 5.5, spider |
+| `\dExHaikuTseSpider` | +3.8 | runs_e2_haiku.jsonl | paired EX diff TSE-B0, Haiku 5.5, spider |
 | `\exSonnetBzero` | 83.5 | runs_e2_sonnet_r.jsonl | EX %, Sonnet 5.5, B0 |
 | `\exSonnetBthree` | 64.3 | runs_e2_sonnet_r.jsonl | EX %, Sonnet 5.5, B3 |
 | `\wreqSonnet` | 24.5 | runs_e2_sonnet_r.jsonl | % TSE runs with >=1 widening request, Sonnet 5.5 |
@@ -154,16 +154,16 @@ Every number in the paper text is one of these LaTeX macros.
 | `\wappLocal` | 7.5 | runs_e2_local.jsonl | % TSE runs with >=1 approved widening, Open-weight |
 | `\exAfterWidLocal` | 6.7 | runs_e2_local.jsonl | EX among TSE runs with approved widening, Open-weight |
 | `\exLocalTse` | 36.5 | runs_e2_local.jsonl | EX %, Open-weight, TSE |
-| `\dExLocalBthree` | 2.0 | runs_e2_local.jsonl | paired EX diff B3-B0 (pp), Open-weight |
+| `\dExLocalBthree` | +2.0 | runs_e2_local.jsonl | paired EX diff B3-B0 (pp), Open-weight |
 | `\dExLoLocalBthree` | \ensuremath{-}2.5 | runs_e2_local.jsonl | paired EX diff CI low, B3-B0, Open-weight |
-| `\dExHiLocalBthree` | 6.5 | runs_e2_local.jsonl | paired EX diff CI high, B3-B0, Open-weight |
+| `\dExHiLocalBthree` | +6.5 | runs_e2_local.jsonl | paired EX diff CI high, B3-B0, Open-weight |
 | `\dExLocalBthreeBird` | 0.0 | runs_e2_local.jsonl | paired EX diff B3-B0, Open-weight, bird |
-| `\dExLocalBthreeSpider` | 4.0 | runs_e2_local.jsonl | paired EX diff B3-B0, Open-weight, spider |
-| `\dExLocalTse` | 2.0 | runs_e2_local.jsonl | paired EX diff TSE-B0 (pp), Open-weight |
+| `\dExLocalBthreeSpider` | +4.0 | runs_e2_local.jsonl | paired EX diff B3-B0, Open-weight, spider |
+| `\dExLocalTse` | +2.0 | runs_e2_local.jsonl | paired EX diff TSE-B0 (pp), Open-weight |
 | `\dExLoLocalTse` | \ensuremath{-}3.0 | runs_e2_local.jsonl | paired EX diff CI low, TSE-B0, Open-weight |
-| `\dExHiLocalTse` | 7.0 | runs_e2_local.jsonl | paired EX diff CI high, TSE-B0, Open-weight |
+| `\dExHiLocalTse` | +7.0 | runs_e2_local.jsonl | paired EX diff CI high, TSE-B0, Open-weight |
 | `\dExLocalTseBird` | 0.0 | runs_e2_local.jsonl | paired EX diff TSE-B0, Open-weight, bird |
-| `\dExLocalTseSpider` | 4.0 | runs_e2_local.jsonl | paired EX diff TSE-B0, Open-weight, spider |
+| `\dExLocalTseSpider` | +4.0 | runs_e2_local.jsonl | paired EX diff TSE-B0, Open-weight, spider |
 | `\nEtwoRuns` | 7600 | runs_e2_*.jsonl | number of E2 permitted-set runs in table |
 | `\nRunsPerCondHaiku` | 1000 | runs_e2_*.jsonl | min runs per condition, Haiku 5.5 |
 | `\nRunsPerCondSonnet` | 1000 | runs_e2_*.jsonl | min runs per condition, Sonnet 5.5 |
@@ -188,6 +188,8 @@ Every number in the paper text is one of these LaTeX macros.
 | `\eFourOk` | 962 | e4_overhead.jsonl | E4 tasks without error |
 | `\eFourGroupingErr` | 35 | e4_overhead.jsonl | E4 GroupingError count (PK functional dependency lost through views) |
 | `\eFourTimeout` | 2 | e4_overhead.jsonl | E4 statement-timeout count |
+| `\eFourOther` | 1 | e4_overhead.jsonl | E4 other errors (a table missed by gold-scope extraction) |
+| `\eFourTotal` | 1000 | e4_overhead.jsonl | E4 tasks |
 | `\medInferS` | 8.1 | proposals_qwen2.5-coder_7b_main.jsonl | median inference latency (s), local 7B, shared machine |
 | `\pNinetyFiveInferS` | 22.5 | proposals_qwen2.5-coder_7b_main.jsonl | p95 inference latency (s) |
 | `\bypassAttempts` | 928 | e5b_bypass.jsonl | scripted bypass attempts |
@@ -245,29 +247,29 @@ Every number in the paper text is one of these LaTeX macros.
 | `\pDenySonnet` | 7.1e-15 | runs_e5ctx_sonnet_deny.jsonl | exact McNemar, TSE auto vs TSE deny exfiltration, Sonnet (exploratory, unadjusted) |
 | `\bthreewExHaiku` | 53.5 | runs_abl_haiku.jsonl | EX %, B3W, Haiku, ablation subset |
 | `\bthreewTseExHaiku` | 62.0 | runs_abl_haiku.jsonl | EX %, TSE auto, Haiku, same tasks |
-| `\dTseBthreewHaiku` | 8.5 | runs_abl_haiku.jsonl | paired EX diff TSE - B3W (pp), Haiku |
-| `\dLoTseBthreewHaiku` | 2.0 | runs_abl_haiku.jsonl | CI low |
-| `\dHiTseBthreewHaiku` | 15.0 | runs_abl_haiku.jsonl | CI high |
+| `\dTseBthreewHaiku` | +8.5 | runs_abl_haiku.jsonl | paired EX diff TSE - B3W (pp), Haiku |
+| `\dLoTseBthreewHaiku` | +2.0 | runs_abl_haiku.jsonl | CI low |
+| `\dHiTseBthreewHaiku` | +15.0 | runs_abl_haiku.jsonl | CI high |
 | `\bthreewWappHaiku` | 13.0 | runs_abl_haiku.jsonl | % B3W runs with approved widening, Haiku |
 | `\bthreewExSonnet` | 73.0 | runs_b3w_sonnet.jsonl | EX %, B3W, Sonnet, ablation subset |
 | `\bthreewTseExSonnet` | 80.0 | runs_e2_sonnet_r.jsonl | EX %, TSE, Sonnet, same tasks |
-| `\dTseBthreewSonnet` | 7.0 | runs_b3w_sonnet.jsonl | paired EX diff TSE - B3W (pp), Sonnet |
-| `\dLoTseBthreewSonnet` | 2.0 | runs_b3w_sonnet.jsonl | CI low |
-| `\dHiTseBthreewSonnet` | 12.0 | runs_b3w_sonnet.jsonl | CI high |
+| `\dTseBthreewSonnet` | +7.0 | runs_b3w_sonnet.jsonl | paired EX diff TSE - B3W (pp), Sonnet |
+| `\dLoTseBthreewSonnet` | +2.0 | runs_b3w_sonnet.jsonl | CI low |
+| `\dHiTseBthreewSonnet` | +12.0 | runs_b3w_sonnet.jsonl | CI high |
 | `\ablExKzero` | 50.5 | runs_abl_haiku.jsonl | EX %, agent ablation tse_k0/auto |
 | `\ablDKzero` | \ensuremath{-}11.5 | runs_abl_haiku.jsonl | paired EX diff vs default TSE (pp), tse_k0/auto |
 | `\ablDLoKzero` | \ensuremath{-}18.0 | runs_abl_haiku.jsonl | CI low |
 | `\ablDHiKzero` | \ensuremath{-}5.5 | runs_abl_haiku.jsonl | CI high |
 | `\ablWreqKzero` | 26.5 | runs_abl_haiku.jsonl | % runs with widening request, tse_k0/auto |
 | `\ablExKtwo` | 65.5 | runs_abl_haiku.jsonl | EX %, agent ablation tse_k2/auto |
-| `\ablDKtwo` | 3.5 | runs_abl_haiku.jsonl | paired EX diff vs default TSE (pp), tse_k2/auto |
+| `\ablDKtwo` | +3.5 | runs_abl_haiku.jsonl | paired EX diff vs default TSE (pp), tse_k2/auto |
 | `\ablDLoKtwo` | \ensuremath{-}3.5 | runs_abl_haiku.jsonl | CI low |
-| `\ablDHiKtwo` | 10.5 | runs_abl_haiku.jsonl | CI high |
+| `\ablDHiKtwo` | +10.5 | runs_abl_haiku.jsonl | CI high |
 | `\ablWreqKtwo` | 1.5 | runs_abl_haiku.jsonl | % runs with widening request, tse_k2/auto |
 | `\ablExStrict` | 58.5 | runs_abl_haiku.jsonl | EX %, agent ablation tse/strict |
 | `\ablDStrict` | \ensuremath{-}3.5 | runs_abl_haiku.jsonl | paired EX diff vs default TSE (pp), tse/strict |
 | `\ablDLoStrict` | \ensuremath{-}9.0 | runs_abl_haiku.jsonl | CI low |
-| `\ablDHiStrict` | 2.0 | runs_abl_haiku.jsonl | CI high |
+| `\ablDHiStrict` | +2.0 | runs_abl_haiku.jsonl | CI high |
 | `\ablWreqStrict` | 19.0 | runs_abl_haiku.jsonl | % runs with widening request, tse/strict |
 | `\ablExDeny` | 51.5 | runs_abl_haiku.jsonl | EX %, agent ablation tse/deny |
 | `\ablDDeny` | \ensuremath{-}10.5 | runs_abl_haiku.jsonl | paired EX diff vs default TSE (pp), tse/deny |
@@ -342,6 +344,7 @@ Every number in the paper text is one of these LaTeX macros.
 | `\brokerErrWidHaiku` | 27 | runs_e5wid_haiku.jsonl | TSE runs ended by a broker error, WidHaiku |
 | `\nTseRunsWidHaiku` | 400 | runs_e5wid_haiku.jsonl | TSE runs, WidHaiku |
 | `\widCanaryTagged` | 21.0 | canary_tags_widen.json | % widening-attack canary columns tagged sensitive (strict-policy tagger) |
+| `\localReqNotGranted` | 76.9 | runs_e2_local.jsonl | % open-weight widening requests that named no grantable column |
 | `\exLocalQwenBzero` | 34.3 | runs_e2_local.jsonl | EX %, qwen3:8b, B0 |
 | `\nLocalQwen` | 134 | runs_e2_local.jsonl | tasks, qwen3:8b |
 | `\exLocalQwenBthree` | 37.3 | runs_e2_local.jsonl | EX %, qwen3:8b, B3 |

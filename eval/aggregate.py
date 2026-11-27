@@ -26,6 +26,8 @@ def macro(name, value, source, how, fmt=None):
     if isinstance(value, float) and fmt is None:
         fmt = "{:.1f}"
     s = fmt.format(value) if fmt else str(value)
+    if name.startswith(("dEx", "ablD", "dTse", "dLoTse", "dHiTse", "seedDiff")) and isinstance(value, (int, float)) and value > 0:
+        s = "+" + s
     if s.startswith("-") and s[1:2].isdigit():
         s = "\\ensuremath{-}" + s[1:]
     MACROS[name] = (s, source, how)
@@ -167,7 +169,7 @@ if SC:
             axes[1].scatter(R[s]["oer_col"], 100 * R[s]["suff"][0], marker=m, c="k", s=28)
             short = {"B1": "B1 role view", "tse_k0": "k=0", "tse": "k=1 (default)", "tse_k2": "k=2", "tse_noclose": "no FK closure",
                      "tse_nosl": "no semantic layer", "tse_small": "3B inference", "tse_haiku": "Haiku inference"}[s]
-            off = {"tse_noclose": (5, -10), "tse": (-62, 4), "tse_k0": (-24, 1), "tse_small": (5, -3), "tse_nosl": (5, -8),
+            off = {"tse_noclose": (6, 4), "tse": (-62, 4), "tse_k0": (-24, 1), "tse_small": (5, -3), "tse_nosl": (5, -8),
                    "tse_haiku": (5, 2), "tse_k2": (5, 2), "B1": (5, 2)}.get(s, (4, 2))
             axes[1].annotate(short, (R[s]["oer_col"], 100 * R[s]["suff"][0]), fontsize=7, xytext=off, textcoords="offset points")
     axes[1].set_xlabel("OER$_\\mathrm{col}$ (geomean)", fontsize=8); axes[1].set_ylabel("sufficient scopes (%)", fontsize=8)
@@ -339,6 +341,9 @@ if E4:
     errs = collections.Counter(x["error"].split(":")[0] for x in E4 if "error" in x)
     macro("eFourGroupingErr", errs.get("GroupingError", 0), "e4_overhead.jsonl", "E4 GroupingError count (PK functional dependency lost through views)")
     macro("eFourTimeout", errs.get("QueryCanceled", 0), "e4_overhead.jsonl", "E4 statement-timeout count")
+    macro("eFourOther", sum(errs.values()) - errs.get("QueryCanceled", 0) - errs.get("GroupingError", 0), "e4_overhead.jsonl",
+          "E4 other errors (a table missed by gold-scope extraction)")
+    macro("eFourTotal", len(E4), "e4_overhead.jsonl", "E4 tasks")
     with open(os.path.join(PAPER, "tables", "tab_e4.tex"), "w") as f:
         f.write("\\begin{table}[t]\\centering\\caption{Overhead (E4), milliseconds, over permitted tasks; gold query under B0 credentials "
                 "(grants + RLS) vs.\\ compiled TSE views (median of 5 runs after warm-up).}\\label{tab:e4}\n\\footnotesize"
@@ -691,12 +696,30 @@ if "widen" in INJ:
 
 # open-weight arm per agent model (the pooled row mixes two models)
 LOC = runs("runs_e2_local.jsonl")
+_aud = [a for x in LOC if x["condition"] == "TSE" for a in x.get("audit", [])]
+if _aud:
+    macro("localReqNotGranted", pct(np.mean([a["decision"] == "nothing_granted" for a in _aud])), "runs_e2_local.jsonl",
+          "% open-weight widening requests that named no grantable column")
 for tg, model in (("Qwen", "qwen3:8b"), ("Coder", "qwen2.5-coder:7b")):
     for c, C in (("B0", "Bzero"), ("B3", "Bthree"), ("TSE", "Tse")):
         xs = [x for x in LOC if x["model"] == model and x["condition"] == c]
         if xs:
             macro("exLocal" + tg + C, pct(np.mean([ok_ex(x) for x in xs])), "runs_e2_local.jsonl", f"EX %, {model}, {c}")
             macro("nLocal" + tg, len(xs), "runs_e2_local.jsonl", f"tasks, {model}")
+
+# D9 (exploratory): inference without the BIRD evidence hint
+NH = load("e3_nohint.jsonl")
+if NH and SC:
+    byt = {x["task_id"]: x for x in SC if "tse" in x["scopes"]}
+    ts = [x for x in NH if x["task_id"] in byt]
+    macro("nNohint", len(ts), "e3_nohint.jsonl", "hinted tasks evaluated without the hint")
+    macro("suffNohint", pct(np.mean([bool(x["sufficient"]) for x in ts])), "e3_nohint.jsonl", "TSE sufficiency % without hint")
+    macro("suffHintSame", pct(np.mean([bool(byt[x["task_id"]]["scopes"]["tse"]["sufficient"]) for x in ts])), "e1e3_scopes.jsonl",
+          "TSE sufficiency % with hint, same tasks")
+    macro("recNohint", np.mean([x["recall"] for x in ts]), "e3_nohint.jsonl", "column recall without hint", "{:.2f}")
+    macro("recHintSame", np.mean([byt[x["task_id"]]["scopes"]["tse"]["recall"] for x in ts]), "e1e3_scopes.jsonl", "column recall with hint, same tasks", "{:.2f}")
+    macro("oerColNohint", geomean([x["oer_col"] for x in ts]), "e3_nohint.jsonl", "geomean OER_col without hint", "{:.2f}")
+    macro("oerColHintSame", geomean([byt[x["task_id"]]["scopes"]["tse"]["oer_col"] for x in ts]), "e1e3_scopes.jsonl", "geomean OER_col with hint, same tasks", "{:.2f}")
 
 # E5: tasks whose canary column lies outside E(u) (threat-matrix row 2)
 if "context" in INJ:

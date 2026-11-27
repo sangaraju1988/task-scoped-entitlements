@@ -84,7 +84,7 @@ policy per table, which together implement $E(u)$. For each task the broker, a n
 Because $U$ owns the views, PostgreSQL evaluates them with $U$'s column grants and $U$'s row policy;
 \item create a \texttt{NOLOGIN} role \texttt{tse\_r\_<id>} with \texttt{USAGE} on the schema and \texttt{SELECT}
 on its views, and a login proxy \texttt{tse\_l\_<id>} that is a member of it \texttt{WITH INHERIT TRUE, SET FALSE};
-\item pin the login's \texttt{search\_path} to the task schema, make its transactions read-only and set a statement
+\item pin the login's \texttt{search\_path} to the task schema, default its transactions to read-only (defence in depth; the privilege set is what prevents writes) and set a statement
 timeout.
 \end{enumerate}
 \texttt{PUBLIC} holds no privileges on the database, on schema \texttt{public}, or on base tables, and

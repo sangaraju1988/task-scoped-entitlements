@@ -177,5 +177,6 @@ Secondary analyses are labelled exploratory.
 * **D9 (2026-11-27, after a second internal review; exploratory).** BIRD tasks carry an "evidence" hint that the
   benchmark supplies to text-to-SQL systems; the broker's inference model and grounding also received it. Because a
   deployed user would not always supply such hints, we add a variant `tse_nohint` (proposal and grounding see the
-  question only) on all hinted tasks and report its sufficiency and exposure next to the default. Agents keep the
+  question only) on a fixed random sample of 200 hinted tasks (`eval/subset_nohint_200.txt`, seed 20261128,
+  drawn before any no-hint result was computed, because local inference on BIRD schemas is slow) and report its sufficiency and exposure next to the default. Agents keep the
   hint in all conditions (standard BIRD protocol), so E2 comparisons are unaffected.

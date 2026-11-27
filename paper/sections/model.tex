@@ -77,7 +77,9 @@ on its views (A2, A4). Base tables are unreadable to it. Each view is owned by t
 evaluated with that role's column grants and row policy and yields
 $\pi_{C^S_R\cap C^E_R}\,\sigma_{\varphi^S_R\wedge\varphi^E_R}(R)$. The \texttt{security\_barrier}
 option evaluates the view predicate before any user-supplied predicate (A1). Writes and object creation
-are impossible (read-only transactions, no \texttt{CREATE} or \texttt{TEMPORARY} privilege). Widening
+are impossible because the scope role holds only \texttt{SELECT} on its views and no \texttt{CREATE} or
+\texttt{TEMPORARY} privilege; the read-only default and statement timeout set on the login are defence in depth
+only, since a session can change them. Widening
 changes the views only through the bound check. \hfill$\square$
 
 The Remark is conditional and holds by construction; we do not count it as an experimental finding.
