@@ -5,7 +5,7 @@ Checked 2026-11-27 against `paper/main.pdf` (16 pages) and `paper/IEEE-ACCESS-RE
 | Item | Status | Evidence |
 |---|---|---|
 | Within IEEE Access scope | ✅ | Security of computing systems / databases / AI; multidisciplinary, applied, with evaluation |
-| Template followed | ✅ | Official `ieeeaccess.cls`; footer set to Vol. 14, 2026; the editorial office sets the history/DOI fields |
+| Template followed | ✅ | Official `ieeeaccess.cls` (unmodified); review version: volume/year footer, DOI and history lines suppressed in `main.tex`, to be restored by the editorial office on acceptance |
 | Abstract within limit | ✅ | Single paragraph, about 242 words in the rendered PDF (limit 150-250); no citations or abbreviations left undefined |
 | Keywords present | ✅ | 8 index terms (limit 3-10) |
 | Figures legible | ✅ | Fig. 1 and Fig. 3 redrawn at two-column width with fonts of at least 7 pt; grayscale-safe; round-2 review checks layout |
