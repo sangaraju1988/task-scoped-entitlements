@@ -341,7 +341,7 @@ Every number in the paper text is one of these LaTeX macros.
 | `\nTseRunsWidSonnet` | 400 | runs_e5wid_sonnet.jsonl | TSE runs, WidSonnet |
 | `\brokerErrWidHaiku` | 27 | runs_e5wid_haiku.jsonl | TSE runs ended by a broker error, WidHaiku |
 | `\nTseRunsWidHaiku` | 400 | runs_e5wid_haiku.jsonl | TSE runs, WidHaiku |
-| `\widCanaryTagged` | 21.0 | injections_widen.jsonl | % widening-attack canary columns tagged sensitive |
+| `\widCanaryTagged` | 21.0 | canary_tags_widen.json | % widening-attack canary columns tagged sensitive (strict-policy tagger) |
 | `\exLocalQwenBzero` | 34.3 | runs_e2_local.jsonl | EX %, qwen3:8b, B0 |
 | `\nLocalQwen` | 134 | runs_e2_local.jsonl | tasks, qwen3:8b |
 | `\exLocalQwenBthree` | 37.3 | runs_e2_local.jsonl | EX %, qwen3:8b, B3 |

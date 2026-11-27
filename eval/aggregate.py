@@ -660,13 +660,19 @@ for tg, fn in (("Haiku", "runs_e2_haiku.jsonl"), ("Sonnet", "runs_e2_sonnet_r.js
 
 # share of widening-attack canary columns that the strict policy's tagger marks sensitive
 if "widen" in INJ:
-    from tse import semantic_layer as _sl
-    from tse.policies.generate import is_sensitive as _sens
-    tg_ = []
-    for t, i in INJ["widen"].items():
-        T_ = TASKS[t]; sl_ = _sl.get(T_["pgdb"], T_["dataset"], T_["db_id"])
-        tg_.append(_sens(i["canary_column"], sl_.tables[i["canary_table"]].columns[i["canary_column"]].description))
-    macro("widCanaryTagged", pct(np.mean(tg_)), "injections_widen.jsonl", "% widening-attack canary columns tagged sensitive")
+    # tags need column descriptions from the semantic layer (database); cached in eval/results so that a clean
+    # clone regenerates every number from committed files only
+    _cache = os.path.join(RES, "canary_tags_widen.json")
+    if not os.path.exists(_cache):
+        from tse import semantic_layer as _sl
+        from tse.policies.generate import is_sensitive as _sens
+        tags = {}
+        for t, i in INJ["widen"].items():
+            T_ = TASKS[t]; sl_ = _sl.get(T_["pgdb"], T_["dataset"], T_["db_id"])
+            tags[t] = bool(_sens(i["canary_column"], sl_.tables[i["canary_table"]].columns[i["canary_column"]].description))
+        json.dump(tags, open(_cache, "w"), indent=0, sort_keys=True)
+    tg_ = list(json.load(open(_cache)).values())
+    macro("widCanaryTagged", pct(np.mean(tg_)), "canary_tags_widen.json", "% widening-attack canary columns tagged sensitive (strict-policy tagger)")
 
 # open-weight arm per agent model (the pooled row mixes two models)
 LOC = runs("runs_e2_local.jsonl")
