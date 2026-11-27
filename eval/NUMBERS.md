@@ -13,7 +13,7 @@ Every number in the paper text is one of these LaTeX macros.
 | `\permRateFull` | 100.0 | prep.jsonl | share of tasks permitted under full |
 | `\permRateRestricted` | 44.5 | prep.jsonl | share of tasks permitted under restricted |
 | `\permRatePartition` | 52.4 | prep.jsonl | share of tasks permitted under partition |
-| `\goldSufficient` | 96.0 | e1e3_scopes.jsonl | gold scope N(t) sufficient by execution |
+| `\goldSufficient` | 96.1 | e1e3_scopes.jsonl | gold scope N(t) sufficient by execution |
 | `\oerColBzero` | 9.45 | e1e3_scopes.jsonl | geomean OER_col, B0 |
 | `\oerRowBzero` | 2.67 | e1e3_scopes.jsonl | geomean OER_row, B0 |
 | `\oerCellBzero` | 50.6 | e1e3_scopes.jsonl | geomean OER_cell, B0 |
@@ -70,14 +70,14 @@ Every number in the paper text is one of these LaTeX macros.
 | `\suffHiTsenosl` | 50.1 | e1e3_scopes.jsonl | sufficiency CI high, tse_nosl |
 | `\precTsenosl` | 0.62 | e1e3_scopes.jsonl | mean column precision, tse_nosl |
 | `\recTsenosl` | 0.86 | e1e3_scopes.jsonl | mean column recall, tse_nosl |
-| `\oerColTsesmall` | 2.49 | e1e3_scopes.jsonl | geomean OER_col, tse_small |
-| `\oerRowTsesmall` | 0.30 | e1e3_scopes.jsonl | geomean OER_row, tse_small |
-| `\oerCellTsesmall` | 5.1 | e1e3_scopes.jsonl | geomean OER_cell, tse_small |
-| `\suffTsesmall` | 27.6 | e1e3_scopes.jsonl | sufficiency %, tse_small |
-| `\suffLoTsesmall` | 21.5 | e1e3_scopes.jsonl | sufficiency CI low, tse_small |
-| `\suffHiTsesmall` | 34.3 | e1e3_scopes.jsonl | sufficiency CI high, tse_small |
-| `\precTsesmall` | 0.39 | e1e3_scopes.jsonl | mean column precision, tse_small |
-| `\recTsesmall` | 0.84 | e1e3_scopes.jsonl | mean column recall, tse_small |
+| `\oerColTsesmall` | 2.71 | e1e3_scopes.jsonl | geomean OER_col, tse_small |
+| `\oerRowTsesmall` | 0.36 | e1e3_scopes.jsonl | geomean OER_row, tse_small |
+| `\oerCellTsesmall` | 4.9 | e1e3_scopes.jsonl | geomean OER_cell, tse_small |
+| `\suffTsesmall` | 54.6 | e1e3_scopes.jsonl | sufficiency %, tse_small |
+| `\suffLoTsesmall` | 51.5 | e1e3_scopes.jsonl | sufficiency CI low, tse_small |
+| `\suffHiTsesmall` | 57.7 | e1e3_scopes.jsonl | sufficiency CI high, tse_small |
+| `\precTsesmall` | 0.40 | e1e3_scopes.jsonl | mean column precision, tse_small |
+| `\recTsesmall` | 0.91 | e1e3_scopes.jsonl | mean column recall, tse_small |
 | `\oerColTsehaiku` | 1.79 | e1e3_scopes.jsonl | geomean OER_col, tse_haiku |
 | `\oerRowTsehaiku` | 0.85 | e1e3_scopes.jsonl | geomean OER_row, tse_haiku |
 | `\oerCellTsehaiku` | 2.1 | e1e3_scopes.jsonl | geomean OER_cell, tse_haiku |
@@ -243,29 +243,35 @@ Every number in the paper text is one of these LaTeX macros.
 | `\denyLeaksSonnet` | 5 | runs_e5ctx_sonnet_deny.jsonl | D4 deny-arm exfiltrating runs, Sonnet |
 | `\denyLeaksInScopeSonnet` | 5 | runs_e5ctx_sonnet_deny.jsonl | of those, canary column already inside the inferred task scope, Sonnet |
 | `\pDenySonnet` | 7.1e-15 | runs_e5ctx_sonnet_deny.jsonl | exact McNemar, TSE auto vs TSE deny exfiltration, Sonnet (exploratory, unadjusted) |
-| `\ablExKzero` | 50.5 | runs_abl_haiku.jsonl | EX %, agent ablation tse_k0/auto |
-| `\ablDKzero` | \ensuremath{-}9.0 | runs_abl_haiku.jsonl | paired EX diff vs default TSE (pp), tse_k0/auto |
-| `\ablDLoKzero` | \ensuremath{-}15.0 | runs_abl_haiku.jsonl | CI low |
-| `\ablDHiKzero` | \ensuremath{-}3.0 | runs_abl_haiku.jsonl | CI high |
-| `\ablWreqKzero` | 26.5 | runs_abl_haiku.jsonl | % runs with widening request, tse_k0/auto |
-| `\ablExKtwo` | 65.5 | runs_abl_haiku.jsonl | EX %, agent ablation tse_k2/auto |
-| `\ablDKtwo` | 6.0 | runs_abl_haiku.jsonl | paired EX diff vs default TSE (pp), tse_k2/auto |
-| `\ablDLoKtwo` | \ensuremath{-}0.5 | runs_abl_haiku.jsonl | CI low |
-| `\ablDHiKtwo` | 12.5 | runs_abl_haiku.jsonl | CI high |
-| `\ablWreqKtwo` | 1.5 | runs_abl_haiku.jsonl | % runs with widening request, tse_k2/auto |
-| `\ablExStrict` | 58.5 | runs_abl_haiku.jsonl | EX %, agent ablation tse/strict |
-| `\ablDStrict` | \ensuremath{-}1.0 | runs_abl_haiku.jsonl | paired EX diff vs default TSE (pp), tse/strict |
-| `\ablDLoStrict` | \ensuremath{-}7.0 | runs_abl_haiku.jsonl | CI low |
-| `\ablDHiStrict` | 5.0 | runs_abl_haiku.jsonl | CI high |
-| `\ablWreqStrict` | 19.0 | runs_abl_haiku.jsonl | % runs with widening request, tse/strict |
-| `\ablExDeny` | 51.5 | runs_abl_haiku.jsonl | EX %, agent ablation tse/deny |
-| `\ablDDeny` | \ensuremath{-}8.0 | runs_abl_haiku.jsonl | paired EX diff vs default TSE (pp), tse/deny |
-| `\ablDLoDeny` | \ensuremath{-}14.5 | runs_abl_haiku.jsonl | CI low |
-| `\ablDHiDeny` | \ensuremath{-}1.5 | runs_abl_haiku.jsonl | CI high |
-| `\ablWreqDeny` | 19.0 | runs_abl_haiku.jsonl | % runs with widening request, tse/deny |
-| `\ablN` | 200 | runs_abl_haiku.jsonl | tasks in agent-level ablation subset |
-| `\ablExDefault` | 59.5 | runs_e2_haiku.jsonl | EX %, default TSE on the ablation subset |
-| `\ablExBzero` | 67.5 | runs_e2_haiku.jsonl | EX %, B0 on the ablation subset |
+| `\bthreewExHaiku` | 40.2 | runs_abl_haiku.jsonl | EX %, B3W, Haiku, ablation subset |
+| `\bthreewTseExHaiku` | 52.6 | runs_abl_haiku.jsonl | EX %, TSE auto, Haiku, same tasks |
+| `\dTseBthreewHaiku` | 12.4 | runs_abl_haiku.jsonl | paired EX diff TSE - B3W (pp), Haiku |
+| `\dLoTseBthreewHaiku` | 1.0 | runs_abl_haiku.jsonl | CI low |
+| `\dHiTseBthreewHaiku` | 23.7 | runs_abl_haiku.jsonl | CI high |
+| `\bthreewWappHaiku` | 23.7 | runs_abl_haiku.jsonl | % B3W runs with approved widening, Haiku |
+| `\ablExKzero` | 43.3 | runs_abl_haiku.jsonl | EX %, agent ablation tse_k0/auto |
+| `\ablDKzero` | \ensuremath{-}9.3 | runs_abl_haiku.jsonl | paired EX diff vs default TSE (pp), tse_k0/auto |
+| `\ablDLoKzero` | \ensuremath{-}19.6 | runs_abl_haiku.jsonl | CI low |
+| `\ablDHiKzero` | 1.0 | runs_abl_haiku.jsonl | CI high |
+| `\ablWreqKzero` | 45.4 | runs_abl_haiku.jsonl | % runs with widening request, tse_k0/auto |
+| `\ablExKtwo` | 64.9 | runs_abl_haiku.jsonl | EX %, agent ablation tse_k2/auto |
+| `\ablDKtwo` | 12.4 | runs_abl_haiku.jsonl | paired EX diff vs default TSE (pp), tse_k2/auto |
+| `\ablDLoKtwo` | 1.0 | runs_abl_haiku.jsonl | CI low |
+| `\ablDHiKtwo` | 24.7 | runs_abl_haiku.jsonl | CI high |
+| `\ablWreqKtwo` | 3.1 | runs_abl_haiku.jsonl | % runs with widening request, tse_k2/auto |
+| `\ablExStrict` | 47.4 | runs_abl_haiku.jsonl | EX %, agent ablation tse/strict |
+| `\ablDStrict` | \ensuremath{-}5.2 | runs_abl_haiku.jsonl | paired EX diff vs default TSE (pp), tse/strict |
+| `\ablDLoStrict` | \ensuremath{-}14.4 | runs_abl_haiku.jsonl | CI low |
+| `\ablDHiStrict` | 4.1 | runs_abl_haiku.jsonl | CI high |
+| `\ablWreqStrict` | 32.0 | runs_abl_haiku.jsonl | % runs with widening request, tse/strict |
+| `\ablExDeny` | 37.1 | runs_abl_haiku.jsonl | EX %, agent ablation tse/deny |
+| `\ablDDeny` | \ensuremath{-}15.5 | runs_abl_haiku.jsonl | paired EX diff vs default TSE (pp), tse/deny |
+| `\ablDLoDeny` | \ensuremath{-}24.7 | runs_abl_haiku.jsonl | CI low |
+| `\ablDHiDeny` | \ensuremath{-}7.2 | runs_abl_haiku.jsonl | CI high |
+| `\ablWreqDeny` | 32.0 | runs_abl_haiku.jsonl | % runs with widening request, tse/deny |
+| `\ablN` | 97 | runs_abl_haiku.jsonl | tasks in agent-level ablation subset |
+| `\ablExDefault` | 52.6 | runs_abl_haiku.jsonl | EX %, default TSE on the ablation subset |
+| `\ablExBzero` | 69.1 | runs_abl_haiku.jsonl | EX %, B0 on the ablation subset |
 | `\seedReps` | 3 | runs_seeds_haiku.jsonl | repetitions |
 | `\seedSubsetN` | 100 | runs_seeds_haiku.jsonl | tasks in repeated-run study |
 | `\seedDiffMin` | \ensuremath{-}6.0 | runs_seeds_haiku.jsonl | min TSE-B0 EX diff across repetitions (pp) |
@@ -293,4 +299,57 @@ Every number in the paper text is one of these LaTeX macros.
 | `\taxViewSemantics` | 9.0 | taxonomy_sample.jsonl | % of sampled insufficient scopes: view_semantics |
 | `\taxOther` | 0.0 | taxonomy_sample.jsonl | % of sampled insufficient scopes: other |
 | `\taxN` | 100 | taxonomy_sample.jsonl | sampled insufficient scopes |
-| `\apiSpend` | 57.94 | api_spend.jsonl | total API spend (USD) |
+| `\apiSpend` | 58.41 | api_spend.jsonl | total API spend (USD) |
+| `\nRoleFull` | 632 | e1e3_scopes.jsonl | permitted tasks with role full |
+| `\oerColRedFull` | 5.4 | e1e3_scopes.jsonl | geomean oer_col B0/TSE, role full |
+| `\oerCellRedFull` | 31.9 | e1e3_scopes.jsonl | geomean oer_cell B0/TSE, role full |
+| `\suffTseFull` | 58.5 | e1e3_scopes.jsonl | TSE sufficiency %, role full |
+| `\nRoleRestricted` | 178 | e1e3_scopes.jsonl | permitted tasks with role restricted |
+| `\oerColRedRestricted` | 4.0 | e1e3_scopes.jsonl | geomean oer_col B0/TSE, role restricted |
+| `\oerCellRedRestricted` | 10.6 | e1e3_scopes.jsonl | geomean oer_cell B0/TSE, role restricted |
+| `\suffTseRestricted` | 79.2 | e1e3_scopes.jsonl | TSE sufficiency %, role restricted |
+| `\nRolePartition` | 190 | e1e3_scopes.jsonl | permitted tasks with role partition |
+| `\oerColRedPartition` | 4.8 | e1e3_scopes.jsonl | geomean oer_col B0/TSE, role partition |
+| `\oerCellRedPartition` | 21.8 | e1e3_scopes.jsonl | geomean oer_cell B0/TSE, role partition |
+| `\suffTsePartition` | 67.4 | e1e3_scopes.jsonl | TSE sufficiency %, role partition |
+| `\oerColReductionSuff` | 4.8 | e1e3_scopes.jsonl | geomean oer_col B0/TSE on tasks with sufficient TSE scope |
+| `\oerCellReductionSuff` | 11.9 | e1e3_scopes.jsonl | geomean oer_cell B0/TSE on tasks with sufficient TSE scope |
+| `\suffTseNoPre` | 63.9 | e1e3_scopes.jsonl | TSE sufficiency % excluding pre-freeze tasks |
+| `\oerCellReductionNoPre` | 24.6 | e1e3_scopes.jsonl | cell reduction excluding pre-freeze tasks |
+| `\dExHaikuTseNoPre` | \ensuremath{-}6.5 | runs_e2_haiku.jsonl | EX diff TSE-B0 excluding pre-freeze tasks, Haiku 5.5 |
+| `\dExSonnetTseNoPre` | \ensuremath{-}11.2 | runs_e2_sonnet_r.jsonl | EX diff TSE-B0 excluding pre-freeze tasks, Sonnet 5.5 |
+| `\oerColPostHaiku` | 1.93 | e1_postwiden.jsonl | geomean oer_col of final reach, TSE runs, Haiku |
+| `\oerColRedPostHaiku` | 4.9 | e1_postwiden.jsonl | geomean oer_col B0 / final TSE reach, Haiku |
+| `\oerCellPostHaiku` | 3.51 | e1_postwiden.jsonl | geomean oer_cell of final reach, TSE runs, Haiku |
+| `\oerCellRedPostHaiku` | 14.3 | e1_postwiden.jsonl | geomean oer_cell B0 / final TSE reach, Haiku |
+| `\nPostHaiku` | 997 | e1_postwiden.jsonl | TSE runs with final-reach OER, Haiku |
+| `\oerColPostSonnet` | 1.94 | e1_postwiden.jsonl | geomean oer_col of final reach, TSE runs, Sonnet |
+| `\oerColRedPostSonnet` | 4.9 | e1_postwiden.jsonl | geomean oer_col B0 / final TSE reach, Sonnet |
+| `\oerCellPostSonnet` | 3.90 | e1_postwiden.jsonl | geomean oer_cell of final reach, TSE runs, Sonnet |
+| `\oerCellRedPostSonnet` | 13.0 | e1_postwiden.jsonl | geomean oer_cell B0 / final TSE reach, Sonnet |
+| `\nPostSonnet` | 989 | e1_postwiden.jsonl | TSE runs with final-reach OER, Sonnet |
+| `\nCanaryOutE` | 18 | injections_context.jsonl | context-injection tasks whose canary column is outside E(u) |
+| `\exfOutEHaikuBzero` | 0 | runs_e5ctx_haiku.jsonl | exfiltrating runs among out-of-E canary tasks, Haiku, B0 |
+| `\nOutEHaikuBzero` | 18 | runs_e5ctx_haiku.jsonl | runs among out-of-E canary tasks, Haiku, B0 |
+| `\exfOutEHaikuTse` | 0 | runs_e5ctx_haiku.jsonl | exfiltrating runs among out-of-E canary tasks, Haiku, TSE |
+| `\nOutEHaikuTse` | 18 | runs_e5ctx_haiku.jsonl | runs among out-of-E canary tasks, Haiku, TSE |
+| `\exfOutESonnetBzero` | 0 | runs_e5ctx_sonnet.jsonl | exfiltrating runs among out-of-E canary tasks, Sonnet, B0 |
+| `\nOutESonnetBzero` | 18 | runs_e5ctx_sonnet.jsonl | runs among out-of-E canary tasks, Sonnet, B0 |
+| `\exfOutESonnetTse` | 0 | runs_e5ctx_sonnet.jsonl | exfiltrating runs among out-of-E canary tasks, Sonnet, TSE |
+| `\nOutESonnetTse` | 18 | runs_e5ctx_sonnet.jsonl | runs among out-of-E canary tasks, Sonnet, TSE |
+| `\widExfilAutoHaiku` | 67.9 | runs_e5wid_*.jsonl | exfiltration %, widening attack, auto, Haiku |
+| `\widExfilAutoHaikuLo` | 61.1 | runs_e5wid_*.jsonl | CI low |
+| `\widExfilAutoHaikuHi` | 74.7 | runs_e5wid_*.jsonl | CI high |
+| `\widNAutoHaiku` | 190 | runs_e5wid_*.jsonl | runs, widening attack, auto, Haiku |
+| `\widExfilStrictHaiku` | 54.2 | runs_e5wid_*.jsonl | exfiltration %, widening attack, strict, Haiku |
+| `\widExfilStrictHaikuLo` | 47.4 | runs_e5wid_*.jsonl | CI low |
+| `\widExfilStrictHaikuHi` | 61.1 | runs_e5wid_*.jsonl | CI high |
+| `\widNStrictHaiku` | 190 | runs_e5wid_*.jsonl | runs, widening attack, strict, Haiku |
+| `\widExfilAutoSonnet` | 60.1 | runs_e5wid_*.jsonl | exfiltration %, widening attack, auto, Sonnet |
+| `\widExfilAutoSonnetLo` | 52.8 | runs_e5wid_*.jsonl | CI low |
+| `\widExfilAutoSonnetHi` | 67.4 | runs_e5wid_*.jsonl | CI high |
+| `\widNAutoSonnet` | 178 | runs_e5wid_*.jsonl | runs, widening attack, auto, Sonnet |
+| `\widExfilStrictSonnet` | 56.8 | runs_e5wid_*.jsonl | exfiltration %, widening attack, strict, Sonnet |
+| `\widExfilStrictSonnetLo` | 49.7 | runs_e5wid_*.jsonl | CI low |
+| `\widExfilStrictSonnetHi` | 63.8 | runs_e5wid_*.jsonl | CI high |
+| `\widNStrictSonnet` | 185 | runs_e5wid_*.jsonl | runs, widening attack, strict, Sonnet |

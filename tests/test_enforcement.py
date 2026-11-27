@@ -184,3 +184,32 @@ def test_ddl_listing_has_no_superuser_ops():
     ddl = " ".join(compile_ddl(h)).upper()
     assert "SUPERUSER" not in ddl and "BYPASSRLS" not in ddl and "SECURITY_INVOKER" not in ddl
     assert "SECURITY_BARRIER = TRUE" in ddl and "SET FALSE" in ddl
+
+
+def test_malicious_filter_literal_cannot_inject_ddl(sl):
+    """Grounded filter values from task text are compiled as quoted literals (no DDL/SQL injection into the broker)."""
+    from tse.db import qlit
+    evil = "France'); DROP TABLE public.singer; --"
+    pred = f"lower(\"country\"::text) = lower({qlit(evil)})"
+    b = Broker(DB)
+    h = b.provision("test_evil", Scope({"singer": TableScope(frozenset({"singer_id", "name", "country"}), pred)}), "full")
+    try:
+        with agent(h) as c:
+            assert c.execute("select count(*) from singer").fetchone()[0] == 0   # literal matched nothing
+    finally:
+        b.teardown(h); b.close()
+    with connect(DB) as a:
+        assert a.execute("select count(*) from public.singer").fetchone()[0] > 0  # table intact
+
+
+def test_repeated_widening_keeps_working(sl):
+    """Regression (D8): a second widening must not fail on view column order."""
+    b = Broker(DB)
+    h = b.provision("test_widen2", Scope({"singer": TableScope(frozenset({"singer_id", "name"}), None)}), "full")
+    try:
+        b.widen(h, Scope({"singer": TableScope(frozenset({"singer_id", "name", "country"}), None)}))
+        b.widen(h, Scope({"singer": TableScope(frozenset({"singer_id", "name", "country", "age"}), None)}))
+        with agent(h) as c:
+            assert c.execute("select age, country, name from singer").fetchall()
+    finally:
+        b.teardown(h); b.close()

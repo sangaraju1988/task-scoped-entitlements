@@ -67,6 +67,19 @@ def compile_ddl(h: Handle):
     return ddl
 
 
+def _retry_catalog(fn, tries=4):
+    """Concurrent brokers can collide on shared catalog rows (e.g. GRANT CONNECT ON DATABASE updates pg_database):
+    PostgreSQL then raises 'tuple concurrently updated'. The transaction is rolled back, so retrying is safe."""
+    import psycopg
+    for i in range(tries):
+        try:
+            return fn()
+        except psycopg.errors.InternalError_ as e:
+            if "concurrently" not in str(e) or i == tries - 1:
+                raise
+            time.sleep(0.05 * (i + 1))
+
+
 class Broker:
     def __init__(self, pgdb: str):
         self.pgdb = pgdb
@@ -85,9 +98,11 @@ class Broker:
         t0 = time.perf_counter()
         tid, s, R, L = self._ids(task_key)
         h = Handle(self.pgdb, tid, s, R, L, secrets.token_hex(16), user_role(self.pgdb, role), scope)
-        with self.conn.transaction():
-            for stmt in compile_ddl(h):
-                self.conn.execute(stmt)
+        def run():
+            with self.conn.transaction():
+                for stmt in compile_ddl(h):
+                    self.conn.execute(stmt)
+        _retry_catalog(run)
         h.n_objects = 1 + len(scope.tables) + 2  # schema + views + 2 roles
         self.mine[s] = (R, L)
         h.timings["compile_ms"] = 1000 * (time.perf_counter() - t0)
@@ -96,6 +111,12 @@ class Broker:
     def widen(self, h: Handle, new_scope: Scope):
         """Replace views so the scope becomes new_scope (columns may only be added; predicates relaxed)."""
         t0 = time.perf_counter()
+        _retry_catalog(lambda: self._widen_tx(h, new_scope))
+        h.scope = new_scope
+        h.n_objects = 1 + len(new_scope.tables) + 2
+        h.timings.setdefault("widen_ms", []).append(1000 * (time.perf_counter() - t0))
+
+    def _widen_tx(self, h: Handle, new_scope: Scope):
         with self.conn.transaction():
             self.conn.execute(f"GRANT USAGE, CREATE ON SCHEMA {qident(h.schema)} TO {h.user_role}")
             self.conn.execute(f"SET ROLE {h.user_role}")
@@ -104,8 +125,12 @@ class Broker:
                 if old is not None and not (old.columns <= ts.columns):
                     raise ValueError("widening may not remove columns")
                 if old is not None:
-                    # CREATE OR REPLACE VIEW requires existing columns first, in the same order
-                    cols = sorted(old.columns) + sorted(ts.columns - old.columns)
+                    # CREATE OR REPLACE VIEW requires the view's existing columns first, in their current order
+                    # (read from the catalog: after an earlier widening it is no longer sorted)
+                    now = [r[0] for r in self.conn.execute(
+                        "SELECT attname FROM pg_attribute WHERE attrelid = %s::regclass AND attnum > 0 AND NOT attisdropped "
+                        "ORDER BY attnum", (f"{qident(h.schema)}.{qident(t)}",)).fetchall()]
+                    cols = now + sorted(ts.columns - set(now))
                     where = f" WHERE {ts.predicate}" if ts.predicate else ""
                     self.conn.execute(f"CREATE OR REPLACE VIEW {qident(h.schema)}.{qident(t)} WITH (security_barrier = true) AS "
                                       f"SELECT {', '.join(qident(c) for c in cols)} FROM public.{qident(t)}{where}")
@@ -114,9 +139,6 @@ class Broker:
                     self.conn.execute(f"GRANT SELECT ON {qident(h.schema)}.{qident(t)} TO {h.scope_role}")
             self.conn.execute("RESET ROLE")
             self.conn.execute(f"REVOKE CREATE ON SCHEMA {qident(h.schema)} FROM {h.user_role}")
-        h.scope = new_scope
-        h.n_objects = 1 + len(new_scope.tables) + 2
-        h.timings.setdefault("widen_ms", []).append(1000 * (time.perf_counter() - t0))
 
     def teardown(self, h: Handle):
         t0 = time.perf_counter()

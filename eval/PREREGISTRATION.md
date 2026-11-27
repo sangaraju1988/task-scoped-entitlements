@@ -163,3 +163,14 @@ Secondary analyses are labelled exploratory.
   where approval only enlarges the shown schema (credentials stay E(u)); Haiku 5.5 on the ablation subset (both
   harnesses, same cells) and Sonnet 5.5 (ReAct) on the same 200 tasks, paired with E2 TSE runs. Both are
   exploratory and reported as such.
+* **D7 (2026-11-27, after internal review; exploratory).** E1 measures exposure of the initial scope. We add the
+  exposure of each E2 TSE run's final reach (initial scope plus approved widenings; `eval/run_e1_postwiden.py`), and
+  report E1 also per role and on the tasks whose TSE scope is sufficient.
+* **D8 (2026-11-27, bug found after the runs; no re-execution).** Two broker defects ended some TSE runs with an
+  error: (i) a second widening of the same view failed because `CREATE OR REPLACE VIEW` requires the existing column
+  order, which the broker re-derived by sorting instead of reading it from the catalog; (ii) concurrent brokers
+  occasionally collided on shared catalog rows ("tuple concurrently updated"). As preregistered (§8), these runs count
+  as failures of the TSE condition and are not re-executed, which is conservative for TSE utility; for the
+  widening-abuse experiment, errored runs are excluded from the exfiltration denominator, which is conservative for
+  security. Both defects are fixed in the released code (catalog-ordered widening, retry on catalog conflicts) with
+  regression tests; counts are reported in the paper.
