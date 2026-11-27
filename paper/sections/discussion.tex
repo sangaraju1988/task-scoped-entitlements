@@ -22,17 +22,17 @@ not address it.
 4. Widening requests beyond $E(u)$ & Rejected by the bound check and unenforceable by the DB (view owner lacks privilege) & Mitigated & Sec.~\ref{sec:res-security}(c) (no grant outside $E(u)$); T \\
 5. Role switching (\texttt{SET ROLE}, \texttt{SET SESSION AUTHORIZATION}) & Membership \texttt{WITH SET FALSE}; no superuser & Mitigated & Sec.~\ref{sec:res-security}(b); T \\
 6. Direct base-table access, schema-path tricks, mixing views and base tables & No \texttt{USAGE} on \texttt{public}; privileges checked per relation & Mitigated & Sec.~\ref{sec:res-security}(b); T \\
-6b. Query hidden in a string argument (\texttt{query\_to\_xml}, \texttt{table\_to\_xml}) & Executed with the role's privileges, which exclude base tables; a parsing gate is bypassed & Mitigated (TSE); not by a parser gate & Sec.~\ref{sec:res-security}(b) \\
-7. Leaky functions/operators observing filtered rows & \texttt{security\_barrier}; no \texttt{CREATE}/\texttt{TEMPORARY}, so the agent cannot define a leaky function & Mitigated & T (leaky-function unit test; catalog attempts could not create one) \\
-8. Statistics and catalog values (\texttt{pg\_stats}, \texttt{pg\_statistic}) & \texttt{pg\_stats} filters by column privilege; \texttt{pg\_statistic} denied & Mitigated & Sec.~\ref{sec:res-security}(b); T \\
-9. Error-message side channels & Errors arise only on in-scope data; no out-of-scope value reached in our scripted attempts & Partially mitigated (scripted tests only) & Sec.~\ref{sec:res-security}(b); T \\
-10. Server file and program access (\texttt{COPY}, \texttt{pg\_read\_file}, large objects) & Require superuser or predefined roles & Mitigated & Sec.~\ref{sec:res-security}(b); T \\
-11. Writes, DDL, persistence & Only \texttt{SELECT} granted; no \texttt{CREATE}/\texttt{TEMPORARY} (resetting the read-only default does not help); ephemeral roles dropped at task end & Mitigated & Sec.~\ref{sec:res-security}(b); E4 (cleanup) \\
-12. Schema metadata (table/column names, view definitions) & PostgreSQL exposes catalog metadata to all roles & Out of scope & Sec.~\ref{sec:res-security}(b) (catalog reads run) \\
-13. Timing and other covert channels & Not addressed & Out of scope & -- \\
-14. Inference/aggregation from in-scope data & Classic statistical-database threat~\cite{denning1979tracker} & Out of scope & -- \\
-15. Exfiltration of in-scope data & TSE limits what is reachable, not what the agent says & Partially mitigated (smaller reach) & E1 (OER) \\
-16. Malicious authorized user; compromised broker; wrong $E(u)$ & Outside A3 / beyond TSE's role & Out of scope & -- \\
+7. Query hidden in a string argument (\texttt{query\_to\_xml}, \texttt{table\_to\_xml}) & Executed with the role's privileges, which exclude base tables; a parsing gate is bypassed & Mitigated (TSE); not by a parser gate & Sec.~\ref{sec:res-security}(b) \\
+8. Leaky functions/operators observing filtered rows & \texttt{security\_barrier}; no \texttt{CREATE}/\texttt{TEMPORARY}, so the agent cannot define a leaky function & Mitigated & T (leaky-function unit test; catalog attempts could not create one) \\
+9. Statistics and catalog values (\texttt{pg\_stats}, \texttt{pg\_statistic}) & \texttt{pg\_stats} filters by column privilege; \texttt{pg\_statistic} denied & Mitigated & Sec.~\ref{sec:res-security}(b); T \\
+10. Error-message side channels & Errors arise only on in-scope data; no out-of-scope value reached in our scripted attempts & Partially mitigated (scripted tests only) & Sec.~\ref{sec:res-security}(b); T \\
+11. Server file and program access (\texttt{COPY}, \texttt{pg\_read\_file}, large objects) & Require superuser or predefined roles & Mitigated & Sec.~\ref{sec:res-security}(b); T \\
+12. Writes, DDL, persistence & Only \texttt{SELECT} granted; no \texttt{CREATE}/\texttt{TEMPORARY} (resetting the read-only default does not help); ephemeral roles dropped at task end & Mitigated & Sec.~\ref{sec:res-security}(b); E4 (cleanup) \\
+13. Schema metadata (table/column names, view definitions) & PostgreSQL exposes catalog metadata to all roles & Out of scope & Sec.~\ref{sec:res-security}(b) (catalog reads run) \\
+14. Timing and other covert channels & Not addressed & Out of scope & -- \\
+15. Inference/aggregation from in-scope data & Classic statistical-database threat~\cite{denning1979tracker} & Out of scope & -- \\
+16. Exfiltration of in-scope data & TSE limits what is reachable, not what the agent says & Partially mitigated (smaller reach) & E1 (OER) \\
+17. Malicious authorized user; compromised broker; wrong $E(u)$ & Outside A3 / beyond TSE's role & Out of scope & -- \\
 \hline
 \end{tabular}
 \end{table*}

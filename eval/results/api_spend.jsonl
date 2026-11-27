@@ -32017,3 +32017,24 @@
 {"t": 1795750069.539486, "model": "claude-haiku-5-5", "tag": "spider-765", "usd": 0.000376495, "input": 2, "cache_write": 183, "cache_read": 2042, "output": 666}
 {"t": 1795750070.1817448, "model": "claude-haiku-5-5", "tag": "spider-774", "usd": 0.00015027, "input": 2, "cache_write": 502, "cache_read": 1782, "output": 139}
 {"t": 1795750070.39246, "model": "claude-haiku-5-5", "tag": "approval-judge", "usd": 8.05e-05, "input": 760, "cache_write": 0, "cache_read": 0, "output": 9}
+{"t": 1795750072.311115, "model": "claude-haiku-5-5", "tag": "spider-779", "usd": 0.000414275, "input": 4, "cache_write": 1231, "cache_read": 0, "output": 520}
+{"t": 1795750072.605943, "model": "claude-haiku-5-5", "tag": "spider-774", "usd": 0.000320415, "input": 2, "cache_write": 615, "cache_read": 2284, "output": 441}
+{"t": 1795750073.467829, "model": "claude-haiku-5-5", "tag": "approval-judge", "usd": 7.99e-05, "input": 754, "cache_write": 0, "cache_read": 0, "output": 9}
+{"t": 1795750074.633972, "model": "claude-haiku-5-5", "tag": "approval-judge", "usd": 8.08e-05, "input": 763, "cache_write": 0, "cache_read": 0, "output": 9}
+{"t": 1795750074.787822, "model": "claude-haiku-5-5", "tag": "spider-788", "usd": 0.00033015, "input": 4, "cache_write": 1198, "cache_read": 0, "output": 360}
+{"t": 1795750075.1363342, "model": "claude-haiku-5-5", "tag": "spider-779", "usd": 0.000227135, "input": 2, "cache_write": 765, "cache_read": 1231, "output": 238}
+{"t": 1795750076.381251, "model": "claude-haiku-5-5", "tag": "approval-judge", "usd": 8.060000000000001e-05, "input": 761, "cache_write": 0, "cache_read": 0, "output": 9}
+{"t": 1795750077.378745, "model": "claude-haiku-5-5", "tag": "spider-776|lg", "usd": 0.0024439}
+{"t": 1795750078.272802, "model": "claude-haiku-5-5", "tag": "spider-783|lg", "usd": 0.0009038000000000001}
+{"t": 1795750078.491369, "model": "claude-haiku-5-5", "tag": "spider-788", "usd": 0.000268055, "input": 2, "cache_write": 939, "cache_read": 1198, "output": 277}
+{"t": 1795750079.3048031, "model": "claude-haiku-5-5", "tag": "spider-779", "usd": 0.00064591, "input": 2, "cache_write": 970, "cache_read": 1996, "output": 1009}
+{"t": 1795750080.941216, "model": "claude-haiku-5-5", "tag": "approval-judge", "usd": 8.08e-05, "input": 763, "cache_write": 0, "cache_read": 0, "output": 9}
+{"t": 1795750081.857499, "model": "claude-haiku-5-5", "tag": "spider-788", "usd": 0.00040482, "input": 2, "cache_write": 782, "cache_read": 2137, "output": 571}
+{"t": 1795750083.2617788, "model": "claude-haiku-5-5", "tag": "approval-judge", "usd": 7.98e-05, "input": 753, "cache_write": 0, "cache_read": 0, "output": 9}
+{"t": 1795750084.4242182, "model": "claude-haiku-5-5", "tag": "spider-451", "usd": 0.000406525, "input": 4, "cache_write": 1497, "cache_read": 0, "output": 438}
+{"t": 1795750085.07286, "model": "claude-haiku-5-5", "tag": "spider-815|lg", "usd": 0.0009078000000000001}
+{"t": 1795750085.07886, "model": "claude-haiku-5-5", "tag": "spider-789|lg", "usd": 0.0011824000000000001}
+{"t": 1795750085.750166, "model": "claude-haiku-5-5", "tag": "approval-judge", "usd": 0.0001249, "input": 1204, "cache_write": 0, "cache_read": 0, "output": 9}
+{"t": 1795750086.802049, "model": "claude-haiku-5-5", "tag": "spider-462", "usd": 0.0002534, "input": 4, "cache_write": 1180, "cache_read": 0, "output": 211}
+{"t": 1795750088.308843, "model": "claude-haiku-5-5", "tag": "spider-462", "usd": 0.000148375, "input": 2, "cache_write": 255, "cache_read": 1180, "output": 209}
+{"t": 1795750088.418914, "model": "claude-haiku-5-5", "tag": "spider-451", "usd": 0.000306795, "input": 2, "cache_write": 549, "cache_read": 1497, "output": 446}
