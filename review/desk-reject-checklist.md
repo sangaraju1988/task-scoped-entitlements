@@ -11,7 +11,7 @@ Checked 2026-11-27 against `paper/main.pdf` (16 pages) and `paper/IEEE-ACCESS-RE
 | Figures legible | ✅ | Fig. 1 and Fig. 3 redrawn at two-column width with fonts of at least 7 pt; grayscale-safe; round-2 review checks layout |
 | References formatted with DOIs | ✅ | 76 entries, IEEEtran style; every entry resolved (`review/bib-check-2.txt`); DOIs wherever one exists; preprints carry arXiv IDs |
 | Limitations present | ✅ | Section "Limitations" (benchmarks, synthetic policies, approximated baselines, PostgreSQL only, single-query tasks, fixed attacks, implementation defects, run variance, deviations) |
-| Ethics / AI disclosure present | ⚠️ author | The Acknowledgment contains the AI-use disclosure; **the author must review and edit it** (placeholder note) |
+| Ethics / AI disclosure present | ⚠️ author decision | AI-use statement removed at the author's request (2026-11-27). IEEE author guidelines ask for AI-generated content to be disclosed in the Acknowledgments; the author has accepted this risk |
 | Data and code statement present | ⚠️ author | The statement is present; **the repository URL placeholder must be filled** |
 | No identifying overlap with prior publications | ✅ | `review/overlap-report.md`: no shared prose with the author's prior papers (only a LaTeX table column spec matches); the lineage paper is cited once as complementary |
 | English proofread | ✅ (model) / ⚠️ author | Two independent review passes read the full text (round 2: minor revision); a final human read is recommended |

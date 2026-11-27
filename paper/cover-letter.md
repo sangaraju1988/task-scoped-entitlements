@@ -26,8 +26,7 @@ preregistration are available at https://github.com/sangaraju1988/task-scoped-en
 
 The manuscript is original, has not been published, and is not under consideration elsewhere. It does not overlap with
 the author's prior publications; one prior IEEE Access article by the author on a complementary topic
-(DOI 10.1109/ACCESS.2026.3730363) is cited in related work. AI-assisted tools were used as disclosed in the
-Acknowledgment. There are no conflicts of interest.
+(DOI 10.1109/ACCESS.2026.3730363) is cited in related work. There are no conflicts of interest.
 
 Suggested reviewers: [AUTHOR TO PROVIDE 3–5 names with affiliations; avoid recent collaborators].
 
