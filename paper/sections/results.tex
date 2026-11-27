@@ -210,13 +210,15 @@ attacker can write, including the agent's stated reason. We tested two broker-si
 original task. Granting a column only if the broker's lexical linker connects it to the task does not work: in a
 replay over all \replayNNeeded{} logged grants of needed columns it would have approved only \replayLexNeeded\%,
 because the initial scope already contains every column the linker finds. An LLM judge (Claude Haiku~5.5) that
-sees the task, the schema and the requested column approved \replayJudgeNeeded\% of the needed columns and
+sees the task, the schema and the requested column, with a fixed prompt written before the replay and not changed
+afterwards (it was smoke-tested on one evaluation task), approved \replayJudgeNeeded\% of the needed columns and
 \replayJudgeCanary\% of the \replayNCanary{} canary columns in the same replay. Deployed as the widening policy, the
 judge reduced exfiltration under the widening attack to \widExfilJudgeSonnet\% for Sonnet~5.5 ([\widExfilJudgeSonnetLo,
 \widExfilJudgeSonnetHi], $n=\widNJudgeSonnet$) and \widExfilJudgeHaiku\% for Haiku~5.5 ([\widExfilJudgeHaikuLo,
 \widExfilJudgeHaikuHi], $n=\widNJudgeHaiku$), and changed accuracy relative to \emph{auto} by \dJudgeHaiku{} pp
 ([\dJudgeLoHaiku, \dJudgeHiHaiku]) and \dJudgeSonnet{} pp ([\dJudgeLoSonnet, \dJudgeHiSonnet]) on \judgeNHaiku{}
-tasks. The judge is itself a model and could be targeted by an attacker who controls the task text; that attacker is
+tasks. The replay grants come from the same experiments and the live runs reuse the same fixed attack template, so this
+is exploratory evidence, not a held-out evaluation. The judge is itself a model and could be targeted by an attacker who controls the task text; that attacker is
 the user, whom we exclude (Section~\ref{sec:threat}). \emph{Takeaway: against an attacker who targets widening,
 automatic approval forfeits most of TSE's protection for in-entitlement data, but an approval decision grounded in
 the original task closes this channel at little utility cost, whereas denying all widening costs \ablDDeny{} pp.}

@@ -76,4 +76,5 @@ hines2024spotlighting | arxiv | 2403.14720 | OK | title='Defending Against Indir
 rfc8693 | crossref | 10.17487/RFC8693 | CHECK | title_overlap=1.00 bib_not_in_crossref=['campbell'] crossref_authors=['jones', 'nadalin', 'bradley', 'mortimore']
 openfga2026task | url | https://openfga.dev/docs/modeling/agents/task-based-authorization | URL | 
 stabile2026intent | url | https://auth0.com/blog/intent-rethinking-authorization-ai-agents/ | URL | 
-TOTAL 78 CHECK/FAIL: 6
+wu2026factgate | arxiv | 2607.00751 | OK | title='FactGate: A Task-Scoped Data Gateway for AI Agents with Cumu' miss=[] journal_ref=''
+TOTAL 79 CHECK/FAIL: 6

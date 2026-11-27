@@ -66,8 +66,7 @@ side that sees only the original task, never the agent's stated reason, reduced 
 (Sonnet~5.5) and \widExfilJudgeHaiku\% (Haiku~5.5) at an accuracy change of \dJudgeSonnet{} and \dJudgeHaiku{}
 points (exploratory). With a stronger broker model, the accuracy change relative to full access shrank to
 \hbDHaiku{} (Haiku~5.5) and \hbDSonnet{} points (Sonnet~5.5; exploratory). None of our \bypassAttempts{} scripted bypass attempts (\bypassTypes{}
-attack types) reached out-of-scope data; a SQL-parsing gate enforcing the same scope was bypassed by queries hidden in
-string arguments of built-in functions, which the database-enforced scope blocked. Provisioning takes \medCompile{}\,ms (median) and teardown
+attack types) reached out-of-scope data; a SQL-parsing gate enforcing the same scope admitted queries hidden in string arguments of built-in functions, an example of the general difficulty that a query-text check must anticipate every function that executes SQL from data, whereas the database-enforced scope blocked them. Provisioning takes \medCompile{}\,ms (median) and teardown
 \medTeardown{}\,ms. Results marked exploratory (conservativeness and policy ablations, denied widening, the
 prompt-only widening baseline, post-widening exposure, inference without benchmark hints, the approval judge,
 the stronger broker) were added outside the preregistered analyses and are reported as such.

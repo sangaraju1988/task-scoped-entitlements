@@ -42,7 +42,15 @@ downstream call~\cite{rfc8693}. TSE can be read as token exchange for relational
 the task. Industry guidance now promotes \emph{task-based authorization} for agents: permissions created per task in
 a relationship-based authorization service and deleted or expired when the task ends~\cite{openfga2026task,stabile2026intent}.
 These systems authorize agent actions on application objects and leave the mapping from intent to permissions to
-the developer; TSE derives that mapping for relational data automatically and enforces it inside the DBMS.
+the developer; TSE derives that mapping for relational data automatically and enforces it inside the DBMS. The
+closest system is SessionBound, since revised as FactGate~\cite{wu2026factgate}. SessionBound turns an enterprise
+task that a business user approves from a template into a short-lived, budgeted PostgreSQL session with safe views
+and denied fields; FactGate adds exact cumulative accounting of how many distinct facts a task and its subtasks may
+release, which bounds decomposition across many queries. Both take the scope from a human-approved task definition.
+TSE instead infers the scope automatically from the natural-language task, caps it by ownership at the user's
+entitlement, measures how much it over-exposes (OER) and how often it suffices, and recovers from under-scoping
+through bounded widening. Cumulative release budgets are complementary: TSE bounds which rows and columns are
+reachable, not how many distinct facts are released from them.
 
 \subsection{Least privilege and authorization for LLM agents}
 Indirect prompt injection lets content an agent reads redirect its actions~\cite{greshake2023not}, and
@@ -98,7 +106,8 @@ task-minimal subset of the user's policy, and we add a bounded, audited widening
 inferred subset is insufficient. The new parts are therefore (i) per-task inference of a relational scope
 from natural language, (ii) its compilation to ephemeral database objects whose ownership caps them at the
 user's entitlement, (iii) the widening protocol, and (iv) the measured security/utility trade-off. To our
-knowledge, no prior system combines (i) and (ii) (novelty search documented in the artifact\footnote{Code, preregistration, run logs and analysis scripts: \artifacturl.}).
+knowledge, no prior system combines (i) and (ii); task-session systems such as SessionBound/FactGate enforce a
+task boundary in the database but obtain it from human approval rather than by inference (novelty search documented in the artifact\footnote{Code, preregistration, run logs and analysis scripts: \artifacturl.}).
 
 \begin{table*}[t]
 \centering
@@ -120,6 +129,7 @@ CaMeL~\cite{debenedetti2026camel}, FIDES~\cite{costa2025fides} & control/data fl
 RBAC text-to-SQL~\cite{fei2026rbac,klisura2026role} & roles (tables/columns) & synthesized roles & evaluated (model compliance) & no & user's entitlement \\
 PCC-SQL~\cite{miyamoto2026pccsql} & column-use policy & role policy & constrained decoding & no & role's columns \\
 SecureMCP~\cite{kim2026securemcp} & RBAC + SQL checks & role policy & MCP server pipeline & no & role's entitlement \\
+SessionBound / FactGate~\cite{wu2026factgate} & task sessions; fact budgets & human-approved task template & DBMS session + release ledger & yes & approved views, cumulative fact budget \\
 \textbf{TSE (this paper)} & rows, columns & \textbf{inferred from task} $\cap$ entitlement & \textbf{DBMS} (ephemeral role, views) & \textbf{yes} & \textbf{task scope (+bounded widening)} \\
 \hline
 \end{tabular}

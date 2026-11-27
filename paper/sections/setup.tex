@@ -9,14 +9,15 @@ accuracy is non-inferior to B0 within 5 percentage points (lower bound of the pa
 indirect injection that targets in-entitlement, out-of-task data, exfiltration is lower under TSE than under B0, B2
 and B3; \emph{H5} no widening grant exceeds $E(u)$. Before the freeze, the inference pipeline had been debugged on
 16 evaluation tasks, listed in the preregistration; excluding them changes the main results only
-marginally (e.g., sufficiency \suffTseNoPre\%, Sonnet accuracy difference \dExSonnetTseNoPre{} points). Nine deviations
+marginally (e.g., sufficiency \suffTseNoPre\%, Sonnet accuracy difference \dExSonnetTseNoPre{} points). Twelve deviations
 are logged with dates and reasons: a bug fix after the pilot (D1, row filters shown to the agent), two budget-driven
-scope changes (D2, D3), a deadline-bounded open-weight arm (D5), and three exploratory additions (D4: denied
-widening; D6: a prompt-only widening baseline and same-harness ablation references; D7: post-widening and per-role
-exposure; D9: inference without benchmark hints). D6, D7 and D9 respond to internal reviews of the draft. D8
-records two broker defects found after the runs; the affected runs count as failures. Two infrastructure incidents
-(a premature cleanup and a connection-limit exhaustion) are documented in the artifact; their affected runs were
-re-executed. Results from D4, D6, D7 and D9 and from the agent-level ablations are labelled \emph{exploratory}.
+scope changes (D2, D3), a deadline-bounded open-weight arm (D5), broker defects found after the runs whose affected
+runs count as failures (D8), and seven exploratory additions (D4: denied widening; D6: a prompt-only widening
+baseline and same-harness ablation references; D7: post-widening and per-role exposure; D9: inference without
+benchmark hints; D10: task-grounded widening approval; D11: a stronger broker model; D12: a SQL-parsing gate
+baseline). D6, D7 and D9--D12 respond to reviews of the draft. Two infrastructure incidents (a premature cleanup and a
+connection-limit exhaustion) are documented in the artifact; their affected runs were re-executed. Results from D4,
+D6, D7 and D9--D12 and from the agent-level ablations are labelled \emph{exploratory}.
 
 \textbf{Tasks.} We use \nTasks{} tasks with gold SQL from two public benchmarks: all \nBird{} questions of BIRD
 Mini-Dev in its 2026 PostgreSQL release~\cite{birdminidev2026,li2023bird} (\nBirdChallenging{} labeled challenging),
@@ -26,8 +27,10 @@ database. Spider is distributed for SQLite; we load its 20 dev databases into Po
 (\nSpiderValid{} of 1{,}034 qualify). Gold SQL defines the needed data, so over-exposure does not depend on a workload
 we designed.
 
-\textbf{Entitlements.} No released role policies were available for the RBAC benchmark of Fei et
-al.~\cite{fei2026rbac}, so we generate three roles per database with a seeded procedure: \emph{full} (everything),
+\textbf{Entitlements.} Fei et al.~\cite{fei2026rbac} release RBAC-augmented versions of Spider and BIRD with
+column- and operation-level role policies; row-level policies are not part of their main release. TSE
+scopes rows as well as columns, and our sensitivity analysis must vary how broad a policy is, so we generate three
+roles per database with a seeded procedure that is released with the artifact: \emph{full} (everything),
 \emph{restricted} (drops columns tagged sensitive by a fixed lexical tagger plus a random 25\% of non-key columns) and
 \emph{partition} (drops sensitive columns and restricts the largest table with a categorical column to a value subset
 covering 30--70\% of its rows). The gold query is permitted under a role if its columns are granted and it returns the
