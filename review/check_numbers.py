@@ -21,7 +21,7 @@ bad = []
 for p in files:
     for ln, line in enumerate(open(p), 1):
         s = re.sub(r"(?<!\\)%.*$", "", line)
-        if s.lstrip().startswith(("\\begin{tabular", "\\includegraphics", "\\begin{algorithm", "\\begin{table", "\\begin{figure", "\\history", "\\doi", "\\author", "\\address", "\\corresp", "\\titlepgskip")):
+        if s.lstrip().startswith(("\\begin{tabular", "\\includegraphics", "\\begin{algorithm", "\\begin{table", "\\begin{figure", "\\history", "\\doi", "\\author", "\\address", "\\corresp", "\\titlepgskip", "\\vol")):
             continue
         s = re.sub(r"\\(cite|ref|label|eqref|input|url|includegraphics|begin|end|newcommand|usepackage|documentclass|address|bibliography\w*|section\*?|subsection\*?)\{[^}]*\}", " ", s)
         s = re.sub(r"\\[A-Za-z]+", " ", s)               # macros (incl. generated numbers)
