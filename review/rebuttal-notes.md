@@ -94,3 +94,28 @@ Other changes:
 - The Δ glyph in table captions is replaced with text.
 - Remaining items to close in the final pass: the "Listing 2" vs "Figure 2" label, the OER summation domains, and
   the template footer ("VOLUME 11, 2023").
+
+---
+
+# Round 2 (second independent pass on the revised PDF): recommendation **minor revision**
+
+| Round-2 item | Response |
+|---|---|
+| N1: the abstract headline (final reach) is exploratory, and the conclusion still says 24x | The abstract now leads with the preregistered all-task factors (5.0x / 24x), gives the sufficient-only 11.9x, and marks the about-13x final-reach figure as exploratory. The conclusion gives the same three figures. The introduction marks D7 as exploratory. |
+| N2: BIRD hints given to the broker | Disclosed in Setup and Discussion (mitigations). New exploratory D9: inference without hints on a fixed random 200-task sample; sufficiency, recall and OER reported next to the hinted figures on the same tasks. Agents keep the hint in all conditions (standard BIRD protocol). |
+| N3: read-only/timeout are session-settable | Remark proof, Method step 4 and threat-matrix rows 10-11 now say that writes are prevented by privileges (SELECT only, no CREATE/TEMPORARY), and that the read-only default is defence in depth. The bypass catalog already contains "reset read-only then write" (denied: no TEMPORARY). Row 7 now cites the unit test and states that catalog attempts could not create a leaky function. |
+| N4a: Spider sign | Diff macros now carry an explicit "+"; the text notes that TSE's Spider point estimate was above B0. |
+| N4b: B1 < B3 despite similar sufficiency | Explained: B3 is not enforced, so its agent can query columns that the prompt does not show. |
+| N4c: B3W levels | EX levels added for both models. |
+| N4d: E5c pooling | Marked "both models pooled". |
+| N4e: strict n/CI; "barely helped" | n and CI per model added; the wording changed to "helped only partly". |
+| N4f: open-weight approval rate | Explained: 76.9% of their requests named no grantable column. |
+| N5: variability; speculative cause; H1 vs B2/B3 | The B3W explanation is marked speculative with wide CIs. H1 vs B2/B3 is noted as holding by construction. Run-to-run variance was already stated; a hierarchical bootstrap is listed as not done. |
+| N6: "generic injection" misnomer | Renamed to "injection naming an out-of-task column". |
+| N6: threat-matrix references | Now point to Sec. VIII-E (a)/(b)/(c) and Table 8. |
+| N6: garbled deviation sentence; incidents | Rewritten; the incidents are named. |
+| E4 sum to 1,000 | Reconciled: 962 executed (960 equal), 35 GroupingError, 2 timeouts, 1 table missed by gold-scope extraction. |
+| E4 960 vs 96.1% | Explained as separate runs. |
+| C5 "four baselines" | Changed to "three baselines and a tool-gating control". |
+| Fig. 1 and Fig. 3 overlaps | Labels moved; the compiler box text is shortened. |
+| Placeholders | Remain as author TODOs: repository URL, AI-disclosure review, biography. |
