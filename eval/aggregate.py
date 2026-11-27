@@ -139,7 +139,7 @@ if SC:
         macro("suffTse" + D, pct(np.mean([bool(x["scopes"]["tse"]["sufficient"]) for x in xs])), "e1e3_scopes.jsonl", f"TSE sufficiency, {ds}")
     adj = holm(pv)
     with open(os.path.join(PAPER, "tables", "tab_e1_tests.tex"), "w") as f:
-        f.write("\\begin{table}[t]\\centering\\caption{E1 paired Wilcoxon signed-rank tests, TSE vs.\\ baseline (Holm-adjusted $p$; effect size: "
+        f.write("\\begin{table}[t]\\centering\\caption{E1 paired Wilcoxon signed-rank tests, TSE vs.\\ baseline ($n$ excludes tied pairs, which the test drops; Holm-adjusted $p$; effect size: "
                 "matched-pairs rank-biserial $r$, negative = TSE lower).}\\label{tab:e1tests}\n\\footnotesize\\begin{tabular}{llllrr}\\hline\n"
                 "\\textbf{Data} & \\textbf{OER} & \\textbf{vs.} & $n$ & $r$ & $p_\\mathrm{Holm}$ \\\\\\hline\n")
         for (ds, gran, base, rbs, n), pa in zip(labels, adj):
@@ -184,7 +184,7 @@ if SENS:
         g[(x["seed"], x["frac"])].append(x)
     with open(os.path.join(PAPER, "tables", "tab_sensitivity.tex"), "w") as f:
         f.write("\\begin{table}[t]\\centering\\caption{Sensitivity of column-level over-exposure to the synthetic policy generator "
-                "(role \\emph{restricted}; seeds $\\times$ dropped-column fraction). $n$: permitted tasks.}\\label{tab:sens}\n\\footnotesize"
+                "(role \\emph{restricted}; seeds $\\times$ dropped-column fraction). $n$: permitted tasks. Covers $N$: share of tasks whose TSE scope contains every needed column (a column-only check; sufficiency in Table~\\ref{tab:e1} also checks rows by execution).}\\label{tab:sens}\n\\footnotesize"
                 "\\begin{tabular}{rrrrrr}\\hline\\textbf{seed} & \\textbf{frac} & $n$ & \\textbf{B0} & \\textbf{TSE} & \\textbf{covers $N$ (\\%)} \\\\\\hline\n")
         ratios = []
         for (sd, fr), xs in sorted(g.items()):

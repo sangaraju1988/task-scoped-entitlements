@@ -42,7 +42,7 @@ $\rho=E(u)$; for TSE, $\rho=S(t)\sqcap E(u)$. We define
 \mathrm{OER}_{\mathrm{row}} &= \frac{\sum_{R\in\mathrm{dom}N}\mathrm{rows}_D(\rho,R)}{\sum_{R\in\mathrm{dom}N}\max(1,\mathrm{rows}_D(N,R))},\\
 \mathrm{OER}_{\mathrm{cell}} &= \frac{\sum_{R\in\mathrm{dom}\rho}|C^\rho_R|\,\mathrm{rows}_D(\rho,R)}{\sum_{R\in\mathrm{dom}N}|C^N_R|\,\max(1,\mathrm{rows}_D(N,R))}.
 \end{align}
-An OER of one means the agent can reach exactly the needed data. For an insufficient scope the OER can fall
+The column and cell numerators sum over every relation the reach $\rho$ contains, so reachable but unneeded tables count; the row ratio is taken over the relations of $N(t)$ only, because rows of unneeded tables are already counted at the cell level. An OER of one means the agent can reach exactly the needed data. For an insufficient scope the OER can fall
 below one, so we always report OER together with the sufficiency rate.
 
 \subsection{Widening}

@@ -76,7 +76,7 @@ which bounds them by $E(u)$, applies the approval policy and logs them.}
 Fig.~\ref{fig:arch} shows the architecture. Base tables are owned by a dedicated owner role and have row-level
 security enabled. Each user role $U$ holds column-level \texttt{SELECT} grants and one permissive \texttt{SELECT}
 policy per table, which together implement $E(u)$. For each task the broker, a non-superuser role with
-\texttt{CREATEROLE}, executes the DDL of Listing~\ref{lst:ddl} in one transaction:
+\texttt{CREATEROLE}, executes the DDL of Fig.~\ref{lst:ddl} in one transaction:
 \begin{enumerate}
 \item create schema \texttt{tse\_<id>};
 \item while acting as $U$ (the broker may \texttt{SET ROLE} to $U$ but does not inherit its privileges), create one

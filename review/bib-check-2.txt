@@ -1,0 +1,77 @@
+saltzer1975protection | crossref | 10.1109/PROC.1975.9939 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['saltzer', 'schroeder']
+dennis1966programming | crossref | 10.1145/365230.365252 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['dennis', 'vanhorn']
+hardy1988confused | crossref | 10.1145/54289.871709 | CHECK | title_overlap=0.29 bib_not_in_crossref=[] crossref_authors=['hardy']
+sandhu1996rbac | crossref | 10.1109/2.485845 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['sandhu', 'coyne', 'feinstein', 'youman']
+ferraiolo2001nist | crossref | 10.1145/501978.501980 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['ferraiolo', 'sandhu', 'gavrila', 'kuhn', 'chandramouli']
+hu2014abac | crossref | 10.6028/NIST.SP.800-162 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['hu', 'ferraiolo', 'kuhn', 'schnitzer', 'sandlin', 'miller', 'scarfone']
+nist80053r5 | crossref | 10.6028/NIST.SP.800-53r5 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['jointtaskforceinteragencyworkinggroup']
+griffiths1976authorization | crossref | 10.1145/320473.320482 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['griffiths', 'wade']
+stonebraker1975query | crossref | 10.1145/500080.500091 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['stonebraker']
+rizvi2004extending | crossref | 10.1145/1007568.1007631 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['rizvi', 'mendelzon', 'sudarshan', 'roy']
+kabra2006redundancy | crossref | 10.1145/1142473.1142489 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['kabra', 'ramamurthy', 'sudarshan']
+bertino2005database | crossref | 10.1109/TDSC.2005.9 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['bertino', 'sandhu']
+miklau2004formal | crossref | 10.1145/1007568.1007633 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['miklau', 'suciu']
+pgrls | url | https://www.postgresql.org/docs/16/ddl-rowsecurity.html | URL | 
+pgsecbarrier | url | https://www.postgresql.org/docs/16/rules-privileges.html | URL | 
+pggrant | url | https://www.postgresql.org/docs/16/sql-grant.html | URL | 
+oraclevpd | url | https://docs.oracle.com/en/database/oracle/oracle-database/19/dbseg/using-oracle-vpd-to-control-data-access.html | URL | 
+chandra1977optimal | crossref | 10.1145/800105.803397 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['chandra', 'merlin']
+levy1995answering | crossref | 10.1145/212433.220198 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['levy', 'mendelzon', 'sagiv']
+halevy2001answering | crossref | 10.1007/s007780100054 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['halevy']
+denning1979tracker | crossref | 10.1145/320064.320069 | CHECK | title_overlap=0.20 bib_not_in_crossref=['schwartz'] crossref_authors=['denning', 'denning']
+adam1989security | crossref | 10.1145/76894.76895 | CHECK | title_overlap=1.00 bib_not_in_crossref=['wortmann'] crossref_authors=['adam', 'worthmann']
+agrawal2002hippocratic | crossref | 10.1016/B978-155860869-6/50021-4 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['agrawal', 'kiernan', 'srikant', 'xu']
+lefevre2004limiting | crossref | 10.1016/B978-012088469-8.50013-9 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['lefevre', 'agrawal', 'ercegovac', 'ramakrishnan', 'xu', 'dewitt']
+byun2008purpose | crossref | 10.1007/s00778-006-0023-0 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['byun', 'li']
+barth2006contextual | crossref | 10.1109/SP.2006.32 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['barth', 'datta', 'mitchell', 'nissenbaum']
+gdpr2016 | url | https://eur-lex.europa.eu/eli/reg/2016/679/oj | URL | 
+greshake2023not | crossref | 10.1145/3605764.3623985 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['greshake', 'abdelnabi', 'mishra', 'endres', 'holz', 'fritz']
+liu2024formalizing | url | - | NOID | 
+debenedetti2024agentdojo | crossref | 10.52202/079017-2636 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['debenedetti', 'zhang', 'balunovic', 'beurerkellner', 'fischer', 'tramer']
+zhan2024injecagent | crossref | 10.18653/v1/2024.findings-acl.624 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['zhan', 'liang', 'ying', 'kang']
+zhang2025asb | arxiv | 2410.02644 | OK | title='Agent Security Bench (ASB): Formalizing and Benchmarking Att' miss=[] journal_ref=''
+pedro2025prompt | crossref | 10.1109/ICSE55347.2025.00007 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['pedro', 'coimbra', 'castro', 'carreira', 'santos']
+debenedetti2026camel | crossref | 10.1109/SaTML68715.2026.00040 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['debenedetti', 'shumailov', 'fan', 'hayes', 'carlini', 'fabian', 'kern', 'shi', 'terzis', 'tramer']
+costa2025fides | arxiv | 2505.23643 | OK | title='Securing AI Agents with Information-Flow Control' miss=[] journal_ref=''
+wu2025isolategpt | arxiv | 2403.04960 | OK | title='IsolateGPT: An Execution Isolation Architecture for LLM-Base' miss=[] journal_ref='The Network and Distributed System Security (NDSS) Symposium 2025'
+kim2025pfi | arxiv | 2503.15547 | OK | title='Prompt Flow Integrity to Prevent Privilege Escalation in LLM' miss=[] journal_ref=''
+yao2023react | arxiv | 2210.03629 | OK | title='ReAct: Synergizing Reasoning and Acting in Language Models' miss=[] journal_ref=''
+ruan2024toolemu | arxiv | 2309.15817 | OK | title='Identifying the Risks of LM Agents with an LM-Emulated Sandb' miss=[] journal_ref=''
+zhu2025miniscope | arxiv | 2512.11147 | OK | title='MiniScope: Authorizing Agents with Least-Privilege Permissio' miss=[] journal_ref=''
+shi2025progent | arxiv | 2504.11703 | OK | title='Progent: Securing AI Agents with Privilege Control' miss=[] journal_ref=''
+cai2025agentsentry | arxiv | 2510.26212 | OK | title='Who Grants the Agent Power? Defending Against Instruction In' miss=[] journal_ref=''
+zhu2026igac | arxiv | 2606.22916 | OK | title='Intent-Governed Tool Authorization for AI Agents' miss=[] journal_ref=''
+zheng2026intentcap | arxiv | 2609.14631 | OK | title='LLM Agent Capabilities Should Follow Task Intent and Context' miss=[] journal_ref=''
+zhang2025principles | arxiv | 2505.24019 | OK | title='LLM Agents Should Employ Security Principles' miss=[] journal_ref=''
+sharma2026ac4a | arxiv | 2603.20933 | OK | title='AC4A: Access Control for Agents' miss=[] journal_ref=''
+li2025vision | arxiv | 2510.11108 | OK | title='A Vision for Access Control in LLM-based Agent Systems' miss=[] journal_ref=''
+surapani2026authz | arxiv | 2609.15906 | OK | title='Authorization Architectures for Tool-Using AI Agents' miss=[] journal_ref=''
+yang2026lowerpriv | crossref | 10.18653/2026.findings-emnlp.2059 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['yang', 'bu', 'yi', 'wang', 'zhou', 'dai', 'hu', 'yang']
+lahjouji2026know | arxiv | 2606.26627 | OK | title='Agents That Know Too Much: A Data-Centric Survey of Privacy ' miss=[] journal_ref=''
+yu2018spider | crossref | 10.18653/v1/D18-1425 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['yu', 'zhang', 'yang', 'yasunaga', 'wang', 'li', 'ma', 'li', 'yao', 'roman', 'zhang', 'radev']
+li2023bird | crossref | 10.52202/075280-1835 | CHECK | title_overlap=1.00 bib_not_in_crossref=['ma'] crossref_authors=['li', 'hui', 'qu', 'yang', 'li', 'li', 'wang', 'qin', 'geng', 'huo', 'zhou', 'chenhao', 'li', 'chang', 'huang', 'cheng', 'li']
+birdminidev2026 | url | https://huggingface.co/datasets/birdsql/bird_mini_dev | URL | 
+zhong2020semantic | crossref | 10.18653/v1/2020.emnlp-main.29 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['zhong', 'yu', 'klein']
+wang2020ratsql | crossref | 10.18653/v1/2020.acl-main.677 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['wang', 'shin', 'liu', 'polozov', 'richardson']
+lei2020reexamining | crossref | 10.18653/v1/2020.emnlp-main.564 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['lei', 'wang', 'ma', 'gan', 'lu', 'kan', 'chua']
+li2023resdsql | crossref | 10.1609/aaai.v37i11.26535 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['li', 'zhang', 'li', 'chen']
+pourreza2023dinsql | crossref | 10.52202/075280-1577 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['pourreza', 'rafiei']
+gao2024dailsql | crossref | 10.14778/3641204.3641221 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['gao', 'wang', 'li', 'sun', 'qian', 'ding', 'zhou']
+fei2026rbac | crossref | 10.1145/3837098 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['fei', 'jiang', 'yang', 'xiao']
+klisura2026role | crossref | 10.18653/v1/2026.findings-eacl.316 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['klisura', 'khoury', 'kundu', 'krishnan', 'rios']
+miyamoto2026pccsql | crossref | 10.18653/2026.aacl-long.239 | CHECK | title_overlap=1.00 bib_not_in_crossref=['miyamoto'] crossref_authors=['ryoto', 'fan', 'yamana']
+abedini2025masksql | arxiv | 2509.23459 | OK | title='MaskSQL: Safeguarding Privacy for LLM-Based Text-to-SQL via ' miss=[] journal_ref=''
+kim2026securemcp | crossref | 10.3390/app16167974 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['kim', 'yoo', 'moon']
+efron1979bootstrap | crossref | 10.1214/aos/1176344552 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['efron']
+mcnemar1947note | crossref | 10.1007/BF02295996 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['mcnemar']
+wilcoxon1945individual | crossref | 10.2307/3001968 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['wilcoxon']
+holm1979simple | url | - | NOID | 
+langgraph | url | https://github.com/langchain-ai/langgraph | URL | 
+ollama | url | https://github.com/ollama/ollama | URL | 
+tsai2025conseca | crossref | 10.1145/3713082.3730378 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['tsai', 'bagdasarian']
+bagdasarian2024airgapagent | crossref | 10.1145/3658644.3690350 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['bagdasarian', 'yi', 'ghalebikesabi', 'kairouz', 'gruteser', 'oh', 'balle', 'ramage']
+chen2025secalign | crossref | 10.1145/3719027.3744836 | OK | title_overlap=1.00 bib_not_in_crossref=[] crossref_authors=['chen', 'zharmagambetov', 'mahloujifar', 'chaudhuri', 'wagner', 'guo']
+chen2025struq | arxiv | 2402.06363 | OK | title='StruQ: Defending Against Prompt Injection with Structured Qu' miss=[] journal_ref=''
+hines2024spotlighting | arxiv | 2403.14720 | OK | title='Defending Against Indirect Prompt Injection Attacks With Spo' miss=[] journal_ref=''
+rfc8693 | crossref | 10.17487/RFC8693 | CHECK | title_overlap=1.00 bib_not_in_crossref=['campbell'] crossref_authors=['jones', 'nadalin', 'bradley', 'mortimore']
+TOTAL 76 CHECK/FAIL: 6
