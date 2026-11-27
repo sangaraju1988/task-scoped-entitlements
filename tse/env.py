@@ -100,7 +100,7 @@ class Env:
         req = {"columns": columns or [], "drop_row_filter": drop_row_filter or [], "reason": reason}
         cur = self.handle.scope if self.handle is not None else self.visible  # B3W: prompt-only scope
         new, rec = widen_mod.handle_request(req, cur, self.E, self.sl, self.widening_policy,
-                                            self.audit, self.n_approved)
+                                            self.audit, self.n_approved, task=self.task)
         if rec["decision"] == "approved":
             if self.handle is not None:
                 self.broker.widen(self.handle, new)

@@ -180,3 +180,9 @@ Secondary analyses are labelled exploratory.
   question only) on a fixed random sample of 200 hinted tasks (`eval/subset_nohint_200.txt`, seed 20261128,
   drawn before any no-hint result was computed, because local inference on BIRD schemas is slow) and report its sufficiency and exposure next to the default. Agents keep the
   hint in all conditions (standard BIRD protocol), so E2 comparisons are unaffected.
+* **D10 (2026-11-27, after an external review comment; exploratory).** The deployed recommendation (approval that
+  does not depend on the agent's stated reason) had no data. We add task-grounded approval policies and evaluate
+  them, first offline on all logged grants (`eval/run_judge_replay.py`: legitimate grants labelled by membership in
+  N(t), and canary grants from the widening-abuse runs), then in live runs: (a) lexical grounding with the broker's
+  lenient linker; (b) an LLM judge (Claude Haiku 5.5) that sees only the original task, the schema and the
+  requested column (`tse/approval_judge.py`).

@@ -9,22 +9,27 @@ The agent emits a structured request: {"columns": ["table.column", ...], "drop_r
        strict  as auto, but items on columns tagged sensitive (policies/generate.py) are denied
                (models a user who refuses to release sensitive fields to an agent).
        deny    never approve (ablation 'no widening').
+       grounded  as auto, but a column is granted only if the broker's lenient lexical linker links it to the
+               ORIGINAL task text (question + benchmark hint), which the agent cannot change. The decision ignores
+               the agent's stated reason, so injected content cannot argue a column into scope. Row-filter drops
+               are handled as in auto. (Added after review, deviation D10.)
   3. AUDIT: every request, decision and the resulting scope is appended to the task's audit log.
 """
 from __future__ import annotations
 import time
 from .scope import Scope, TableScope
-from .infer import parse_colref
+from .infer import parse_colref, link_columns, task_text
 from .policies.generate import is_sensitive
 
 
 class WideningPolicy:
     def __init__(self, mode="auto", budget=3):
-        assert mode in ("auto", "strict", "deny")
+        assert mode in ("auto", "strict", "deny", "grounded")
         self.mode, self.budget = mode, budget
 
 
-def handle_request(req: dict, scope: Scope, E: Scope, sl, policy: WideningPolicy, audit: list, n_approved_so_far: int):
+def handle_request(req: dict, scope: Scope, E: Scope, sl, policy: WideningPolicy, audit: list, n_approved_so_far: int,
+                   task: dict = None):
     """Return (new_scope, decision_dict). Never returns a scope outside E(u) (column-wise)."""
     rec = {"t": time.time(), "request": req, "granted_columns": [], "granted_row_drops": [],
            "exceeds_entitlement": [], "denied": [], "invalid": []}
@@ -53,6 +58,10 @@ def handle_request(req: dict, scope: Scope, E: Scope, sl, policy: WideningPolicy
             continue
         if policy.mode == "strict" and is_sensitive(c, sl.tables[t].columns[c].description):
             rec["denied"].append(f"{t}.{c}"); continue
+        if policy.mode == "grounded":
+            assert task is not None, "grounded policy needs the original task"
+            if (t, c) not in link_columns(task_text(task), sl, {t}, lenient=True):
+                rec["denied"].append(f"{t}.{c}"); continue
         new.add_columns(t, [c])
         rec["granted_columns"].append(f"{t}.{c}")
     for t in req.get("drop_row_filter", []) or []:

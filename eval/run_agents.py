@@ -47,7 +47,7 @@ def main():
     ap.add_argument("--conditions", default="B0,B1,B3,TSE")
     ap.add_argument("--cells", required=True, help="comma list model/framework")
     ap.add_argument("--variant", default="tse", help="TSE scope variant (eval/common.py VARIANTS)")
-    ap.add_argument("--widen", default="auto", choices=["auto", "strict", "deny"])
+    ap.add_argument("--widen", default="auto", choices=["auto", "strict", "deny", "grounded"])
     ap.add_argument("--seeds", default="0")
     ap.add_argument("--temperature", type=float, default=0.0)
     ap.add_argument("--subset", default=None, help="file with task_ids (one per line)")
