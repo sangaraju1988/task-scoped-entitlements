@@ -26,6 +26,7 @@ for p in files:
         s = re.sub(r"\\(cite|ref|label|eqref|input|url|includegraphics|begin|end|newcommand|usepackage|documentclass|address|bibliography\w*|section\*?|subsection\*?)\{[^}]*\}", " ", s)
         s = re.sub(r"\\[A-Za-z]+", " ", s)               # macros (incl. generated numbers)
         s = re.sub(r"^\s*\d+\.\s", " ", s)              # enumerated rows (threat matrix ids)
+        s = re.sub(r"ORCID:\s*[\dX-]+|DOI\s+10\.\S+", " ", s)  # identifiers, not results
         s = re.sub(r"\$[^$]*\$", " ", s)                  # inline math (indices like k=0, A1)
         s = re.sub(r"\b(?:[A-Z]{1,2}\d+|E\d|H\d|D\d|I\d)\b", " ", s)  # labels like C1, A4, L12, E5, H2, D3
         s = re.sub(r"\[[^\]]*\]", lambda m: m.group(0) if "CI" in m.group(0) else " ", s)

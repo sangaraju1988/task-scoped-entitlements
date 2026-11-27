@@ -68,4 +68,4 @@ Steps:
 
 ## Citation
 
-[AUTHOR: add the citation once the paper is accepted.]
+Archived release: [10.5281/zenodo.24578031](https://doi.org/10.5281/zenodo.24578031). Paper citation to be added on acceptance.
