@@ -39,7 +39,10 @@ integrity for the task at hand~\cite{bagdasarian2024airgapagent}. TSE applies th
 enforces it inside the DBMS rather than in the agent runtime. Outside academia, short-lived, narrowly scoped
 credentials are standard practice; OAuth 2.0 token exchange, for example, issues a down-scoped token for a specific
 downstream call~\cite{rfc8693}. TSE can be read as token exchange for relational data, with the scope inferred from
-the task.
+the task. Industry guidance now promotes \emph{task-based authorization} for agents: permissions created per task in
+a relationship-based authorization service and deleted or expired when the task ends~\cite{openfga2026task,stabile2026intent}.
+These systems authorize agent actions on application objects and leave the mapping from intent to permissions to
+the developer; TSE derives that mapping for relational data automatically and enforces it inside the DBMS.
 
 \subsection{Least privilege and authorization for LLM agents}
 Indirect prompt injection lets content an agent reads redirect its actions~\cite{greshake2023not}, and

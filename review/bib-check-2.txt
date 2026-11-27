@@ -74,4 +74,6 @@ chen2025secalign | crossref | 10.1145/3719027.3744836 | OK | title_overlap=1.00 
 chen2025struq | arxiv | 2402.06363 | OK | title='StruQ: Defending Against Prompt Injection with Structured Qu' miss=[] journal_ref=''
 hines2024spotlighting | arxiv | 2403.14720 | OK | title='Defending Against Indirect Prompt Injection Attacks With Spo' miss=[] journal_ref=''
 rfc8693 | crossref | 10.17487/RFC8693 | CHECK | title_overlap=1.00 bib_not_in_crossref=['campbell'] crossref_authors=['jones', 'nadalin', 'bradley', 'mortimore']
-TOTAL 76 CHECK/FAIL: 6
+openfga2026task | url | https://openfga.dev/docs/modeling/agents/task-based-authorization | URL | 
+stabile2026intent | url | https://auth0.com/blog/intent-rethinking-authorization-ai-agents/ | URL | 
+TOTAL 78 CHECK/FAIL: 6

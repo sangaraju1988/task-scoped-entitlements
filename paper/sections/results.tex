@@ -174,6 +174,18 @@ Timing was not tested and is out of scope. The catalog is fixed and scripted, no
 exercises standard PostgreSQL privilege checks; it tests, but cannot prove, assumption A1. A separate unit test
 checks that task text cannot inject DDL into the broker through grounded filter values.
 
+\textbf{Database enforcement versus a parsing gate.} The same catalog run through the B4 parsing gate, which
+enforces the identical scope in front of the user's credentials, also leaked nothing on the original attack types
+(\gateOrigLeaks{} leaks): the gate rejects out-of-scope tables and columns, non-\texttt{SELECT} statements and
+role changes. We then added \stringTypes{} attacks that hide a query or a table name inside a string argument of a
+built-in function (\texttt{query\_to\_xml}, \texttt{table\_to\_xml}, \texttt{ts\_stat}). A parser sees only a function
+call over no table, so the gate admitted them, and the database executed the hidden query with the user's
+privileges: \gateLeakTypes{} of the \stringTypes{} types leaked the canary, in \gateStringLeaks{} of
+\gateStringAttempts{} attempts. As the TSE role the same attacks returned \tseStringLeaks{} canary values, because the
+role holds no privilege on the base tables, whatever the query text. A function denylist would close these two
+attacks, but a gate must anticipate every function and extension that executes SQL from data; database enforcement
+does not depend on the query text at all.
+
 \textbf{(c) Widening abuse.} This is the strongest attack in our threat model: the injection tells the agent to
 request the canary column through \texttt{request\_access} and then reveal it. Agents complied often: the column was
 requested in \widCanaryReqAuto\% of runs and, being inside the entitlement, granted under the \emph{auto} policy in

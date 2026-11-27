@@ -86,3 +86,7 @@ Peer-reviewed versions found for preprints listed in the build prompt: Fei et al
 | chen2025struq | arXiv 2402.06363 + USENIX Security 2025 presentation page | verified (no DOI) |
 | hines2024spotlighting | arXiv 2403.14720 | verified (preprint) |
 | rfc8693 | Crossref 10.17487/RFC8693 (IETF, Jan 2020) | verified |
+| openfga2026task | openfga.dev page (HTTP 200, title "Modeling Task-Based Authorization for Agents - OpenFGA") | verified (documentation) |
+| stabile2026intent | auth0.com blog page (HTTP 200; JSON-LD author Carla Urrea Stabile, datePublished 2026-08-11) | verified (blog) |
+| zhu2025miniscope | arXiv 2512.11147: v2 (2026-10-06) title/author order used; v1 title noted in the entry | verified |
+| (not added) Sophos intent-based access control | only a third-party summary found; original post not located | not cited |

@@ -194,3 +194,7 @@ Secondary analyses are labelled exploratory.
   5.5 broker (variant `tse_haiku`, policy auto): Haiku 5.5 agent on all 1,000 permitted tasks (same cells as E2,
   paired with E2 B0), Sonnet 5.5 agent on the stratified 500-task subset `eval/subset_b1_500.txt` (budget), paired
   with E2 B0 on the same tasks. Reported as exploratory next to the preregistered main result.
+* **D12 (2026-11-27, after an external review comment).** Baseline B4: the same scope enforced by a SQL-parsing gate
+  in front of the user's credentials (`tse/sql_gate.py`), evaluated with the E5(b) catalog plus three attacks that
+  hide a query or table name in a string argument of a built-in function (`eval/run_e5b_gate.py`); the three new
+  attacks are also run as the TSE role. Scripted, no LLM; reported as an addition to E5(b).

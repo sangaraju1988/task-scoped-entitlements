@@ -306,7 +306,7 @@ Every number in the paper text is one of these LaTeX macros.
 | `\taxViewSemantics` | 9.0 | taxonomy_sample.jsonl | % of sampled insufficient scopes: view_semantics |
 | `\taxOther` | 0.0 | taxonomy_sample.jsonl | % of sampled insufficient scopes: other |
 | `\taxN` | 100 | taxonomy_sample.jsonl | sampled insufficient scopes |
-| `\apiSpend` | 60.55 | api_spend.jsonl | total API spend (USD) |
+| `\apiSpend` | 60.93 | api_spend.jsonl | total API spend (USD) |
 | `\nRoleFull` | 632 | e1e3_scopes.jsonl | permitted tasks with role full |
 | `\oerColRedFull` | 5.4 | e1e3_scopes.jsonl | geomean oer_col B0/TSE, role full |
 | `\oerCellRedFull` | 31.9 | e1e3_scopes.jsonl | geomean oer_cell B0/TSE, role full |
@@ -360,6 +360,27 @@ Every number in the paper text is one of these LaTeX macros.
 | `\recHintSame` | 0.93 | e1e3_scopes.jsonl | column recall with hint, same tasks |
 | `\oerColNohint` | 1.87 | e3_nohint.jsonl | geomean OER_col without hint |
 | `\oerColHintSame` | 2.04 | e1e3_scopes.jsonl | geomean OER_col with hint, same tasks |
+| `\replayLexNeeded` | 5.7 | judge_replay.jsonl | % approved by lexical, legit needed=True |
+| `\replayNNeeded` | 174 | judge_replay.jsonl | replay items, legit needed=True |
+| `\replayLexUnneeded` | 2.4 | judge_replay.jsonl | % approved by lexical, legit needed=False |
+| `\replayNUnneeded` | 41 | judge_replay.jsonl | replay items, legit needed=False |
+| `\replayLexCanary` | 3.5 | judge_replay.jsonl | % approved by lexical, canary needed=False |
+| `\replayNCanary` | 171 | judge_replay.jsonl | replay items, canary needed=False |
+| `\replayJudgeNeeded` | 92.0 | judge_replay.jsonl | % approved by judge, legit needed=True |
+| `\replayJudgeUnneeded` | 39.0 | judge_replay.jsonl | % approved by judge, legit needed=False |
+| `\replayJudgeCanary` | 0.6 | judge_replay.jsonl | % approved by judge, canary needed=False |
+| `\widExfilJudgeHaiku` | 1.6 | runs_e5wid_*.jsonl | exfiltration %, widening attack, judge policy, Haiku |
+| `\widExfilJudgeHaikuLo` | 0.0 | runs_e5wid_*.jsonl | CI low |
+| `\widExfilJudgeHaikuHi` | 3.8 | runs_e5wid_*.jsonl | CI high |
+| `\widNJudgeHaiku` | 182 | runs_e5wid_*.jsonl | runs, widening attack, judge policy, Haiku |
+| `\gateAttempts` | 1015 | e5b_gate.jsonl | bypass attempts against the parser gate |
+| `\gateDbs` | 29 | e5b_gate.jsonl | canary databases |
+| `\gateOrigLeaks` | 0 | e5b_gate.jsonl | gate leaks, original catalog |
+| `\gateStringLeaks` | 58 | e5b_gate.jsonl | gate leaks, string-argument attacks |
+| `\gateStringAttempts` | 87 | e5b_gate.jsonl | string-argument attempts |
+| `\gateLeakTypes` | 2 | e5b_gate.jsonl | attack types that leaked through the gate |
+| `\tseStringLeaks` | 0 | e5b_gate.jsonl | TSE leaks, string-argument attacks |
+| `\stringTypes` | 3 | e5b_gate.jsonl | string-argument attack types |
 | `\nCanaryOutE` | 18 | injections_context.jsonl | context-injection tasks whose canary column is outside E(u) |
 | `\exfOutEHaikuBzero` | 0 | runs_e5ctx_haiku.jsonl | exfiltrating runs among out-of-E canary tasks, Haiku, B0 |
 | `\nOutEHaikuBzero` | 18 | runs_e5ctx_haiku.jsonl | runs among out-of-E canary tasks, Haiku, B0 |

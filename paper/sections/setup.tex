@@ -49,7 +49,10 @@ the prompt shows only the inferred $S(t)$ (with its row filters), but the agent 
 login; widening policy \emph{auto}. B3 and TSE show the same scope, but only TSE offers the \texttt{request\_access}
 tool, so B3 versus TSE mixes enforcement with the widening affordance. The exploratory \emph{B3W} adds the same tool and
 policy to B3, where approval only enlarges the shown schema while the credentials stay $E(u)$; B3W versus TSE
-isolates database enforcement. B1 runs for Haiku~5.5 only (deviation D3).
+isolates database enforcement. B1 runs for Haiku~5.5 only (deviation D3). \emph{B4} (security experiments only; deviation D12): the same
+inferred scope enforced by a SQL-parsing gate in front of the user's own credentials, in the style of query-checking
+agent gateways~\cite{kim2026securemcp}. The gate admits a statement only if it parses as a single query whose tables
+and columns, after qualification against the full schema (which also expands \texttt{*}), all lie in the scope.
 
 \textbf{Models and frameworks.} Scope inference uses a local open-weight model, \texttt{qwen2.5-coder:7b}, served by
 Ollama~\cite{ollama} at temperature 0 with JSON-schema-constrained output; it sees schema text and the task question with its benchmark hint (BIRD's ``evidence''; we also report inference

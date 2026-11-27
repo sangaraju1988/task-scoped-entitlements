@@ -42,7 +42,7 @@ conservativeness parameter $k$ (Section~\ref{sec:inference}).
 \item[\textbf{C4}] A controlled widening protocol that turns inference errors into bounded, auditable requests
 (Section~\ref{sec:widening}).
 \item[\textbf{C5}] A preregistered evaluation on \nTasks{} public text-to-SQL tasks (BIRD and Spider) with frontier
-and open-weight agents in two agent frameworks, three baselines and a tool-gating control, indirect prompt injection, widening abuse, and
+and open-weight agents in two agent frameworks, three baselines, a tool-gating control and a SQL-parsing gate, indirect prompt injection, widening abuse, and
 \bypassAttempts{} enforcement-bypass attempts (Sections~\ref{sec:setup}--\ref{sec:results}).
 \end{itemize}
 
@@ -63,7 +63,8 @@ Haiku~5.5. Under indirect prompt injection that names an out-of-task column, exf
 exploit widening succeeded in \widExfilAutoSonnet\% (Sonnet~5.5) and \widExfilAutoHaiku\% (Haiku~5.5) of runs under
 automatic approval; widening approval is therefore the main residual channel, and the approval policy is the
 setting that matters most in deployment. None of our \bypassAttempts{} scripted bypass attempts (\bypassTypes{}
-attack types) reached out-of-scope data. Provisioning takes \medCompile{}\,ms (median) and teardown
+attack types) reached out-of-scope data; a SQL-parsing gate enforcing the same scope was bypassed by queries hidden in
+string arguments of built-in functions, which the database-enforced scope blocked. Provisioning takes \medCompile{}\,ms (median) and teardown
 \medTeardown{}\,ms. Results marked exploratory (conservativeness and policy ablations, denied widening, the
 prompt-only widening baseline, post-widening exposure, inference without benchmark hints) were added outside the preregistered analyses and are reported as such.
 

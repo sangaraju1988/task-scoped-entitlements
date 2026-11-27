@@ -24,7 +24,8 @@ def main():
         for name in ("runs_e2_haiku.jsonl", "runs_e2_sonnet_r.jsonl"):
             for l in open(os.path.join(config.RESULTS, name)):
                 r = json.loads(l)
-                if r["condition"] != "TSE" or r["run_id"] in done or not r.get("final_scope"):
+                if r["condition"] != "TSE" or r.get("variant") not in (None, "tse") or r.get("widen_policy") not in (None, "auto") \
+                        or r["run_id"] in done or not r.get("final_scope"):
                     continue
                 t = tasks[r["task_id"]]
                 key = (r["task_id"], json.dumps(r["final_scope"], sort_keys=True))
