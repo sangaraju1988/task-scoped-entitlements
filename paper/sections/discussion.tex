@@ -74,6 +74,9 @@ queries); B2 approximates task-scoped tool gating; neither is the original syste
 \emph{PostgreSQL only.} The compilation uses PostgreSQL features (view ownership semantics, \texttt{security\_barrier},
 role-membership options); other DBMSs offer analogues (e.g., Oracle VPD) but we did not test them. Views also hide
 primary-key metadata, so a few queries valid on base tables are rejected through views (Section~\ref{sec:res-overhead}).
+\emph{Benchmark hints.} The broker received BIRD's evidence hints; without them, sufficiency on hinted tasks fell
+from \suffHintSame\% to \suffNohint\% (exploratory), so our main sufficiency figures are optimistic for users who
+give no such hints.
 \emph{Single-query tasks.} Each task is answered by one final query. Multi-step analyses whose later steps depend on
 earlier results would need scope evolution beyond widening.
 \emph{Models and decoding.} Claude models reject sampling parameters, so their runs are not seed-controlled; we

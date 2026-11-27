@@ -53,7 +53,8 @@ Under synthetic-policy entitlements, the default TSE scope reduces the columns a
 cell reduction is \oerCellReductionSuff-fold, and counting the widening that agents obtained during their runs it is
 \oerCellRedPostHaiku-fold (Haiku~5.5) and \oerCellRedPostSonnet-fold (Sonnet~5.5; exploratory, deviation D7). The scope is sufficient for the
 gold query on \suffTse\% of tasks; this inference quality is the load-bearing assumption of the approach, and we
-quantify it directly. With widening, execution accuracy changed by \dExHaikuTse{} percentage points for Claude
+quantify it directly. It depends on benchmark hints: on hinted BIRD tasks, sufficiency fell from \suffHintSame\% to
+\suffNohint\% when the broker saw only the question (exploratory). With widening, execution accuracy changed by \dExHaikuTse{} percentage points for Claude
 Haiku~5.5 (95\% CI [\dExLoHaikuTse, \dExHiHaikuTse]) and by \dExSonnetTse{} points for Claude Sonnet~5.5 (95\% CI
 [\dExLoSonnetTse, \dExHiSonnetTse]) relative to full access; static role views cost \dExHaikuBone{} points for
 Haiku~5.5. Under indirect prompt injection that names an out-of-task column, exfiltration fell from

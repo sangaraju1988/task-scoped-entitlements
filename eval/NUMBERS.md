@@ -353,6 +353,13 @@ Every number in the paper text is one of these LaTeX macros.
 | `\nLocalCoder` | 66 | runs_e2_local.jsonl | tasks, qwen2.5-coder:7b |
 | `\exLocalCoderBthree` | 34.8 | runs_e2_local.jsonl | EX %, qwen2.5-coder:7b, B3 |
 | `\exLocalCoderTse` | 36.4 | runs_e2_local.jsonl | EX %, qwen2.5-coder:7b, TSE |
+| `\nNohint` | 200 | e3_nohint.jsonl | hinted tasks evaluated without the hint |
+| `\suffNohint` | 34.0 | e3_nohint.jsonl | TSE sufficiency % without hint |
+| `\suffHintSame` | 47.5 | e1e3_scopes.jsonl | TSE sufficiency % with hint, same tasks |
+| `\recNohint` | 0.88 | e3_nohint.jsonl | column recall without hint |
+| `\recHintSame` | 0.93 | e1e3_scopes.jsonl | column recall with hint, same tasks |
+| `\oerColNohint` | 1.87 | e3_nohint.jsonl | geomean OER_col without hint |
+| `\oerColHintSame` | 2.04 | e1e3_scopes.jsonl | geomean OER_col with hint, same tasks |
 | `\nCanaryOutE` | 18 | injections_context.jsonl | context-injection tasks whose canary column is outside E(u) |
 | `\exfOutEHaikuBzero` | 0 | runs_e5ctx_haiku.jsonl | exfiltrating runs among out-of-E canary tasks, Haiku, B0 |
 | `\nOutEHaikuBzero` | 18 | runs_e5ctx_haiku.jsonl | runs among out-of-E canary tasks, Haiku, B0 |
