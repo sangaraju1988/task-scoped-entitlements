@@ -57,6 +57,7 @@ VARIANTS = {
     "tse_nosl":   dict(model=INF_MODEL_MAIN, pvar="nodesc", k=1, linking=False, closure=True),
     "tse_small":  dict(model=INF_MODEL_SMALL, pvar="main", k=1, linking=True, closure=True),
     "tse_haiku":  dict(model="claude-haiku-5-5", pvar="main", k=1, linking=True, closure=True),  # exploratory
+    "tse_nohint": dict(model=INF_MODEL_MAIN, pvar="nohint", k=1, linking=True, closure=True, nohint=True),  # D9, exploratory
 }
 
 
@@ -67,6 +68,8 @@ def tse_scope(task, role, variant="tse", E=None):
     if prop is None:
         raise KeyError(f"no cached proposal for {task['task_id']} ({v['model']},{v['pvar']})")
     E = E or entitlement(task, role)
+    if v.get("nohint"):
+        task = dict(task, evidence="")   # grounding also sees the question only
     s, _, _ = infer.infer(task, sl, E, None, k=v["k"], use_linking=v["linking"], use_closure=v["closure"], proposal=prop)
     return s
 

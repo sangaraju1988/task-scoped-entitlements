@@ -174,3 +174,8 @@ Secondary analyses are labelled exploratory.
   widening-abuse experiment, errored runs are excluded from the exfiltration denominator, which is conservative for
   security. Both defects are fixed in the released code (catalog-ordered widening, retry on catalog conflicts) with
   regression tests; counts are reported in the paper.
+* **D9 (2026-11-27, after a second internal review; exploratory).** BIRD tasks carry an "evidence" hint that the
+  benchmark supplies to text-to-SQL systems; the broker's inference model and grounding also received it. Because a
+  deployed user would not always supply such hints, we add a variant `tse_nohint` (proposal and grounding see the
+  question only) on all hinted tasks and report its sufficiency and exposure next to the default. Agents keep the
+  hint in all conditions (standard BIRD protocol), so E2 comparisons are unaffected.

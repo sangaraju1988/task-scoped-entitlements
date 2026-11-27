@@ -21,11 +21,13 @@ def commit():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", required=True)
-    ap.add_argument("--variant", default="main", choices=["main", "nodesc"])
+    ap.add_argument("--variant", default="main", choices=["main", "nodesc", "nohint"])
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--tasks", default=os.path.join(config.DATA, "tasks", "tasks.jsonl"))
     a = ap.parse_args()
     tasks = [json.loads(l) for l in open(a.tasks)][: a.limit]
+    if a.variant == "nohint":
+        tasks = [t for t in tasks if t.get("evidence")]   # only tasks that carry a benchmark hint
     out = os.path.join(config.RESULTS, f"proposals_{a.model.replace(':', '_').replace('/', '_')}_{a.variant}.jsonl")
     done = set()
     if os.path.exists(out):
@@ -43,7 +45,8 @@ def main():
             sl = semantic_layer.get(t["pgdb"], t["dataset"], t["db_id"], use_descriptions=(a.variant == "main"))
             t0 = time.perf_counter()
             n0 = len(llm.calls)
-            prop = infer.llm_propose(t, sl, llm)
+            tt = dict(t, evidence="") if a.variant == "nohint" else t   # D9: broker sees the question only
+            prop = infer.llm_propose(tt, sl, llm)
             rec = {"task_id": t["task_id"], "model": a.model, "model_digest": a.model if a.model.startswith("claude-") else model_digest(a.model), "variant": a.variant,
                    "proposal": {"tables": prop["tables"], "columns": [list(x) for x in prop["columns"]], "filters": prop["filters"],
                                 "parse_error": prop["parse_error"]},
