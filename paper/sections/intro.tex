@@ -61,12 +61,16 @@ Haiku~5.5. Under indirect prompt injection that names an out-of-task column, exf
 \exfSonnetCtxBzero\% (B0) to \exfSonnetCtxTse\% (TSE) for Sonnet~5.5 and from \exfHaikuCtxBzero\% to
 \exfHaikuCtxTse\% for Haiku~5.5. Nearly all remaining leaks used approved widening, and an injection written to
 exploit widening succeeded in \widExfilAutoSonnet\% (Sonnet~5.5) and \widExfilAutoHaiku\% (Haiku~5.5) of runs under
-automatic approval; widening approval is therefore the main residual channel, and the approval policy is the
-setting that matters most in deployment. None of our \bypassAttempts{} scripted bypass attempts (\bypassTypes{}
+automatic approval; widening approval is therefore the main residual channel. An approval judge on the broker
+side that sees only the original task, never the agent's stated reason, reduced this to \widExfilJudgeSonnet\%
+(Sonnet~5.5) and \widExfilJudgeHaiku\% (Haiku~5.5) at an accuracy change of \dJudgeSonnet{} and \dJudgeHaiku{}
+points (exploratory). With a stronger broker model, the accuracy change relative to full access shrank to
+\hbDHaiku{} (Haiku~5.5) and \hbDSonnet{} points (Sonnet~5.5; exploratory). None of our \bypassAttempts{} scripted bypass attempts (\bypassTypes{}
 attack types) reached out-of-scope data; a SQL-parsing gate enforcing the same scope was bypassed by queries hidden in
 string arguments of built-in functions, which the database-enforced scope blocked. Provisioning takes \medCompile{}\,ms (median) and teardown
 \medTeardown{}\,ms. Results marked exploratory (conservativeness and policy ablations, denied widening, the
-prompt-only widening baseline, post-widening exposure, inference without benchmark hints) were added outside the preregistered analyses and are reported as such.
+prompt-only widening baseline, post-widening exposure, inference without benchmark hints, the approval judge,
+the stronger broker) were added outside the preregistered analyses and are reported as such.
 
 \subsection{What we do not claim}
 TSE reduces the data reachable for a task; it does not prevent all leakage. It does not protect against inference or

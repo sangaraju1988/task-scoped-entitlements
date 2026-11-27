@@ -96,6 +96,14 @@ overall: \texttt{qwen3:8b} reached \exLocalQwenBzero\% (B0), \exLocalQwenBthree\
 ([\dExLoLocalTse, \dExHiLocalTse]); at this sample size we draw no conclusion beyond the absence of a large loss. These agents rarely obtained
 widening: \localReqNotGranted\% of their requests named no grantable column.
 
+\textbf{A stronger broker (exploratory, deviation D11).} With Claude Haiku~5.5 as the broker's inference model
+(sufficiency \suffTsehaiku\% instead of \suffTse\%; Section~\ref{sec:res-inference}), TSE reached \hbExHaiku\% with the
+Haiku~5.5 agent on all \hbNHaiku{} tasks, a paired difference to B0 of \hbDHaiku{} pp (95\% CI [\hbDLoHaiku,
+\hbDHiHaiku]), against \dExHaikuTse{} pp with the 7B broker. With the Sonnet~5.5 agent on a stratified \hbNSonnet-task
+subset it reached \hbExSonnet\% (\hbDSonnet{} pp, [\hbDLoSonnet, \hbDHiSonnet]). Agents needed widening less often
+(approved in \hbWappHaiku\% and \hbWappSonnet\% of runs). The point estimate for Haiku~5.5 is within the 5-point
+margin, but the CI is not, so H2 remains unsupported; better inference is the most direct lever on the utility cost.
+
 \textbf{Conservativeness and widening policy (exploratory).} On a \ablN-task subset (Haiku 5.5,
 Table~\ref{tab:ablation}), where B0 reaches \ablExBzero\% and default TSE \ablExDefault\%, the paired change in execution accuracy is
 \ablDKzero{} pp (95\% CI [\ablDLoKzero, \ablDHiKzero]) for a narrower scope ($k{=}0$) and \ablDKtwo{} pp
@@ -197,10 +205,20 @@ is conservative. Our lexical \emph{strict} policy, which denies only columns tag
 \widExfilStrictHaiku\% for Haiku 5.5 ([\widExfilStrictHaikuLo, \widExfilStrictHaikuHi], $n=\widNStrictHaiku$), because
 only \widCanaryTagged\% of the canary columns were tagged sensitive.
 Across all runs, \widGrantedOutsideE{} of \widGrantedTotal{} granted items lay outside $E(u)$, so H5 holds.
-\emph{Takeaway: against an attacker who targets widening, automatic approval forfeits most of TSE's protection for
-in-entitlement data. Widening is bounded by the entitlement and logged, but closing this channel needs an approval
-decision that does not depend on the agent's stated reason, such as human review of columns outside the initial
-scope or denial (exploratory: \exfSonnetCtxDeny\% exfiltration under the column-naming injection of (a), at an accuracy cost of
-\ablDDeny{} pp).}
+\textbf{Task-grounded approval (exploratory, deviation D10).} The approval decision must not depend on anything the
+attacker can write, including the agent's stated reason. We tested two broker-side policies that see only the
+original task. Granting a column only if the broker's lexical linker connects it to the task does not work: in a
+replay over all \replayNNeeded{} logged grants of needed columns it would have approved only \replayLexNeeded\%,
+because the initial scope already contains every column the linker finds. An LLM judge (Claude Haiku~5.5) that
+sees the task, the schema and the requested column approved \replayJudgeNeeded\% of the needed columns and
+\replayJudgeCanary\% of the \replayNCanary{} canary columns in the same replay. Deployed as the widening policy, the
+judge reduced exfiltration under the widening attack to \widExfilJudgeSonnet\% for Sonnet~5.5 ([\widExfilJudgeSonnetLo,
+\widExfilJudgeSonnetHi], $n=\widNJudgeSonnet$) and \widExfilJudgeHaiku\% for Haiku~5.5 ([\widExfilJudgeHaikuLo,
+\widExfilJudgeHaikuHi], $n=\widNJudgeHaiku$), and changed accuracy relative to \emph{auto} by \dJudgeHaiku{} pp
+([\dJudgeLoHaiku, \dJudgeHiHaiku]) and \dJudgeSonnet{} pp ([\dJudgeLoSonnet, \dJudgeHiSonnet]) on \judgeNHaiku{}
+tasks. The judge is itself a model and could be targeted by an attacker who controls the task text; that attacker is
+the user, whom we exclude (Section~\ref{sec:threat}). \emph{Takeaway: against an attacker who targets widening,
+automatic approval forfeits most of TSE's protection for in-entitlement data, but an approval decision grounded in
+the original task closes this channel at little utility cost, whereas denying all widening costs \ablDDeny{} pp.}
 
 \input{tables/tab_bypass}

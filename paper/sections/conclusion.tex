@@ -8,8 +8,9 @@ protocol absorbs inference errors. On \nTasks{} public tasks, TSE scopes reduced
 (\oerCellReductionSuff{} on tasks whose scope sufficed, and about \oerCellRedPostSonnet{} counting approved widening),
 at an accuracy cost of \dExHaikuTse{} to \dExSonnetTse{} points, and lowered injection-driven exfiltration of
 out-of-task data. Widening approval is the main residual channel: an injection that targets it succeeded in most
-runs under automatic approval, so deployments should require human approval or deny widening for columns outside
-the initial scope. The approach depends on scope-inference quality, which we measured directly, and on the
+runs under automatic approval, but rarely when a broker-side judge that sees only the original task decided
+(exploratory), so deployments should ground approval in the task rather than in the agent's stated reason. A
+stronger broker model reduced the accuracy cost, and inference quality remains the main lever for future work. The approach depends on scope-inference quality, which we measured directly, and on the
 correctness of database enforcement, which we tested but which ultimately rests on the DBMS.
 
 Future work includes multi-step tasks whose scope evolves with intermediate results; propagating row restrictions

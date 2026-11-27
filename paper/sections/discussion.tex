@@ -18,7 +18,7 @@ not address it.
 \hline
 1. Injected instruction to read out-of-task columns or rows within $E(u)$ & Columns/rows outside $S(t)$ are not in the views; base tables unreadable; reachable again through approved widening & Partially mitigated (depends on approval policy) & Sec.~\ref{sec:res-security}(a) (Table~\ref{tab:e5}), (b), (c); T \\
 2. Injected instruction to read data outside $E(u)$ & View owner $U$ lacks the privilege; B0 already blocks it & Mitigated (also by B0) & Sec.~\ref{sec:res-security}(a) (\nCanaryOutE{} out-of-$E$ tasks, \exfOutESonnetTse{} leaks); T \\
-3. Injected instruction to request widening for out-of-task data & Bound $W\subseteq E(u)$; policy; budget; audit. In-entitlement requests can be approved under \emph{auto} & Partially mitigated & Sec.~\ref{sec:res-security}(c) (Section~\ref{sec:res-security}) \\
+3. Injected instruction to request widening for out-of-task data & Bound $W\subseteq E(u)$; policy; budget; audit. In-entitlement requests can be approved under \emph{auto}; a task-grounded judge rejects them & Partially mitigated (\emph{auto}); mitigated with the judge (exploratory, fixed attack) & Sec.~\ref{sec:res-security}(c) \\
 4. Widening requests beyond $E(u)$ & Rejected by the bound check and unenforceable by the DB (view owner lacks privilege) & Mitigated & Sec.~\ref{sec:res-security}(c) (no grant outside $E(u)$); T \\
 5. Role switching (\texttt{SET ROLE}, \texttt{SET SESSION AUTHORIZATION}) & Membership \texttt{WITH SET FALSE}; no superuser & Mitigated & Sec.~\ref{sec:res-security}(b); T \\
 6. Direct base-table access, schema-path tricks, mixing views and base tables & No \texttt{USAGE} on \texttt{public}; privileges checked per relation & Mitigated & Sec.~\ref{sec:res-security}(b); T \\
@@ -48,9 +48,10 @@ prompting and $k{=}0$ reduce it.
 \emph{Widening is abused.} Under the \emph{auto} policy an injected request for in-entitlement data can be approved,
 and this was the main residual channel in our injection experiment. Our lexical \emph{strict} policy only reduced it
 modestly (Section~\ref{sec:res-security}), because the requested column was often not tagged sensitive; denying
-widening removed it but changed accuracy by \ablDDeny{} points (exploratory). Human approval for columns outside the
-initial scope, a smaller budget, and audit review are the practical middle ground; a better sensitivity tagger
-would make \emph{strict} more effective.
+widening removed it but changed accuracy by \ablDDeny{} points (exploratory). A broker-side approval judge that sees only
+the original task closed this channel in our experiments at little utility cost (exploratory); human approval of
+columns outside the initial scope is the conservative alternative, and audit review remains useful in both cases.
+The judge's decisions depend on a model, so they can err; such errors stay bounded by $E(u)$ and are logged.
 \emph{Benchmark hints help inference.} BIRD supplies an evidence hint with each question, and the broker used it; without hints sufficiency on BIRD changes as reported in Section~\ref{sec:res-inference} (exploratory). Deployments without such hints should expect lower sufficiency or rely more on widening.
 \emph{DB enforcement is wrong} (A1 or A4 violated). TSE inherits the error. Our tests and the bypass catalog check
 the configuration we ship; operators should run them against their own deployment.
@@ -83,7 +84,8 @@ earlier results would need scope evolution beyond widening.
 \emph{Models and decoding.} Claude models reject sampling parameters, so their runs are not seed-controlled; we
 quantify run-to-run variation separately. Local open-weight agents struggled with the tool protocol, which limited
 the open-weight arm.
-\emph{Attacks are fixed, not adaptive.} Injection uses a few fixed templates that name the target column, and the
+\emph{Attacks are fixed, not adaptive.} The approval judge and the stronger broker were evaluated on subsets and
+against the same fixed widening attack; an adaptive attacker was not tested. Injection uses a few fixed templates that name the target column, and the
 bypass catalog is scripted. Paraphrased or adaptive injections, attacks that try to manipulate scope inference
 itself, and agent-driven bypass search were not evaluated; nor did we compare with model-level injection defenses,
 which are complementary.

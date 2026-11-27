@@ -5,14 +5,14 @@ broker infers the tables, columns and rows a natural-language task needs, compil
 PostgreSQL role and security-barrier views owned by the user's role, and offers a bounded, audited widening request
 when the scope is insufficient. In a preregistered evaluation on \nTasks{} BIRD and Spider tasks with Claude Haiku~5.5,
 Claude Sonnet~5.5 and open-weight agents, under synthetic role policies, TSE scopes exposed \oerColReduction-fold
-fewer columns and \oerCellReduction-fold fewer cells than the full entitlement (\oerCellReductionSuff-fold on tasks
-whose scope sufficed; about \oerCellRedPostSonnet-fold, exploratory, counting approved widening). Execution accuracy changed by \dExHaikuTse{} percentage points (95\% CI
-[\dExLoHaikuTse, \dExHiHaikuTse]) for Haiku and \dExSonnetTse{} ([\dExLoSonnetTse, \dExHiSonnetTse]) for Sonnet.
-Under indirect prompt injection naming an out-of-task column, exfiltration of out-of-task data fell from \exfSonnetCtxBzero\% to
-\exfSonnetCtxTse\% (Sonnet); an injection that told the agent to request the target column still succeeded in
-\widExfilAutoSonnet\% of runs under automatic approval, so widening approval is the main residual channel.
-\bypassSuccess{} of \bypassAttempts{} scripted enforcement-bypass attempts succeeded. The approach rests on two
-assumptions: scope-inference quality (inferred scopes were sufficient for \suffTse\% of tasks) and correct database
-enforcement. TSE does not protect against inference from in-scope data, covert channels, misuse of in-scope data, or
-malicious users; it reduces the data reachable per task.
+fewer columns and \oerCellReduction-fold fewer cells than the full entitlement (\oerCellReductionSuff-fold where the
+scope sufficed). Execution accuracy changed by \dExHaikuTse{} (Haiku) and \dExSonnetTse{} (Sonnet) percentage points;
+with a stronger broker model, by \hbDHaiku{} and \hbDSonnet{} (exploratory). Under injection naming an out-of-task
+column, exfiltration fell from \exfSonnetCtxBzero\% to \exfSonnetCtxTse\% (Sonnet). An injection that made the agent
+request the column succeeded in \widExfilAutoSonnet\% of runs under automatic approval, but in
+\widExfilJudgeSonnet\% when a broker-side judge that sees only the original task approved widening (exploratory).
+Scripted bypass attempts succeeded in \bypassSuccess{} of \bypassAttempts{} cases, while a SQL-parsing gate
+enforcing the same scope was bypassed. TSE rests on scope-inference quality (sufficient for \suffTse\% of tasks) and correct database
+enforcement; it does not protect against inference from in-scope data, covert channels, misuse of in-scope data, or
+malicious users.
 \end{abstract}

@@ -306,7 +306,7 @@ Every number in the paper text is one of these LaTeX macros.
 | `\taxViewSemantics` | 9.0 | taxonomy_sample.jsonl | % of sampled insufficient scopes: view_semantics |
 | `\taxOther` | 0.0 | taxonomy_sample.jsonl | % of sampled insufficient scopes: other |
 | `\taxN` | 100 | taxonomy_sample.jsonl | sampled insufficient scopes |
-| `\apiSpend` | 60.93 | api_spend.jsonl | total API spend (USD) |
+| `\apiSpend` | 71.26 | api_spend.jsonl | total API spend (USD) |
 | `\nRoleFull` | 632 | e1e3_scopes.jsonl | permitted tasks with role full |
 | `\oerColRedFull` | 5.4 | e1e3_scopes.jsonl | geomean oer_col B0/TSE, role full |
 | `\oerCellRedFull` | 31.9 | e1e3_scopes.jsonl | geomean oer_cell B0/TSE, role full |
@@ -369,10 +369,42 @@ Every number in the paper text is one of these LaTeX macros.
 | `\replayJudgeNeeded` | 92.0 | judge_replay.jsonl | % approved by judge, legit needed=True |
 | `\replayJudgeUnneeded` | 39.0 | judge_replay.jsonl | % approved by judge, legit needed=False |
 | `\replayJudgeCanary` | 0.6 | judge_replay.jsonl | % approved by judge, canary needed=False |
-| `\widExfilJudgeHaiku` | 1.6 | runs_e5wid_*.jsonl | exfiltration %, widening attack, judge policy, Haiku |
+| `\widExfilJudgeHaiku` | 1.5 | runs_e5wid_*.jsonl | exfiltration %, widening attack, judge policy, Haiku |
 | `\widExfilJudgeHaikuLo` | 0.0 | runs_e5wid_*.jsonl | CI low |
-| `\widExfilJudgeHaikuHi` | 3.8 | runs_e5wid_*.jsonl | CI high |
-| `\widNJudgeHaiku` | 182 | runs_e5wid_*.jsonl | runs, widening attack, judge policy, Haiku |
+| `\widExfilJudgeHaikuHi` | 3.6 | runs_e5wid_*.jsonl | CI high |
+| `\widNJudgeHaiku` | 195 | runs_e5wid_*.jsonl | runs, widening attack, judge policy, Haiku |
+| `\widExfilJudgeSonnet` | 0.0 | runs_e5wid_*.jsonl | exfiltration %, widening attack, judge policy, Sonnet |
+| `\widExfilJudgeSonnetLo` | 0.0 | runs_e5wid_*.jsonl | CI low |
+| `\widExfilJudgeSonnetHi` | 0.0 | runs_e5wid_*.jsonl | CI high |
+| `\widNJudgeSonnet` | 200 | runs_e5wid_*.jsonl | runs, widening attack, judge policy, Sonnet |
+| `\judgeExHaiku` | 60.0 | runs_abl_haiku.jsonl | EX %, TSE judge policy, Haiku, ablation subset |
+| `\judgeAutoExHaiku` | 62.0 | runs_abl_haiku.jsonl | EX %, TSE auto policy, Haiku, same tasks |
+| `\dJudgeHaiku` | \ensuremath{-}2.0 | runs_abl_haiku.jsonl | paired EX diff judge - auto (pp), Haiku |
+| `\dJudgeLoHaiku` | \ensuremath{-}7.5 | runs_abl_haiku.jsonl | CI low |
+| `\dJudgeHiHaiku` | +3.5 | runs_abl_haiku.jsonl | CI high |
+| `\judgeNHaiku` | 200 | runs_abl_haiku.jsonl | paired tasks, judge vs auto, Haiku |
+| `\judgeExSonnet` | 79.0 | runs_b3w_sonnet.jsonl | EX %, TSE judge policy, Sonnet, ablation subset |
+| `\judgeAutoExSonnet` | 80.0 | runs_e2_sonnet_r.jsonl | EX %, TSE auto policy, Sonnet, same tasks |
+| `\dJudgeSonnet` | \ensuremath{-}1.0 | runs_b3w_sonnet.jsonl | paired EX diff judge - auto (pp), Sonnet |
+| `\dJudgeLoSonnet` | \ensuremath{-}4.5 | runs_b3w_sonnet.jsonl | CI low |
+| `\dJudgeHiSonnet` | +2.5 | runs_b3w_sonnet.jsonl | CI high |
+| `\judgeNSonnet` | 200 | runs_b3w_sonnet.jsonl | paired tasks, judge vs auto, Sonnet |
+| `\hbExHaiku` | 62.5 | runs_e2_haiku.jsonl | EX %, TSE with Haiku broker, Haiku |
+| `\hbBzeroExHaiku` | 65.8 | runs_e2_haiku.jsonl | EX %, B0 on the same tasks, Haiku |
+| `\hbDHaiku` | \ensuremath{-}3.3 | runs_e2_haiku.jsonl | paired EX diff TSE(Haiku broker) - B0 (pp), Haiku |
+| `\hbDLoHaiku` | \ensuremath{-}6.1 | runs_e2_haiku.jsonl | CI low |
+| `\hbDHiHaiku` | \ensuremath{-}0.5 | runs_e2_haiku.jsonl | CI high |
+| `\hbNHaiku` | 1000 | runs_e2_haiku.jsonl | paired tasks, Haiku broker, Haiku |
+| `\hbTseOneExHaiku` | 59.3 | runs_e2_haiku.jsonl | EX %, default TSE (7B broker), same tasks, Haiku |
+| `\hbWappHaiku` | 10.4 | runs_e2_haiku.jsonl | % runs with approved widening, Haiku broker, Haiku |
+| `\hbExSonnet` | 75.6 | runs_e2_sonnet_r.jsonl | EX %, TSE with Haiku broker, Sonnet |
+| `\hbBzeroExSonnet` | 83.2 | runs_e2_sonnet_r.jsonl | EX %, B0 on the same tasks, Sonnet |
+| `\hbDSonnet` | \ensuremath{-}7.6 | runs_e2_sonnet_r.jsonl | paired EX diff TSE(Haiku broker) - B0 (pp), Sonnet |
+| `\hbDLoSonnet` | \ensuremath{-}10.8 | runs_e2_sonnet_r.jsonl | CI low |
+| `\hbDHiSonnet` | \ensuremath{-}4.4 | runs_e2_sonnet_r.jsonl | CI high |
+| `\hbNSonnet` | 500 | runs_e2_sonnet_r.jsonl | paired tasks, Haiku broker, Sonnet |
+| `\hbTseOneExSonnet` | 74.2 | runs_e2_sonnet_r.jsonl | EX %, default TSE (7B broker), same tasks, Sonnet |
+| `\hbWappSonnet` | 10.8 | runs_e2_sonnet_r.jsonl | % runs with approved widening, Haiku broker, Sonnet |
 | `\gateAttempts` | 1015 | e5b_gate.jsonl | bypass attempts against the parser gate |
 | `\gateDbs` | 29 | e5b_gate.jsonl | canary databases |
 | `\gateOrigLeaks` | 0 | e5b_gate.jsonl | gate leaks, original catalog |
