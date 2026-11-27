@@ -13,6 +13,8 @@ The agent emits a structured request: {"columns": ["table.column", ...], "drop_r
                ORIGINAL task text (question + benchmark hint), which the agent cannot change. The decision ignores
                the agent's stated reason, so injected content cannot argue a column into scope. Row-filter drops
                are handled as in auto. (Added after review, deviation D10.)
+       judge   as auto, but each column is granted only if an LLM judge (tse/approval_judge.py) that sees only the
+               original task, the schema and the column name says it is needed (D10).
   3. AUDIT: every request, decision and the resulting scope is appended to the task's audit log.
 """
 from __future__ import annotations
@@ -24,7 +26,7 @@ from .policies.generate import is_sensitive
 
 class WideningPolicy:
     def __init__(self, mode="auto", budget=3):
-        assert mode in ("auto", "strict", "deny", "grounded")
+        assert mode in ("auto", "strict", "deny", "grounded", "judge")
         self.mode, self.budget = mode, budget
 
 
@@ -61,6 +63,11 @@ def handle_request(req: dict, scope: Scope, E: Scope, sl, policy: WideningPolicy
         if policy.mode == "grounded":
             assert task is not None, "grounded policy needs the original task"
             if (t, c) not in link_columns(task_text(task), sl, {t}, lenient=True):
+                rec["denied"].append(f"{t}.{c}"); continue
+        if policy.mode == "judge":
+            from .approval_judge import judge
+            assert task is not None, "judge policy needs the original task"
+            if not judge(task, sl, t, c):
                 rec["denied"].append(f"{t}.{c}"); continue
         new.add_columns(t, [c])
         rec["granted_columns"].append(f"{t}.{c}")

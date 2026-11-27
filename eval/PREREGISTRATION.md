@@ -186,3 +186,11 @@ Secondary analyses are labelled exploratory.
   N(t), and canary grants from the widening-abuse runs), then in live runs: (a) lexical grounding with the broker's
   lenient linker; (b) an LLM judge (Claude Haiku 5.5) that sees only the original task, the schema and the
   requested column (`tse/approval_judge.py`).
+  Live runs (decided before any live judge result): widening-abuse injection (same 200 tasks and cells as E5c)
+  and utility on the ablation subset (Haiku 5.5 both harnesses with the ablation's cells; Sonnet 5.5 ReAct on the
+  same 200 tasks, paired with E2 TSE), policy `judge`.
+* **D11 (2026-11-27, after an external review comment; exploratory).** The main TSE configuration uses the 7B
+  local inference model although Claude Haiku 5.5 reached higher sufficiency (E3). We re-run E2 TSE with the Haiku
+  5.5 broker (variant `tse_haiku`, policy auto): Haiku 5.5 agent on all 1,000 permitted tasks (same cells as E2,
+  paired with E2 B0), Sonnet 5.5 agent on the stratified 500-task subset `eval/subset_b1_500.txt` (budget), paired
+  with E2 B0 on the same tasks. Reported as exploratory next to the preregistered main result.
