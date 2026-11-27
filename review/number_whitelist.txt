@@ -26,3 +26,7 @@
 1 | k=1 / one per task / one transaction
 4 | number of baselines
 13 | (reserved)
+30 | lower partition share bound, written as 30--70 (tse/policies/generate.py)
+70 | upper partition share bound, written as 30--70 (tse/policies/generate.py)
+12 | 12B model size label (mistral-nemo:12b)
+4.0 | CC BY-SA 4.0 license version

@@ -1,0 +1,13 @@
+\begin{table*}[t]\centering\caption{Scope-level results on all permitted tasks (E1, E3). OER: geometric mean over tasks (1 = only needed data reachable). Sufficiency: the gold query, executed under the compiled scope, returns the gold result (95\% bootstrap CI). Column precision/recall against the gold scope $N(t)$. Synthetic-policy entitlements.}\label{tab:e1}
+\footnotesize\begin{tabular}{lrrrrrrr}\hline
+\textbf{Scope source} & \textbf{OER$_\mathrm{col}$} & \textbf{OER$_\mathrm{row}$} & \textbf{OER$_\mathrm{cell}$} & \textbf{Sufficient (\%)} & \textbf{Col.\ prec.} & \textbf{Col.\ rec.} & \textbf{Median cols} \\\hline
+B0 / B2 / B3 (reach $=E(u)$) & 9.45 & 2.67 & 50.6 & 100.0 [100.0, 100.0] & 0.15 & 1.00 & 31 \\
+B1 static role view & 6.16 & 1.81 & 28.8 & 66.7 [63.8, 69.6] & 0.18 & 0.89 & 25 \\
+TSE $k{=}0$ & 1.38 & 0.40 & 1.1 & 53.8 [50.7, 56.8] & 0.69 & 0.90 & 5 \\
+TSE $k{=}1$ (default) & 1.90 & 0.60 & 2.1 & 63.9 [60.9, 66.9] & 0.55 & 0.94 & 7 \\
+TSE $k{=}2$ & 4.57 & 2.47 & 13.2 & 91.3 [89.5, 93.0] & 0.28 & 0.98 & 16 \\
+TSE no FK closure & 1.89 & 0.59 & 2.1 & 63.3 [60.3, 66.3] & 0.55 & 0.94 & 7 \\
+TSE no semantic layer & 1.29 & 0.42 & 1.2 & 47.0 [43.9, 50.1] & 0.62 & 0.86 & 5 \\
+TSE small inference model & 2.49 & 0.30 & 5.1 & 27.6 [21.5, 34.3] & 0.39 & 0.84 & 15 \\
+TSE Haiku-5.5 inference (exploratory) & 1.79 & 0.85 & 2.1 & 78.2 [75.7, 80.7] & 0.57 & 0.97 & 7 \\
+\hline\end{tabular}\end{table*}

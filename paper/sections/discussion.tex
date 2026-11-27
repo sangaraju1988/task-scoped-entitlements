@@ -47,7 +47,7 @@ prompting and $k{=}0$ reduce it.
 \emph{Widening is abused.} Under the \emph{auto} policy an injected request for in-entitlement data can be approved,
 and this was the main residual channel in our injection experiment. Our lexical \emph{strict} policy only reduced it
 modestly (Section~\ref{sec:res-security}), because the requested column was often not tagged sensitive; denying
-widening removed it at a cost of \ablDDeny{} accuracy points (exploratory). Human approval for columns outside the
+widening removed it but changed accuracy by \ablDDeny{} points (exploratory). Human approval for columns outside the
 initial scope, a smaller budget, and audit review are the practical middle ground; a better sensitivity tagger
 would make \emph{strict} more effective.
 \emph{DB enforcement is wrong} (A1 or A4 violated). TSE inherits the error. Our tests and the bypass catalog check

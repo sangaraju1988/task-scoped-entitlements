@@ -1,0 +1,100 @@
+{"task_id": "bird-0", "dataset": "bird", "difficulty": "moderate", "category": "missing_column", "missing_cols": ["satscores.rtype"]}
+{"task_id": "bird-1", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["schools.doctype", "schools.fundingtype"]}
+{"task_id": "bird-10", "dataset": "bird", "difficulty": "challenging", "category": "row_filter", "predicates": {"schools": "(lower(\"charternum\"::text) = lower('756')) AND (lower(\"mailcity\"::text) = lower('San Diego'))"}, "err": ""}
+{"task_id": "bird-101", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["set_translations.translation"]}
+{"task_id": "bird-105", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["sets.releasedate"]}
+{"task_id": "bird-109", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["cards.types"]}
+{"task_id": "bird-11", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["schools.statustype"]}
+{"task_id": "bird-110", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["cards.convertedmanacost", "cards.name", "cards.types"]}
+{"task_id": "bird-127", "dataset": "bird", "difficulty": "challenging", "category": "row_filter", "predicates": {"users": "lower(\"location\"::text) = lower('United Kingdom')"}, "err": ""}
+{"task_id": "bird-130", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["posts.creaiondate"]}
+{"task_id": "bird-135", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["posts.tags"]}
+{"task_id": "bird-136", "dataset": "bird", "difficulty": "challenging", "category": "row_filter", "predicates": {"users": "lower(\"location\"::text) = lower('Germany')"}, "err": ""}
+{"task_id": "bird-139", "dataset": "bird", "difficulty": "challenging", "category": "row_filter", "predicates": {"badges": "lower(\"name\"::text) = lower('Yearling')", "users": "lower(\"location\"::text) = lower('India')"}, "err": ""}
+{"task_id": "bird-144", "dataset": "bird", "difficulty": "challenging", "category": "row_filter", "predicates": {"users": "lower(\"location\"::text) = lower('India')"}, "err": ""}
+{"task_id": "bird-159", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["yearmonth.date"]}
+{"task_id": "bird-169", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["player_attributes.date"]}
+{"task_id": "bird-175", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["player_attributes.date"]}
+{"task_id": "bird-180", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["team_attributes.date"]}
+{"task_id": "bird-210", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["disp.type"]}
+{"task_id": "bird-22", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["schools.eilname"]}
+{"task_id": "bird-220", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["district.a2"]}
+{"task_id": "bird-222", "dataset": "bird", "difficulty": "challenging", "category": "row_filter", "predicates": {"client": "\"client_id\" = 3541"}, "err": ""}
+{"task_id": "bird-224", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["district.a2"]}
+{"task_id": "bird-230", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["disp.type", "trans.type"]}
+{"task_id": "bird-232", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["account.date", "district.a4"]}
+{"task_id": "bird-241", "dataset": "bird", "difficulty": "challenging", "category": "missing_table", "missing_tables": ["races"], "missing_cols": ["results.positionorder"]}
+{"task_id": "bird-251", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["races.name"]}
+{"task_id": "bird-267", "dataset": "bird", "difficulty": "challenging", "category": "missing_table", "missing_tables": ["laptimes"], "missing_cols": []}
+{"task_id": "bird-269", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["drivers.dob"]}
+{"task_id": "bird-273", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["results.positionorder"]}
+{"task_id": "bird-278", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["pitstops.duration", "pitstops.milliseconds", "races.date"]}
+{"task_id": "bird-286", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["results.positionorder"]}
+{"task_id": "bird-288", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["results.positionorder"]}
+{"task_id": "bird-289", "dataset": "bird", "difficulty": "challenging", "category": "missing_table", "missing_tables": ["races"], "missing_cols": []}
+{"task_id": "bird-291", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["drivers.dob"]}
+{"task_id": "bird-297", "dataset": "bird", "difficulty": "simple", "category": "missing_column", "missing_cols": ["income.source"]}
+{"task_id": "bird-298", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["budget.category", "event.type"]}
+{"task_id": "bird-309", "dataset": "bird", "difficulty": "challenging", "category": "row_filter", "predicates": {"budget": "lower(\"category\"::text) = lower('advertising')"}, "err": ""}
+{"task_id": "bird-314", "dataset": "bird", "difficulty": "challenging", "category": "missing_table", "missing_tables": ["expense"], "missing_cols": []}
+{"task_id": "bird-317", "dataset": "bird", "difficulty": "challenging", "category": "missing_table", "missing_tables": ["expense"], "missing_cols": []}
+{"task_id": "bird-330", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["expense.cost", "expense.expense_date", "expense.expense_description"]}
+{"task_id": "bird-335", "dataset": "bird", "difficulty": "challenging", "category": "row_filter", "predicates": {"publisher": "(lower(\"publisher_name\"::text) = lower('Marvel Comics')) AND (lower(\"publisher_name\"::text) = lower('DC Comics'))"}, "err": ""}
+{"task_id": "bird-350", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["attribute.attribute_name"]}
+{"task_id": "bird-361", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["superhero.superhero_name"]}
+{"task_id": "bird-368", "dataset": "bird", "difficulty": "challenging", "category": "row_filter", "predicates": {"superhero": "lower(\"superhero_name\"::text) = lower('3-D Man')"}, "err": ""}
+{"task_id": "bird-369", "dataset": "bird", "difficulty": "challenging", "category": "missing_table", "missing_tables": ["colour"], "missing_cols": ["alignment.alignment"]}
+{"task_id": "bird-37", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["schools.statustype"]}
+{"task_id": "bird-371", "dataset": "bird", "difficulty": "challenging", "category": "missing_table", "missing_tables": ["gender"], "missing_cols": []}
+{"task_id": "bird-379", "dataset": "bird", "difficulty": "challenging", "category": "missing_table", "missing_tables": ["publisher"], "missing_cols": []}
+{"task_id": "bird-382", "dataset": "bird", "difficulty": "challenging", "category": "row_filter", "predicates": {"patient": "lower(\"sex\"::text) = lower('male')"}, "err": ""}
+{"task_id": "bird-389", "dataset": "bird", "difficulty": "challenging", "category": "missing_table", "missing_tables": ["laboratory"], "missing_cols": []}
+{"task_id": "bird-392", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["patient.birthday"]}
+{"task_id": "bird-394", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["laboratory.plt"]}
+{"task_id": "bird-4", "dataset": "bird", "difficulty": "simple", "category": "missing_column", "missing_cols": ["satscores.avgscrmath"]}
+{"task_id": "bird-416", "dataset": "bird", "difficulty": "challenging", "category": "row_filter", "predicates": {"patient": "(lower(\"sex\"::text) = lower('M')) AND (lower(\"sex\"::text) = lower('F'))"}, "err": ""}
+{"task_id": "bird-417", "dataset": "bird", "difficulty": "challenging", "category": "row_filter", "predicates": {"patient": "(lower(\"admission\"::text) = lower('+')) AND (lower(\"admission\"::text) = lower('-'))"}, "err": ""}
+{"task_id": "bird-418", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["patient.First Date"]}
+{"task_id": "bird-424", "dataset": "bird", "difficulty": "challenging", "category": "row_filter", "predicates": {"patient": "lower(\"sex\"::text) = lower('female')"}, "err": ""}
+{"task_id": "bird-430", "dataset": "bird", "difficulty": "challenging", "category": "row_filter", "predicates": {"patient": "(lower(\"admission\"::text) = lower('+')) AND (lower(\"admission\"::text) = lower('-'))"}, "err": ""}
+{"task_id": "bird-438", "dataset": "bird", "difficulty": "challenging", "category": "view_semantics", "err": "GroupingError: column \"t1.birthday\" must appear in the GROUP BY clause or be used in an aggregate function"}
+{"task_id": "bird-442", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["patient.birthday"]}
+{"task_id": "bird-444", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["laboratory.date"]}
+{"task_id": "bird-447", "dataset": "bird", "difficulty": "challenging", "category": "row_filter", "predicates": {"patient": "lower(\"sex\"::text) = lower('female')"}, "err": ""}
+{"task_id": "bird-452", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["patient.birthday"]}
+{"task_id": "bird-465", "dataset": "bird", "difficulty": "challenging", "category": "row_filter", "predicates": {"patient": "lower(\"sex\"::text) = lower('female')"}, "err": ""}
+{"task_id": "bird-467", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["laboratory.U-PRO", "laboratory.plt", "patient.birthday"]}
+{"task_id": "bird-474", "dataset": "bird", "difficulty": "moderate", "category": "row_filter", "predicates": {"atom": "(lower(\"element\"::text) = lower('Phosphorus')) AND (lower(\"element\"::text) = lower('Nitrogen'))"}, "err": ""}
+{"task_id": "bird-476", "dataset": "bird", "difficulty": "moderate", "category": "row_filter", "predicates": {"atom": "lower(\"element\"::text) IN (lower('P'), lower('Br'))", "bond": "lower(\"bond_type\"::text) = lower('#')"}, "err": ""}
+{"task_id": "bird-489", "dataset": "bird", "difficulty": "challenging", "category": "row_filter", "predicates": {"bond": "lower(\"bond_type\"::text) = lower('triple')"}, "err": ""}
+{"task_id": "bird-492", "dataset": "bird", "difficulty": "challenging", "category": "row_filter", "predicates": {"atom": "(lower(\"element\"::text) = lower('Y')) AND (lower(\"element\"::text) = lower('H'))"}, "err": ""}
+{"task_id": "bird-6", "dataset": "bird", "difficulty": "moderate", "category": "missing_column", "missing_cols": ["schools.gsserved"]}
+{"task_id": "bird-60", "dataset": "bird", "difficulty": "challenging", "category": "missing_table", "missing_tables": ["sets"], "missing_cols": ["cards.setcode"]}
+{"task_id": "bird-66", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["sets.totalsetsize"]}
+{"task_id": "bird-77", "dataset": "bird", "difficulty": "challenging", "category": "row_filter", "predicates": {"cards": "lower(\"setcode\"::text) = lower('DARK')"}, "err": ""}
+{"task_id": "bird-78", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["set_translations.translation", "sets.releasedate"]}
+{"task_id": "bird-79", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["sets.releasedate", "sets.totalsetsize"]}
+{"task_id": "bird-8", "dataset": "bird", "difficulty": "challenging", "category": "missing_column", "missing_cols": ["schools.doctype"]}
+{"task_id": "bird-91", "dataset": "bird", "difficulty": "challenging", "category": "row_filter", "predicates": {"cards": "(lower(\"artist\"::text) = lower('Erica Yang')) AND (lower(\"rarity\"::text) = lower('Common'))", "legalities": "(lower(\"format\"::text) = lower('Pauper')) AND (lower(\"status\"::text) = lower('Legal'))"}, "err": ""}
+{"task_id": "spider-115", "dataset": "spider", "difficulty": "hard", "category": "missing_column", "missing_cols": ["countries.countryname"]}
+{"task_id": "spider-149", "dataset": "spider", "difficulty": "medium", "category": "view_semantics", "err": "GroupingError: column \"t1.fullname\" must appear in the GROUP BY clause or be used in an aggregate function"}
+{"task_id": "spider-151", "dataset": "spider", "difficulty": "extra", "category": "row_filter", "predicates": {"car_makers": "lower(\"fullname\"::text) = lower('General Motors')"}, "err": ""}
+{"task_id": "spider-175", "dataset": "spider", "difficulty": "extra", "category": "view_semantics", "err": "GroupingError: column \"t1.maker\" must appear in the GROUP BY clause or be used in an aggregate function"}
+{"task_id": "spider-25", "dataset": "spider", "difficulty": "extra", "category": "view_semantics", "err": "GroupingError: column \"t2.name\" must appear in the GROUP BY clause or be used in an aggregate function"}
+{"task_id": "spider-356", "dataset": "spider", "difficulty": "medium", "category": "missing_column", "missing_cols": ["ref_template_types.template_type_description"]}
+{"task_id": "spider-504", "dataset": "spider", "difficulty": "extra", "category": "row_filter", "predicates": {"ship": "(lower(\"name\"::text) = lower('Lettice')) AND (lower(\"name\"::text) = lower('HMS Atalanta'))"}, "err": ""}
+{"task_id": "spider-512", "dataset": "spider", "difficulty": "easy", "category": "missing_column", "missing_cols": ["courses.course_name"]}
+{"task_id": "spider-540", "dataset": "spider", "difficulty": "extra", "category": "view_semantics", "err": "GroupingError: column \"t1.degree_summary_name\" must appear in the GROUP BY clause or be used in an aggregate function"}
+{"task_id": "spider-58", "dataset": "spider", "difficulty": "extra", "category": "row_filter", "predicates": {"pets": "(lower(\"pettype\"::text) = lower('cat')) AND (lower(\"pettype\"::text) = lower('dog'))"}, "err": ""}
+{"task_id": "spider-593", "dataset": "spider", "difficulty": "medium", "category": "row_filter", "predicates": {"cartoon": "(lower(\"directed_by\"::text) = lower('Ben Jones')) AND (lower(\"directed_by\"::text) = lower('Brandon Vietti'))"}, "err": ""}
+{"task_id": "spider-610", "dataset": "spider", "difficulty": "medium", "category": "row_filter", "predicates": {"cartoon": "lower(\"title\"::text) = lower('The Rise of the Blue Beetle')"}, "err": ""}
+{"task_id": "spider-637", "dataset": "spider", "difficulty": "extra", "category": "row_filter", "predicates": {"cartoon": "(lower(\"directed_by\"::text) = lower('Ben Jones')) AND (lower(\"directed_by\"::text) = lower('Michael Chang'))"}, "err": ""}
+{"task_id": "spider-66", "dataset": "spider", "difficulty": "extra", "category": "missing_column", "missing_cols": ["student.age"]}
+{"task_id": "spider-684", "dataset": "spider", "difficulty": "hard", "category": "missing_table", "missing_tables": ["poker_player"], "missing_cols": []}
+{"task_id": "spider-714", "dataset": "spider", "difficulty": "medium", "category": "missing_column", "missing_cols": ["country.name"]}
+{"task_id": "spider-783", "dataset": "spider", "difficulty": "hard", "category": "row_filter", "predicates": {"country": "lower(\"governmentform\"::text) = lower('Republic')", "countrylanguage": "lower(\"language\"::text) = lower('English')"}, "err": ""}
+{"task_id": "spider-82", "dataset": "spider", "difficulty": "medium", "category": "view_semantics", "err": "GroupingError: column \"t1.fname\" must appear in the GROUP BY clause or be used in an aggregate function"}
+{"task_id": "spider-890", "dataset": "spider", "difficulty": "hard", "category": "row_filter", "predicates": {"highschooler": "lower(\"name\"::text) = lower('Kyle')"}, "err": ""}
+{"task_id": "spider-922", "dataset": "spider", "difficulty": "extra", "category": "view_semantics", "err": "GroupingError: column \"t1.last_name\" must appear in the GROUP BY clause or be used in an aggregate function"}
+{"task_id": "spider-937", "dataset": "spider", "difficulty": "extra", "category": "view_semantics", "err": "GroupingError: column \"t1.last_name\" must appear in the GROUP BY clause or be used in an aggregate function"}
+{"task_id": "spider-938", "dataset": "spider", "difficulty": "extra", "category": "view_semantics", "err": "GroupingError: column \"t1.treatment_type_description\" must appear in the GROUP BY clause or be used in an aggregate function"}

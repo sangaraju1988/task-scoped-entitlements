@@ -41,11 +41,11 @@ enforcement.
 Ollama~\cite{ollama} at temperature 0 with JSON-schema-constrained output; it sees schema text and the task, never
 data values. Ablations use \texttt{llama3.2:3b} and, as an exploratory variant, Claude Haiku 5.5. Agents are Claude
 Haiku 5.5 and Claude Sonnet 5.5 (Anthropic API, adaptive thinking, effort ``medium'', default sampling) and the
-open-weight \texttt{qwen3:8b}. They run in two harnesses with identical prompts and tools: a manual function-calling
+open-weight \texttt{qwen3:8b} and \texttt{qwen2.5-coder:7b} (the latter in the manual harness only). They run in two harnesses with identical prompts and tools: a manual function-calling
 ReAct loop~\cite{yao2023react} and the LangGraph prebuilt ReAct agent~\cite{langgraph}. Each task is assigned one
 harness by balanced rotation within strata, and all conditions of a task run in the same model and harness, so
 comparisons are paired. Haiku 5.5 runs the full design in both harnesses; Sonnet 5.5 runs the main and injection
-experiments in the manual harness (deviation D3); \texttt{qwen3:8b} runs a 200-task subset. A dev-split check
+experiments in the manual harness (deviation D3); the open-weight agents run a 200-task stratified subset (deviation D5). A dev-split check
 excluded \texttt{mistral-nemo:12b} and \texttt{llama3.2:3b} as agents because they rarely completed the tool
 protocol. Agents get at most 8 steps; query results show at most 20 rows.
 

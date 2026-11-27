@@ -26,8 +26,15 @@ def macro(name, value, source, how, fmt=None):
     if isinstance(value, float) and fmt is None:
         fmt = "{:.1f}"
     s = fmt.format(value) if fmt else str(value)
+    if s.startswith("-") and s[1:2].isdigit():
+        s = "\\ensuremath{-}" + s[1:]
     MACROS[name] = (s, source, how)
     return s
+
+
+def prel(p):
+    """p-value as a LaTeX relation for use as $p\\macro$."""
+    return "<10^{-6}" if p < 1e-6 else "\\le " + f"{p:.2g}"
 
 
 def pct(x):
@@ -61,7 +68,7 @@ if PREP:
         macro("permRate" + r.capitalize(), pct(np.mean([p["permitted"][r] for p in PREP.values()])), "prep.jsonl", f"share of tasks permitted under {r}")
 
 # ======================================================================= E1 / E3 (scope level)
-SC = load("e1e3_scopes.jsonl")
+SC = load(os.environ.get("TSE_E1E3", "e1e3_scopes.jsonl"))
 SRC_LABEL = {"B0": "B0 / B2 / B3 (reach $=E(u)$)", "B1": "B1 static role view", "tse_k0": "TSE $k{=}0$", "tse": "TSE $k{=}1$ (default)",
              "tse_k2": "TSE $k{=}2$", "tse_noclose": "TSE no FK closure", "tse_nosl": "TSE no semantic layer", "tse_small": "TSE small inference model",
              "tse_haiku": "TSE Haiku-5.5 inference (exploratory)"}
@@ -105,6 +112,16 @@ if SC:
     if "B0" in R and "tse" in R:
         macro("oerColReduction", R["B0"]["oer_col"] / R["tse"]["oer_col"], "e1e3_scopes.jsonl", "geomean OER_col B0 / TSE", "{:.1f}")
         macro("oerCellReduction", R["B0"]["oer_cell"] / R["tse"]["oer_cell"], "e1e3_scopes.jsonl", "geomean OER_cell B0 / TSE", "{:.0f}")
+        if "tse_k2" in R:
+            macro("oerColReductionKtwo", R["B0"]["oer_col"] / R["tse_k2"]["oer_col"], "e1e3_scopes.jsonl", "geomean OER_col B0 / TSE k=2", "{:.1f}")
+            macro("oerCellReductionKtwo", R["B0"]["oer_cell"] / R["tse_k2"]["oer_cell"], "e1e3_scopes.jsonl", "geomean OER_cell B0 / TSE k=2", "{:.1f}")
+        # restricted to tasks whose default TSE scope is sufficient (OER < 1 otherwise reflects missing data)
+        ok = [x for x in SC if "tse" in x["scopes"] and x["scopes"]["tse"]["sufficient"]]
+        for g, G in (("oer_col", "Col"), ("oer_row", "Row"), ("oer_cell", "Cell")):
+            t_ = geomean([x["scopes"]["tse"][g] for x in ok]); b_ = geomean([x["scopes"]["B0"][g] for x in ok])
+            macro("oer" + G + "TseSuff", t_, "e1e3_scopes.jsonl", f"geomean {g}, TSE, tasks with sufficient TSE scope", "{:.2f}")
+            macro("oer" + G + "BzeroSuff", b_, "e1e3_scopes.jsonl", f"geomean {g}, B0, same tasks", "{:.2f}")
+        macro("nTseSuff", len(ok), "e1e3_scopes.jsonl", "tasks with sufficient default TSE scope")
     # per dataset, Wilcoxon TSE vs B0 / B1
     pv, labels = [], []
     for ds in ("bird", "spider"):
@@ -129,7 +146,7 @@ if SC:
             f.write(f"{ds} & {gran.split('_')[1]} & {base} & {n} & {rbs:.2f} & {('<10^{-6}' if pa < 1e-6 else f'{pa:.3g}')} \\\\\n".replace("<10^{-6}", "$<10^{-6}$"))
         f.write("\\hline\\end{tabular}\\end{table}\n")
     maxp = max(adj) if adj else float("nan")
-    macro("eoneMaxPHolm", maxp, "e1e3_scopes.jsonl", "max Holm-adjusted p over E1 tests", "{:.2g}")
+    macro("eoneMaxPHolm", prel(maxp), "e1e3_scopes.jsonl", "max Holm-adjusted p over E1 tests (as relation)")
     # figure: OER_cell distributions (log) + sufficiency vs OER for variants
     import matplotlib
     matplotlib.use("Agg")
@@ -415,7 +432,7 @@ if E5TAB:
         for (label, mode, base, n, n01, n10), pa in zip(k5, adj5):
             f.write(f"% {label} {mode} TSE vs {base}: n={n} baseOnly={n01} tseOnly={n10} pHolm={pa:.3g}\n")
     ctxp = [pa for (label, mode, base, n, n01, n10), pa in zip(k5, adj5) if mode == "context"]
-    macro("eFiveMaxPHolm", max(ctxp) if ctxp else float("nan"), "runs_e5ctx_*.jsonl", "max Holm-adjusted p, E5a context, TSE vs baselines", "{:.2g}")
+    macro("eFiveMaxPHolm", prel(max(ctxp)) if ctxp else "=?", "runs_e5ctx_*.jsonl", "max Holm-adjusted p, E5a context, TSE vs baselines (as relation)")
 
 # dbfield exposure (preregistered: did the agent read the injected carrier text?) and compliance
 DBF = runs("runs_e5db_haiku.jsonl")

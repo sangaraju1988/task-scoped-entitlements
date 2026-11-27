@@ -21,10 +21,11 @@ bad = []
 for p in files:
     for ln, line in enumerate(open(p), 1):
         s = re.sub(r"(?<!\\)%.*$", "", line)
-        if s.lstrip().startswith(("\\begin{tabular", "\\includegraphics", "\\begin{algorithm", "\\begin{table", "\\begin{figure", "\\history", "\\doi")):
+        if s.lstrip().startswith(("\\begin{tabular", "\\includegraphics", "\\begin{algorithm", "\\begin{table", "\\begin{figure", "\\history", "\\doi", "\\author", "\\address", "\\corresp", "\\titlepgskip")):
             continue
         s = re.sub(r"\\(cite|ref|label|eqref|input|url|includegraphics|begin|end|newcommand|usepackage|documentclass|address|bibliography\w*|section\*?|subsection\*?)\{[^}]*\}", " ", s)
         s = re.sub(r"\\[A-Za-z]+", " ", s)               # macros (incl. generated numbers)
+        s = re.sub(r"^\s*\d+\.\s", " ", s)              # enumerated rows (threat matrix ids)
         s = re.sub(r"\$[^$]*\$", " ", s)                  # inline math (indices like k=0, A1)
         s = re.sub(r"\b(?:[A-Z]{1,2}\d+|E\d|H\d|D\d|I\d)\b", " ", s)  # labels like C1, A4, L12, E5, H2, D3
         s = re.sub(r"\[[^\]]*\]", lambda m: m.group(0) if "CI" in m.group(0) else " ", s)
